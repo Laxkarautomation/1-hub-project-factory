@@ -13,17 +13,17 @@
       {
         "provider": "cloudflare",
         "success": false,
-        "error": "Provider API key not configured yet"
+        "error": "Missing credentials: apiKey, accountId"
       },
       {
         "provider": "google",
         "success": false,
-        "error": "Provider API key not configured yet"
+        "error": "Missing credentials: apiKey"
       },
       {
         "provider": "fal",
         "success": false,
-        "error": "Provider API key not configured yet"
+        "error": "Missing credentials: apiKey"
       }
     ]
   },

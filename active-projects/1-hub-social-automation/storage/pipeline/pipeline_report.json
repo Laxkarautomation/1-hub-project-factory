@@ -1,0 +1,267 @@
+{
+  "started_at": "2026-06-09T11:57:03.126Z",
+  "mode": "fresh",
+  "steps": [
+    {
+      "id": "provider_health_check",
+      "name": "Provider Health Check",
+      "command": "node modules/providers/run_provider_health_check.js",
+      "status": "success",
+      "duration_ms": 44
+    },
+    {
+      "id": "provider_summary",
+      "name": "Provider Summary",
+      "command": "node modules/providers/run_provider_summary.js",
+      "status": "success",
+      "duration_ms": 36
+    },
+    {
+      "id": "collect_youtube",
+      "name": "Collect Competitor YouTube Data",
+      "command": "node providers/youtube/services/collect_multi_channels.js",
+      "status": "success",
+      "duration_ms": 114563
+    },
+    {
+      "id": "normalize_youtube",
+      "name": "Normalize YouTube Data",
+      "command": "node providers/youtube/services/normalize_all_youtube.js",
+      "status": "success",
+      "duration_ms": 204
+    },
+    {
+      "id": "filter_relevant_videos",
+      "name": "Filter Relevant Videos",
+      "command": "node modules/analytics/services/filter_relevant_videos.js",
+      "status": "success",
+      "duration_ms": 152
+    },
+    {
+      "id": "create_top_ideas_input",
+      "name": "Create Top Ideas Input",
+      "command": "node modules/analytics/services/create_top_ideas_input.js",
+      "status": "success",
+      "duration_ms": 79
+    },
+    {
+      "id": "extract_story_angles",
+      "name": "Extract Story Angles",
+      "command": "node modules/analytics/services/extract_story_angles.js",
+      "status": "success",
+      "duration_ms": 38
+    },
+    {
+      "id": "extract_research_notes",
+      "name": "Extract Research Notes",
+      "command": "node modules/research/services/extract_research_notes.js",
+      "status": "success",
+      "duration_ms": 40
+    },
+    {
+      "id": "generate_research_scripts",
+      "name": "Generate Research Scripts",
+      "command": "node modules/scripts/services/generate_research_scripts.js",
+      "status": "success",
+      "duration_ms": 39
+    },
+    {
+      "id": "generate_image_prompts",
+      "name": "Generate Scene Varied Image Prompts",
+      "command": "node modules/images/services/generate_scene_varied_prompts.js",
+      "status": "success",
+      "duration_ms": 38
+    },
+    {
+      "id": "generate_captions",
+      "name": "Generate Captions",
+      "command": "node modules/captions/services/generate_captions.js",
+      "status": "success",
+      "duration_ms": 38
+    },
+    {
+      "id": "generate_voice",
+      "name": "Generate Audio Voice",
+      "command": "node providers/edge-tts/services/generate_voice.js",
+      "status": "success",
+      "duration_ms": 17777
+    },
+    {
+      "id": "export_content_pack",
+      "name": "Export Content Pack",
+      "command": "node modules/publishing/services/export_content_pack.js",
+      "status": "success",
+      "duration_ms": 40
+    },
+    {
+      "id": "build_video_manifest",
+      "name": "Build Video Manifest",
+      "command": "node modules/video/services/build_video_manifest.js",
+      "status": "success",
+      "duration_ms": 39
+    },
+    {
+      "id": "build_shot_list",
+      "name": "Build Shot List",
+      "command": "node modules/video/services/build_shot_list.js",
+      "status": "success",
+      "duration_ms": 37
+    },
+    {
+      "id": "export_image_jobs",
+      "name": "Export Image Jobs",
+      "command": "node providers/image-providers/services/export_image_jobs.js",
+      "status": "success",
+      "duration_ms": 41
+    },
+    {
+      "id": "image_factory_research_script_001",
+      "name": "Image Factory: research_script_001",
+      "command": "node modules/image-factory/run_image_factory.js research_script_001",
+      "status": "success",
+      "duration_ms": 47
+    },
+    {
+      "id": "image_audit_research_script_001",
+      "name": "Image Audit: research_script_001",
+      "command": "node modules/image-factory/run_image_audit.js research_script_001",
+      "status": "success",
+      "duration_ms": 41
+    },
+    {
+      "id": "image_factory_research_script_002",
+      "name": "Image Factory: research_script_002",
+      "command": "node modules/image-factory/run_image_factory.js research_script_002",
+      "status": "success",
+      "duration_ms": 44
+    },
+    {
+      "id": "image_audit_research_script_002",
+      "name": "Image Audit: research_script_002",
+      "command": "node modules/image-factory/run_image_audit.js research_script_002",
+      "status": "success",
+      "duration_ms": 40
+    },
+    {
+      "id": "image_factory_research_script_003",
+      "name": "Image Factory: research_script_003",
+      "command": "node modules/image-factory/run_image_factory.js research_script_003",
+      "status": "success",
+      "duration_ms": 39
+    },
+    {
+      "id": "image_audit_research_script_003",
+      "name": "Image Audit: research_script_003",
+      "command": "node modules/image-factory/run_image_audit.js research_script_003",
+      "status": "success",
+      "duration_ms": 47
+    },
+    {
+      "id": "image_factory_research_script_004",
+      "name": "Image Factory: research_script_004",
+      "command": "node modules/image-factory/run_image_factory.js research_script_004",
+      "status": "success",
+      "duration_ms": 44
+    },
+    {
+      "id": "image_audit_research_script_004",
+      "name": "Image Audit: research_script_004",
+      "command": "node modules/image-factory/run_image_audit.js research_script_004",
+      "status": "success",
+      "duration_ms": 45
+    },
+    {
+      "id": "image_factory_research_script_005",
+      "name": "Image Factory: research_script_005",
+      "command": "node modules/image-factory/run_image_factory.js research_script_005",
+      "status": "success",
+      "duration_ms": 40
+    },
+    {
+      "id": "image_audit_research_script_005",
+      "name": "Image Audit: research_script_005",
+      "command": "node modules/image-factory/run_image_audit.js research_script_005",
+      "status": "success",
+      "duration_ms": 52
+    },
+    {
+      "id": "image_factory_research_script_006",
+      "name": "Image Factory: research_script_006",
+      "command": "node modules/image-factory/run_image_factory.js research_script_006",
+      "status": "success",
+      "duration_ms": 44
+    },
+    {
+      "id": "image_audit_research_script_006",
+      "name": "Image Audit: research_script_006",
+      "command": "node modules/image-factory/run_image_audit.js research_script_006",
+      "status": "success",
+      "duration_ms": 49
+    },
+    {
+      "id": "image_factory_research_script_007",
+      "name": "Image Factory: research_script_007",
+      "command": "node modules/image-factory/run_image_factory.js research_script_007",
+      "status": "success",
+      "duration_ms": 45
+    },
+    {
+      "id": "image_audit_research_script_007",
+      "name": "Image Audit: research_script_007",
+      "command": "node modules/image-factory/run_image_audit.js research_script_007",
+      "status": "success",
+      "duration_ms": 41
+    },
+    {
+      "id": "image_factory_research_script_008",
+      "name": "Image Factory: research_script_008",
+      "command": "node modules/image-factory/run_image_factory.js research_script_008",
+      "status": "success",
+      "duration_ms": 46
+    },
+    {
+      "id": "image_audit_research_script_008",
+      "name": "Image Audit: research_script_008",
+      "command": "node modules/image-factory/run_image_audit.js research_script_008",
+      "status": "success",
+      "duration_ms": 39
+    },
+    {
+      "id": "image_factory_research_script_009",
+      "name": "Image Factory: research_script_009",
+      "command": "node modules/image-factory/run_image_factory.js research_script_009",
+      "status": "success",
+      "duration_ms": 46
+    },
+    {
+      "id": "image_audit_research_script_009",
+      "name": "Image Audit: research_script_009",
+      "command": "node modules/image-factory/run_image_audit.js research_script_009",
+      "status": "success",
+      "duration_ms": 39
+    },
+    {
+      "id": "image_factory_research_script_010",
+      "name": "Image Factory: research_script_010",
+      "command": "node modules/image-factory/run_image_factory.js research_script_010",
+      "status": "success",
+      "duration_ms": 46
+    },
+    {
+      "id": "image_audit_research_script_010",
+      "name": "Image Audit: research_script_010",
+      "command": "node modules/image-factory/run_image_audit.js research_script_010",
+      "status": "success",
+      "duration_ms": 41
+    },
+    {
+      "id": "batch_video_render",
+      "name": "Batch Video Render",
+      "command": "node modules/video-renderer/services/render_all_videos.js",
+      "status": "success",
+      "duration_ms": 69826
+    }
+  ],
+  "finished_at": "2026-06-09T12:00:27.053Z",
+  "status": "success"
+}
