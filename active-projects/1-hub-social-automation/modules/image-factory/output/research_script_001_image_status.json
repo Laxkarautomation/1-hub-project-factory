@@ -1,0 +1,47 @@
+[
+  {
+    "script_id": "research_script_001",
+    "scene": 1,
+    "image_path": "storage/images/unraaz/research_script_001/scene_1.jpg",
+    "exists": false,
+    "size_bytes": 0,
+    "status": "missing",
+    "prompt": "wide shot of abandoned Indian village at sunset, empty lanes, fog, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+  },
+  {
+    "script_id": "research_script_001",
+    "scene": 2,
+    "image_path": "storage/images/unraaz/research_script_001/scene_2.jpg",
+    "exists": true,
+    "size_bytes": 35299,
+    "status": "ready",
+    "prompt": "old villagers standing far away in shadows, worried faces, rural India, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+  },
+  {
+    "script_id": "research_script_001",
+    "scene": 3,
+    "image_path": "storage/images/unraaz/research_script_001/scene_3.jpg",
+    "exists": true,
+    "size_bytes": 35384,
+    "status": "ready",
+    "prompt": "dark narrow village path with broken temple bell and warning atmosphere, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+  },
+  {
+    "script_id": "research_script_001",
+    "scene": 4,
+    "image_path": "storage/images/unraaz/research_script_001/scene_4.jpg",
+    "exists": true,
+    "size_bytes": 35087,
+    "status": "ready",
+    "prompt": "close-up of empty doorway, moving curtain, eerie night mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+  },
+  {
+    "script_id": "research_script_001",
+    "scene": 5,
+    "image_path": "storage/images/unraaz/research_script_001/scene_5.jpg",
+    "exists": true,
+    "size_bytes": 35210,
+    "status": "ready",
+    "prompt": "lonely village road under moonlight, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+  }
+]

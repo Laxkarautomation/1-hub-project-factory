@@ -1,0 +1,18 @@
+{
+  "script": {
+    "active": "template",
+    "fallbacks": ["template", "gemini", "openai", "claude"]
+  },
+  "image": {
+    "active": "placeholder",
+    "fallbacks": ["placeholder", "cloudflare", "google", "fal"]
+  },
+  "audio": {
+    "active": "edge_tts",
+    "fallbacks": ["edge_tts", "cloudflare_tts", "openai_tts", "elevenlabs"]
+  },
+  "video": {
+    "active": "ffmpeg",
+    "fallbacks": ["ffmpeg", "remotion", "fal_video", "runway"]
+  }
+}

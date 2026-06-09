@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-06-09T10:13:09.170Z",
+  "status": {
+    "script": {
+      "success": true,
+      "type": "script",
+      "provider": "template",
+      "result": {
+        "success": true,
+        "provider": "template",
+        "message": "Template script engine is local/free fallback. Existing script pipeline should handle actual generation.",
+        "payload": {
+          "topic": "haunted village mystery"
+        }
+      },
+      "attempts": [
+        {
+          "provider": "template",
+          "success": true,
+          "error": null
+        }
+      ]
+    },
+    "image": {
+      "success": false,
+      "type": "image",
+      "provider": null,
+      "result": null,
+      "attempts": [
+        {
+          "provider": "placeholder",
+          "success": false,
+          "error": "Placeholder provider connected but no replacement image generated yet"
+        },
+        {
+          "provider": "cloudflare",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        },
+        {
+          "provider": "google",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        },
+        {
+          "provider": "fal",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        }
+      ]
+    },
+    "audio": {
+      "success": true,
+      "type": "audio",
+      "provider": "edge_tts",
+      "result": {
+        "success": true,
+        "provider": "edge_tts",
+        "message": "Edge-TTS is existing local/free provider. Existing audio pipeline should handle actual generation.",
+        "payload": {
+          "text": "Ye ek rahasya ki kahani hai."
+        }
+      },
+      "attempts": [
+        {
+          "provider": "edge_tts",
+          "success": true,
+          "error": null
+        }
+      ]
+    },
+    "video": {
+      "success": true,
+      "type": "video",
+      "provider": "ffmpeg",
+      "result": {
+        "success": true,
+        "provider": "ffmpeg",
+        "message": "FFmpeg is existing local/free renderer. Existing video renderer should handle actual rendering.",
+        "payload": {
+          "script_id": "research_script_001"
+        }
+      },
+      "attempts": [
+        {
+          "provider": "ffmpeg",
+          "success": true,
+          "error": null
+        }
+      ]
+    }
+  }
+}

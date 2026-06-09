@@ -1,0 +1,24 @@
+{
+  "cloudflare": {
+    "apiKey": "",
+    "accountId": ""
+  },
+  "google": {
+    "apiKey": ""
+  },
+  "huggingface": {
+    "apiKey": ""
+  },
+  "openai": {
+    "apiKey": ""
+  },
+  "elevenlabs": {
+    "apiKey": ""
+  },
+  "fal": {
+    "apiKey": ""
+  },
+  "runway": {
+    "apiKey": ""
+  }
+}

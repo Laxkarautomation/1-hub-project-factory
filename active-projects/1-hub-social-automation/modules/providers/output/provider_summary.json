@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-06-09T10:14:39.613Z",
+  "summary": [
+    {
+      "type": "script",
+      "healthy": true,
+      "active_provider": "template",
+      "state": "healthy",
+      "attempts": [
+        {
+          "provider": "template",
+          "success": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "healthy": false,
+      "active_provider": null,
+      "state": "needs_provider_key_or_setup",
+      "attempts": [
+        {
+          "provider": "placeholder",
+          "success": false,
+          "error": "Placeholder provider connected but no replacement image generated yet"
+        },
+        {
+          "provider": "cloudflare",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        },
+        {
+          "provider": "google",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        },
+        {
+          "provider": "fal",
+          "success": false,
+          "error": "Provider API key not configured yet"
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "healthy": true,
+      "active_provider": "edge_tts",
+      "state": "healthy",
+      "attempts": [
+        {
+          "provider": "edge_tts",
+          "success": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "healthy": true,
+      "active_provider": "ffmpeg",
+      "state": "healthy",
+      "attempts": [
+        {
+          "provider": "ffmpeg",
+          "success": true,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
