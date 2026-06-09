@@ -1,0 +1,258 @@
+{
+  "generated_at": "2026-06-09T13:31:28.692Z",
+  "channel": "UNRAAZ",
+  "source_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json",
+  "total_scripts": 5,
+  "scripts": [
+    {
+      "script_id": "intelligence_script_001",
+      "source": "intelligence_script_brief",
+      "topic": "loan fraud story",
+      "working_title": "loan fraud story: ek real kahani jo sabko warning deti hai",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "duration_seconds": 60,
+      "voice_style": "deep suspense narrator",
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "script": [
+        {
+          "time": "0-5s",
+          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+        },
+        {
+          "time": "5-12s",
+          "text": "loan fraud story ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+        },
+        {
+          "time": "12-22s",
+          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+        },
+        {
+          "time": "22-35s",
+          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+        },
+        {
+          "time": "35-50s",
+          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+        },
+        {
+          "time": "50-60s",
+          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+        }
+      ],
+      "image_prompt_seed": {
+        "mood": "dark cinematic realistic suspense",
+        "format": "9:16 vertical",
+        "style": "realistic documentary mystery",
+        "scenes": [
+          "Opening hook with curiosity",
+          "Normal world setup",
+          "Incident or conflict begins",
+          "Twist / discovery / danger point",
+          "Final reveal and lesson"
+        ]
+      },
+      "status": "script_from_brief_draft"
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "source": "intelligence_script_brief",
+      "topic": "family betrayal story",
+      "working_title": "family betrayal story: ek real kahani jo sabko warning deti hai",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "duration_seconds": 60,
+      "voice_style": "deep suspense narrator",
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "script": [
+        {
+          "time": "0-5s",
+          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+        },
+        {
+          "time": "5-12s",
+          "text": "family betrayal story ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+        },
+        {
+          "time": "12-22s",
+          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+        },
+        {
+          "time": "22-35s",
+          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+        },
+        {
+          "time": "35-50s",
+          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+        },
+        {
+          "time": "50-60s",
+          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+        }
+      ],
+      "image_prompt_seed": {
+        "mood": "dark cinematic realistic suspense",
+        "format": "9:16 vertical",
+        "style": "realistic documentary mystery",
+        "scenes": [
+          "Opening hook with curiosity",
+          "Normal world setup",
+          "Incident or conflict begins",
+          "Twist / discovery / danger point",
+          "Final reveal and lesson"
+        ]
+      },
+      "status": "script_from_brief_draft"
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "source": "intelligence_script_brief",
+      "topic": "indian village mystery",
+      "working_title": "indian village mystery: ek real kahani jo sabko warning deti hai",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "duration_seconds": 60,
+      "voice_style": "deep suspense narrator",
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "script": [
+        {
+          "time": "0-5s",
+          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+        },
+        {
+          "time": "5-12s",
+          "text": "indian village mystery ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+        },
+        {
+          "time": "12-22s",
+          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+        },
+        {
+          "time": "22-35s",
+          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+        },
+        {
+          "time": "35-50s",
+          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+        },
+        {
+          "time": "50-60s",
+          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+        }
+      ],
+      "image_prompt_seed": {
+        "mood": "dark cinematic realistic suspense",
+        "format": "9:16 vertical",
+        "style": "realistic documentary mystery",
+        "scenes": [
+          "Opening hook with curiosity",
+          "Normal world setup",
+          "Incident or conflict begins",
+          "Twist / discovery / danger point",
+          "Final reveal and lesson"
+        ]
+      },
+      "status": "script_from_brief_draft"
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "source": "intelligence_script_brief",
+      "topic": "real money lesson",
+      "working_title": "real money lesson: ek real kahani jo sabko warning deti hai",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "duration_seconds": 60,
+      "voice_style": "deep suspense narrator",
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "script": [
+        {
+          "time": "0-5s",
+          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+        },
+        {
+          "time": "5-12s",
+          "text": "real money lesson ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+        },
+        {
+          "time": "12-22s",
+          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+        },
+        {
+          "time": "22-35s",
+          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+        },
+        {
+          "time": "35-50s",
+          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+        },
+        {
+          "time": "50-60s",
+          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+        }
+      ],
+      "image_prompt_seed": {
+        "mood": "dark cinematic realistic suspense",
+        "format": "9:16 vertical",
+        "style": "realistic documentary mystery",
+        "scenes": [
+          "Opening hook with curiosity",
+          "Normal world setup",
+          "Incident or conflict begins",
+          "Twist / discovery / danger point",
+          "Final reveal and lesson"
+        ]
+      },
+      "status": "script_from_brief_draft"
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "source": "intelligence_script_brief",
+      "topic": "small town crime",
+      "working_title": "small town crime: ek real kahani jo sabko warning deti hai",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "duration_seconds": 60,
+      "voice_style": "deep suspense narrator",
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "script": [
+        {
+          "time": "0-5s",
+          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+        },
+        {
+          "time": "5-12s",
+          "text": "small town crime ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+        },
+        {
+          "time": "12-22s",
+          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+        },
+        {
+          "time": "22-35s",
+          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+        },
+        {
+          "time": "35-50s",
+          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+        },
+        {
+          "time": "50-60s",
+          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+        }
+      ],
+      "image_prompt_seed": {
+        "mood": "dark cinematic realistic suspense",
+        "format": "9:16 vertical",
+        "style": "realistic documentary mystery",
+        "scenes": [
+          "Opening hook with curiosity",
+          "Normal world setup",
+          "Incident or conflict begins",
+          "Twist / discovery / danger point",
+          "Final reveal and lesson"
+        ]
+      },
+      "status": "script_from_brief_draft"
+    }
+  ]
+}

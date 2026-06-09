@@ -1,0 +1,767 @@
+{
+  "generated_at": "2026-06-09T13:31:28.578Z",
+  "input_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/exports/normalized/relevant_competitor_videos.json",
+  "total_videos_analyzed": 6263,
+  "top_trending_videos": [
+    {
+      "rank": 1,
+      "source_name": "Khooni Monday",
+      "title": "Gaurav Tiwari Death - Real Horror Story | Horror Stories in Hindi | सच्ची कहानी | KM E321🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=Rj-D8dpcaMo",
+      "relevance_score": 5,
+      "trend_score": 17,
+      "quality_score": 25,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "death",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 2,
+      "source_name": "Khooni Monday",
+      "title": "Dybbuk Real Horror Story | True Horror Legend | सच्ची कहानी | Khooni Monday E140🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=NlCWFzPyKCg",
+      "relevance_score": 5,
+      "trend_score": 17,
+      "quality_score": 25,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 3,
+      "source_name": "Real Stories",
+      "title": "Teenage Killers: The Death of Michael Moss | True Crime Story | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=0TVWMaBRl0k",
+      "relevance_score": 5,
+      "trend_score": 18,
+      "quality_score": 24,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 6,
+      "boost_reasons": [
+        "story",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 4,
+      "source_name": "Khooni Monday",
+      "title": "Okiku Doll Real Horror Story | Japan’s Most Haunted | सच्ची कहानी | Khooni Monday E331 🔥 🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=NENZs6qDPxg",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 5,
+      "source_name": "Khooni Monday",
+      "title": "Scary Scarecrow - Bijuka Real Story | सच्ची कहानी | Horror Stories in Hindi | Khooni Monday E254🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=Z4avM3mpItE",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 6,
+      "source_name": "Khooni Monday",
+      "title": "1920 Haunted Castle | Real Horror Story in Hindi | सच्ची कहानी | Khooni Monday E215🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=CkV7Z8SfCkk",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 7,
+      "source_name": "Khooni Monday",
+      "title": "Haunted Bus Stop True Horror Story In Hindi | डरावना बस स्टॉप | Hindi Kahaniyan | KM E116🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=_RkczvhtHOM",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "true",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 8,
+      "source_name": "Khooni Monday",
+      "title": "The Haunted House of Bly Manor - Real Story | भूतिया कहानी | Hindi Horror Stories | KM E93 🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=gS7_NPzmOmM",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 9,
+      "source_name": "Khooni Monday",
+      "title": "Haunted Bridge - Valentines Day True Horror Story | एक सच्ची कहानी | Khooni Monday E67 🔥🔥🔥",
+      "content_url": "https://www.youtube.com/watch?v=cwgnwiufg2M",
+      "relevance_score": 5,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "hindi",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "true",
+        "horror"
+      ],
+      "hooks": [
+        "number_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 10,
+      "source_name": "Real Stories",
+      "title": "From Gangster To Novelist: The Vic Dark Story (Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=L0Fi1Bufp2Q",
+      "relevance_score": 4,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "dark",
+        "real",
+        "crime"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 11,
+      "source_name": "Real Stories",
+      "title": "The Unsolved Murder Of A Newly Married 80 Year-Old (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=-myiXd9ORXs",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "unsolved",
+        "real",
+        "true",
+        "crime"
+      ],
+      "hooks": [
+        "number_hook",
+        "mystery_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 12,
+      "source_name": "Real Stories",
+      "title": "30 Year-Old Murder Solved?: Unearthing Trisha's Story (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=D_FwBEmx3tA",
+      "relevance_score": 4,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime"
+      ],
+      "hooks": [
+        "question_hook",
+        "number_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 13,
+      "source_name": "Real Stories",
+      "title": "America's Most Dangerous Gang Bosses (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=ik5A8s1-nwQ",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "dangerous"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 14,
+      "source_name": "Real Stories",
+      "title": "The Horrifying Angel of Death (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=G22J9Rg6vPc",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 15,
+      "source_name": "Real Stories",
+      "title": "Saving An Innocent Man from Death Row | Real Stories True Crime Documentary",
+      "content_url": "https://www.youtube.com/watch?v=0nbTlxJr8MU",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 16,
+      "source_name": "Real Stories",
+      "title": "The Terrifying Killer Nurse | Real Stories True Crime Documentary",
+      "content_url": "https://www.youtube.com/watch?v=f8VPeVenkpI",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "terrifying"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 17,
+      "source_name": "Real Stories",
+      "title": "The Death Of Josh Taylor: Argument Turns Fatal (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=lImbig7KauA",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 18,
+      "source_name": "Real Stories",
+      "title": "Teen Mom Stabbed: Death of Samantha Madgin (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=YVX3F5pvu20",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 19,
+      "source_name": "Real Stories",
+      "title": "Clinton Young: The Wrong Man on Death Row? | Real Stories True Crime Documentary",
+      "content_url": "https://www.youtube.com/watch?v=WVJM5BSlXm8",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "question_hook",
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 20,
+      "source_name": "Real Stories",
+      "title": "My Dad's On Death Row (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=mzLtHVIO0TY",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 21,
+      "source_name": "Real Stories",
+      "title": "Who Was the Unabomber?: The Story of Ted Kazinsky | Real Stories True Crime Documentary",
+      "content_url": "https://www.youtube.com/watch?v=LPlCBpILQ8c",
+      "relevance_score": 4,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime"
+      ],
+      "hooks": [
+        "question_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 22,
+      "source_name": "Real Stories",
+      "title": "Angel of Death: The Nurse Who Murdered Children (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=eerUbqV6Md4",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 23,
+      "source_name": "Real Stories",
+      "title": "Doctor Death: Britain's Worst Serial Killer (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=3-KVuVjmjmU",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 24,
+      "source_name": "Real Stories",
+      "title": "Husband Or Heartless Killer: The Story of Mitchell Quy (True Crime Documentary) I Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=yZGvsaa8nhY",
+      "relevance_score": 4,
+      "trend_score": 14,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 8,
+      "boost_reasons": [
+        "story",
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime"
+      ],
+      "hooks": [
+        "truth_hook"
+      ]
+    },
+    {
+      "rank": 25,
+      "source_name": "Real Stories",
+      "title": "Reverend Death (True Crime Documentary) | Real Stories",
+      "content_url": "https://www.youtube.com/watch?v=N5v4wr713t4",
+      "relevance_score": 4,
+      "trend_score": 17,
+      "quality_score": 22,
+      "quality_penalty": 0,
+      "penalty_reasons": [],
+      "quality_boost": 5,
+      "boost_reasons": [
+        "documentary",
+        "real_incident"
+      ],
+      "trend_signals": [
+        "real",
+        "true",
+        "crime",
+        "death"
+      ],
+      "hooks": [
+        "fear_hook",
+        "truth_hook"
+      ]
+    }
+  ],
+  "hook_summary": [
+    {
+      "hook": "number_hook",
+      "count": 3149
+    },
+    {
+      "hook": "fear_hook",
+      "count": 1535
+    },
+    {
+      "hook": "truth_hook",
+      "count": 1502
+    },
+    {
+      "hook": "mystery_hook",
+      "count": 679
+    },
+    {
+      "hook": "question_hook",
+      "count": 600
+    },
+    {
+      "hook": "secret_hook",
+      "count": 402
+    }
+  ],
+  "content_gaps": [
+    {
+      "topic": "loan fraud story",
+      "coverage": 0.67,
+      "opportunity_score": 0.33,
+      "matched_words": [
+        "fraud",
+        "story"
+      ]
+    },
+    {
+      "topic": "family betrayal story",
+      "coverage": 0.67,
+      "opportunity_score": 0.33,
+      "matched_words": [
+        "family",
+        "story"
+      ]
+    },
+    {
+      "topic": "indian village mystery",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "indian",
+        "village",
+        "mystery"
+      ]
+    },
+    {
+      "topic": "real money lesson",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "real",
+        "money",
+        "lesson"
+      ]
+    },
+    {
+      "topic": "small town crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "small",
+        "town",
+        "crime"
+      ]
+    },
+    {
+      "topic": "business scam story",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "business",
+        "scam",
+        "story"
+      ]
+    },
+    {
+      "topic": "missing person case",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "missing",
+        "person",
+        "case"
+      ]
+    },
+    {
+      "topic": "historical mystery india",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "historical",
+        "mystery",
+        "india"
+      ]
+    }
+  ]
+}

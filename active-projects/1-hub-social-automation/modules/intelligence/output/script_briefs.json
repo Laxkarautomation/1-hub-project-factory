@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-06-09T13:31:28.684Z",
+  "channel": "UNRAAZ",
+  "source_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/unraaz_recommendations.json",
+  "total_briefs": 5,
+  "briefs": [
+    {
+      "rank": 1,
+      "topic": "loan fraud story",
+      "working_title": "loan fraud story: ek real kahani jo sabko warning deti hai",
+      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "scene_plan": [
+        "Opening hook with curiosity",
+        "Normal world setup",
+        "Incident or conflict begins",
+        "Twist / discovery / danger point",
+        "Final reveal and lesson"
+      ],
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "estimated_duration_seconds": 60
+    },
+    {
+      "rank": 2,
+      "topic": "family betrayal story",
+      "working_title": "family betrayal story: ek real kahani jo sabko warning deti hai",
+      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "scene_plan": [
+        "Opening hook with curiosity",
+        "Normal world setup",
+        "Incident or conflict begins",
+        "Twist / discovery / danger point",
+        "Final reveal and lesson"
+      ],
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "estimated_duration_seconds": 60
+    },
+    {
+      "rank": 3,
+      "topic": "indian village mystery",
+      "working_title": "indian village mystery: ek real kahani jo sabko warning deti hai",
+      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "scene_plan": [
+        "Opening hook with curiosity",
+        "Normal world setup",
+        "Incident or conflict begins",
+        "Twist / discovery / danger point",
+        "Final reveal and lesson"
+      ],
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "estimated_duration_seconds": 60
+    },
+    {
+      "rank": 4,
+      "topic": "real money lesson",
+      "working_title": "real money lesson: ek real kahani jo sabko warning deti hai",
+      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "scene_plan": [
+        "Opening hook with curiosity",
+        "Normal world setup",
+        "Incident or conflict begins",
+        "Twist / discovery / danger point",
+        "Final reveal and lesson"
+      ],
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "estimated_duration_seconds": 60
+    },
+    {
+      "rank": 5,
+      "topic": "small town crime",
+      "working_title": "small town crime: ek real kahani jo sabko warning deti hai",
+      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "target_emotion": "curiosity, fear, shock, lesson",
+      "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "scene_plan": [
+        "Opening hook with curiosity",
+        "Normal world setup",
+        "Incident or conflict begins",
+        "Twist / discovery / danger point",
+        "Final reveal and lesson"
+      ],
+      "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
+      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "estimated_duration_seconds": 60
+    }
+  ]
+}

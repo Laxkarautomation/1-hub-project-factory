@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-06-09T13:31:28.653Z",
+  "source_report": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/competitor_intelligence_report.json",
+  "total_videos_analyzed": 25,
+  "top_patterns": [
+    {
+      "pattern": "real_story",
+      "count": 25
+    },
+    {
+      "pattern": "true_crime",
+      "count": 18
+    },
+    {
+      "pattern": "documentary",
+      "count": 16
+    },
+    {
+      "pattern": "horror",
+      "count": 9
+    },
+    {
+      "pattern": "india",
+      "count": 8
+    },
+    {
+      "pattern": "mystery",
+      "count": 1
+    }
+  ],
+  "top_competitors": [
+    {
+      "source_name": "Khooni Monday",
+      "total_videos": 8,
+      "total_score": 182,
+      "average_score": 22.75
+    },
+    {
+      "source_name": "Real Stories",
+      "total_videos": 17,
+      "total_score": 376,
+      "average_score": 22.11764705882353
+    }
+  ],
+  "story_formulas": [
+    {
+      "formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+      "count": 23
+    },
+    {
+      "formula": "CRIME → INVESTIGATION → REVEAL",
+      "count": 17
+    },
+    {
+      "formula": "NORMAL EVENT → FEAR → PARANORMAL TWIST",
+      "count": 8
+    },
+    {
+      "formula": "QUESTION → CLUES → UNKNOWN ENDING",
+      "count": 1
+    }
+  ]
+}

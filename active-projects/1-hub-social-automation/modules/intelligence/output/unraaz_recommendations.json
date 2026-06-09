@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-06-09T13:31:28.673Z",
+  "channel": "UNRAAZ",
+  "strategy_summary": {
+    "strongest_patterns": [
+      {
+        "pattern": "real_story",
+        "count": 25
+      },
+      {
+        "pattern": "true_crime",
+        "count": 18
+      },
+      {
+        "pattern": "documentary",
+        "count": 16
+      },
+      {
+        "pattern": "horror",
+        "count": 9
+      },
+      {
+        "pattern": "india",
+        "count": 8
+      },
+      {
+        "pattern": "mystery",
+        "count": 1
+      }
+    ],
+    "strongest_competitors": [
+      {
+        "source_name": "Khooni Monday",
+        "total_videos": 8,
+        "total_score": 182,
+        "average_score": 22.75
+      },
+      {
+        "source_name": "Real Stories",
+        "total_videos": 17,
+        "total_score": 376,
+        "average_score": 22.11764705882353
+      }
+    ],
+    "best_story_formulas": [
+      {
+        "formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+        "count": 23
+      },
+      {
+        "formula": "CRIME → INVESTIGATION → REVEAL",
+        "count": 17
+      },
+      {
+        "formula": "NORMAL EVENT → FEAR → PARANORMAL TWIST",
+        "count": 8
+      },
+      {
+        "formula": "QUESTION → CLUES → UNKNOWN ENDING",
+        "count": 1
+      }
+    ]
+  },
+  "recommended_topics": [
+    {
+      "rank": 1,
+      "topic": "loan fraud story",
+      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 2,
+      "topic": "family betrayal story",
+      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 3,
+      "topic": "indian village mystery",
+      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 4,
+      "topic": "real money lesson",
+      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 5,
+      "topic": "small town crime",
+      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    }
+  ],
+  "hook_suggestions": [
+    "Ye kahani sach hai, lekin iska twist kisi film se kam nahi...",
+    "Raat ke andhere me jo hua, uska jawab aaj tak nahi mila...",
+    "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+    "Saboot mile, gawah mile, lekin sach aaj bhi adhoora hai..."
+  ],
+  "title_suggestions": [
+    {
+      "topic": "loan fraud story",
+      "titles": [
+        "loan fraud story: ek sachchi kahani jise log bhool gaye",
+        "loan fraud story ka woh raaz jo aaj bhi clear nahi hua",
+        "loan fraud story: real incident, shocking twist"
+      ]
+    },
+    {
+      "topic": "family betrayal story",
+      "titles": [
+        "family betrayal story: ek sachchi kahani jise log bhool gaye",
+        "family betrayal story ka woh raaz jo aaj bhi clear nahi hua",
+        "family betrayal story: real incident, shocking twist"
+      ]
+    },
+    {
+      "topic": "indian village mystery",
+      "titles": [
+        "indian village mystery: ek sachchi kahani jise log bhool gaye",
+        "indian village mystery ka woh raaz jo aaj bhi clear nahi hua",
+        "indian village mystery: real incident, shocking twist"
+      ]
+    },
+    {
+      "topic": "real money lesson",
+      "titles": [
+        "real money lesson: ek sachchi kahani jise log bhool gaye",
+        "real money lesson ka woh raaz jo aaj bhi clear nahi hua",
+        "real money lesson: real incident, shocking twist"
+      ]
+    },
+    {
+      "topic": "small town crime",
+      "titles": [
+        "small town crime: ek sachchi kahani jise log bhool gaye",
+        "small town crime ka woh raaz jo aaj bhi clear nahi hua",
+        "small town crime: real incident, shocking twist"
+      ]
+    }
+  ],
+  "next_action": "Use top recommended topic to generate script brief."
+}
