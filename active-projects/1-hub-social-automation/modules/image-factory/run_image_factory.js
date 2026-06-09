@@ -22,7 +22,7 @@ if (!script) {
 }
 
 const stack = getProviderStack("image");
-const providers = getImageProviders(stack.fallbacks);
+const providers = getImageProviders(stack.fallbacks, stack.keys);
 
 const outputDir = path.join(process.cwd(), "storage/images/unraaz", scriptId);
 fs.mkdirSync(outputDir, { recursive: true });

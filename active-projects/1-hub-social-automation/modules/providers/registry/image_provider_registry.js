@@ -1,36 +1,39 @@
-function createMissingKeyProvider(name) {
-  return {
-    name,
-    run: async () => ({
-      success: false,
-      error: "Provider API key not configured yet"
-    })
-  };
-}
+const cloudflare = require("../connectors/image/cloudflare_provider");
+const google = require("../connectors/image/google_provider");
+const fal = require("../connectors/image/fal_provider");
 
-function getImageProviders(providerNames = []) {
-  return providerNames.map(name => {
-    if (["cloudflare", "google", "fal"].includes(name)) {
-      return createMissingKeyProvider(name);
+function getImageProviders(providerNames = [], keys = {}) {
+  const map = {
+    cloudflare,
+    google,
+    fal,
+    placeholder: {
+      name: "placeholder",
+      run: async () => ({
+        success: false,
+        provider: "placeholder",
+        error: "Placeholder provider connected but no replacement image generated yet"
+      })
     }
+  };
 
-    if (name === "placeholder") {
+  return providerNames.map(name => {
+    const provider = map[name];
+
+    if (!provider) {
       return {
-        name: "placeholder",
-        run: async payload => ({
+        name,
+        run: async () => ({
           success: false,
-          error: "Placeholder provider connected but no replacement image generated yet",
-          payload
+          provider: name,
+          error: `Unknown image provider: ${name}`
         })
       };
     }
 
     return {
-      name,
-      run: async () => ({
-        success: false,
-        error: `Unknown image provider: ${name}`
-      })
+      name: provider.name,
+      run: payload => provider.run(payload, keys[name] || {})
     };
   });
 }

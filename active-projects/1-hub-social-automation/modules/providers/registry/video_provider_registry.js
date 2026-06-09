@@ -1,37 +1,40 @@
-function createMissingKeyProvider(name) {
-  return {
-    name,
-    run: async () => ({
-      success: false,
-      error: "Provider API key not configured yet"
-    })
-  };
-}
+const falVideo = require("../connectors/video/fal_video_provider");
+const runway = require("../connectors/video/runway_provider");
+const remotion = require("../connectors/video/remotion_provider");
 
-function getVideoProviders(providerNames = []) {
+function getVideoProviders(providerNames = [], keys = {}) {
+  const map = {
+    fal_video: falVideo,
+    runway,
+    remotion,
+    ffmpeg: {
+      name: "ffmpeg",
+      run: async payload => ({
+        success: true,
+        provider: "ffmpeg",
+        message: "FFmpeg is existing local/free renderer. Existing video renderer should handle actual rendering.",
+        payload
+      })
+    }
+  };
+
   return providerNames.map(name => {
-    if (name === "ffmpeg") {
+    const provider = map[name];
+
+    if (!provider) {
       return {
-        name: "ffmpeg",
-        run: async payload => ({
-          success: true,
-          provider: "ffmpeg",
-          message: "FFmpeg is existing local/free renderer. Existing video renderer should handle actual rendering.",
-          payload
+        name,
+        run: async () => ({
+          success: false,
+          provider: name,
+          error: `Unknown video provider: ${name}`
         })
       };
     }
 
-    if (["remotion", "fal_video", "runway"].includes(name)) {
-      return createMissingKeyProvider(name);
-    }
-
     return {
-      name,
-      run: async () => ({
-        success: false,
-        error: `Unknown video provider: ${name}`
-      })
+      name: provider.name,
+      run: payload => provider.run(payload, keys[name] || {})
     };
   });
 }

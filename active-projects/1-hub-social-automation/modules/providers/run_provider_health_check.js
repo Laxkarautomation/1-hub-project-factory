@@ -11,7 +11,7 @@ const { getVideoProviders } = require("./registry/video_provider_registry");
 
 async function check(type, getProviders, payload) {
   const stack = getProviderStack(type);
-  const providers = getProviders(stack.fallbacks);
+  const providers = getProviders(stack.fallbacks, stack.keys);
 
   return runFallbackStack({
     type,
