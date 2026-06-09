@@ -1,3 +1,19 @@
+const {
+  rotateProviderKey,
+  shouldRotateKey
+} = require("../runtime/key_rotation_engine");
+
+function buildAttempt(provider, result, extra = {}) {
+  return {
+    provider: provider?.name || "unknown",
+    success: !!result?.success,
+    status: result?.status || null,
+    error: result?.error || null,
+    keyStatus: result?.keyStatus || null,
+    rotation: extra.rotation || null
+  };
+}
+
 async function runFallbackStack({ type, providers, payload }) {
   const attempts = [];
 
@@ -6,7 +22,9 @@ async function runFallbackStack({ type, providers, payload }) {
       attempts.push({
         provider: provider?.name || "unknown",
         success: false,
-        error: "Invalid provider runner"
+        status: "invalid_provider_runner",
+        error: "Invalid provider runner",
+        rotation: null
       });
       continue;
     }
@@ -14,11 +32,29 @@ async function runFallbackStack({ type, providers, payload }) {
     try {
       const result = await provider.run(payload);
 
-      attempts.push({
-        provider: provider.name,
-        success: !!result.success,
-        error: result.error || null
-      });
+      const rotationCheck = shouldRotateKey(result?.key || null, result?.success ? null : result);
+
+      let rotation = null;
+
+      if (!result.success && rotationCheck.rotate) {
+        rotation = rotateProviderKey(provider.name, result?.keyId || null);
+      }
+
+      attempts.push(buildAttempt(provider, result, {
+        rotation: rotation
+          ? {
+              attempted: true,
+              success: rotation.success,
+              status: rotation.status,
+              reason: rotation.reason || null,
+              previousKeyId: rotation.previousKeyId || null,
+              nextKeyId: rotation.keyId || null
+            }
+          : {
+              attempted: false,
+              reason: rotationCheck.reason
+            }
+      }));
 
       if (result.success) {
         return {
@@ -30,10 +66,22 @@ async function runFallbackStack({ type, providers, payload }) {
         };
       }
     } catch (error) {
+      const rotation = rotateProviderKey(provider.name);
+
       attempts.push({
         provider: provider.name,
         success: false,
-        error: error.message
+        status: "provider_exception",
+        error: error.message,
+        keyStatus: null,
+        rotation: {
+          attempted: true,
+          success: rotation.success,
+          status: rotation.status,
+          reason: rotation.reason || null,
+          previousKeyId: null,
+          nextKeyId: rotation.keyId || null
+        }
       });
     }
   }
