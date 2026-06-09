@@ -1,0 +1,10 @@
+{
+  "ok": false,
+  "issues": [
+    {
+      "type": "missing_image",
+      "scene": 1,
+      "path": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_001/scene_1.jpg"
+    }
+  ]
+}
