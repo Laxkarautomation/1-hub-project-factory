@@ -1,6 +1,6 @@
-const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const { dispatchJob } = require("./modules/jobs/core/job_dispatcher");
 
 const stateDir = path.join(process.cwd(), "storage/pipeline");
 const statePath = path.join(stateDir, "pipeline_state.json");
@@ -28,10 +28,11 @@ let state = shouldResume
 const report = {
   started_at: new Date().toISOString(),
   mode: shouldResume ? "resume" : shouldForce ? "force" : "fresh",
+  execution_layer: "job_dispatcher",
   steps: []
 };
 
-function runStep(step) {
+async function runStep(step) {
   const alreadyDone = state.completedSteps.includes(step.id);
 
   if (alreadyDone && shouldResume && !shouldForce) {
@@ -45,15 +46,19 @@ function runStep(step) {
     return;
   }
 
-  console.log(`\n▶ ${step.name}`);
-  console.log(`$ ${step.command}`);
-
-  const started = Date.now();
-
   try {
-    execSync(step.command, { stdio: "inherit" });
-
-    const durationMs = Date.now() - started;
+    const result = await dispatchJob(
+      {
+        id: step.id,
+        name: step.name,
+        type: "pipeline_step",
+        command: step.command
+      },
+      {
+        writeResult: true,
+        throwOnFailure: true
+      }
+    );
 
     if (!state.completedSteps.includes(step.id)) {
       state.completedSteps.push(step.id);
@@ -65,21 +70,23 @@ function runStep(step) {
       id: step.id,
       name: step.name,
       command: step.command,
-      status: "success",
-      duration_ms: durationMs
+      status: result.status,
+      duration_ms: result.duration_ms,
+      execution_layer: "job_dispatcher"
     });
 
     saveJson(reportPath, report);
   } catch (error) {
-    const durationMs = Date.now() - started;
+    const result = error.result || {};
 
     report.steps.push({
       id: step.id,
       name: step.name,
       command: step.command,
       status: "failed",
-      duration_ms: durationMs,
-      error: error.message
+      duration_ms: result.duration_ms || null,
+      error: result.error || error.message,
+      execution_layer: "job_dispatcher"
     });
 
     report.failed_at = step.id;
@@ -194,43 +201,50 @@ const baseSteps = [
   }
 ];
 
-console.log("\n🚀 1 Hub Social Automation — Master Pipeline Started");
+async function main() {
+  console.log("\n🚀 1 Hub Social Automation — Master Pipeline Started");
 
-for (const step of baseSteps) {
-  runStep(step);
-}
+  for (const step of baseSteps) {
+    await runStep(step);
+  }
 
-const scriptIds = getScriptIdsFromManifest();
+  const scriptIds = getScriptIdsFromManifest();
 
-if (!scriptIds.length) {
-  console.warn("⚠️ No script IDs found in video manifest. Skipping image factory and render steps.");
-} else {
-  for (const scriptId of scriptIds) {
-    runStep({
-      id: `image_factory_${scriptId}`,
-      name: `Image Factory: ${scriptId}`,
-      command: `node modules/image-factory/run_image_factory.js ${scriptId}`
-    });
+  if (!scriptIds.length) {
+    console.warn("⚠️ No script IDs found in video manifest. Skipping image factory and render steps.");
+  } else {
+    for (const scriptId of scriptIds) {
+      await runStep({
+        id: `image_factory_${scriptId}`,
+        name: `Image Factory: ${scriptId}`,
+        command: `node modules/image-factory/run_image_factory.js ${scriptId}`
+      });
 
-    runStep({
-      id: `image_audit_${scriptId}`,
-      name: `Image Audit: ${scriptId}`,
-      command: `node modules/image-factory/run_image_audit.js ${scriptId}`
+      await runStep({
+        id: `image_audit_${scriptId}`,
+        name: `Image Audit: ${scriptId}`,
+        command: `node modules/image-factory/run_image_audit.js ${scriptId}`
+      });
+    }
+
+    await runStep({
+      id: "batch_video_render",
+      name: "Batch Video Render",
+      command: "node modules/video-renderer/services/render_all_videos.js"
     });
   }
 
-  runStep({
-    id: "batch_video_render",
-    name: "Batch Video Render",
-    command: "node modules/video-renderer/services/render_all_videos.js"
-  });
+  report.finished_at = new Date().toISOString();
+  report.status = "success";
+
+  saveJson(reportPath, report);
+
+  console.log("\n✅ Master pipeline completed successfully");
+  console.log(`State: ${statePath}`);
+  console.log(`Report: ${reportPath}`);
 }
 
-report.finished_at = new Date().toISOString();
-report.status = "success";
-
-saveJson(reportPath, report);
-
-console.log("\n✅ Master pipeline completed successfully");
-console.log(`State: ${statePath}`);
-console.log(`Report: ${reportPath}`);
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
+});
