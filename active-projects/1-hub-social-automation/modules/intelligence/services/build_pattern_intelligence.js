@@ -1,54 +1,43 @@
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
-const { summarizePatterns } =
-require("../core/pattern_extractor");
+const { summarizePatterns } = require("../core/pattern_extractor");
+const { rankCompetitors } = require("../core/competitor_ranker");
+const { buildStoryFormulas } = require("../core/story_formula_builder");
 
-const { rankCompetitors } =
-require("../core/competitor_ranker");
-
-const { buildStoryFormulas } =
-require("../core/story_formula_builder");
-
-const reportPath = path.join(
+const outputPath = path.join(
   process.cwd(),
   "modules/intelligence/output/pattern_intelligence_report.json"
 );
 
-const inputPath = path.join(
+const qualityReportPath = path.join(
   process.cwd(),
-  "storage/exports/normalized/relevant_competitor_videos.json"
+  "modules/intelligence/output/competitor_intelligence_report.json"
 );
 
-fs.mkdirSync(
-  path.dirname(reportPath),
-  { recursive: true }
-);
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
-const videos = JSON.parse(
-  fs.readFileSync(inputPath,"utf8")
-);
+if (!fs.existsSync(qualityReportPath)) {
+  console.log("ℹ️ Quality intelligence report missing. Generating it first...");
+  execSync("node modules/intelligence/services/build_competitor_intelligence.js", {
+    stdio: "inherit"
+  });
+}
+
+const qualityReport = JSON.parse(fs.readFileSync(qualityReportPath, "utf8"));
+const videos = qualityReport.top_trending_videos || [];
 
 const report = {
   generated_at: new Date().toISOString(),
-
-  top_patterns:
-    summarizePatterns(videos),
-
-  top_competitors:
-    rankCompetitors(videos),
-
-  story_formulas:
-    buildStoryFormulas(videos)
+  source_report: qualityReportPath,
+  total_videos_analyzed: videos.length,
+  top_patterns: summarizePatterns(videos),
+  top_competitors: rankCompetitors(videos),
+  story_formulas: buildStoryFormulas(videos)
 };
 
-fs.writeFileSync(
-  reportPath,
-  JSON.stringify(report,null,2)
-);
+fs.writeFileSync(outputPath, JSON.stringify(report, null, 2));
 
-console.log(
-  "✅ Pattern intelligence generated"
-);
-
-console.log(reportPath);
+console.log("✅ Pattern intelligence generated");
+console.log(outputPath);
