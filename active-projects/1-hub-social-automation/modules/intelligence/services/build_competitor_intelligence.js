@@ -4,6 +4,7 @@ const path = require("path");
 const { scoreVideo } = require("../core/trend_scorer");
 const { extractHooks, buildHookSummary } = require("../core/hook_extractor");
 const { findContentGaps } = require("../core/content_gap_finder");
+const { calculateQuality } = require("../core/quality_filter");
 
 const inputPath = path.join(process.cwd(), "storage/exports/normalized/relevant_competitor_videos.json");
 const outputDir = path.join(process.cwd(), "modules/intelligence/output");
@@ -22,12 +23,14 @@ function run() {
   const scoredVideos = videos
     .map(video => {
       const scored = scoreVideo(video);
-      return {
+      const withHooks = {
         ...scored,
         hooks: extractHooks(scored.title || "")
       };
+
+      return calculateQuality(withHooks);
     })
-    .sort((a, b) => b.trend_score - a.trend_score);
+    .sort((a, b) => b.quality_score - a.quality_score);
 
   const report = {
     generated_at: new Date().toISOString(),
@@ -40,6 +43,11 @@ function run() {
       content_url: video.content_url,
       relevance_score: video.relevance_score,
       trend_score: video.trend_score,
+      quality_score: video.quality_score,
+      quality_penalty: video.quality_penalty,
+      penalty_reasons: video.penalty_reasons,
+      quality_boost: video.quality_boost,
+      boost_reasons: video.boost_reasons,
       trend_signals: video.trend_signals,
       hooks: video.hooks
     })),
