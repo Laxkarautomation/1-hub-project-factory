@@ -1,6 +1,7 @@
 const { execSync } = require("child_process");
 
 const steps = [
+  "node modules/providers/run_provider_execution_preflight.js",
   "node providers/youtube/services/collect_multi_channels.js",
   "node providers/youtube/services/normalize_all_youtube.js",
   "node modules/analytics/services/filter_relevant_videos.js",

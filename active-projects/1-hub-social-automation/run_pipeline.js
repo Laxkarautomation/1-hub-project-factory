@@ -118,6 +118,11 @@ const baseSteps = [
     command: "node modules/providers/run_provider_summary.js"
   },
   {
+    id: "provider_execution_preflight",
+    name: "Provider Execution Preflight",
+    command: "node modules/providers/run_provider_execution_preflight.js"
+  },
+  {
     id: "collect_youtube",
     name: "Collect Competitor YouTube Data",
     command: "node providers/youtube/services/collect_multi_channels.js"
