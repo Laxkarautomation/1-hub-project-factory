@@ -1,0 +1,152 @@
+[
+  {
+    "job_id": "research_script_001_scene_1",
+    "script_id": "research_script_001",
+    "scene": 1,
+    "duration_seconds": 4,
+    "prompt": "wide shot of abandoned Indian village at sunset, empty lanes, fog, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_001/scene_1.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_001_scene_2",
+    "script_id": "research_script_001",
+    "scene": 2,
+    "duration_seconds": 6,
+    "prompt": "old villagers standing far away in shadows, worried faces, rural India, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_001/scene_2.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_001_scene_3",
+    "script_id": "research_script_001",
+    "scene": 3,
+    "duration_seconds": 8,
+    "prompt": "dark narrow village path with broken temple bell and warning atmosphere, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_001/scene_3.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_001_scene_4",
+    "script_id": "research_script_001",
+    "scene": 4,
+    "duration_seconds": 10,
+    "prompt": "close-up of empty doorway, moving curtain, eerie night mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_001/scene_4.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_001_scene_5",
+    "script_id": "research_script_001",
+    "scene": 5,
+    "duration_seconds": 7,
+    "prompt": "lonely village road under moonlight, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_001/scene_5.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_002_scene_1",
+    "script_id": "research_script_002",
+    "scene": 1,
+    "duration_seconds": 4,
+    "prompt": "wide shot of remote crash site in foggy mountains, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_002/scene_1.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_002_scene_2",
+    "script_id": "research_script_002",
+    "scene": 2,
+    "duration_seconds": 6,
+    "prompt": "survivors' abandoned supplies near broken airplane parts, no bodies, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_002/scene_2.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_002_scene_3",
+    "script_id": "research_script_002",
+    "scene": 3,
+    "duration_seconds": 8,
+    "prompt": "cold forest rescue scene, distant emergency light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_002/scene_3.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_002_scene_4",
+    "script_id": "research_script_002",
+    "scene": 4,
+    "duration_seconds": 10,
+    "prompt": "close-up of damaged aircraft metal in snow or mud, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_002/scene_4.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_002_scene_5",
+    "script_id": "research_script_002",
+    "scene": 5,
+    "duration_seconds": 7,
+    "prompt": "lonely crash site under dark sky, survival mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_002/scene_5.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_003_scene_1",
+    "script_id": "research_script_003",
+    "scene": 1,
+    "duration_seconds": 4,
+    "prompt": "wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_003/scene_1.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_003_scene_2",
+    "script_id": "research_script_003",
+    "scene": 2,
+    "duration_seconds": 6,
+    "prompt": "locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_003/scene_2.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_003_scene_3",
+    "script_id": "research_script_003",
+    "scene": 3,
+    "duration_seconds": 8,
+    "prompt": "dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_003/scene_3.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_003_scene_4",
+    "script_id": "research_script_003",
+    "scene": 4,
+    "duration_seconds": 10,
+    "prompt": "close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_003/scene_4.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  },
+  {
+    "job_id": "research_script_003_scene_5",
+    "script_id": "research_script_003",
+    "scene": 5,
+    "duration_seconds": 7,
+    "prompt": "empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+    "output_path": "storage/images/unraaz/research_script_003/scene_5.jpg",
+    "provider_status": "pending",
+    "provider": "manual_or_future_ai"
+  }
+]

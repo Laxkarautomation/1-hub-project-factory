@@ -1,0 +1,34 @@
+[
+  {
+    "script_id": "script_001",
+    "source_content_id": "sample_001",
+    "idea_title": "India ka sabse mysterious village ke peeche ki asli kahani",
+    "hook": "Kya aap jaante ho is kahani ka sach kuch aur hi tha?",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "script": [
+      "Kya aap jaante ho is kahani ka sach kuch aur hi tha?",
+      "India me kuch jagah aisi hain jinke baare me log kam baat karte hain.",
+      "Lekin un jagahon ke peeche ki kahani kabhi kabhi bahut dark hoti hai.",
+      "Aaj ki story me hum dekhenge ek aisi mystery jahan sach aur afwah ke beech line dhundhli ho jati hai.",
+      "Aur end me aap decide karna — ye sirf kahani thi ya kuch aur?"
+    ],
+    "status": "draft"
+  },
+  {
+    "script_id": "script_002",
+    "source_content_id": "sample_001",
+    "idea_title": "FactTechz style me ek dark mystery short",
+    "hook": "Ye incident sunke aap raat ko sochne par majboor ho jaoge.",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "script": [
+      "Ye incident sunke aap raat ko sochne par majboor ho jaoge.",
+      "India me kuch jagah aisi hain jinke baare me log kam baat karte hain.",
+      "Lekin un jagahon ke peeche ki kahani kabhi kabhi bahut dark hoti hai.",
+      "Aaj ki story me hum dekhenge ek aisi mystery jahan sach aur afwah ke beech line dhundhli ho jati hai.",
+      "Aur end me aap decide karna — ye sirf kahani thi ya kuch aur?"
+    ],
+    "status": "draft"
+  }
+]

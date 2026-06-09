@@ -1,0 +1,11 @@
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_1.jpg'
+duration 4
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_2.jpg'
+duration 6
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_3.jpg'
+duration 8
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_4.jpg'
+duration 10
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_5.jpg'
+duration 7
+file '/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_003/scene_5.jpg'

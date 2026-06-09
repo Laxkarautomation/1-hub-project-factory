@@ -1,0 +1,17 @@
+[
+  {
+    "platform": "youtube",
+    "channel": "FactTechz",
+    "channel_url": "https://www.youtube.com/@FactTechz",
+    "video_id": "sample_001",
+    "type": "short",
+    "title": "India ka sabse mysterious village",
+    "description": "Ek aisa gaon jahan raat ko ajeeb awaazein aati hain.",
+    "views": 1200000,
+    "likes": 85000,
+    "comments": 4300,
+    "published_at": "2026-06-01",
+    "url": "https://youtube.com/shorts/sample_001",
+    "tags": ["mystery", "india", "village"]
+  }
+]

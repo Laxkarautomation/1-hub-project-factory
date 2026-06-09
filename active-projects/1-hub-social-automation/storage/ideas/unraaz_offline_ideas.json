@@ -1,0 +1,133 @@
+{
+  "generated_by": "offline_rule_based_generator",
+  "project": "UNRAAZ",
+  "cluster_summary": {
+    "haunted": 1178,
+    "mystery": 581,
+    "crime": 375,
+    "disaster": 141,
+    "places": 145
+  },
+  "ideas": [
+    {
+      "idea_id": "unraaz_idea_001",
+      "based_on_rank": 1,
+      "source_name": "Khooni Monday",
+      "source_title": "India's Most Haunted Village - Bemni | सच्ची कहानी | True Horror Stories in Hindi | KM E184🔥🔥🔥",
+      "idea_title": "UNRAAZ: India's Most Haunted Village - Bemni ka asli raaz",
+      "category": "haunted_place",
+      "hook": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_002",
+      "based_on_rank": 2,
+      "source_name": "BE AMAZED",
+      "source_title": "One Dark Secret Kept Survivors Of A Remote Plane Crash Alive",
+      "idea_title": "UNRAAZ: One Dark Secret Kept Survivors Of A Remote Plane Crash Alive ka asli raaz",
+      "category": "disaster",
+      "hook": "Ye accident sirf accident nahi tha, iske peeche ek dark secret chhupa tha.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_003",
+      "based_on_rank": 3,
+      "source_name": "Khooni Monday",
+      "source_title": "D’Mello House Goa - India’s Most Haunted | सच्ची कहानी | Horror Story in Hindi | KM E335 🔥 🔥🔥",
+      "idea_title": "UNRAAZ: D’Mello House Goa - India’s Most Haunted ka asli raaz",
+      "category": "haunted_place",
+      "hook": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_004",
+      "based_on_rank": 4,
+      "source_name": "Khooni Monday",
+      "source_title": "Okiku Doll Real Horror Story | Japan’s Most Haunted | सच्ची कहानी | Khooni Monday E331 🔥 🔥🔥",
+      "idea_title": "UNRAAZ: Okiku Doll Real Horror Story ka asli raaz",
+      "category": "haunted",
+      "hook": "Kya Okiku Doll Real Horror Story ke peeche sach me koi paranormal raaz chhupa hai?",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_005",
+      "based_on_rank": 5,
+      "source_name": "Khooni Monday",
+      "source_title": "Gaurav Tiwari Death - Real Horror Story | Horror Stories in Hindi | सच्ची कहानी | KM E321🔥🔥🔥",
+      "idea_title": "UNRAAZ: Gaurav Tiwari Death - Real Horror Story ka asli raaz",
+      "category": "crime",
+      "hook": "Is case me sabse ajeeb baat ye thi ki sach saamne hote hue bhi log samajh nahi paaye.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_006",
+      "based_on_rank": 6,
+      "source_name": "Khooni Monday",
+      "source_title": "Scary Scarecrow - Bijuka Real Story | सच्ची कहानी | Horror Stories in Hindi | Khooni Monday E254🔥🔥🔥",
+      "idea_title": "UNRAAZ: Scary Scarecrow - Bijuka Real Story ka asli raaz",
+      "category": "mystery",
+      "hook": "Is kahani me ek aisa twist hai jo end tak samajh nahi aata.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_007",
+      "based_on_rank": 7,
+      "source_name": "Khooni Monday",
+      "source_title": "Kundanbagh Horror Story - India's Most Haunted House | सच्ची कहानी | Hyderabad | KM E221🔥🔥🔥",
+      "idea_title": "UNRAAZ: Kundanbagh Horror Story - India's Most Haunted House ka asli raaz",
+      "category": "haunted_place",
+      "hook": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai.",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_008",
+      "based_on_rank": 8,
+      "source_name": "Khooni Monday",
+      "source_title": "1920 Haunted Castle | Real Horror Story in Hindi | सच्ची कहानी | Khooni Monday E215🔥🔥🔥",
+      "idea_title": "UNRAAZ: 1920 Haunted Castle ka asli raaz",
+      "category": "haunted",
+      "hook": "Kya 1920 Haunted Castle ke peeche sach me koi paranormal raaz chhupa hai?",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_009",
+      "based_on_rank": 9,
+      "source_name": "Khooni Monday",
+      "source_title": "Ramoji Film City - India's Most Haunted | सच्ची कहानी | Hyderabad Horror Story in Hindi | KM E185🔥🔥🔥",
+      "idea_title": "UNRAAZ: Ramoji Film City - India's Most Haunted ka asli raaz",
+      "category": "haunted",
+      "hook": "Kya Ramoji Film City - India's Most Haunted ke peeche sach me koi paranormal raaz chhupa hai?",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    },
+    {
+      "idea_id": "unraaz_idea_010",
+      "based_on_rank": 10,
+      "source_name": "Khooni Monday",
+      "source_title": "Dybbuk Real Horror Story | True Horror Legend | सच्ची कहानी | Khooni Monday E140🔥🔥🔥",
+      "idea_title": "UNRAAZ: Dybbuk Real Horror Story ka asli raaz",
+      "category": "haunted",
+      "hook": "Kya Dybbuk Real Horror Story ke peeche sach me koi paranormal raaz chhupa hai?",
+      "why_it_can_work": "Competitor data me is topic/category ka strong relevance score mila hai.",
+      "target_duration_seconds": 35,
+      "status": "new"
+    }
+  ]
+}

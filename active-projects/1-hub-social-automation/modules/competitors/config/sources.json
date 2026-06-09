@@ -1,0 +1,23 @@
+{
+  "brand": "UNRAAZ",
+  "sources": [
+    {
+      "platform": "youtube",
+      "name": "FactTechz",
+      "url": "https://www.youtube.com/@FactTechz",
+      "status": "active"
+    },
+    {
+      "platform": "youtube",
+      "name": "Khooni Monday",
+      "url": "https://www.youtube.com/@KhooniMonday",
+      "status": "active"
+    },
+    {
+      "platform": "youtube",
+      "name": "TRS Clips",
+      "url": "https://www.youtube.com/@TRSClips",
+      "status": "active"
+    }
+  ]
+}

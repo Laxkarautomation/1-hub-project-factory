@@ -1,0 +1,382 @@
+[
+  {
+    "script_id": "angle_script_001",
+    "sub_theme": "haunted_village",
+    "selected_angle": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain.",
+        "image_prompt": "abandoned Indian village at dusk, empty narrow streets, fog, old houses, cinematic horror documentary mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Gaon ke log is kahani ko mazaak nahi mante.",
+        "image_prompt": "abandoned Indian village at dusk, empty narrow streets, fog, old houses, cinematic horror documentary mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Unke hisaab se kuch jagah aisi hain jahan raat ke baad jaana mana hai.",
+        "image_prompt": "abandoned Indian village at dusk, empty narrow streets, fog, old houses, cinematic horror documentary mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Sabse ajeeb baat ye hai ki outsiders ne bhi milte-julte experiences bataye.",
+        "image_prompt": "abandoned Indian village at dusk, empty narrow streets, fog, old houses, cinematic horror documentary mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "abandoned Indian village at dusk, empty narrow streets, fog, old houses, cinematic horror documentary mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_002",
+    "sub_theme": "survival_disaster",
+    "selected_angle": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada.",
+        "image_prompt": "remote crash site in mountains or forest, broken airplane parts, cold fog, survival tension, cinematic realism, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Accident ke baad asli struggle survival ka tha.",
+        "image_prompt": "remote crash site in mountains or forest, broken airplane parts, cold fog, survival tension, cinematic realism, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Remote location ki wajah se help time par pahunchna almost impossible tha.",
+        "image_prompt": "remote crash site in mountains or forest, broken airplane parts, cold fog, survival tension, cinematic realism, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Sabse dark sawaal ye tha ki bachne ke liye log kis had tak ja sakte hain.",
+        "image_prompt": "remote crash site in mountains or forest, broken airplane parts, cold fog, survival tension, cinematic realism, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "remote crash site in mountains or forest, broken airplane parts, cold fog, survival tension, cinematic realism, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_003",
+    "sub_theme": "haunted_house",
+    "selected_angle": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is ghar ki kahani sirf ek room se start hoti hai.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Log kehte hain ki raat me andar se awaazein aati thi, jabki ghar khaali hota tha.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Sabse ajeeb baat ye thi ki har naye rehne wale ne ek hi warning repeat ki.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_004",
+    "sub_theme": "haunted_object",
+    "selected_angle": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai.",
+        "image_prompt": "old room with a mysterious antique doll/object on a wooden table, shadows, candle light, suspense mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Ye koi normal cheez nahi thi, kyunki iske aane ke baad incidents start hue.",
+        "image_prompt": "old room with a mysterious antique doll/object on a wooden table, shadows, candle light, suspense mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Family ne pehle ise coincidence samjha, par baatein repeat hone lagi.",
+        "image_prompt": "old room with a mysterious antique doll/object on a wooden table, shadows, candle light, suspense mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Sabse scary baat ye thi ki ise hataane ke baad bhi darr khatam nahi hua.",
+        "image_prompt": "old room with a mysterious antique doll/object on a wooden table, shadows, candle light, suspense mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "old room with a mysterious antique doll/object on a wooden table, shadows, candle light, suspense mood, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_005",
+    "sub_theme": "true_crime",
+    "selected_angle": "Ek case jahan last phone call ne poori story badal di",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek case jahan last phone call ne poori story badal di.",
+        "image_prompt": "dark investigation room, case files, old telephone, evidence board, low light crime documentary style, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Case me saboot the, par kahani simple nahi thi.",
+        "image_prompt": "dark investigation room, case files, old telephone, evidence board, low light crime documentary style, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Ek chhoti si detail ne investigation ka direction badal diya.",
+        "image_prompt": "dark investigation room, case files, old telephone, evidence board, low light crime documentary style, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Aaj bhi log is case me police theory aur public theory ko compare karte hain.",
+        "image_prompt": "dark investigation room, case files, old telephone, evidence board, low light crime documentary style, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "dark investigation room, case files, old telephone, evidence board, low light crime documentary style, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_006",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is kahani me facts aur afwah itne mix ho gaye ki sach dhundhna mushkil ho gaya.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Logon ki theory alag thi, lekin kuch details baar-baar repeat hoti rahi.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Aur wahi details is mystery ko aur gehra bana deti hain.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_007",
+    "sub_theme": "haunted_house",
+    "selected_angle": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is ghar ki kahani sirf ek room se start hoti hai.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Log kehte hain ki raat me andar se awaazein aati thi, jabki ghar khaali hota tha.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Sabse ajeeb baat ye thi ki har naye rehne wale ne ek hi warning repeat ki.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "old abandoned Indian mansion, cracked walls, locked wooden door, dim moonlight, eerie atmosphere, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_008",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is kahani me facts aur afwah itne mix ho gaye ki sach dhundhna mushkil ho gaya.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Logon ki theory alag thi, lekin kuch details baar-baar repeat hoti rahi.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Aur wahi details is mystery ko aur gehra bana deti hain.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_009",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is kahani me facts aur afwah itne mix ho gaye ki sach dhundhna mushkil ho gaya.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Logon ki theory alag thi, lekin kuch details baar-baar repeat hoti rahi.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Aur wahi details is mystery ko aur gehra bana deti hain.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  },
+  {
+    "script_id": "angle_script_010",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-5s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "5-12s",
+        "narration": "Is kahani me facts aur afwah itne mix ho gaye ki sach dhundhna mushkil ho gaya.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "12-20s",
+        "narration": "Logon ki theory alag thi, lekin kuch details baar-baar repeat hoti rahi.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "20-28s",
+        "narration": "Aur wahi details is mystery ko aur gehra bana deti hain.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai? Sach, coincidence ya kuch aur? Comment me batao.",
+        "image_prompt": "dark cinematic mystery scene, shadowy figure, foggy background, suspense documentary look, vertical 9:16, realistic, cinematic lighting, high detail, dramatic shadows, no text, no watermark, no gore"
+      }
+    ],
+    "status": "image_prompts_ready"
+  }
+]

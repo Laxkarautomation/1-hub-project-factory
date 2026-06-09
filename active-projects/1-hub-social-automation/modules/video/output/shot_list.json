@@ -1,0 +1,522 @@
+[
+  {
+    "script_id": "research_script_001",
+    "title": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain",
+    "voice_file": "storage/audio/unraaz/research_script_001.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain.",
+        "visual_prompt": "wide shot of abandoned Indian village at sunset, empty lanes, fog, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Bemni ek aise gaon ke roop me jaana jaata hai jahan raat ke baad log rukne se darte hain.",
+        "visual_prompt": "old villagers standing far away in shadows, worried faces, rural India, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark narrow village path with broken temple bell and warning atmosphere, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of empty doorway, moving curtain, eerie night mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "lonely village road under moonlight, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#HauntedVillage",
+      "#Mystery",
+      "#HorrorStory",
+      "#IndiaMystery"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_002",
+    "title": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada",
+    "voice_file": "storage/audio/unraaz/research_script_002.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada.",
+        "visual_prompt": "wide shot of remote crash site in foggy mountains, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "One Dark Secret Kept Survivors Of A Remote Plane Crash Alive me crash ke baad survival ka angle sabse zyada shocking ban jaata hai.",
+        "visual_prompt": "survivors' abandoned supplies near broken airplane parts, no bodies, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "cold forest rescue scene, distant emergency light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of damaged aircraft metal in snow or mud, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "lonely crash site under dark sky, survival mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#SurvivalStory",
+      "#PlaneCrash",
+      "#DarkSecret",
+      "#MysteryFacts"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_003",
+    "title": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "voice_file": "storage/audio/unraaz/research_script_003.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "visual_prompt": "wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "D’Mello House Goa - India’s ki kahani ek purane ghar, locked rooms aur ajeeb awaazon ke around ghoomti hai.",
+        "visual_prompt": "locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek ghar jahan naye rehne wale zyada din tik nahi paate...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#HauntedHouse",
+      "#RealHorror",
+      "#Mystery",
+      "#DarkStory"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_004",
+    "title": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai",
+    "voice_file": "storage/audio/unraaz/research_script_004.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai.",
+        "visual_prompt": "old room with antique object on wooden table, candle light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Okiku Doll me darr kisi jagah se nahi, ek object se start hota hai.",
+        "visual_prompt": "family photo frames blurred in background, object in focus, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "close-up of mysterious doll or object with dramatic shadows, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "object lying alone after room is emptied, eerie silence, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "dark table with object half-lit, final mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#HauntedObject",
+      "#HorrorMystery",
+      "#ScaryStory",
+      "#DarkFacts"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_005",
+    "title": "Ek case jahan last phone call ne poori story badal di",
+    "voice_file": "storage/audio/unraaz/research_script_005.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek case jahan last phone call ne poori story badal di.",
+        "visual_prompt": "dark investigation desk with case files and old phone, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Gaurav Tiwari Death - me sabse bada sawaal official story aur public theory ke beech ka gap hai.",
+        "visual_prompt": "evidence board with blurred photos and red strings, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "close-up of ringing old telephone in dim light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "shadow of investigator standing near file cabinet, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "empty interrogation room with single chair, suspense ending, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek case jahan last phone call ne poori story badal di...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#TrueCrime",
+      "#UnsolvedMystery",
+      "#CrimeStory",
+      "#DarkTruth"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_006",
+    "title": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "voice_file": "storage/audio/unraaz/research_script_006.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "visual_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Scary Scarecrow - Bijuka Real Story sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "visual_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek kahani jahan sach aur afwah ek jaise lagne lage...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#MysteryFacts",
+      "#DarkStory",
+      "#UnknownFacts",
+      "#Suspense"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_007",
+    "title": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "voice_file": "storage/audio/unraaz/research_script_007.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "visual_prompt": "wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Kundanbagh - House ki kahani ek purane ghar, locked rooms aur ajeeb awaazon ke around ghoomti hai.",
+        "visual_prompt": "locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek ghar jahan naye rehne wale zyada din tik nahi paate...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#HauntedHouse",
+      "#RealHorror",
+      "#Mystery",
+      "#DarkStory"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_008",
+    "title": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "voice_file": "storage/audio/unraaz/research_script_008.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "visual_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "1920 Haunted Castle sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "visual_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek kahani jahan sach aur afwah ek jaise lagne lage...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#MysteryFacts",
+      "#DarkStory",
+      "#UnknownFacts",
+      "#Suspense"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_009",
+    "title": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "voice_file": "storage/audio/unraaz/research_script_009.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "visual_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Ramoji Film City - sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "visual_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek kahani jahan sach aur afwah ek jaise lagne lage...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#MysteryFacts",
+      "#DarkStory",
+      "#UnknownFacts",
+      "#Suspense"
+    ],
+    "status": "editor_ready"
+  },
+  {
+    "script_id": "research_script_010",
+    "title": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "voice_file": "storage/audio/unraaz/research_script_010.mp3",
+    "total_duration_seconds": 35,
+    "shots": [
+      {
+        "scene": 1,
+        "duration_seconds": 4,
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "visual_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom in, dark fade from black"
+      },
+      {
+        "scene": 2,
+        "duration_seconds": 6,
+        "narration": "Dybbuk sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "visual_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slight camera push, add low suspense ambience"
+      },
+      {
+        "scene": 3,
+        "duration_seconds": 8,
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "visual_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "quick cut, add subtle shadow movement"
+      },
+      {
+        "scene": 4,
+        "duration_seconds": 10,
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "visual_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "slow zoom close-up, increase tension"
+      },
+      {
+        "scene": 5,
+        "duration_seconds": 7,
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "visual_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore",
+        "edit_note": "fade out with question text overlay"
+      }
+    ],
+    "caption": "Ek kahani jahan sach aur afwah ek jaise lagne lage...\n\nIs kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.\n\nAapko kya lagta hai? Comment me batao.",
+    "hashtags": [
+      "#UNRAAZ",
+      "#MysteryFacts",
+      "#DarkStory",
+      "#UnknownFacts",
+      "#Suspense"
+    ],
+    "status": "editor_ready"
+  }
+]

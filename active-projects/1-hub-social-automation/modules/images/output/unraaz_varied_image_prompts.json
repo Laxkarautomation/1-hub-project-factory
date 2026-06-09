@@ -1,0 +1,382 @@
+[
+  {
+    "script_id": "research_script_001",
+    "sub_theme": "haunted_village",
+    "selected_angle": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain.",
+        "image_prompt": "wide shot of abandoned Indian village at sunset, empty lanes, fog, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Bemni ek aise gaon ke roop me jaana jaata hai jahan raat ke baad log rukne se darte hain.",
+        "image_prompt": "old villagers standing far away in shadows, worried faces, rural India, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark narrow village path with broken temple bell and warning atmosphere, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of empty doorway, moving curtain, eerie night mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "lonely village road under moonlight, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_002",
+    "sub_theme": "survival_disaster",
+    "selected_angle": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada.",
+        "image_prompt": "wide shot of remote crash site in foggy mountains, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "One Dark Secret Kept Survivors Of A Remote Plane Crash Alive me crash ke baad survival ka angle sabse zyada shocking ban jaata hai.",
+        "image_prompt": "survivors' abandoned supplies near broken airplane parts, no bodies, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "cold forest rescue scene, distant emergency light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of damaged aircraft metal in snow or mud, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "lonely crash site under dark sky, survival mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_003",
+    "sub_theme": "haunted_house",
+    "selected_angle": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "image_prompt": "wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "D’Mello House Goa - India’s ki kahani ek purane ghar, locked rooms aur ajeeb awaazon ke around ghoomti hai.",
+        "image_prompt": "locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_004",
+    "sub_theme": "haunted_object",
+    "selected_angle": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek object jo ghar me aate hi ajeeb incidents start kar deta hai.",
+        "image_prompt": "old room with antique object on wooden table, candle light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Okiku Doll me darr kisi jagah se nahi, ek object se start hota hai.",
+        "image_prompt": "family photo frames blurred in background, object in focus, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "close-up of mysterious doll or object with dramatic shadows, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "object lying alone after room is emptied, eerie silence, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "dark table with object half-lit, final mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_005",
+    "sub_theme": "true_crime",
+    "selected_angle": "Ek case jahan last phone call ne poori story badal di",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek case jahan last phone call ne poori story badal di.",
+        "image_prompt": "dark investigation desk with case files and old phone, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Gaurav Tiwari Death - me sabse bada sawaal official story aur public theory ke beech ka gap hai.",
+        "image_prompt": "evidence board with blurred photos and red strings, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "close-up of ringing old telephone in dim light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "shadow of investigator standing near file cabinet, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "empty interrogation room with single chair, suspense ending, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_006",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Scary Scarecrow - Bijuka Real Story sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "image_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_007",
+    "sub_theme": "haunted_house",
+    "selected_angle": "Ek ghar jahan naye rehne wale zyada din tik nahi paate",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek ghar jahan naye rehne wale zyada din tik nahi paate.",
+        "image_prompt": "wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Kundanbagh - House ki kahani ek purane ghar, locked rooms aur ajeeb awaazon ke around ghoomti hai.",
+        "image_prompt": "locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_008",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "1920 Haunted Castle sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "image_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_009",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Ramoji Film City - sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "image_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  },
+  {
+    "script_id": "research_script_010",
+    "sub_theme": "general_mystery",
+    "selected_angle": "Ek kahani jahan sach aur afwah ek jaise lagne lage",
+    "scenes": [
+      {
+        "scene": 1,
+        "time": "0-4s",
+        "narration": "Ek kahani jahan sach aur afwah ek jaise lagne lage.",
+        "image_prompt": "shadowy figure walking on foggy road at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 2,
+        "time": "4-10s",
+        "narration": "Dybbuk sirf ek kahani nahi, balki ek aisa mystery case hai jisme sawaal jawab se zyada hain.",
+        "image_prompt": "old newspaper clippings on table, no readable text, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 3,
+        "time": "10-18s",
+        "narration": "Local stories aur available details is case ko normal incident se alag banate hain.",
+        "image_prompt": "dark room with single lamp and hidden file, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 4,
+        "time": "18-28s",
+        "narration": "Sabse interesting baat ye hai ki is story me facts, fear aur public theories ek dusre se mix ho jaate hain.",
+        "image_prompt": "close-up of mysterious hand opening old box, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      },
+      {
+        "scene": 5,
+        "time": "28-35s",
+        "narration": "Aapko kya lagta hai — ye sach tha, fear tha, ya ek hidden truth? Comment me batao.",
+        "image_prompt": "foggy empty road disappearing into darkness, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore"
+      }
+    ],
+    "status": "varied_image_prompts_ready"
+  }
+]

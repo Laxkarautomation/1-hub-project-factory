@@ -1,0 +1,412 @@
+[
+  {
+    "script_id": "unraaz_script_001",
+    "idea_id": "unraaz_idea_001",
+    "category": "haunted_place",
+    "title": "UNRAAZ: India's Most Haunted Village - Bemni ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani India's Most Haunted Village - Bemni ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "India's Most Haunted Village - Bemni | सच्ची कहानी | True Horror Stories in Hindi | KM E184🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_002",
+    "idea_id": "unraaz_idea_002",
+    "category": "disaster",
+    "title": "UNRAAZ: One Dark Secret Kept Survivors Of A Remote Plane Crash Alive ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Ye accident sirf accident nahi tha, iske peeche ek dark secret chhupa tha."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani One Dark Secret Kept Survivors Of A Remote Plane Crash Alive ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "BE AMAZED",
+      "source_title": "One Dark Secret Kept Survivors Of A Remote Plane Crash Alive"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_003",
+    "idea_id": "unraaz_idea_003",
+    "category": "haunted_place",
+    "title": "UNRAAZ: D’Mello House Goa - India’s Most Haunted ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani D’Mello House Goa - India’s Most Haunted ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "D’Mello House Goa - India’s Most Haunted | सच्ची कहानी | Horror Story in Hindi | KM E335 🔥 🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_004",
+    "idea_id": "unraaz_idea_004",
+    "category": "haunted",
+    "title": "UNRAAZ: Okiku Doll Real Horror Story ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Kya Okiku Doll Real Horror Story ke peeche sach me koi paranormal raaz chhupa hai?"
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Okiku Doll Real Horror Story ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Okiku Doll Real Horror Story | Japan’s Most Haunted | सच्ची कहानी | Khooni Monday E331 🔥 🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_005",
+    "idea_id": "unraaz_idea_005",
+    "category": "crime",
+    "title": "UNRAAZ: Gaurav Tiwari Death - Real Horror Story ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Is case me sabse ajeeb baat ye thi ki sach saamne hote hue bhi log samajh nahi paaye."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Gaurav Tiwari Death - Real Horror Story ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Gaurav Tiwari Death - Real Horror Story | Horror Stories in Hindi | सच्ची कहानी | KM E321🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_006",
+    "idea_id": "unraaz_idea_006",
+    "category": "mystery",
+    "title": "UNRAAZ: Scary Scarecrow - Bijuka Real Story ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Is kahani me ek aisa twist hai jo end tak samajh nahi aata."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Scary Scarecrow - Bijuka Real Story ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Scary Scarecrow - Bijuka Real Story | सच्ची कहानी | Horror Stories in Hindi | Khooni Monday E254🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_007",
+    "idea_id": "unraaz_idea_007",
+    "category": "haunted_place",
+    "title": "UNRAAZ: Kundanbagh Horror Story - India's Most Haunted House ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "India ki is jagah ko log haunted bolte hain, par asli kahani aur zyada darawani hai."
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Kundanbagh Horror Story - India's Most Haunted House ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Kundanbagh Horror Story - India's Most Haunted House | सच्ची कहानी | Hyderabad | KM E221🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_008",
+    "idea_id": "unraaz_idea_008",
+    "category": "haunted",
+    "title": "UNRAAZ: 1920 Haunted Castle ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Kya 1920 Haunted Castle ke peeche sach me koi paranormal raaz chhupa hai?"
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani 1920 Haunted Castle ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "1920 Haunted Castle | Real Horror Story in Hindi | सच्ची कहानी | Khooni Monday E215🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_009",
+    "idea_id": "unraaz_idea_009",
+    "category": "haunted",
+    "title": "UNRAAZ: Ramoji Film City - India's Most Haunted ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Kya Ramoji Film City - India's Most Haunted ke peeche sach me koi paranormal raaz chhupa hai?"
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Ramoji Film City - India's Most Haunted ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Ramoji Film City - India's Most Haunted | सच्ची कहानी | Hyderabad Horror Story in Hindi | KM E185🔥🔥🔥"
+    },
+    "status": "draft"
+  },
+  {
+    "script_id": "unraaz_script_010",
+    "idea_id": "unraaz_idea_010",
+    "category": "haunted",
+    "title": "UNRAAZ: Dybbuk Real Horror Story ka asli raaz",
+    "duration_seconds": 35,
+    "language": "hinglish",
+    "voice_style": "deep suspense narrator",
+    "script_lines": [
+      {
+        "time": "0-4s",
+        "type": "hook",
+        "text": "Kya Dybbuk Real Horror Story ke peeche sach me koi paranormal raaz chhupa hai?"
+      },
+      {
+        "time": "4-10s",
+        "type": "setup",
+        "text": "Ye kahani Dybbuk Real Horror Story ka asli raaz se judi hai, jiske baare me log aaj bhi alag-alag baatein karte hain."
+      },
+      {
+        "time": "10-18s",
+        "type": "twist",
+        "text": "Sabse ajeeb baat ye thi ki jitna log sach ke kareeb gaye, utna hi raaz aur gehra hota gaya."
+      },
+      {
+        "time": "18-28s",
+        "type": "suspense",
+        "text": "Kuch log ise sirf afwah mante hain, lekin wahan ke locals ke experiences kuch aur hi kahani batate hain."
+      },
+      {
+        "time": "28-35s",
+        "type": "ending",
+        "text": "Aapko kya lagta hai, ye sach tha ya sirf darr ka khel? Comment me batao."
+      }
+    ],
+    "source_reference": {
+      "source_name": "Khooni Monday",
+      "source_title": "Dybbuk Real Horror Story | True Horror Legend | सच्ची कहानी | Khooni Monday E140🔥🔥🔥"
+    },
+    "status": "draft"
+  }
+]

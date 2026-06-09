@@ -1,0 +1,20 @@
+{
+  "project": "UNRAAZ",
+  "platforms": {
+    "youtube": [
+      {
+        "name": "FactTechz",
+        "url": "https://www.youtube.com/@FactTechz"
+      },
+      {
+        "name": "Khooni Monday",
+        "url": "https://www.youtube.com/@KhooniMonday"
+      },
+      {
+        "name": "The Ranveer Show Clips",
+        "url": "https://www.youtube.com/@TRSClips"
+      }
+    ],
+    "instagram": []
+  }
+}

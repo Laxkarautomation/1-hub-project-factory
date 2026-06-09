@@ -1,0 +1,45 @@
+UNRAAZ IMAGE BATCH
+Script ID: smart_script_002
+Title: Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada
+Format: Vertical 9:16
+Style: Dark cinematic realistic documentary
+
+SCENE 1
+Duration: 4s
+Narration: Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada.
+Prompt: wide shot of remote crash site in foggy mountains, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom in, dark fade from black
+
+SCENE 2
+Duration: 6s
+Narration: Ek accident ke baad asli kahani crash ki nahi, survival ki thi.
+Prompt: survivors' abandoned supplies near broken airplane parts, no bodies, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slight camera push, add low suspense ambience
+
+SCENE 3
+Duration: 8s
+Narration: Remote location ki wajah se rescue almost impossible ho gaya.
+Prompt: cold forest rescue scene, distant emergency light, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: quick cut, add subtle shadow movement
+
+SCENE 4
+Duration: 10s
+Narration: Bachne ke liye logon ko aise decisions lene pade jinke baare me sochna bhi mushkil hai. Aur isi wajah se ye story accident se zyada ek dark mystery ban gayi.
+Prompt: close-up of damaged aircraft metal in snow or mud, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom close-up, increase tension
+
+SCENE 5
+Duration: 7s
+Narration: Aapko kya lagta hai — sach, darr ya coincidence? Comment me batao.
+Prompt: lonely crash site under dark sky, survival mystery mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: fade out with question text overlay
+
+Caption:
+Ek accident jahan bachne ke liye logon ko unimaginable decision lena pada...
+
+Is kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.
+
+Aapko kya lagta hai? Comment me batao.
+
+Hashtags:
+#UNRAAZ #SurvivalStory #PlaneCrash #DarkSecret #MysteryFacts

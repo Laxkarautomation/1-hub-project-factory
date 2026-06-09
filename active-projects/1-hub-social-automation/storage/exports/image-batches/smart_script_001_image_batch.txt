@@ -1,0 +1,45 @@
+UNRAAZ IMAGE BATCH
+Script ID: smart_script_001
+Title: Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain
+Format: Vertical 9:16
+Style: Dark cinematic realistic documentary
+
+SCENE 1
+Duration: 4s
+Narration: Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain.
+Prompt: wide shot of abandoned Indian village at sunset, empty lanes, fog, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom in, dark fade from black
+
+SCENE 2
+Duration: 6s
+Narration: India ke ek aise gaon ki kahani, jahan suraj dhalte hi mahaul badal jaata hai.
+Prompt: old villagers standing far away in shadows, worried faces, rural India, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slight camera push, add low suspense ambience
+
+SCENE 3
+Duration: 8s
+Narration: Local log kehte hain ki raat ke baad kuch raaste aise hain jahan jaana mana hai.
+Prompt: dark narrow village path with broken temple bell and warning atmosphere, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: quick cut, add subtle shadow movement
+
+SCENE 4
+Duration: 10s
+Narration: Ajeeb baat ye hai ki alag-alag logon ne ek jaisi awaazein aur shadows notice ki. Science ise fear bolta hai, lekin locals ke liye ye aaj bhi ek warning hai.
+Prompt: close-up of empty doorway, moving curtain, eerie night mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom close-up, increase tension
+
+SCENE 5
+Duration: 7s
+Narration: Aapko kya lagta hai — sach, darr ya coincidence? Comment me batao.
+Prompt: lonely village road under moonlight, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: fade out with question text overlay
+
+Caption:
+Ek gaon jahan suraj dhalne ke baad galiyan khaali ho jaati hain...
+
+Is kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.
+
+Aapko kya lagta hai? Comment me batao.
+
+Hashtags:
+#UNRAAZ #HauntedVillage #Mystery #HorrorStory #IndiaMystery

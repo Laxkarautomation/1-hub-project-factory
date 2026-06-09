@@ -1,0 +1,21 @@
+{
+  "name": "1-hub-social-automation",
+  "version": "1.0.0",
+  "description": "Automated content research and generation system for UNRAAZ and future 1 Hub brands.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fast-xml-parser": "^5.8.0",
+    "yt-dlp-exec": "^1.0.2"
+  }
+}

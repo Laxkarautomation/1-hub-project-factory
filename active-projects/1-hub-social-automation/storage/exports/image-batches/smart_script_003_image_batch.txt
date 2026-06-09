@@ -1,0 +1,45 @@
+UNRAAZ IMAGE BATCH
+Script ID: smart_script_003
+Title: Ek ghar jahan naye rehne wale zyada din tik nahi paate
+Format: Vertical 9:16
+Style: Dark cinematic realistic documentary
+
+SCENE 1
+Duration: 4s
+Narration: Ek ghar jahan naye rehne wale zyada din tik nahi paate.
+Prompt: wide shot of old abandoned Indian mansion at night, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom in, dark fade from black
+
+SCENE 2
+Duration: 6s
+Narration: Ek purana ghar, jahan rehne wale log zyada din ruk nahi paaye.
+Prompt: locked wooden door inside old house, dust and moonlight, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slight camera push, add low suspense ambience
+
+SCENE 3
+Duration: 8s
+Narration: Kahani ek locked room se start hoti hai, jise family ne saalon tak band rakha.
+Prompt: dark room with cracked walls and faint light from window, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: quick cut, add subtle shadow movement
+
+SCENE 4
+Duration: 10s
+Narration: Raat me footsteps aur awaazein sunai deti thi, jabki ghar khaali hota tha. Kya ye imagination tha, ya us ghar me sach me kuch chhupa tha?
+Prompt: close-up of staircase shadows and mysterious footsteps mood, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: slow zoom close-up, increase tension
+
+SCENE 5
+Duration: 7s
+Narration: Aapko kya lagta hai — sach, darr ya coincidence? Comment me batao.
+Prompt: empty hallway fading into darkness, suspense ending frame, vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore
+Edit Note: fade out with question text overlay
+
+Caption:
+Ek ghar jahan naye rehne wale zyada din tik nahi paate...
+
+Is kahani me sach, darr aur coincidence ke beech ek ajeeb connection dikhta hai.
+
+Aapko kya lagta hai? Comment me batao.
+
+Hashtags:
+#UNRAAZ #HauntedHouse #RealHorror #Mystery #DarkStory
