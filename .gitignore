@@ -100,3 +100,12 @@ ecc2/target/
 .opencode/package-lock.json
 .opencode/node_modules/
 assets/images/security/badrudi-exploit.mp4
+
+# 1 Hub Project Factory ignores
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+factory/exports/*.zip
