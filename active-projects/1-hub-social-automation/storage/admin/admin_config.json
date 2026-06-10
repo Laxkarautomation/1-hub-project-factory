@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "environment": "local",
+  "system": {
+    "projectName": "1-hub-social-automation",
+    "freeFirst": true,
+    "allowPaidProviders": false,
+    "activeChannelSource": "channels-module",
+    "logsEnabled": true
+  },
+  "providers": {
+    "llm": {
+      "active": "mock",
+      "fallbackOrder": [
+        "mock"
+      ],
+      "providers": {
+        "mock": {
+          "enabled": true,
+          "type": "free",
+          "apiKeyRef": null,
+          "model": "mock-llm",
+          "endpoint": null,
+          "dailyLimit": 999999
+        }
+      }
+    },
+    "tts": {
+      "active": "mock",
+      "fallbackOrder": [
+        "mock"
+      ],
+      "providers": {
+        "mock": {
+          "enabled": true,
+          "type": "free",
+          "apiKeyRef": null,
+          "model": "mock-tts",
+          "endpoint": null,
+          "dailyLimit": 999999
+        }
+      }
+    },
+    "image": {
+      "active": "mock",
+      "fallbackOrder": [
+        "mock"
+      ],
+      "providers": {
+        "mock": {
+          "enabled": true,
+          "type": "free",
+          "apiKeyRef": null,
+          "model": "mock-image",
+          "endpoint": null,
+          "dailyLimit": 999999
+        }
+      }
+    },
+    "video": {
+      "active": "local",
+      "fallbackOrder": [
+        "local"
+      ],
+      "providers": {
+        "local": {
+          "enabled": true,
+          "type": "free",
+          "apiKeyRef": null,
+          "model": "local-renderer",
+          "endpoint": null,
+          "dailyLimit": 999999
+        }
+      }
+    }
+  },
+  "runtime": {
+    "maxRetries": 2,
+    "timeoutMs": 30000,
+    "failFast": false,
+    "dryRun": false
+  },
+  "secrets": {
+    "strategy": "env",
+    "allowedPrefix": "HUB_"
+  }
+}
