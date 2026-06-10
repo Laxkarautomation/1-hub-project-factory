@@ -1,23 +1,23 @@
 const fs = require("fs");
-const path = require("path");
 
 function createPlaceholderImage(scene, outputPath) {
-  const existingFallback = path.join(
-    process.cwd(),
-    "storage/images/unraaz",
-    scene.script_id || "",
-    `scene_${scene.scene}.jpg`
-  );
-
-  if (fs.existsSync(existingFallback) && fs.statSync(existingFallback).size > 1000) {
-    fs.copyFileSync(existingFallback, outputPath);
-    return { success: true, provider: "placeholder", outputPath };
+  if (fs.existsSync(outputPath)) {
+    return {
+      success: true,
+      skipped: true,
+      outputPath,
+      provider: "placeholder",
+      scene: scene.scene,
+    };
   }
 
   return {
     success: false,
+    skipped: false,
+    outputPath,
     provider: "placeholder",
-    error: "No valid placeholder image found"
+    scene: scene.scene,
+    error: "No placeholder source configured for active channel",
   };
 }
 

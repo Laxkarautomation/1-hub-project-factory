@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const workspaceResolver = require("../channels/channel_workspace_resolver");
 
 const { getProviderStack } = require("../providers/core/provider_loader");
 const { getImageProviders } = require("../providers/registry/image_provider_registry");
@@ -24,7 +25,8 @@ if (!script) {
 const stack = getProviderStack("image");
 const providers = getImageProviders(stack.fallbacks, stack.keys);
 
-const outputDir = path.join(process.cwd(), "storage/images/unraaz", scriptId);
+const workspace = workspaceResolver.getWorkspace(scriptId);
+const outputDir = workspace.getImagesPath();
 fs.mkdirSync(outputDir, { recursive: true });
 
 async function main() {
