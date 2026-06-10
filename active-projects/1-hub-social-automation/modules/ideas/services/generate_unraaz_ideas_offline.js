@@ -12,9 +12,11 @@ const topInputPath = path.join(
   "../../../storage/ideas/top_ideas_input.json"
 );
 
+const channelIdentity = getActiveChannelIdentity();
+
 const outputPath = path.join(
   __dirname,
-  "../../../storage/ideas/unraaz_offline_ideas.json"
+  `../../../storage/ideas/${channelIdentity.channelId}_offline_ideas.json`
 );
 
 function cleanTitle(title) {

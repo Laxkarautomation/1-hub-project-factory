@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const workspaceResolver = require("../../channels/channel_workspace_resolver");
 
 function checkVideoAssets(script) {
   const issues = [];
@@ -14,7 +15,7 @@ function checkVideoAssets(script) {
   for (const scene of script.scenes || []) {
     const imagePath = path.join(
       process.cwd(),
-      "storage/images/unraaz",
+      workspaceResolver.getWorkspace().getImagesPath(),
       script.script_id,
       `scene_${scene.scene}.jpg`
     );

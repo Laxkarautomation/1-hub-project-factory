@@ -1,6 +1,7 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const workspaceResolver = require("../../channels/channel_workspace_resolver");
 
 const manifestPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
 
@@ -15,7 +16,7 @@ function run() {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
 
   for (const video of manifest) {
-    const imageDir = path.join(process.cwd(), `storage/images/unraaz/${video.script_id}`);
+    const imageDir = workspaceResolver.getWorkspace(video.script_id).getImagesPath();
     fs.mkdirSync(imageDir, { recursive: true });
 
     for (const scene of video.scenes) {
