@@ -1,0 +1,233 @@
+[
+  {
+    "event": "job_created",
+    "jobId": "job_1781086934980_e98ec695",
+    "type": "system_test",
+    "channelId": "unraaz",
+    "timestamp": "2026-06-10T10:22:14.981Z"
+  },
+  {
+    "event": "job_created",
+    "jobId": "job_1781086934981_a27b6189",
+    "type": "script_generation",
+    "channelId": "unraaz",
+    "timestamp": "2026-06-10T10:22:14.982Z"
+  },
+  {
+    "event": "job_created",
+    "jobId": "job_1781086934982_053efab2",
+    "type": "image_generation",
+    "channelId": "unraaz",
+    "timestamp": "2026-06-10T10:22:14.982Z"
+  },
+  {
+    "event": "job_created",
+    "jobId": "job_1781086934983_65a21bf6",
+    "type": "video_rendering",
+    "channelId": "unraaz",
+    "timestamp": "2026-06-10T10:22:14.983Z"
+  },
+  {
+    "event": "running_jobs_reset",
+    "count": 0,
+    "timestamp": "2026-06-10T10:22:15.128Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934980_e98ec695",
+    "patch": {
+      "status": "running",
+      "lockedAt": "2026-06-10T10:22:15.129Z",
+      "startedAt": "2026-06-10T10:22:15.129Z",
+      "attempts": 1
+    },
+    "timestamp": "2026-06-10T10:22:15.130Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934980_e98ec695",
+    "patch": {
+      "status": "completed",
+      "completedAt": "2026-06-10T10:22:15.130Z",
+      "lockedAt": null,
+      "result": {
+        "success": true,
+        "message": "System test job completed",
+        "jobId": "job_1781086934980_e98ec695",
+        "payload": {
+          "message": "Phase 12 system test"
+        }
+      },
+      "lastError": null
+    },
+    "timestamp": "2026-06-10T10:22:15.130Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934981_a27b6189",
+    "patch": {
+      "status": "running",
+      "lockedAt": "2026-06-10T10:22:15.131Z",
+      "startedAt": "2026-06-10T10:22:15.131Z",
+      "attempts": 1
+    },
+    "timestamp": "2026-06-10T10:22:15.131Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934981_a27b6189",
+    "patch": {
+      "status": "completed",
+      "completedAt": "2026-06-10T10:22:15.138Z",
+      "lockedAt": null,
+      "result": {
+        "success": true,
+        "serviceName": "llm",
+        "provider": "mock",
+        "result": {
+          "success": true,
+          "serviceName": "llm",
+          "providerName": "mock",
+          "providerConfig": {
+            "name": "mock",
+            "model": "mock-llm",
+            "type": "free"
+          },
+          "output": {
+            "message": "Mock provider executed for llm",
+            "input": {
+              "jobId": "job_1781086934981_a27b6189",
+              "jobType": "script_generation",
+              "channelId": "unraaz",
+              "payload": {
+                "topic": "Mystery short script test"
+              }
+            }
+          }
+        },
+        "attempts": [
+          {
+            "provider": "mock",
+            "success": true,
+            "skipped": false,
+            "error": null
+          }
+        ]
+      },
+      "lastError": null
+    },
+    "timestamp": "2026-06-10T10:22:15.138Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934982_053efab2",
+    "patch": {
+      "status": "running",
+      "lockedAt": "2026-06-10T10:22:15.139Z",
+      "startedAt": "2026-06-10T10:22:15.139Z",
+      "attempts": 1
+    },
+    "timestamp": "2026-06-10T10:22:15.139Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934982_053efab2",
+    "patch": {
+      "status": "completed",
+      "completedAt": "2026-06-10T10:22:15.141Z",
+      "lockedAt": null,
+      "result": {
+        "success": true,
+        "serviceName": "image",
+        "provider": "mock",
+        "result": {
+          "success": true,
+          "serviceName": "image",
+          "providerName": "mock",
+          "providerConfig": {
+            "name": "mock",
+            "model": "mock-image",
+            "type": "free"
+          },
+          "output": {
+            "message": "Mock provider executed for image",
+            "input": {
+              "jobId": "job_1781086934982_053efab2",
+              "jobType": "image_generation",
+              "channelId": "unraaz",
+              "payload": {
+                "prompt": "Mystery thumbnail test"
+              }
+            }
+          }
+        },
+        "attempts": [
+          {
+            "provider": "mock",
+            "success": true,
+            "skipped": false,
+            "error": null
+          }
+        ]
+      },
+      "lastError": null
+    },
+    "timestamp": "2026-06-10T10:22:15.142Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934983_65a21bf6",
+    "patch": {
+      "status": "running",
+      "lockedAt": "2026-06-10T10:22:15.142Z",
+      "startedAt": "2026-06-10T10:22:15.142Z",
+      "attempts": 1
+    },
+    "timestamp": "2026-06-10T10:22:15.143Z"
+  },
+  {
+    "event": "job_updated",
+    "jobId": "job_1781086934983_65a21bf6",
+    "patch": {
+      "status": "completed",
+      "completedAt": "2026-06-10T10:22:15.145Z",
+      "lockedAt": null,
+      "result": {
+        "success": true,
+        "serviceName": "video",
+        "provider": "local",
+        "result": {
+          "success": true,
+          "serviceName": "video",
+          "providerName": "local",
+          "providerConfig": {
+            "name": "local",
+            "model": "local-renderer",
+            "type": "free"
+          },
+          "output": {
+            "message": "Local provider executed for video",
+            "input": {
+              "jobId": "job_1781086934983_65a21bf6",
+              "jobType": "video_rendering",
+              "channelId": "unraaz",
+              "payload": {
+                "scriptId": "test_script_001"
+              }
+            }
+          }
+        },
+        "attempts": [
+          {
+            "provider": "local",
+            "success": true,
+            "skipped": false,
+            "error": null
+          }
+        ]
+      },
+      "lastError": null
+    },
+    "timestamp": "2026-06-10T10:22:15.146Z"
+  }
+]

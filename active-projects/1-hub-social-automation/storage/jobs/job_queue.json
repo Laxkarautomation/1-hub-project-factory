@@ -1,0 +1,200 @@
+[
+  {
+    "id": "job_1781086934980_e98ec695",
+    "type": "system_test",
+    "status": "completed",
+    "channelId": "unraaz",
+    "providerService": null,
+    "payload": {
+      "message": "Phase 12 system test"
+    },
+    "priority": 1,
+    "attempts": 1,
+    "maxAttempts": 3,
+    "scheduledAt": null,
+    "lockedAt": null,
+    "startedAt": "2026-06-10T10:22:15.129Z",
+    "completedAt": "2026-06-10T10:22:15.130Z",
+    "failedAt": null,
+    "lastError": null,
+    "result": {
+      "success": true,
+      "message": "System test job completed",
+      "jobId": "job_1781086934980_e98ec695",
+      "payload": {
+        "message": "Phase 12 system test"
+      }
+    },
+    "metadata": {},
+    "createdAt": "2026-06-10T10:22:14.980Z",
+    "updatedAt": "2026-06-10T10:22:15.130Z"
+  },
+  {
+    "id": "job_1781086934981_a27b6189",
+    "type": "script_generation",
+    "status": "completed",
+    "channelId": "unraaz",
+    "providerService": "llm",
+    "payload": {
+      "topic": "Mystery short script test"
+    },
+    "priority": 2,
+    "attempts": 1,
+    "maxAttempts": 3,
+    "scheduledAt": null,
+    "lockedAt": null,
+    "startedAt": "2026-06-10T10:22:15.131Z",
+    "completedAt": "2026-06-10T10:22:15.138Z",
+    "failedAt": null,
+    "lastError": null,
+    "result": {
+      "success": true,
+      "serviceName": "llm",
+      "provider": "mock",
+      "result": {
+        "success": true,
+        "serviceName": "llm",
+        "providerName": "mock",
+        "providerConfig": {
+          "name": "mock",
+          "model": "mock-llm",
+          "type": "free"
+        },
+        "output": {
+          "message": "Mock provider executed for llm",
+          "input": {
+            "jobId": "job_1781086934981_a27b6189",
+            "jobType": "script_generation",
+            "channelId": "unraaz",
+            "payload": {
+              "topic": "Mystery short script test"
+            }
+          }
+        }
+      },
+      "attempts": [
+        {
+          "provider": "mock",
+          "success": true,
+          "skipped": false,
+          "error": null
+        }
+      ]
+    },
+    "metadata": {},
+    "createdAt": "2026-06-10T10:22:14.982Z",
+    "updatedAt": "2026-06-10T10:22:15.138Z"
+  },
+  {
+    "id": "job_1781086934982_053efab2",
+    "type": "image_generation",
+    "status": "completed",
+    "channelId": "unraaz",
+    "providerService": "image",
+    "payload": {
+      "prompt": "Mystery thumbnail test"
+    },
+    "priority": 3,
+    "attempts": 1,
+    "maxAttempts": 3,
+    "scheduledAt": null,
+    "lockedAt": null,
+    "startedAt": "2026-06-10T10:22:15.139Z",
+    "completedAt": "2026-06-10T10:22:15.141Z",
+    "failedAt": null,
+    "lastError": null,
+    "result": {
+      "success": true,
+      "serviceName": "image",
+      "provider": "mock",
+      "result": {
+        "success": true,
+        "serviceName": "image",
+        "providerName": "mock",
+        "providerConfig": {
+          "name": "mock",
+          "model": "mock-image",
+          "type": "free"
+        },
+        "output": {
+          "message": "Mock provider executed for image",
+          "input": {
+            "jobId": "job_1781086934982_053efab2",
+            "jobType": "image_generation",
+            "channelId": "unraaz",
+            "payload": {
+              "prompt": "Mystery thumbnail test"
+            }
+          }
+        }
+      },
+      "attempts": [
+        {
+          "provider": "mock",
+          "success": true,
+          "skipped": false,
+          "error": null
+        }
+      ]
+    },
+    "metadata": {},
+    "createdAt": "2026-06-10T10:22:14.982Z",
+    "updatedAt": "2026-06-10T10:22:15.141Z"
+  },
+  {
+    "id": "job_1781086934983_65a21bf6",
+    "type": "video_rendering",
+    "status": "completed",
+    "channelId": "unraaz",
+    "providerService": "video",
+    "payload": {
+      "scriptId": "test_script_001"
+    },
+    "priority": 4,
+    "attempts": 1,
+    "maxAttempts": 3,
+    "scheduledAt": null,
+    "lockedAt": null,
+    "startedAt": "2026-06-10T10:22:15.142Z",
+    "completedAt": "2026-06-10T10:22:15.145Z",
+    "failedAt": null,
+    "lastError": null,
+    "result": {
+      "success": true,
+      "serviceName": "video",
+      "provider": "local",
+      "result": {
+        "success": true,
+        "serviceName": "video",
+        "providerName": "local",
+        "providerConfig": {
+          "name": "local",
+          "model": "local-renderer",
+          "type": "free"
+        },
+        "output": {
+          "message": "Local provider executed for video",
+          "input": {
+            "jobId": "job_1781086934983_65a21bf6",
+            "jobType": "video_rendering",
+            "channelId": "unraaz",
+            "payload": {
+              "scriptId": "test_script_001"
+            }
+          }
+        }
+      },
+      "attempts": [
+        {
+          "provider": "local",
+          "success": true,
+          "skipped": false,
+          "error": null
+        }
+      ]
+    },
+    "metadata": {},
+    "createdAt": "2026-06-10T10:22:14.983Z",
+    "updatedAt": "2026-06-10T10:22:15.145Z"
+  }
+]
