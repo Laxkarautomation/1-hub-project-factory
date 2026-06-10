@@ -3,9 +3,11 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 const { buildScriptBriefs } = require("../core/script_brief_builder");
+const { getActiveChannelIdentity } = require("../../channels/channel_identity_helper");
 
 const outputDir = path.join(process.cwd(), "modules/intelligence/output");
-const recommendationPath = path.join(outputDir, "unraaz_recommendations.json");
+const channelIdentity = getActiveChannelIdentity();
+const recommendationPath = path.join(outputDir, `${channelIdentity.channelId}_recommendations.json`);
 const outputPath = path.join(outputDir, "script_briefs.json");
 
 fs.mkdirSync(outputDir, { recursive: true });
