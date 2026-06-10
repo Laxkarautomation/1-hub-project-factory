@@ -2,9 +2,60 @@
   {
     "channelId": "unraaz",
     "name": "UNRAAZ",
+    "brand": "UNRAAZ",
     "status": "active",
-    "platforms": [
-      "youtube"
-    ]
+    "platforms": ["youtube"],
+    "niche": "mystery_real_incidents_money_lessons",
+    "language": "hinglish",
+    "outputBasePath": "storage/videos/unraaz",
+    "contentStyle": {
+      "tone": "mystery_storytelling",
+      "format": "short_video",
+      "aspectRatio": "9:16"
+    },
+    "publishing": {
+      "youtube": {
+        "enabled": true,
+        "defaultPrivacy": "private"
+      },
+      "instagram": {
+        "enabled": false
+      }
+    },
+    "metadata": {
+      "createdBy": "phase_10_2_runtime_registry"
+    }
+  },
+  {
+    "channelId": "malwa_loan_hub",
+    "name": "Malwa Loan Hub",
+    "brand": "Malwa Loan Hub",
+    "status": "active",
+    "platforms": ["instagram", "youtube", "facebook"],
+    "niche": "loan_lead_generation",
+    "language": "hindi_hinglish",
+    "outputBasePath": "storage/videos/malwa_loan_hub",
+    "contentStyle": {
+      "tone": "local_trust_finance",
+      "format": "short_video",
+      "aspectRatio": "9:16"
+    },
+    "publishing": {
+      "instagram": {
+        "enabled": true,
+        "dailySlots": ["12:00", "18:00"]
+      },
+      "youtube": {
+        "enabled": true,
+        "dailySlots": ["12:00", "18:00"]
+      },
+      "facebook": {
+        "enabled": true,
+        "dailySlots": ["12:00", "18:00"]
+      }
+    },
+    "metadata": {
+      "createdBy": "phase_10_2_runtime_registry"
+    }
   }
 ]
