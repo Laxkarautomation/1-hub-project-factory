@@ -1,0 +1,64 @@
+{
+  "success": true,
+  "stage": "image_generation",
+  "channelId": "unraaz",
+  "workflowId": "default_content_workflow",
+  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
+  "generatedAt": "2026-06-10T10:29:57.861Z",
+  "totalScripts": 10,
+  "completed": 0,
+  "skippedExisting": 10,
+  "failed": 0,
+  "results": [
+    {
+      "scriptId": "research_script_001",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_001_image_status.json"
+    },
+    {
+      "scriptId": "research_script_002",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_002_image_status.json"
+    },
+    {
+      "scriptId": "research_script_003",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_003_image_status.json"
+    },
+    {
+      "scriptId": "research_script_004",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_004_image_status.json"
+    },
+    {
+      "scriptId": "research_script_005",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_005_image_status.json"
+    },
+    {
+      "scriptId": "research_script_006",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_006_image_status.json"
+    },
+    {
+      "scriptId": "research_script_007",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_007_image_status.json"
+    },
+    {
+      "scriptId": "research_script_008",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_008_image_status.json"
+    },
+    {
+      "scriptId": "research_script_009",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_009_image_status.json"
+    },
+    {
+      "scriptId": "research_script_010",
+      "status": "skipped_existing",
+      "outputStatus": "modules/image-factory/output/research_script_010_image_status.json"
+    }
+  ]
+}

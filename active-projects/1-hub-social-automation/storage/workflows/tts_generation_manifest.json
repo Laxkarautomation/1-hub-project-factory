@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "channelId": "unraaz",
+  "providerAware": true,
+  "adminConfigDriven": true,
+  "freeFirst": true,
+  "status": "manifest_created",
+  "note": "TTS content-stage manifest created. Actual audio generation will use admin-selected audio provider when keys/free provider are available.",
+  "totalScripts": 5,
+  "items": [
+    {
+      "id": "script_001",
+      "status": "pending_audio_provider",
+      "textSource": "script_generation",
+      "outputAudio": null
+    },
+    {
+      "id": "script_002",
+      "status": "pending_audio_provider",
+      "textSource": "script_generation",
+      "outputAudio": null
+    },
+    {
+      "id": "script_003",
+      "status": "pending_audio_provider",
+      "textSource": "script_generation",
+      "outputAudio": null
+    },
+    {
+      "id": "script_004",
+      "status": "pending_audio_provider",
+      "textSource": "script_generation",
+      "outputAudio": null
+    },
+    {
+      "id": "script_005",
+      "status": "pending_audio_provider",
+      "textSource": "script_generation",
+      "outputAudio": null
+    }
+  ],
+  "generatedAt": "2026-06-10T10:29:57.915Z"
+}

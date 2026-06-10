@@ -29,6 +29,7 @@ const STAGES = [
     key: "image_generation",
     name: "Image Generation",
     candidates: [
+      "modules/content-workflow/stages/run_image_generation_stage.js",
       "modules/image-factory/run_image_factory.js"
     ]
   },

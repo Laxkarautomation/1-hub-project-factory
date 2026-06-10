@@ -2,7 +2,7 @@
   "success": true,
   "phase": "13-content-workflow-engine-audit",
   "root": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation",
-  "generatedAt": "2026-06-10T10:27:26.047Z",
+  "generatedAt": "2026-06-10T10:29:57.730Z",
   "stages": [
     {
       "key": "competitor_tracking",
@@ -54,11 +54,13 @@
       "key": "image_generation",
       "name": "Image Generation",
       "ready": true,
-      "selectedRunner": "modules/image-factory/run_image_factory.js",
+      "selectedRunner": "modules/content-workflow/stages/run_image_generation_stage.js",
       "candidates": [
+        "modules/content-workflow/stages/run_image_generation_stage.js",
         "modules/image-factory/run_image_factory.js"
       ],
       "found": [
+        "modules/content-workflow/stages/run_image_generation_stage.js",
         "modules/image-factory/run_image_factory.js"
       ]
     },
