@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "stage": "script_generation",
+  "channelId": "unraaz",
+  "workflowId": "default_content_workflow",
+  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
+  "generatedAt": "2026-06-10T10:27:26.880Z",
+  "attempts": [
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/generate_scripts_from_briefs.js",
+      "exitCode": 0,
+      "stdout": "✅ Scripts generated from intelligence briefs\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/generated_unraaz_scripts.json\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/scripts/services/generate_research_scripts.js",
+      "exitCode": 0,
+      "stdout": "✅ Cleaner research-aware scripts generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/scripts/output/unraaz_research_scripts.json\nTotal scripts: 10\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/scripts/services/generate_smart_scripts.js",
+      "exitCode": 0,
+      "stdout": "✅ Smart scripts generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/scripts/output/unraaz_smart_scripts.json\nTotal scripts: 10\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": {
+    "generatedUnraazScripts": true,
+    "researchScripts": true,
+    "smartScripts": true
+  }
+}

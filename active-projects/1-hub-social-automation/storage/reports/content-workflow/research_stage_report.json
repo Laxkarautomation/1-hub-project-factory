@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "stage": "research",
+  "channelId": "unraaz",
+  "workflowId": "default_content_workflow",
+  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
+  "generatedAt": "2026-06-10T10:27:26.617Z",
+  "attempts": [
+    {
+      "ok": true,
+      "file": "modules/research/services/extract_research_notes.js",
+      "exitCode": 0,
+      "stdout": "✅ Research notes extracted\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/research/output/research_notes.json\nTotal notes: 10\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/build_script_briefs.js",
+      "exitCode": 0,
+      "stdout": "✅ Script briefs generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": {
+    "researchNotes": true,
+    "scriptBriefs": true,
+    "researchNotesPath": "modules/research/output/research_notes.json",
+    "scriptBriefsPath": "modules/intelligence/output/script_briefs.json"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "stage": "competitor_tracking",
+  "channelId": "unraaz",
+  "workflowId": "default_content_workflow",
+  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
+  "generatedAt": "2026-06-10T10:27:26.426Z",
+  "attempts": [
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/build_competitor_intelligence.js",
+      "exitCode": 0,
+      "stdout": "✅ Competitor intelligence report created:\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/competitor_intelligence_report.json\nTotal analyzed: 6263\n",
+      "stderr": ""
+    }
+  ],
+  "inputs": {
+    "normalizedYoutubeItems": 8455,
+    "relevantVideos": 6263
+  },
+  "outputs": {
+    "competitorIntelligenceReport": true,
+    "path": "modules/intelligence/output/competitor_intelligence_report.json"
+  }
+}

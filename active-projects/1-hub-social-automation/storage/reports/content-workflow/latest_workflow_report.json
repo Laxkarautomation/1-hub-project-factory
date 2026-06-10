@@ -11,18 +11,51 @@
   "providerAware": true,
   "channelAware": true,
   "startedAt": "2026-06-10T10:26:03.443Z",
-  "completedAt": "2026-06-10T10:26:03.444Z",
+  "completedAt": "2026-06-10T10:27:26.949Z",
   "stages": [
     {
       "key": "competitor_tracking",
       "name": "Competitor Tracking",
+      "status": "completed",
+      "runner": "modules/content-workflow/stages/run_competitor_tracking_stage.js",
+      "startedAt": "2026-06-10T10:27:26.115Z",
+      "completedAt": "2026-06-10T10:27:26.436Z",
+      "exitCode": 0,
+      "stdout": "{\n  \"success\": true,\n  \"stage\": \"competitor_tracking\",\n  \"channelId\": \"unraaz\",\n  \"workflowId\": \"default_content_workflow\",\n  \"workflowRunId\": \"default_content_workflow_unraaz_1781087163443\",\n  \"generatedAt\": \"2026-06-10T10:27:26.426Z\",\n  \"attempts\": [\n    {\n      \"ok\": true,\n      \"file\": \"modules/intelligence/services/build_competitor_intelligence.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Competitor intelligence report created:\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/competitor_intelligence_report.json\\nTotal analyzed: 6263\\n\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"inputs\": {\n    \"normalizedYoutubeItems\": 8455,\n    \"relevantVideos\": 6263\n  },\n  \"outputs\": {\n    \"competitorIntelligenceReport\": true,\n    \"path\": \"modules/intelligence/output/competitor_intelligence_report.json\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "key": "research",
+      "name": "Research",
+      "status": "completed",
+      "runner": "modules/content-workflow/stages/run_research_stage.js",
+      "startedAt": "2026-06-10T10:27:26.437Z",
+      "completedAt": "2026-06-10T10:27:26.626Z",
+      "exitCode": 0,
+      "stdout": "{\n  \"success\": true,\n  \"stage\": \"research\",\n  \"channelId\": \"unraaz\",\n  \"workflowId\": \"default_content_workflow\",\n  \"workflowRunId\": \"default_content_workflow_unraaz_1781087163443\",\n  \"generatedAt\": \"2026-06-10T10:27:26.617Z\",\n  \"attempts\": [\n    {\n      \"ok\": true,\n      \"file\": \"modules/research/services/extract_research_notes.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Research notes extracted\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/research/output/research_notes.json\\nTotal notes: 10\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"ok\": true,\n      \"file\": \"modules/intelligence/services/build_script_briefs.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Script briefs generated\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json\\n\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"outputs\": {\n    \"researchNotes\": true,\n    \"scriptBriefs\": true,\n    \"researchNotesPath\": \"modules/research/output/research_notes.json\",\n    \"scriptBriefsPath\": \"modules/intelligence/output/script_briefs.json\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "key": "script_generation",
+      "name": "Script Generation",
+      "status": "completed",
+      "runner": "modules/content-workflow/stages/run_script_generation_stage.js",
+      "startedAt": "2026-06-10T10:27:26.627Z",
+      "completedAt": "2026-06-10T10:27:26.887Z",
+      "exitCode": 0,
+      "stdout": "{\n  \"success\": true,\n  \"stage\": \"script_generation\",\n  \"channelId\": \"unraaz\",\n  \"workflowId\": \"default_content_workflow\",\n  \"workflowRunId\": \"default_content_workflow_unraaz_1781087163443\",\n  \"generatedAt\": \"2026-06-10T10:27:26.880Z\",\n  \"attempts\": [\n    {\n      \"ok\": true,\n      \"file\": \"modules/intelligence/services/generate_scripts_from_briefs.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Scripts generated from intelligence briefs\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/generated_unraaz_scripts.json\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"ok\": true,\n      \"file\": \"modules/scripts/services/generate_research_scripts.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Cleaner research-aware scripts generated\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/scripts/output/unraaz_research_scripts.json\\nTotal scripts: 10\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"ok\": true,\n      \"file\": \"modules/scripts/services/generate_smart_scripts.js\",\n      \"exitCode\": 0,\n      \"stdout\": \"✅ Smart scripts generated\\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/scripts/output/unraaz_smart_scripts.json\\nTotal scripts: 10\\n\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"outputs\": {\n    \"generatedUnraazScripts\": true,\n    \"researchScripts\": true,\n    \"smartScripts\": true\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "key": "image_generation",
+      "name": "Image Generation",
       "status": "failed",
-      "reason": "No runner found",
-      "candidates": [
-        "modules/competitors/run_competitor_tracking.js",
-        "modules/competitor-tracking/run_competitor_tracking.js",
-        "modules/youtube/run_youtube_competitor_tracker.js"
-      ]
+      "runner": "modules/image-factory/run_image_factory.js",
+      "startedAt": "2026-06-10T10:27:26.888Z",
+      "completedAt": "2026-06-10T10:27:26.949Z",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Usage: node modules/image-factory/run_image_factory.js research_script_001\n"
     }
   ]
 }
