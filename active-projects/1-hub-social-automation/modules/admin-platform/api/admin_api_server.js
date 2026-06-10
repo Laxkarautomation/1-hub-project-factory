@@ -8,6 +8,14 @@ const {
   getDashboardSnapshot
 } = require("../services/admin_data_service");
 
+const {
+  listChannels,
+  getChannel,
+  setActiveChannel,
+  saveChannel,
+  getChannelRuntimePreview
+} = require("../services/admin_channel_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -109,6 +117,41 @@ function createAdminServer() {
         });
       });
     }
+
+    if (req.url === "/api/admin/channels" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, listChannels());
+      });
+    }
+
+    if (req.url.startsWith("/api/admin/channels/") && req.method === "GET") {
+      return withAuth(req, res, () => {
+        const parts = req.url.split("/");
+        const channelId = parts[4];
+        const action = parts[5];
+
+        if (action === "runtime") {
+          return sendJson(res, 200, getChannelRuntimePreview(channelId));
+        }
+
+        return sendJson(res, 200, getChannel(channelId));
+      });
+    }
+
+    if (req.url === "/api/admin/channels/save" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, saveChannel(body));
+      });
+    }
+
+    if (req.url === "/api/admin/channels/set-active" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, setActiveChannel(body.channelId));
+      });
+    }
+
 
     if (req.url === "/api/providers" && req.method === "GET") {
       return withAuth(req, res, () => {
