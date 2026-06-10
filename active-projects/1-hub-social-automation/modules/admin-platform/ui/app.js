@@ -73,11 +73,14 @@ async function loadView(view) {
     return loadProviderManager();
   }
 
+  if (view === "settings") {
+    return loadRuntimeControls();
+  }
+
   const routeMap = {
     dashboard: "/api/dashboard",
     jobs: "/api/jobs",
-    reports: "/api/reports",
-    settings: "/api/settings"
+    reports: "/api/reports"
   };
 
   const data = await api(routeMap[view]);
@@ -302,4 +305,100 @@ function showProviderDetails(type, providerId) {
     health: data.health?.status?.[type],
     summary: (data.summary?.summary || []).find((item) => item.type === type)
   });
+}
+
+
+async function loadRuntimeControls() {
+  const data = await api("/api/admin/runtime");
+  const runtime = data.runtime || {};
+  const controls = runtime.controls || {};
+
+  document.getElementById("summary").innerHTML = `
+    <div class="tile"><strong>Runtime</strong><br>${runtime.paused ? "Paused" : "Running"}</div>
+    <div class="tile"><strong>Pipeline Run</strong><br>${controls.allowPipelineRun ? "Allowed" : "Blocked"}</div>
+    <div class="tile"><strong>Job Retry</strong><br>${controls.allowJobRetry ? "Allowed" : "Blocked"}</div>
+    <div class="tile"><strong>Switching</strong><br>
+      Channel: ${controls.allowChannelSwitch ? "Allowed" : "Blocked"}<br>
+      Provider: ${controls.allowProviderSwitch ? "Allowed" : "Blocked"}
+    </div>
+  `;
+
+  document.getElementById("output").innerHTML = `
+    <div class="manager">
+      <h2>Runtime Controls</h2>
+
+      <div class="runtime-card">
+        <h3>Status</h3>
+        <p><b>Paused:</b> ${runtime.paused ? "Yes" : "No"}</p>
+        <p><b>Reason:</b> ${runtime.reason || "-"}</p>
+        <p><b>Updated:</b> ${runtime.updatedAt || "-"}</p>
+        <button onclick="pauseRuntimeFromUi()">Pause Runtime</button>
+        <button onclick="resumeRuntimeFromUi()">Resume Runtime</button>
+      </div>
+
+      <div class="runtime-card">
+        <h3>Control Flags</h3>
+
+        <label>
+          <input type="checkbox" id="allowPipelineRun" ${controls.allowPipelineRun ? "checked" : ""}>
+          Allow Pipeline Run
+        </label>
+
+        <label>
+          <input type="checkbox" id="allowJobRetry" ${controls.allowJobRetry ? "checked" : ""}>
+          Allow Job Retry
+        </label>
+
+        <label>
+          <input type="checkbox" id="allowProviderSwitch" ${controls.allowProviderSwitch ? "checked" : ""}>
+          Allow Provider Switch
+        </label>
+
+        <label>
+          <input type="checkbox" id="allowChannelSwitch" ${controls.allowChannelSwitch ? "checked" : ""}>
+          Allow Channel Switch
+        </label>
+
+        <button onclick="saveRuntimeControls()">Save Runtime Controls</button>
+      </div>
+    </div>
+  `;
+}
+
+async function pauseRuntimeFromUi() {
+  const reason = prompt("Pause reason?", "Paused from admin UI") || "Paused from admin UI";
+
+  const result = await api("/api/admin/runtime/pause", {
+    method: "POST",
+    body: JSON.stringify({ reason })
+  });
+
+  show(result);
+  await loadRuntimeControls();
+}
+
+async function resumeRuntimeFromUi() {
+  const result = await api("/api/admin/runtime/resume", {
+    method: "POST"
+  });
+
+  show(result);
+  await loadRuntimeControls();
+}
+
+async function saveRuntimeControls() {
+  const controls = {
+    allowPipelineRun: document.getElementById("allowPipelineRun").checked,
+    allowJobRetry: document.getElementById("allowJobRetry").checked,
+    allowProviderSwitch: document.getElementById("allowProviderSwitch").checked,
+    allowChannelSwitch: document.getElementById("allowChannelSwitch").checked
+  };
+
+  const result = await api("/api/admin/runtime/controls", {
+    method: "POST",
+    body: JSON.stringify({ controls })
+  });
+
+  show(result);
+  await loadRuntimeControls();
 }

@@ -22,6 +22,14 @@ const {
   saveProviderKeys
 } = require("../services/admin_provider_service");
 
+const {
+  getRuntimeState,
+  updateRuntimeControls,
+  pauseRuntime,
+  resumeRuntime,
+  assertRuntimeAllowed
+} = require("../services/admin_runtime_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -192,6 +200,39 @@ function createAdminServer() {
       });
     }
 
+
+    if (req.url === "/api/admin/runtime" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getRuntimeState());
+      });
+    }
+
+    if (req.url === "/api/admin/runtime/controls" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, updateRuntimeControls(body.controls || body));
+      });
+    }
+
+    if (req.url === "/api/admin/runtime/pause" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, pauseRuntime(body.reason));
+      });
+    }
+
+    if (req.url === "/api/admin/runtime/resume" && req.method === "POST") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, resumeRuntime());
+      });
+    }
+
+    if (req.url === "/api/admin/runtime/check" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, assertRuntimeAllowed(body.action));
+      });
+    }
 
     if (req.url === "/api/jobs" && req.method === "GET") {
       return withAuth(req, res, () => {

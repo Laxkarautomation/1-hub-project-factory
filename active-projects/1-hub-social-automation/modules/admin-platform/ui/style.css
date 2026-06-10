@@ -115,3 +115,16 @@ button:disabled {
 .provider-card p {
   margin: 5px 0;
 }
+
+.runtime-card {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.runtime-card label {
+  display: block;
+  margin: 10px 0;
+}
