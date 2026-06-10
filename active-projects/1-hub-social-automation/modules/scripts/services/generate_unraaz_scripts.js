@@ -2,9 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const { buildChannelSequenceId, getActiveChannelIdentity } = require("../../channels/channel_identity_helper");
 
+const channelIdentity = getActiveChannelIdentity();
+
 const inputPath = path.join(
   __dirname,
-  "../../../storage/ideas/unraaz_offline_ideas.json"
+  `../../../storage/ideas/${channelIdentity.channelId}_offline_ideas.json`
 );
 
 const outputPath = path.join(
