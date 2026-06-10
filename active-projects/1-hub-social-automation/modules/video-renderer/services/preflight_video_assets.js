@@ -2,20 +2,38 @@ const fs = require("fs");
 const path = require("path");
 const workspaceResolver = require("../../channels/channel_workspace_resolver");
 
+function resolveProjectPath(inputPath) {
+  if (!inputPath) return inputPath;
+
+  if (path.isAbsolute(inputPath)) {
+    return inputPath;
+  }
+
+  const cwd = process.cwd();
+
+  if (inputPath.startsWith("workspaces/") || inputPath.includes("/workspaces/")) {
+    return path.resolve("/", inputPath);
+  }
+
+  return path.join(cwd, inputPath);
+}
+
 function checkVideoAssets(script) {
   const issues = [];
+  const workspace = workspaceResolver.getWorkspace();
+  const imagesBasePath = resolveProjectPath(workspace.getImagesPath());
+  const audioPath = resolveProjectPath(script.voice_file);
 
-  if (!fs.existsSync(script.voice_file)) {
+  if (!fs.existsSync(audioPath)) {
     issues.push({
       type: "missing_audio",
-      path: script.voice_file
+      path: audioPath
     });
   }
 
   for (const scene of script.scenes || []) {
     const imagePath = path.join(
-      process.cwd(),
-      workspaceResolver.getWorkspace().getImagesPath(),
+      imagesBasePath,
       script.script_id,
       `scene_${scene.scene}.jpg`
     );
