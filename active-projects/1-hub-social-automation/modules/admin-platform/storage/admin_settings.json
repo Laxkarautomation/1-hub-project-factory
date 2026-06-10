@@ -1,0 +1,13 @@
+{
+  "adminPlatform": {
+    "enabled": true,
+    "port": 7788,
+    "sessionTtlMinutes": 720
+  },
+  "runtimeControls": {
+    "allowPipelineRun": false,
+    "allowJobRetry": true,
+    "allowProviderSwitch": true,
+    "allowChannelSwitch": true
+  }
+}
