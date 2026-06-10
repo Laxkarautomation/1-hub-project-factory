@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { buildChannelSequenceId, getActiveChannelIdentity } = require("../../channels/channel_identity_helper");
 
 const clustersPath = path.join(
   __dirname,
@@ -42,7 +43,7 @@ function buildIdea(video, index) {
   };
 
   return {
-    idea_id: `unraaz_idea_${String(index + 1).padStart(3, "0")}`,
+    idea_id: buildChannelSequenceId("idea", index),
     based_on_rank: video.rank,
     source_name: video.source_name,
     source_title: video.title,
@@ -63,7 +64,7 @@ function run() {
 
   const output = {
     generated_by: "offline_rule_based_generator",
-    project: "UNRAAZ",
+    project: getActiveChannelIdentity().channelId,
     cluster_summary: {
       haunted: clusters.haunted?.count || 0,
       mystery: clusters.mystery?.count || 0,
@@ -76,7 +77,7 @@ function run() {
 
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
 
-  console.log("✅ Offline UNRAAZ ideas generated:");
+  console.log(`✅ Offline ${getActiveChannelIdentity().channelId} ideas generated:`);
   console.log(outputPath);
   console.log(`Total ideas: ${ideas.length}`);
 }

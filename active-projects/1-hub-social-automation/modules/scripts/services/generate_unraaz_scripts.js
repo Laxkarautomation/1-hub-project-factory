@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { buildChannelSequenceId, getActiveChannelIdentity } = require("../../channels/channel_identity_helper");
 
 const inputPath = path.join(
   __dirname,
@@ -15,7 +16,7 @@ function createScript(idea, index) {
   const title = idea.idea_title.replace("UNRAAZ: ", "");
 
   return {
-    script_id: `unraaz_script_${String(index + 1).padStart(3, "0")}`,
+    script_id: buildChannelSequenceId("script", index),
     idea_id: idea.idea_id,
     category: idea.category,
     title: idea.idea_title,
@@ -63,7 +64,7 @@ function run() {
 
   fs.writeFileSync(outputPath, JSON.stringify(scripts, null, 2));
 
-  console.log("✅ UNRAAZ scripts generated:");
+  console.log(`✅ ${getActiveChannelIdentity().channelId} scripts generated:`);
   console.log(outputPath);
   console.log(`Total scripts: ${scripts.length}`);
 }
