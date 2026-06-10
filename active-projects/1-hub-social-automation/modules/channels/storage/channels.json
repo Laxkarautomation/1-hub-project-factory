@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "channelId": "unraaz",
+    "name": "UNRAAZ",
+    "status": "active",
+    "platforms": [
+      "youtube"
+    ]
+  }
+]

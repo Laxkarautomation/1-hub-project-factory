@@ -49,7 +49,30 @@ function getActiveChannelId(activeChannelPath = DEFAULT_ACTIVE_CHANNEL_PATH) {
   };
 }
 
+function setActiveChannel(
+  channelId,
+  activeChannelPath = DEFAULT_ACTIVE_CHANNEL_PATH
+) {
+  fs.writeFileSync(
+    activeChannelPath,
+    JSON.stringify(
+      {
+        channelId,
+        updatedAt: new Date().toISOString()
+      },
+      null,
+      2
+    )
+  );
+
+  return {
+    success: true,
+    channelId
+  };
+}
+
 module.exports = {
   DEFAULT_ACTIVE_CHANNEL_PATH,
-  getActiveChannelId
+  getActiveChannelId,
+  setActiveChannel
 };

@@ -78,9 +78,90 @@ function getChannelById(channelId, channelStorePath = DEFAULT_CHANNEL_STORE_PATH
   };
 }
 
+function saveChannels(channels, channelStorePath = DEFAULT_CHANNEL_STORE_PATH) {
+  fs.writeFileSync(
+    channelStorePath,
+    JSON.stringify(channels, null, 2)
+  );
+
+  return true;
+}
+
+function createChannel(channel, channelStorePath = DEFAULT_CHANNEL_STORE_PATH) {
+  const store = loadChannels(channelStorePath);
+  const channels = Array.isArray(store.raw) ? [...store.raw] : [];
+  const channelId = channel.channelId || channel.id;
+
+  const exists = channels.some(existing => {
+    const existingId = existing.channelId || existing.id;
+    return existingId === channelId;
+  });
+
+  if (exists) {
+    return {
+      success: false,
+      status: "channel_already_exists",
+      reason: "Channel already exists",
+      channelId
+    };
+  }
+
+  channels.push(channel);
+  saveChannels(channels, channelStorePath);
+
+  return {
+    success: true,
+    status: "channel_created",
+    channel
+  };
+}
+
+function updateChannel(channelId, updates, channelStorePath = DEFAULT_CHANNEL_STORE_PATH) {
+  const store = loadChannels(channelStorePath);
+
+  const channels = store.raw.map(channel => {
+    const id = channel.channelId || channel.id;
+
+    if (id !== channelId) {
+      return channel;
+    }
+
+    return {
+      ...channel,
+      ...updates
+    };
+  });
+
+  saveChannels(channels, channelStorePath);
+
+  return {
+    success: true,
+    channelId
+  };
+}
+
+function deleteChannel(channelId, channelStorePath = DEFAULT_CHANNEL_STORE_PATH) {
+  const store = loadChannels(channelStorePath);
+
+  const channels = store.raw.filter(channel => {
+    const id = channel.channelId || channel.id;
+    return id !== channelId;
+  });
+
+  saveChannels(channels, channelStorePath);
+
+  return {
+    success: true,
+    channelId
+  };
+}
 module.exports = {
   DEFAULT_CHANNEL_STORE_PATH,
   loadChannels,
   getEnabledChannels,
-  getChannelById
+  getChannelById,
+  saveChannels,
+  createChannel,
+  updateChannel,
+  deleteChannel
 };
