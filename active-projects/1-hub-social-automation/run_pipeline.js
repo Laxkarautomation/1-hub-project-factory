@@ -1,3 +1,4 @@
+const { runAdminRuntimePreflight } = require("./modules/pipeline/preflight/admin_runtime_preflight");
 const fs = require("fs");
 const path = require("path");
 const { dispatchJob } = require("./modules/jobs/core/job_dispatcher");
@@ -200,6 +201,27 @@ const baseSteps = [
     command: "node providers/image-providers/services/export_image_jobs.js"
   }
 ];
+
+
+function runPhase11AdminPreflightGate() {
+  const preflight = runAdminRuntimePreflight();
+
+  console.log(JSON.stringify({
+    phase: "11-admin-runtime-pipeline-preflight",
+    success: preflight.success,
+    activeChannelId: preflight.activeChannelId,
+    errors: preflight.errors,
+    warnings: preflight.warnings
+  }, null, 2));
+
+  if (!preflight.success) {
+    throw new Error("Admin runtime preflight failed. Fix admin/channel/provider config before pipeline run.");
+  }
+
+  return preflight;
+}
+
+runPhase11AdminPreflightGate();
 
 async function main() {
   console.log("\n🚀 1 Hub Social Automation — Master Pipeline Started");
