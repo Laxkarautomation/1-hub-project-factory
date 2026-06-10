@@ -4,7 +4,8 @@ const path = require("path");
 const { checkVideoAssets } = require("./preflight_video_assets");
 
 const manifestPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
-const outputDir = path.join(process.cwd(), "storage/videos/unraaz");
+const outputRouter = require("../../channels/channel_output_router");
+const outputDir = outputRouter.getVideoOutputPath();
 const reportDir = path.join(process.cwd(), "modules/video-renderer/output");
 
 fs.mkdirSync(outputDir, { recursive: true });
@@ -18,7 +19,7 @@ function writePreflightReport(scriptId, preflight) {
 
 function renderVideo(video) {
   const scriptId = video.script_id;
-  const imageDir = path.join(process.cwd(), `storage/images/unraaz/${scriptId}`);
+  const imageDir = outputRouter.getImageOutputPath(scriptId);
   const audioFile = path.join(process.cwd(), video.voice_file);
   const outputFile = path.join(outputDir, `${scriptId}.mp4`);
   const listFile = path.join(outputDir, `${scriptId}_images.txt`);

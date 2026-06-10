@@ -4,9 +4,10 @@ const path = require("path");
 
 const scriptId = "research_script_001";
 
-const imageDir = path.join(process.cwd(), `storage/images/unraaz/${scriptId}`);
-const audioFile = path.join(process.cwd(), `storage/audio/unraaz/${scriptId}.mp3`);
-const outputDir = path.join(process.cwd(), "storage/videos/unraaz");
+const outputRouter = require("../../channels/channel_output_router");
+const imageDir = outputRouter.getImageOutputPath(scriptId);
+const audioFile = path.join(outputRouter.getAudioOutputPath(), `${scriptId}.mp3`);
+const outputDir = outputRouter.getVideoOutputPath();
 const outputFile = path.join(outputDir, `${scriptId}.mp4`);
 const listFile = path.join(outputDir, `${scriptId}_images.txt`);
 
