@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>1 Hub Admin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>1 Hub Social Automation Admin</h1>
+
+    <div id="login" class="card">
+      <h2>Login</h2>
+      <input id="username" value="admin" placeholder="Username">
+      <input id="password" value="admin123" type="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p id="loginMessage"></p>
+    </div>
+
+    <div id="panel" class="hidden">
+      <div class="nav">
+        <button onclick="loadView('dashboard')">Dashboard</button>
+        <button onclick="loadView('channels')">Channels</button>
+        <button onclick="loadView('providers')">Providers</button>
+        <button onclick="loadView('jobs')">Jobs</button>
+        <button onclick="loadView('reports')">Reports</button>
+        <button onclick="loadView('settings')">Settings</button>
+      </div>
+
+      <div id="summary" class="grid"></div>
+      <pre id="output" class="card"></pre>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

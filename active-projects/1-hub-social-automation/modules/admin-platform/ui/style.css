@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+#app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+.card {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+input {
+  display: block;
+  width: 280px;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+button {
+  padding: 10px 14px;
+  margin: 4px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav {
+  margin: 16px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tile {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hidden {
+  display: none;
+}
