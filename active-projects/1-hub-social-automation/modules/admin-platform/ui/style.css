@@ -87,3 +87,31 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.provider-section {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid #334155;
+}
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.provider-card {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.provider-card h4 {
+  margin: 0 0 8px 0;
+}
+
+.provider-card p {
+  margin: 5px 0;
+}

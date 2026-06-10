@@ -16,6 +16,12 @@ const {
   getChannelRuntimePreview
 } = require("../services/admin_channel_service");
 
+const {
+  getProviderDashboard,
+  setActiveProvider,
+  saveProviderKeys
+} = require("../services/admin_provider_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -165,6 +171,27 @@ function createAdminServer() {
         });
       });
     }
+
+    if (req.url === "/api/admin/providers" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getProviderDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/providers/set-active" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, setActiveProvider(body.type, body.providerId));
+      });
+    }
+
+    if (req.url === "/api/admin/providers/keys" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, saveProviderKeys(body.providerId, body.keys));
+      });
+    }
+
 
     if (req.url === "/api/jobs" && req.method === "GET") {
       return withAuth(req, res, () => {

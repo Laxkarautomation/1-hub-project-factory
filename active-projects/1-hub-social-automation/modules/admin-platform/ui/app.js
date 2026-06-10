@@ -69,9 +69,12 @@ async function loadView(view) {
     return loadChannelManager();
   }
 
+  if (view === "providers") {
+    return loadProviderManager();
+  }
+
   const routeMap = {
     dashboard: "/api/dashboard",
-    providers: "/api/providers",
     jobs: "/api/jobs",
     reports: "/api/reports",
     settings: "/api/settings"
@@ -204,4 +207,99 @@ async function saveChannelFromForm() {
 
   show(result);
   await loadChannelManager();
+}
+
+
+async function loadProviderManager() {
+  const data = await api("/api/admin/providers");
+  const config = data.config || {};
+  const dashboard = data.dashboard || {};
+  const providers = dashboard.providers || [];
+  const totals = dashboard.totals || {};
+
+  document.getElementById("summary").innerHTML = `
+    <div class="tile"><strong>Total Providers</strong><br>${totals.providers || providers.length}</div>
+    <div class="tile"><strong>Keys</strong><br>${totals.keys || 0}</div>
+    <div class="tile"><strong>Usage Success</strong><br>${totals.usageSuccess || 0}</div>
+    <div class="tile"><strong>Usage Failed</strong><br>${totals.usageFailed || 0}</div>
+  `;
+
+  const grouped = providers.reduce((acc, item) => {
+    acc[item.category] = acc[item.category] || [];
+    acc[item.category].push(item);
+    return acc;
+  }, {});
+
+  const sections = Object.keys(config).map((type) => {
+    const providerList = grouped[type] || [];
+    const active = config[type]?.active || "";
+    const fallbacks = config[type]?.fallbacks || [];
+
+    const cards = providerList.map((provider) => {
+      const isActive = provider.providerId === active;
+
+      return `
+        <div class="provider-card">
+          <h4>${provider.providerId}</h4>
+          <p><b>Mode:</b> ${isActive ? "active" : "fallback"}</p>
+          <p><b>Priority:</b> ${provider.priority || "-"}</p>
+          <p><b>Enabled:</b> ${provider.enabled ? "yes" : "no"}</p>
+          <p><b>Keys:</b> ${provider.keyCount || 0}</p>
+          <p><b>Health:</b> ${provider.health?.status || "unknown"}</p>
+          <p><b>Usage:</b> ${provider.usage?.total || 0}</p>
+          ${
+            isActive
+              ? "<button disabled>Active</button>"
+              : `<button onclick="setActiveProvider('${type}', '${provider.providerId}')">Set Active</button>`
+          }
+          <button onclick="showProviderDetails('${type}', '${provider.providerId}')">Details</button>
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <div class="provider-section">
+        <h2>${type.toUpperCase()}</h2>
+        <p><b>Active:</b> ${active}</p>
+        <p><b>Fallbacks:</b> ${fallbacks.join(" → ")}</p>
+        <div class="provider-grid">${cards}</div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("output").innerHTML = `
+    <div class="manager">
+      <h2>Provider Management</h2>
+      ${sections}
+    </div>
+  `;
+
+  window.__providerData = data;
+}
+
+async function setActiveProvider(type, providerId) {
+  const result = await api("/api/admin/providers/set-active", {
+    method: "POST",
+    body: JSON.stringify({ type, providerId })
+  });
+
+  show(result);
+  await loadProviderManager();
+}
+
+function showProviderDetails(type, providerId) {
+  const data = window.__providerData || {};
+  const provider = (data.dashboard?.providers || []).find(
+    (item) => item.category === type && item.providerId === providerId
+  );
+
+  show({
+    success: true,
+    type,
+    providerId,
+    provider,
+    config: data.config?.[type],
+    health: data.health?.status?.[type],
+    summary: (data.summary?.summary || []).find((item) => item.type === type)
+  });
 }
