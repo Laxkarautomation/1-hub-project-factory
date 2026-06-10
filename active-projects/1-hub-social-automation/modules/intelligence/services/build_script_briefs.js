@@ -11,10 +11,8 @@ const outputPath = path.join(outputDir, "script_briefs.json");
 fs.mkdirSync(outputDir, { recursive: true });
 
 if (!fs.existsSync(recommendationPath)) {
-  console.log("ℹ️ UNRAAZ recommendations missing. Generating first...");
-  execSync("node modules/intelligence/services/build_unraaz_recommendations.js", {
-    stdio: "inherit"
-  });
+  console.log("ℹ️ Recommendations missing. Please generate recommendations first.");
+  process.exit(1);
 }
 
 const recommendations = JSON.parse(fs.readFileSync(recommendationPath, "utf8"));
@@ -23,7 +21,7 @@ const briefs = buildScriptBriefs(recommendations.recommended_topics || []);
 
 const report = {
   generated_at: new Date().toISOString(),
-  channel: "UNRAAZ",
+  channel: recommendations.channel || recommendations.channelId || "active_channel",
   source_file: recommendationPath,
   total_briefs: briefs.length,
   briefs
