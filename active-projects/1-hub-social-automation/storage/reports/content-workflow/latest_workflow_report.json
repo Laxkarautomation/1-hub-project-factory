@@ -1,0 +1,28 @@
+{
+  "success": false,
+  "phase": "13-content-workflow-engine",
+  "workflowId": "default_content_workflow",
+  "runId": "default_content_workflow_unraaz_1781087163443",
+  "channelId": "unraaz",
+  "status": "failed",
+  "resumeSafe": true,
+  "jobQueueDriven": true,
+  "adminConfigDriven": true,
+  "providerAware": true,
+  "channelAware": true,
+  "startedAt": "2026-06-10T10:26:03.443Z",
+  "completedAt": "2026-06-10T10:26:03.444Z",
+  "stages": [
+    {
+      "key": "competitor_tracking",
+      "name": "Competitor Tracking",
+      "status": "failed",
+      "reason": "No runner found",
+      "candidates": [
+        "modules/competitors/run_competitor_tracking.js",
+        "modules/competitor-tracking/run_competitor_tracking.js",
+        "modules/youtube/run_youtube_competitor_tracker.js"
+      ]
+    }
+  ]
+}

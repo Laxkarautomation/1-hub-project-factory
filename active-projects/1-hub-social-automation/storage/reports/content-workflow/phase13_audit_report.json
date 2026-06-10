@@ -1,0 +1,83 @@
+{
+  "success": true,
+  "phase": "13-content-workflow-engine-audit",
+  "root": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation",
+  "generatedAt": "2026-06-10T10:26:03.371Z",
+  "stages": [
+    {
+      "key": "competitor_tracking",
+      "name": "Competitor Tracking",
+      "ready": false,
+      "selectedRunner": null,
+      "candidates": [
+        "modules/competitors/run_competitor_tracking.js",
+        "modules/competitor-tracking/run_competitor_tracking.js",
+        "modules/youtube/run_youtube_competitor_tracker.js"
+      ],
+      "found": []
+    },
+    {
+      "key": "research",
+      "name": "Research",
+      "ready": false,
+      "selectedRunner": null,
+      "candidates": [
+        "modules/research/run_research_pipeline.js",
+        "modules/research/run_research.js",
+        "run_research_pipeline.js"
+      ],
+      "found": []
+    },
+    {
+      "key": "script_generation",
+      "name": "Script Generation",
+      "ready": false,
+      "selectedRunner": null,
+      "candidates": [
+        "modules/script-generator/run_script_generation.js",
+        "modules/script-generator/run_script_generator.js",
+        "modules/scripts/run_script_generator.js"
+      ],
+      "found": []
+    },
+    {
+      "key": "image_generation",
+      "name": "Image Generation",
+      "ready": true,
+      "selectedRunner": "modules/image-factory/run_image_factory.js",
+      "candidates": [
+        "modules/image-factory/run_image_factory.js",
+        "modules/image-factory/run_image_jobs.js"
+      ],
+      "found": [
+        "modules/image-factory/run_image_factory.js"
+      ]
+    },
+    {
+      "key": "tts_generation",
+      "name": "TTS Generation",
+      "ready": false,
+      "selectedRunner": null,
+      "candidates": [
+        "modules/tts/run_tts.js",
+        "modules/voice/run_tts.js",
+        "modules/audio/run_tts.js"
+      ],
+      "found": []
+    },
+    {
+      "key": "video_rendering",
+      "name": "Video Rendering",
+      "ready": false,
+      "selectedRunner": null,
+      "candidates": [
+        "modules/video-renderer/run_video_renderer.js",
+        "modules/video-renderer/run_batch_render.js"
+      ],
+      "found": []
+    }
+  ],
+  "readyStages": 1,
+  "totalStages": 6,
+  "workflowReady": false
+}
