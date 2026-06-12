@@ -50,6 +50,12 @@ const {
   runSchedulerNow
 } = require("../../publishing/services/publishing_scheduler_service");
 
+const {
+  getPublishingCredentialsDashboard,
+  savePublishingProviderSecrets,
+  removePublishingProviderSecrets
+} = require("../../publishing/services/publishing_credentials_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -283,6 +289,41 @@ function createAdminServer() {
       });
     }
 
+
+
+    if (req.url === "/api/admin/publishing/credentials" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getPublishingCredentialsDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/credentials/save" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, savePublishingProviderSecrets(body));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/credentials/delete" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, removePublishingProviderSecrets(body.providerId));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
 
     if (req.url === "/api/admin/publishing/scheduler" && req.method === "GET") {
       return withAuth(req, res, () => {

@@ -6,6 +6,10 @@ const LinkedInPublishingAdapter = require("../adapters/platforms/linkedin_publis
 const XPublishingAdapter = require("../adapters/platforms/x_publishing_adapter");
 const TelegramPublishingAdapter = require("../adapters/platforms/telegram_publishing_adapter");
 
+const {
+  getProviderCredentialStatus
+} = require("./publishing_credentials_service");
+
 const ADAPTERS = {
   youtube: YouTubePublishingAdapter,
   instagram: InstagramPublishingAdapter,
@@ -84,16 +88,25 @@ function getAdapterHealth(platformConfig = {}) {
     platform: providerList[0]?.platform || null,
     active: platformConfig.active || null,
     fallbacks: platformConfig.fallbacks || [],
-    providers: providerList.map((provider) => ({
-      providerId: provider.providerId,
-      platform: provider.platform,
-      enabled: provider.enabled === true,
-      mode: provider.mode || "api",
-      requiresAuth: provider.requiresAuth === true,
-      readyForRealPublishing:
-        provider.enabled === true &&
-        provider.requiresAuth !== true
-    })),
+    providers: providerList.map((provider) => {
+      const credentialStatus = getProviderCredentialStatus(provider.providerId);
+
+      return {
+        providerId: provider.providerId,
+        platform: provider.platform,
+        enabled: provider.enabled === true,
+        mode: provider.mode || "api",
+        requiresAuth: provider.requiresAuth === true,
+        credentialsReady: credentialStatus.ready,
+        missingCredentials: credentialStatus.missing,
+        readyForRealPublishing:
+          provider.enabled === true &&
+          (
+            provider.requiresAuth !== true ||
+            credentialStatus.ready === true
+          )
+      };
+    }),
     dryRunAvailable: true
   };
 }
