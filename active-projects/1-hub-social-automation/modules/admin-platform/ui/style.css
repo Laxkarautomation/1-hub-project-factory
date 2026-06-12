@@ -157,3 +157,22 @@ button:disabled {
 .settings-actions {
   margin-top: 16px;
 }
+
+.publishing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.publishing-card {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.publishing-card h3,
+.publishing-card h4 {
+  margin-top: 0;
+}

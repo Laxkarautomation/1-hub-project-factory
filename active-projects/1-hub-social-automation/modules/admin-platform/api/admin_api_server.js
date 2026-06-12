@@ -37,6 +37,12 @@ const {
   resetDefaults
 } = require("../settings/settings_service");
 
+const {
+  getPublishingDashboard,
+  enqueuePublishingJob,
+  runNextPublishingJob
+} = require("../../publishing/services/publishing_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -276,6 +282,33 @@ function createAdminServer() {
           success: true,
           settings: resetDefaults()
         });
+      });
+    }
+
+    if (req.url === "/api/admin/publishing" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getPublishingDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/enqueue" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        try {
+          sendJson(res, 200, enqueuePublishingJob(body));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/run-next" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const result = await runNextPublishingJob();
+        sendJson(res, 200, result);
       });
     }
 

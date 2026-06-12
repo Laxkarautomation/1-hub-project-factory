@@ -1,0 +1,80 @@
+{
+  "youtube": {
+    "active": "youtube_api",
+    "fallbacks": [],
+    "providers": {
+      "youtube_api": {
+        "providerId": "youtube_api",
+        "platform": "youtube",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  },
+  "instagram": {
+    "active": "meta_graph_api",
+    "fallbacks": [],
+    "providers": {
+      "meta_graph_api": {
+        "providerId": "meta_graph_api",
+        "platform": "instagram",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  },
+  "facebook": {
+    "active": "meta_graph_api",
+    "fallbacks": [],
+    "providers": {
+      "meta_graph_api": {
+        "providerId": "meta_graph_api",
+        "platform": "facebook",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  },
+  "linkedin": {
+    "active": "linkedin_api",
+    "fallbacks": [],
+    "providers": {
+      "linkedin_api": {
+        "providerId": "linkedin_api",
+        "platform": "linkedin",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  },
+  "x": {
+    "active": "x_api",
+    "fallbacks": [],
+    "providers": {
+      "x_api": {
+        "providerId": "x_api",
+        "platform": "x",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  },
+  "telegram": {
+    "active": "telegram_bot_api",
+    "fallbacks": [],
+    "providers": {
+      "telegram_bot_api": {
+        "providerId": "telegram_bot_api",
+        "platform": "telegram",
+        "enabled": false,
+        "mode": "api",
+        "requiresAuth": true
+      }
+    }
+  }
+}

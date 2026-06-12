@@ -81,6 +81,10 @@ async function loadView(view) {
     return loadSettingsEditor();
   }
 
+  if (view === "publishing") {
+    return loadPublishingManager();
+  }
+
   const routeMap = {
     dashboard: "/api/dashboard",
     jobs: "/api/jobs",
@@ -538,4 +542,105 @@ async function reloadSettingsFromUi() {
   await loadSettingsEditor();
   const status = document.getElementById("settingsStatus");
   if (status) status.textContent = "Settings reloaded.";
+}
+
+
+async function loadPublishingManager() {
+  const data = await api("/api/admin/publishing");
+  const platforms = data.platforms || [];
+  const queue = data.queue || [];
+  const history = data.history || [];
+
+  document.getElementById("summary").innerHTML = `
+    <div class="tile"><strong>Platforms</strong><br>${platforms.length}</div>
+    <div class="tile"><strong>Queue</strong><br>${queue.length}</div>
+    <div class="tile"><strong>History</strong><br>${history.length}</div>
+    <div class="tile"><strong>Status</strong><br>Foundation Ready</div>
+  `;
+
+  const platformRows = platforms.map((item) => `
+    <div class="publishing-card">
+      <h3>${item.platform.toUpperCase()}</h3>
+      <p><b>Active:</b> ${item.active || "-"}</p>
+      <p><b>Fallbacks:</b> ${(item.fallbacks || []).join(" → ") || "-"}</p>
+      <p><b>Providers:</b> ${(item.providers || []).length}</p>
+    </div>
+  `).join("");
+
+  const queueRows = queue.map((job) => `
+    <div class="publishing-card">
+      <h4>${job.jobId}</h4>
+      <p><b>Platform:</b> ${job.platform}</p>
+      <p><b>Status:</b> ${job.status}</p>
+      <p><b>Scheduled:</b> ${job.scheduledAt}</p>
+    </div>
+  `).join("") || "<p>No publishing jobs queued.</p>";
+
+  const historyRows = history.slice(0, 5).map((job) => `
+    <div class="publishing-card">
+      <h4>${job.jobId}</h4>
+      <p><b>Platform:</b> ${job.platform}</p>
+      <p><b>Status:</b> ${job.status}</p>
+      <p><b>Completed:</b> ${job.completedAt || "-"}</p>
+    </div>
+  `).join("") || "<p>No publishing history.</p>";
+
+  document.getElementById("output").innerHTML = `
+    <div class="manager">
+      <h2>Publishing Foundation</h2>
+
+      <div class="form-card">
+        <h3>Create Dry Run Publish Job</h3>
+        <input id="publishChannelId" placeholder="Channel ID" value="test-channel">
+        <input id="publishPlatform" placeholder="Platform e.g. youtube" value="youtube">
+        <input id="publishContentType" placeholder="Content Type" value="video">
+        <input id="publishTitle" placeholder="Title" value="Test publish title">
+        <input id="publishFilePath" placeholder="File Path" value="storage/videos/test.mp4">
+        <button onclick="enqueuePublishFromUi()">Enqueue</button>
+        <button onclick="runNextPublishFromUi()">Run Next Dry Run</button>
+        <button onclick="loadPublishingManager()">Reload</button>
+        <p id="publishingStatus"></p>
+      </div>
+
+      <h3>Platforms</h3>
+      <div class="publishing-grid">${platformRows}</div>
+
+      <h3>Queue</h3>
+      <div class="publishing-grid">${queueRows}</div>
+
+      <h3>Recent History</h3>
+      <div class="publishing-grid">${historyRows}</div>
+    </div>
+  `;
+}
+
+async function enqueuePublishFromUi() {
+  const payload = {
+    channelId: document.getElementById("publishChannelId").value.trim(),
+    platform: document.getElementById("publishPlatform").value.trim(),
+    contentType: document.getElementById("publishContentType").value.trim(),
+    payload: {
+      title: document.getElementById("publishTitle").value.trim(),
+      filePath: document.getElementById("publishFilePath").value.trim()
+    }
+  };
+
+  const result = await api("/api/admin/publishing/enqueue", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+
+  await loadPublishingManager();
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Publish job queued." : result.error || "Queue failed.";
+}
+
+async function runNextPublishFromUi() {
+  const result = await api("/api/admin/publishing/run-next", {
+    method: "POST"
+  });
+
+  await loadPublishingManager();
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Dry run publish completed." : result.error || "Dry run failed.";
 }

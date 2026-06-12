@@ -1,0 +1,35 @@
+[
+  {
+    "jobId": "publish_service_test_job",
+    "channelId": "test-channel",
+    "platform": "youtube",
+    "providerId": null,
+    "contentType": "video",
+    "status": "completed",
+    "priority": 1,
+    "scheduledAt": "2026-06-12T05:21:57.216Z",
+    "payload": {
+      "title": "Publishing service test",
+      "filePath": "storage/videos/test.mp4"
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T05:21:57.216Z",
+    "updatedAt": "2026-06-12T05:21:57.218Z",
+    "result": {
+      "success": true,
+      "dryRun": true,
+      "providerId": "youtube_api",
+      "platform": "youtube",
+      "jobId": "publish_service_test_job",
+      "validation": {
+        "success": true,
+        "platform": "youtube",
+        "contentType": "video"
+      },
+      "simulatedUrl": "https://example.com/youtube/publish_service_test_job",
+      "publishedAt": "2026-06-12T05:21:57.217Z"
+    },
+    "completedAt": "2026-06-12T05:21:57.218Z"
+  }
+]
