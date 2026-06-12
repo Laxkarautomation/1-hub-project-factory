@@ -2,6 +2,18 @@
   "version": 1,
   "runs": [
     {
+      "id": "scheduler_run_1781242647168",
+      "startedAt": "2026-06-12T05:37:27.168Z",
+      "nowIso": "2026-06-12T05:37:27.167Z",
+      "dryRun": true,
+      "dueCount": 0,
+      "enqueuedCount": 0,
+      "failedCount": 0,
+      "results": [],
+      "success": true,
+      "finishedAt": "2026-06-12T05:37:27.168Z"
+    },
+    {
       "id": "scheduler_run_1781242250702",
       "startedAt": "2026-06-12T05:30:50.702Z",
       "nowIso": "2026-06-12T05:30:50.702Z",
