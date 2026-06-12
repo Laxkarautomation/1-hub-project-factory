@@ -156,7 +156,41 @@ function createAdminServer() {
       return serveStatic(req, res);
     }
 
-    if (req.url === "/api/auth/login" && req.method === "POST") {
+        if (req.url === "/api/admin/factory" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getFactoryDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/factory/queue" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, queueFactoryRun(body));
+      });
+    }
+
+    if (req.url === "/api/admin/factory/approve" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, approveFactoryRun(body.runId));
+      });
+    }
+
+    if (req.url === "/api/admin/factory/cancel" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, cancelFactoryRun(body.runId));
+      });
+    }
+
+    if (req.url === "/api/admin/factory/run" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, executeFactoryRun(body.runId));
+      });
+    }
+
+if (req.url === "/api/auth/login" && req.method === "POST") {
       const body = await readBody(req);
       return sendJson(res, 200, login(body.username, body.password));
     }

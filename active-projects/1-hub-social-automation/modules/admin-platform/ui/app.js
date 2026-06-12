@@ -81,7 +81,11 @@ async function loadView(view) {
     return loadSettingsEditor();
   }
 
-  if (view === "publishing") {
+    if (view === "factory") {
+    return loadFactoryManager();
+  }
+
+if (view === "publishing") {
     return loadPublishingManager();
   }
 
@@ -992,4 +996,82 @@ async function disableRealPublishingFromUi(platform, providerId) {
 
   const status = document.getElementById("publishingStatus");
   if (status) status.textContent = result.success ? "Real publishing disabled." : result.error || "Disable failed.";
+}
+
+
+async function loadFactoryManager() {
+  const data = await api("/api/admin/factory");
+
+  const queue = data.queue || [];
+  const history = data.history || [];
+
+  document.getElementById("summary").innerHTML = `
+    <div class="tile"><strong>Pending Runs</strong><br>${queue.length}</div>
+    <div class="tile"><strong>Run History</strong><br>${history.length}</div>
+  `;
+
+  const queueRows = queue.map((run) => `
+    <div class="channel-card">
+      <h3>${run.runId}</h3>
+      <p><b>Status:</b> ${run.status}</p>
+      <p><b>Safe Mode:</b> ${run.safeMode ? "yes" : "no"}</p>
+      <p><b>Channel:</b> ${run.channelId}</p>
+      <button onclick="approveFactoryRun('${run.runId}')">Approve</button>
+      <button onclick="executeFactoryRun('${run.runId}')">Run</button>
+      <button onclick="cancelFactoryRun('${run.runId}')">Cancel</button>
+    </div>
+  `).join("");
+
+  document.getElementById("output").innerHTML = `
+    <div class="manager">
+      <h2>Factory Control</h2>
+      <button onclick="queueFactoryRun()">Queue Safe Factory Run</button>
+      <h3>Pending Queue</h3>
+      <div class="channel-grid">${queueRows || "<p>No pending factory runs.</p>"}</div>
+      <h3>History</h3>
+      <pre>${JSON.stringify(history, null, 2)}</pre>
+    </div>
+  `;
+}
+
+async function queueFactoryRun() {
+  const result = await api("/api/admin/factory/queue", {
+    method: "POST",
+    body: JSON.stringify({
+      safeMode: true
+    })
+  });
+
+  show(result);
+  await loadFactoryManager();
+}
+
+async function approveFactoryRun(runId) {
+  const result = await api("/api/admin/factory/approve", {
+    method: "POST",
+    body: JSON.stringify({ runId })
+  });
+
+  show(result);
+  await loadFactoryManager();
+}
+
+async function executeFactoryRun(runId) {
+  const result = await api("/api/admin/factory/run", {
+    method: "POST",
+    body: JSON.stringify({ runId })
+  });
+
+  show(result);
+  await loadFactoryManager();
+}
+
+async function cancelFactoryRun(runId) {
+  const result = await api("/api/admin/factory/cancel", {
+    method: "POST",
+    body: JSON.stringify({ runId })
+  });
+
+  show(result);
+  await loadFactoryManager();
 }
