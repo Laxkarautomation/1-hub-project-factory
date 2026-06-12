@@ -549,6 +549,8 @@ async function loadPublishingManager() {
   const data = await api("/api/admin/publishing");
   const schedulerData = await api("/api/admin/publishing/scheduler");
   const credentialsData = await api("/api/admin/publishing/credentials");
+  const providerRuntimeData = await api("/api/admin/publishing/provider-runtime");
+  const publishingHealthData = await api("/api/admin/publishing/health");
 
   const platforms = data.platforms || [];
   const queue = data.queue || [];
@@ -559,6 +561,8 @@ async function loadPublishingManager() {
   const adapterHealth = data.adapterHealth || [];
   const providerStatuses = credentialsData.providerStatuses || [];
   const secretProviders = credentialsData.secrets?.providers || [];
+  const providerRuntimePlatforms = providerRuntimeData.platforms || [];
+  const publishingHealth = publishingHealthData.health || {};
 
   const readyProviders = providerStatuses.filter((item) => item.ready).length;
   const totalProviderStatuses = providerStatuses.length;
@@ -604,6 +608,21 @@ async function loadPublishingManager() {
       </div>
     `;
   }).join("") || "<p>No provider health data.</p>";
+
+  const providerRuntimeRows = providerRuntimePlatforms.flatMap((platform) =>
+    (platform.providers || []).map((provider) => `
+      <div class="publishing-card">
+        <h4>${provider.providerId}</h4>
+        <p><b>Platform:</b> ${platform.platform}</p>
+        <p><b>Enabled:</b> ${provider.enabled ? "Yes" : "No"}</p>
+        <p><b>Real Publishing:</b> ${provider.realPublishing ? "ON" : "OFF"}</p>
+        <p><b>Safe Mode:</b> ${provider.safeMode ? "ON" : "OFF"}</p>
+        <p><b>Requires Auth:</b> ${provider.requiresAuth ? "Yes" : "No"}</p>
+        <button onclick="enableRealPublishingFromUi('${platform.platform}', '${provider.providerId}')">Enable Real</button>
+        <button onclick="disableRealPublishingFromUi('${platform.platform}', '${provider.providerId}')">Disable Real</button>
+      </div>
+    `)
+  ).join("") || "<p>No provider runtime data.</p>";
 
   const credentialRows = providerStatuses.map((status) => `
     <div class="publishing-card">
@@ -709,6 +728,13 @@ async function loadPublishingManager() {
           <p><b>Saved Secret Providers:</b> ${secretProviders.length}</p>
           <button onclick="loadPublishingManager()">Reload Health</button>
         </div>
+
+        <div class="publishing-card">
+          <h3>Publishing Health</h3>
+          <p><b>Score:</b> ${publishingHealth.score ?? "-"}</p>
+          <p><b>Status:</b> ${publishingHealth.status || "-"}</p>
+          <p><b>Generated:</b> ${publishingHealth.generatedAt || "-"}</p>
+        </div>
       </div>
 
       <div class="form-card">
@@ -740,6 +766,9 @@ async function loadPublishingManager() {
         <button onclick="fillCredentialTemplate('linkedin_api')">LinkedIn Template</button>
         <button onclick="fillCredentialTemplate('x_api')">X Template</button>
       </div>
+
+      <h3>Provider Runtime Controls</h3>
+      <div class="publishing-grid">${providerRuntimeRows}</div>
 
       <h3>Provider Health</h3>
       <div class="publishing-grid">${providerHealthRows}</div>
@@ -926,4 +955,41 @@ async function deletePublishingSecretsFromUi(providerId) {
 
   const status = document.getElementById("publishingStatus");
   if (status) status.textContent = result.success ? "Secrets deleted." : result.error || "Delete failed.";
+}
+
+
+async function enableRealPublishingFromUi(platform, providerId) {
+  const ok = confirm(
+    "Enable REAL publishing for " + providerId + " on " + platform + "?\\n\\nOnly do this after credentials are added and tested."
+  );
+
+  if (!ok) return;
+
+  const result = await api("/api/admin/publishing/provider-runtime/enable-real", {
+    method: "POST",
+    body: JSON.stringify({
+      platform,
+      providerId
+    })
+  });
+
+  await loadPublishingManager();
+
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Real publishing enabled." : result.error || "Enable failed.";
+}
+
+async function disableRealPublishingFromUi(platform, providerId) {
+  const result = await api("/api/admin/publishing/provider-runtime/disable-real", {
+    method: "POST",
+    body: JSON.stringify({
+      platform,
+      providerId
+    })
+  });
+
+  await loadPublishingManager();
+
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Real publishing disabled." : result.error || "Disable failed.";
 }
