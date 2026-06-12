@@ -83,6 +83,18 @@
       "actor": "phase24_6_check",
       "reason": "phase24_6_clear",
       "createdAt": "2026-06-12T09:37:17.039Z"
+    },
+    {
+      "type": "safe_mode_changed",
+      "actor": "phase24_7_check",
+      "enabled": true,
+      "createdAt": "2026-06-12T09:42:22.740Z"
+    },
+    {
+      "type": "emergency_stop_cleared",
+      "actor": "phase24_7_check",
+      "reason": "phase24_7_clear",
+      "createdAt": "2026-06-12T09:42:22.742Z"
     }
   ]
 }

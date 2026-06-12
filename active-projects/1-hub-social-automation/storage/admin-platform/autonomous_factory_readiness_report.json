@@ -1,0 +1,107 @@
+{
+  "success": true,
+  "phase": "24.7-autonomous-factory-readiness-check",
+  "createdAt": "2026-06-12T09:42:22.806Z",
+  "readinessScore": 100,
+  "readinessStatus": "ready_for_safe_dry_run_operations",
+  "storage": [
+    {
+      "file": "storage/admin-platform/factory_operations_state.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/factory_emergency_stop.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/factory_audit_log.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/autonomous_runtime_config.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/autonomous_scheduler_config.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/self_healing_retry_config.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/autonomous_decision_config.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/decision_gated_dispatch_config.json",
+      "exists": true
+    },
+    {
+      "file": "storage/admin-platform/autonomous_control_loop_config.json",
+      "exists": true
+    }
+  ],
+  "services": [
+    {
+      "name": "operations_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "content_pack_approval_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "audit_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "audit_chain",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "runtime_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "scheduler_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "retry_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "decision_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "decision_gated_dispatch_center",
+      "success": true,
+      "result": true
+    },
+    {
+      "name": "control_loop_center",
+      "success": true,
+      "result": true
+    }
+  ],
+  "safety": {
+    "emergencyStop": false,
+    "safeMode": true,
+    "runtimeDryRun": true,
+    "loopDryRun": true,
+    "runtimeEnabled": false,
+    "loopEnabled": false,
+    "safeForProductionDryRun": true
+  },
+  "recommendations": []
+}

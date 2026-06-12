@@ -1,6 +1,6 @@
 {
   "immutable": true,
-  "updatedAt": "2026-06-12T09:37:17.094Z",
+  "updatedAt": "2026-06-12T09:42:22.806Z",
   "events": [
     {
       "auditId": "aud_f3923642062b9ba7",
@@ -833,6 +833,158 @@
       },
       "previousHash": "1739a768d3a96dff4b75ab91d0660dff78c818eb3c46adf70b0aa5aa318f6e72",
       "hash": "021eb0bca568b75b58ed5af321208e23a2230c45bd67bbbeb8e4e9e5c8fddf00"
+    },
+    {
+      "auditId": "aud_0d1ae301e638c010",
+      "createdAt": "2026-06-12T09:42:22.740Z",
+      "actor": "phase24_7_check",
+      "action": "factory_safe_mode_changed",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true
+      },
+      "previousHash": "021eb0bca568b75b58ed5af321208e23a2230c45bd67bbbeb8e4e9e5c8fddf00",
+      "hash": "4fd2422da0f4c4616711b87a2dd6d129f68c2186e866192025f73b2793f85cb6"
+    },
+    {
+      "auditId": "aud_1681c55660853a15",
+      "createdAt": "2026-06-12T09:42:22.742Z",
+      "actor": "phase24_7_check",
+      "action": "factory_emergency_stop_cleared",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "reason": "phase24_7_clear"
+      },
+      "previousHash": "4fd2422da0f4c4616711b87a2dd6d129f68c2186e866192025f73b2793f85cb6",
+      "hash": "2f9d017aa732f6a640e714c64268aac060fab31436145cea2ea473ed277e5aa3"
+    },
+    {
+      "auditId": "aud_c0a85ba96667a0a4",
+      "createdAt": "2026-06-12T09:42:22.744Z",
+      "actor": "phase24_7_check",
+      "action": "autonomous_runtime_config_updated",
+      "entityType": "factory_runtime",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": false,
+        "dryRun": true,
+        "requirePublishableStatus": true,
+        "requireSafeMode": true,
+        "autoApprovePublishable": false,
+        "maxPacksPerRun": 3,
+        "allowedProviders": [],
+        "allowedChannels": [],
+        "scheduleMode": "manual_safe",
+        "timezone": "Asia/Kolkata"
+      },
+      "previousHash": "2f9d017aa732f6a640e714c64268aac060fab31436145cea2ea473ed277e5aa3",
+      "hash": "d1a37eb56cbe89fce991fbc07bcb531ae6521f7161275c197b295cc069c14ead"
+    },
+    {
+      "auditId": "aud_923d55b0017614e0",
+      "createdAt": "2026-06-12T09:42:22.746Z",
+      "actor": "phase24_7_check",
+      "action": "autonomous_control_loop_config_updated",
+      "entityType": "control_loop",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": false,
+        "dryRun": true,
+        "requireSafeMode": true,
+        "requireSchedulerDue": false,
+        "runDecisionGate": true,
+        "runDispatch": true,
+        "scanRetriesAfterCycle": true,
+        "runRetryAfterScan": false,
+        "maxCyclesPerManualRun": 1
+      },
+      "previousHash": "d1a37eb56cbe89fce991fbc07bcb531ae6521f7161275c197b295cc069c14ead",
+      "hash": "73bfd0c1487d6b2ff693ce735b16a8949bde79cdd79ac7c73810ff6bf9ad7b59"
+    },
+    {
+      "auditId": "aud_4151f79fbda4c6e9",
+      "createdAt": "2026-06-12T09:42:22.777Z",
+      "actor": "dispatch-gate-preview",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_b62518bd2ade",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "73bfd0c1487d6b2ff693ce735b16a8949bde79cdd79ac7c73810ff6bf9ad7b59",
+      "hash": "894bc08cf304740d078dedd01848af9d53883b8a54d8ec10abcd789feff5a303"
+    },
+    {
+      "auditId": "aud_3f8ea1f1071c5cba",
+      "createdAt": "2026-06-12T09:42:22.787Z",
+      "actor": "dispatch-gate-preview",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_75c1caf65a88",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "894bc08cf304740d078dedd01848af9d53883b8a54d8ec10abcd789feff5a303",
+      "hash": "b86382c8cd6d853a095078a74e11d298a734c60eba3ea184598e2c825ec9f8a1"
+    },
+    {
+      "auditId": "aud_a1fa4a30f1ceee67",
+      "createdAt": "2026-06-12T09:42:22.805Z",
+      "actor": "dispatch-gate-preview",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_3eb5723fe001",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "b86382c8cd6d853a095078a74e11d298a734c60eba3ea184598e2c825ec9f8a1",
+      "hash": "2738aabe66b331a45d9b29d315a217cd3853e42465db2a043dee1c402f4d0f06"
+    },
+    {
+      "auditId": "aud_d66006dc587fa5bc",
+      "createdAt": "2026-06-12T09:42:22.806Z",
+      "actor": "readiness-check",
+      "action": "autonomous_factory_readiness_checked",
+      "entityType": "readiness_report",
+      "entityId": "latest",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "readinessScore": 100,
+        "readinessStatus": "ready_for_safe_dry_run_operations"
+      },
+      "previousHash": "2738aabe66b331a45d9b29d315a217cd3853e42465db2a043dee1c402f4d0f06",
+      "hash": "45b432cc92a12b0bbaa317d2835765bd8b886b1577f8731a66ec21257424eb91"
     }
   ]
 }
