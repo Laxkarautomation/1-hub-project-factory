@@ -250,3 +250,8 @@ textarea {
 .audit-card { border: 1px solid #ddd; border-radius: 14px; padding: 12px; }
 .audit-card-head { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
 /* END_PHASE_23_4_FACTORY_AUDIT_STYLES */
+
+
+/* PHASE_24_1_AUTONOMOUS_RUNTIME_STYLES */
+.autonomous-runtime-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_24_1_AUTONOMOUS_RUNTIME_STYLES */

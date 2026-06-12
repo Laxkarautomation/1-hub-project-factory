@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "dryRun": true,
+  "requirePublishableStatus": true,
+  "requireSafeMode": true,
+  "autoApprovePublishable": false,
+  "maxPacksPerRun": 3,
+  "allowedProviders": [],
+  "allowedChannels": [],
+  "scheduleMode": "manual_safe",
+  "timezone": "Asia/Kolkata"
+}

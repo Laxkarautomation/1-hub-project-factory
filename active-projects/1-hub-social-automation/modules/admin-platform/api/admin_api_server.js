@@ -1,4 +1,7 @@
 
+// PHASE_24_1_AUTONOMOUS_RUNTIME_API
+const autonomousRuntimeService = require("../services/autonomous_factory_runtime_service");
+
 // PHASE_23_4_FACTORY_AUDIT_API
 const factoryAuditService = require("../services/factory_audit_service");
 
@@ -774,4 +777,21 @@ app.post("/api/admin/factory/audit/export", (req, res) => {
   res.json(factoryAuditService.exportAuditReport(format));
 });
 /* END_PHASE_23_4_FACTORY_AUDIT_API */
+
+
+/* PHASE_24_1_AUTONOMOUS_RUNTIME_API */
+app.get("/api/admin/factory/autonomous-runtime", (req, res) => {
+  res.json(autonomousRuntimeService.getRuntimeCenter());
+});
+
+app.post("/api/admin/factory/autonomous-runtime/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousRuntimeService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/autonomous-runtime/run-once", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousRuntimeService.runOnce(actor));
+});
+/* END_PHASE_24_1_AUTONOMOUS_RUNTIME_API */
 

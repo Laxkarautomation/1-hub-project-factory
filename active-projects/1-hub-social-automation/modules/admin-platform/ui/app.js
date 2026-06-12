@@ -1375,3 +1375,94 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadFactoryAuditCenter);
 }
 /* END_PHASE_23_4_FACTORY_AUDIT_UI */
+
+
+/* PHASE_24_1_AUTONOMOUS_RUNTIME_UI */
+async function loadAutonomousRuntimeCenter() {
+  const mountId = "autonomous-runtime-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card autonomous-runtime-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Autonomous Factory Runtime</h2><p>Loading runtime...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/autonomous-runtime");
+    const data = await res.json();
+    const config = data.config || {};
+    const state = data.state || {};
+    const guard = data.guard || {};
+
+    mount.innerHTML = `
+      <h2>Autonomous Factory Runtime</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Runtime: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE SAFE DISPATCH"}</span>
+        <span class="${guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleAutonomousRuntime(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Runtime</button>
+        <button onclick="toggleAutonomousDryRun(${!config.dryRun})">${config.dryRun ? "Disable" : "Enable"} Dry Run</button>
+        <button onclick="runAutonomousFactoryOnce()">Run Once</button>
+        <button onclick="loadAutonomousRuntimeCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Last Status: <b>${state.lastStatus || "never_run"}</b></div>
+        <div>Last Run: <b>${state.lastRunId || "-"}</b></div>
+        <div>Plan Items: <b>${(data.dispatchPlan || []).length}</b></div>
+        <div>Auto Approve: <b>${config.autoApprovePublishable ? "ON" : "OFF"}</b></div>
+      </div>
+
+      <h3>Dispatch Plan</h3>
+      <pre class="ops-json">${JSON.stringify(data.dispatchPlan || [], null, 2)}</pre>
+
+      <h3>Recent Runtime Runs</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentRuns || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Autonomous Factory Runtime</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleAutonomousRuntime(enabled) {
+  await fetch("/api/admin/factory/autonomous-runtime/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadAutonomousRuntimeCenter();
+}
+
+async function toggleAutonomousDryRun(dryRun) {
+  await fetch("/api/admin/factory/autonomous-runtime/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ dryRun, actor: "admin-ui" })
+  });
+  await loadAutonomousRuntimeCenter();
+}
+
+async function runAutonomousFactoryOnce() {
+  await fetch("/api/admin/factory/autonomous-runtime/run-once", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadAutonomousRuntimeCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadAutonomousRuntimeCenter = loadAutonomousRuntimeCenter;
+  window.toggleAutonomousRuntime = toggleAutonomousRuntime;
+  window.toggleAutonomousDryRun = toggleAutonomousDryRun;
+  window.runAutonomousFactoryOnce = runAutonomousFactoryOnce;
+  window.addEventListener("DOMContentLoaded", loadAutonomousRuntimeCenter);
+}
+/* END_PHASE_24_1_AUTONOMOUS_RUNTIME_UI */
