@@ -1635,3 +1635,82 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadSelfHealingRetryCenter);
 }
 /* END_PHASE_24_3_SELF_HEALING_RETRY_UI */
+
+
+/* PHASE_24_4_AUTONOMOUS_DECISION_UI */
+async function loadAutonomousDecisionCenter() {
+  const mountId = "autonomous-decision-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card autonomous-decision-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Autonomous Decision Engine</h2><p>Loading decision center...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/autonomous-decisions");
+    const data = await res.json();
+    const config = data.config || {};
+    const latest = data.latestEvaluation || {};
+
+    mount.innerHTML = `
+      <h2>Autonomous Decision Engine</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Decision Engine: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="safe-badge">Approval Score: ${config.minScoreForApproval}</span>
+        <span class="safe-badge">Dispatch Score: ${config.minScoreForDispatch}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleAutonomousDecisionEngine(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Decision Engine</button>
+        <button onclick="evaluateAutonomousDecisions()">Evaluate Now</button>
+        <button onclick="loadAutonomousDecisionCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Total Packs: <b>${latest.totalPacks || 0}</b></div>
+        <div>Approval Recs: <b>${latest.approvalRecommendations || 0}</b></div>
+        <div>Dispatch Recs: <b>${latest.dispatchRecommendations || 0}</b></div>
+        <div>Evaluations: <b>${(data.recentEvaluations || []).length}</b></div>
+      </div>
+
+      <h3>Latest Decisions</h3>
+      <pre class="ops-json">${JSON.stringify((latest.decisions || []), null, 2)}</pre>
+
+      <h3>Recent Evaluations</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentEvaluations || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Autonomous Decision Engine</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleAutonomousDecisionEngine(enabled) {
+  await fetch("/api/admin/factory/autonomous-decisions/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadAutonomousDecisionCenter();
+}
+
+async function evaluateAutonomousDecisions() {
+  await fetch("/api/admin/factory/autonomous-decisions/evaluate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadAutonomousDecisionCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadAutonomousDecisionCenter = loadAutonomousDecisionCenter;
+  window.toggleAutonomousDecisionEngine = toggleAutonomousDecisionEngine;
+  window.evaluateAutonomousDecisions = evaluateAutonomousDecisions;
+  window.addEventListener("DOMContentLoaded", loadAutonomousDecisionCenter);
+}
+/* END_PHASE_24_4_AUTONOMOUS_DECISION_UI */

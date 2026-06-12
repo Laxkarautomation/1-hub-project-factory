@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "minScoreForApproval": 70,
+  "minScoreForDispatch": 80,
+  "requirePublishable": true,
+  "requireAssets": false,
+  "requireProviders": true,
+  "requireChannel": true,
+  "safeModeOnly": true,
+  "riskBlockThreshold": 2,
+  "allowedProviders": [],
+  "allowedChannels": []
+}

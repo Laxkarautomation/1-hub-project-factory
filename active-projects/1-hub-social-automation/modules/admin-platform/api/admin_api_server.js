@@ -1,4 +1,7 @@
 
+// PHASE_24_4_AUTONOMOUS_DECISION_API
+const autonomousDecisionService = require("../services/autonomous_decision_engine_service");
+
 // PHASE_24_3_SELF_HEALING_RETRY_API
 const selfHealingRetryService = require("../services/self_healing_retry_service");
 
@@ -844,4 +847,21 @@ app.post("/api/admin/factory/self-healing/retry/:retryId", (req, res) => {
   res.json(selfHealingRetryService.runRetry(req.params.retryId, actor));
 });
 /* END_PHASE_24_3_SELF_HEALING_RETRY_API */
+
+
+/* PHASE_24_4_AUTONOMOUS_DECISION_API */
+app.get("/api/admin/factory/autonomous-decisions", (req, res) => {
+  res.json(autonomousDecisionService.getDecisionCenter());
+});
+
+app.post("/api/admin/factory/autonomous-decisions/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousDecisionService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/autonomous-decisions/evaluate", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousDecisionService.evaluateAll(actor));
+});
+/* END_PHASE_24_4_AUTONOMOUS_DECISION_API */
 
