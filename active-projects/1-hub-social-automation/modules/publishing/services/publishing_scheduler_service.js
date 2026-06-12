@@ -37,7 +37,7 @@ function createSchedule(input = {}) {
   const schedule = upsertSchedule({
     id: input.id,
     channelId: input.channelId || "unraaz",
-    providerId: input.providerId || "dry_run",
+    providerId: input.providerId || null,
     platform: input.platform || "youtube",
     contentId: input.contentId || null,
     publishAt: input.publishAt,

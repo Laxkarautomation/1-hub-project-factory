@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "publishing_worker_run_1781242890990",
+      "mode": "once",
+      "dryRun": true,
+      "startedAt": "2026-06-12T05:41:30.990Z",
+      "status": "completed",
+      "result": {
+        "success": true,
+        "job": {
+          "jobId": "publish_1781242890927",
+          "channelId": "unraaz",
+          "platform": "youtube",
+          "providerId": null,
+          "contentType": "video",
+          "status": "completed",
+          "priority": 5,
+          "scheduledAt": "2026-06-12T05:40:30.868Z",
+          "payload": {
+            "title": "Test scheduled publish",
+            "description": "Dry-run scheduled publishing test",
+            "scheduleId": "schedule_1781242890869"
+          },
+          "attempts": 1,
+          "maxAttempts": 3,
+          "createdAt": "2026-06-12T05:41:30.927Z",
+          "updatedAt": "2026-06-12T05:41:30.992Z",
+          "result": {
+            "success": true,
+            "dryRun": true,
+            "providerId": "youtube_api",
+            "platform": "youtube",
+            "jobId": "publish_1781242890927",
+            "validation": {
+              "success": true,
+              "platform": "youtube",
+              "contentType": "video"
+            },
+            "simulatedUrl": "https://example.com/youtube/publish_1781242890927",
+            "publishedAt": "2026-06-12T05:41:30.991Z"
+          },
+          "completedAt": "2026-06-12T05:41:30.992Z"
+        },
+        "result": {
+          "success": true,
+          "dryRun": true,
+          "providerId": "youtube_api",
+          "platform": "youtube",
+          "jobId": "publish_1781242890927",
+          "validation": {
+            "success": true,
+            "platform": "youtube",
+            "contentType": "video"
+          },
+          "simulatedUrl": "https://example.com/youtube/publish_1781242890927",
+          "publishedAt": "2026-06-12T05:41:30.991Z"
+        }
+      },
+      "error": null,
+      "beforeQueueCount": 1,
+      "afterQueueCount": 0,
+      "afterHistoryCount": 2,
+      "finishedAt": "2026-06-12T05:41:30.992Z"
+    }
+  ]
+}

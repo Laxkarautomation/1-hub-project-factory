@@ -57,7 +57,10 @@ async function enqueueScheduledPublish(schedule) {
     publishingService.enqueuePublishingJob({
       channelId: schedule.channelId,
       platform,
-      providerId: schedule.providerId,
+      providerId:
+        schedule.providerId === "dry_run"
+          ? null
+          : schedule.providerId,
       contentType:
         schedule.payload?.contentType ||
         "video",
