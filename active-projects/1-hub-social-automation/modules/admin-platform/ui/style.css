@@ -290,3 +290,8 @@ textarea {
 /* PHASE_25_2_PUBLISHING_QUEUE_WORKER_STYLES */
 .publishing-queue-worker-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_STYLES */
+
+
+/* PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_STYLES */
+.provider-handoff-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_STYLES */

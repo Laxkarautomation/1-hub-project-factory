@@ -2033,3 +2033,82 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadPublishingQueueWorkerCenter);
 }
 /* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_UI */
+
+
+/* PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_UI */
+async function loadProviderHandoffCenter() {
+  const mountId = "provider-handoff-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card provider-handoff-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Provider Execution Handoff</h2><p>Loading handoff center...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/provider-handoff");
+    const data = await res.json();
+    const config = data.config || {};
+    const preview = data.preview || {};
+
+    mount.innerHTML = `
+      <h2>Provider Execution Handoff Contract</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Handoff: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE HANDOFF"}</span>
+        <span class="${data.guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${data.guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleProviderHandoff(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Handoff</button>
+        <button onclick="enqueueProviderHandoffJobs()">Enqueue Handoff Jobs</button>
+        <button onclick="loadProviderHandoffCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Preview Jobs: <b>${(preview.jobs || []).length}</b></div>
+        <div>Queue Jobs: <b>${data.queueSummary.totalJobs || 0}</b></div>
+        <div>Dry Jobs: <b>${data.queueSummary.dryRunJobs || 0}</b></div>
+        <div>Max/Run: <b>${config.maxItemsPerRun}</b></div>
+      </div>
+
+      <h3>Handoff Preview</h3>
+      <pre class="ops-json">${JSON.stringify(preview.jobs || [], null, 2)}</pre>
+
+      <h3>Provider Handoff Queue</h3>
+      <pre class="ops-json">${JSON.stringify(data.queue || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Provider Execution Handoff</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleProviderHandoff(enabled) {
+  await fetch("/api/admin/factory/provider-handoff/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadProviderHandoffCenter();
+}
+
+async function enqueueProviderHandoffJobs() {
+  await fetch("/api/admin/factory/provider-handoff/enqueue", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadProviderHandoffCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadProviderHandoffCenter = loadProviderHandoffCenter;
+  window.toggleProviderHandoff = toggleProviderHandoff;
+  window.enqueueProviderHandoffJobs = enqueueProviderHandoffJobs;
+  window.addEventListener("DOMContentLoaded", loadProviderHandoffCenter);
+}
+/* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_UI */

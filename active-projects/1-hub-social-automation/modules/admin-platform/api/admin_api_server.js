@@ -1,4 +1,7 @@
 
+// PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_API
+const providerExecutionHandoffService = require("../services/provider_execution_handoff_service");
+
 // PHASE_25_2_PUBLISHING_QUEUE_WORKER_API
 const publishingQueueWorkerService = require("../services/publishing_queue_worker_service");
 
@@ -949,4 +952,21 @@ app.post("/api/admin/factory/publishing-queue-worker/run-once", (req, res) => {
   res.json(publishingQueueWorkerService.runWorkerOnce(actor));
 });
 /* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_API */
+
+
+/* PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_API */
+app.get("/api/admin/factory/provider-handoff", (req, res) => {
+  res.json(providerExecutionHandoffService.getHandoffCenter());
+});
+
+app.post("/api/admin/factory/provider-handoff/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(providerExecutionHandoffService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/provider-handoff/enqueue", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(providerExecutionHandoffService.enqueueHandoffJobs(actor));
+});
+/* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_API */
 
