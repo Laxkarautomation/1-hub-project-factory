@@ -1955,3 +1955,81 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadPublishingDispatchBridgeCenter);
 }
 /* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_UI */
+
+
+/* PHASE_25_2_PUBLISHING_QUEUE_WORKER_UI */
+async function loadPublishingQueueWorkerCenter() {
+  const mountId = "publishing-queue-worker-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card publishing-queue-worker-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Publishing Queue Worker</h2><p>Loading worker...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/publishing-queue-worker");
+    const data = await res.json();
+    const config = data.config || {};
+
+    mount.innerHTML = `
+      <h2>Publishing Queue Worker + Execution Tracker</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Worker: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE EXECUTION"}</span>
+        <span class="${data.guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${data.guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="togglePublishingQueueWorker(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Worker</button>
+        <button onclick="runPublishingQueueWorkerOnce()">Run Worker Once</button>
+        <button onclick="loadPublishingQueueWorkerCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Queue Total: <b>${data.queueSummary.totalItems || 0}</b></div>
+        <div>Queued: <b>${data.queueSummary.queued || 0}</b></div>
+        <div>Executed: <b>${data.queueSummary.executed || 0}</b></div>
+        <div>Execution Records: <b>${data.executionSummary.totalRecords || 0}</b></div>
+      </div>
+
+      <h3>Queue</h3>
+      <pre class="ops-json">${JSON.stringify(data.queue || [], null, 2)}</pre>
+
+      <h3>Execution Records</h3>
+      <pre class="ops-json">${JSON.stringify(data.executions || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Publishing Queue Worker</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function togglePublishingQueueWorker(enabled) {
+  await fetch("/api/admin/factory/publishing-queue-worker/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadPublishingQueueWorkerCenter();
+}
+
+async function runPublishingQueueWorkerOnce() {
+  await fetch("/api/admin/factory/publishing-queue-worker/run-once", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadPublishingQueueWorkerCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadPublishingQueueWorkerCenter = loadPublishingQueueWorkerCenter;
+  window.togglePublishingQueueWorker = togglePublishingQueueWorker;
+  window.runPublishingQueueWorkerOnce = runPublishingQueueWorkerOnce;
+  window.addEventListener("DOMContentLoaded", loadPublishingQueueWorkerCenter);
+}
+/* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_UI */

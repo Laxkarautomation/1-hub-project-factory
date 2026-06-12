@@ -285,3 +285,8 @@ textarea {
 /* PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_STYLES */
 .publishing-dispatch-bridge-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_STYLES */
+
+
+/* PHASE_25_2_PUBLISHING_QUEUE_WORKER_STYLES */
+.publishing-queue-worker-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_STYLES */

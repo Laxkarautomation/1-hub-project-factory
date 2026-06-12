@@ -1,4 +1,7 @@
 
+// PHASE_25_2_PUBLISHING_QUEUE_WORKER_API
+const publishingQueueWorkerService = require("../services/publishing_queue_worker_service");
+
 // PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_API
 const publishingDispatchBridgeService = require("../services/publishing_dispatch_bridge_service");
 
@@ -929,4 +932,21 @@ app.post("/api/admin/factory/publishing-dispatch-bridge/enqueue", (req, res) => 
   res.json(publishingDispatchBridgeService.enqueueDispatchIntents(actor));
 });
 /* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_API */
+
+
+/* PHASE_25_2_PUBLISHING_QUEUE_WORKER_API */
+app.get("/api/admin/factory/publishing-queue-worker", (req, res) => {
+  res.json(publishingQueueWorkerService.getWorkerCenter());
+});
+
+app.post("/api/admin/factory/publishing-queue-worker/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(publishingQueueWorkerService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/publishing-queue-worker/run-once", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(publishingQueueWorkerService.runWorkerOnce(actor));
+});
+/* END_PHASE_25_2_PUBLISHING_QUEUE_WORKER_API */
 

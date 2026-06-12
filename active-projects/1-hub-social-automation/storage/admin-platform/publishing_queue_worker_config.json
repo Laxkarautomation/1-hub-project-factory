@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "dryRun": true,
+  "requireSafeMode": true,
+  "maxItemsPerRun": 3,
+  "lockTimeoutMinutes": 15,
+  "allowedProviders": [],
+  "allowedChannels": []
+}
