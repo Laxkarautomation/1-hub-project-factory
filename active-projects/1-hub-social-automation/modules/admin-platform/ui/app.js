@@ -548,6 +548,7 @@ async function reloadSettingsFromUi() {
 async function loadPublishingManager() {
   const data = await api("/api/admin/publishing");
   const schedulerData = await api("/api/admin/publishing/scheduler");
+  const credentialsData = await api("/api/admin/publishing/credentials");
 
   const platforms = data.platforms || [];
   const queue = data.queue || [];
@@ -555,12 +556,21 @@ async function loadPublishingManager() {
   const scheduler = schedulerData.scheduler || {};
   const schedules = schedulerData.schedules || [];
   const runs = schedulerData.runs || [];
+  const adapterHealth = data.adapterHealth || [];
+  const providerStatuses = credentialsData.providerStatuses || [];
+  const secretProviders = credentialsData.secrets?.providers || [];
+
+  const readyProviders = providerStatuses.filter((item) => item.ready).length;
+  const totalProviderStatuses = providerStatuses.length;
+  const readinessScore = totalProviderStatuses
+    ? Math.round((readyProviders / totalProviderStatuses) * 100)
+    : 0;
 
   document.getElementById("summary").innerHTML = `
     <div class="tile"><strong>Platforms</strong><br>${platforms.length}</div>
     <div class="tile"><strong>Queue</strong><br>${queue.length}</div>
     <div class="tile"><strong>Schedules</strong><br>${scheduler.totalSchedules || schedules.length}</div>
-    <div class="tile"><strong>Due Now</strong><br>${scheduler.dueNow || 0}</div>
+    <div class="tile"><strong>Readiness</strong><br>${readinessScore}%</div>
   `;
 
   const platformRows = platforms.map((item) => `
@@ -571,6 +581,52 @@ async function loadPublishingManager() {
       <p><b>Providers:</b> ${(item.providers || []).length}</p>
     </div>
   `).join("");
+
+  const providerHealthRows = adapterHealth.map((health) => {
+    const providerRows = (health.providers || []).map((provider) => `
+      <div class="credential-row">
+        <b>${provider.providerId}</b>
+        <span>${provider.readyForRealPublishing ? "Ready" : "Not Ready"}</span>
+        <small>
+          Enabled: ${provider.enabled ? "yes" : "no"} |
+          Credentials: ${provider.credentialsReady ? "ready" : "missing"} |
+          Missing: ${(provider.missingCredentials || []).join(", ") || "-"}
+        </small>
+      </div>
+    `).join("");
+
+    return `
+      <div class="publishing-card wide-card">
+        <h3>${(health.platform || "unknown").toUpperCase()} Provider Health</h3>
+        <p><b>Active:</b> ${health.active || "-"}</p>
+        <p><b>Dry Run:</b> ${health.dryRunAvailable ? "Available" : "No"}</p>
+        ${providerRows || "<p>No providers.</p>"}
+      </div>
+    `;
+  }).join("") || "<p>No provider health data.</p>";
+
+  const credentialRows = providerStatuses.map((status) => `
+    <div class="publishing-card">
+      <h4>${status.providerId}</h4>
+      <p><b>Platform:</b> ${status.platform || "-"}</p>
+      <p><b>Active:</b> ${status.active ? "Yes" : "No"}</p>
+      <p><b>Ready:</b> ${status.ready ? "Yes" : "No"}</p>
+      <p><b>Required:</b> ${(status.required || []).join(", ") || "-"}</p>
+      <p><b>Present:</b> ${(status.present || []).join(", ") || "-"}</p>
+      <p><b>Missing:</b> ${(status.missing || []).join(", ") || "-"}</p>
+      <p><b>Updated:</b> ${status.updatedAt || "-"}</p>
+    </div>
+  `).join("") || "<p>No credential statuses.</p>";
+
+  const secretRows = secretProviders.map((provider) => `
+    <div class="publishing-card">
+      <h4>${provider.providerId}</h4>
+      <p><b>Keys:</b> ${(provider.keys || []).join(", ") || "-"}</p>
+      <p><b>Key Count:</b> ${provider.keyCount || 0}</p>
+      <p><b>Updated:</b> ${provider.updatedAt || "-"}</p>
+      <button onclick="deletePublishingSecretsFromUi('${provider.providerId}')">Delete Secrets</button>
+    </div>
+  `).join("") || "<p>No saved secrets yet.</p>";
 
   const queueRows = queue.map((job) => `
     <div class="publishing-card">
@@ -645,6 +701,14 @@ async function loadPublishingManager() {
           <button onclick="enqueuePublishFromUi()">Enqueue</button>
           <button onclick="runNextPublishFromUi()">Run Next Dry Run</button>
         </div>
+
+        <div class="publishing-card">
+          <h3>Provider Readiness</h3>
+          <p><b>Ready Providers:</b> ${readyProviders}/${totalProviderStatuses}</p>
+          <p><b>Readiness Score:</b> ${readinessScore}%</p>
+          <p><b>Saved Secret Providers:</b> ${secretProviders.length}</p>
+          <button onclick="loadPublishingManager()">Reload Health</button>
+        </div>
       </div>
 
       <div class="form-card">
@@ -660,6 +724,31 @@ async function loadPublishingManager() {
         <button onclick="loadPublishingManager()">Reload</button>
         <p id="publishingStatus"></p>
       </div>
+
+      <div class="form-card">
+        <h3>Save Provider Credentials</h3>
+        <p>Paste credentials as JSON. Secrets are masked in dashboard.</p>
+        <input id="credentialProviderId" placeholder="Provider ID e.g. telegram_bot_api" value="telegram_bot_api">
+        <textarea id="credentialJson" placeholder='{"botToken":"...","chatId":"..."}'>{
+  "botToken": "TEST_BOT_TOKEN",
+  "chatId": "TEST_CHAT_ID"
+}</textarea>
+        <button onclick="savePublishingCredentialsFromUi()">Save Credentials</button>
+        <button onclick="fillCredentialTemplate('youtube_api')">YouTube Template</button>
+        <button onclick="fillCredentialTemplate('telegram_bot_api')">Telegram Template</button>
+        <button onclick="fillCredentialTemplate('meta_graph_api')">Meta Template</button>
+        <button onclick="fillCredentialTemplate('linkedin_api')">LinkedIn Template</button>
+        <button onclick="fillCredentialTemplate('x_api')">X Template</button>
+      </div>
+
+      <h3>Provider Health</h3>
+      <div class="publishing-grid">${providerHealthRows}</div>
+
+      <h3>Credential Status</h3>
+      <div class="publishing-grid">${credentialRows}</div>
+
+      <h3>Saved Secrets</h3>
+      <div class="publishing-grid">${secretRows}</div>
 
       <h3>Schedules</h3>
       <div class="publishing-grid">${scheduleRows}</div>
@@ -761,4 +850,80 @@ async function runPublishingSchedulerFromUi() {
   await loadPublishingManager();
   const status = document.getElementById("publishingStatus");
   if (status) status.textContent = result.success ? "Scheduler run completed." : result.error || "Scheduler failed.";
+}
+
+
+function fillCredentialTemplate(providerId) {
+  const templates = {
+    youtube_api: {
+      clientId: "YOUR_YOUTUBE_CLIENT_ID",
+      clientSecret: "YOUR_YOUTUBE_CLIENT_SECRET",
+      refreshToken: "YOUR_YOUTUBE_REFRESH_TOKEN"
+    },
+    telegram_bot_api: {
+      botToken: "YOUR_TELEGRAM_BOT_TOKEN",
+      chatId: "YOUR_TELEGRAM_CHAT_ID"
+    },
+    meta_graph_api: {
+      accessToken: "YOUR_META_ACCESS_TOKEN",
+      pageId: "YOUR_PAGE_OR_ACCOUNT_ID"
+    },
+    linkedin_api: {
+      accessToken: "YOUR_LINKEDIN_ACCESS_TOKEN",
+      organizationId: "YOUR_ORGANIZATION_ID"
+    },
+    x_api: {
+      apiKey: "YOUR_X_API_KEY",
+      apiSecret: "YOUR_X_API_SECRET",
+      accessToken: "YOUR_X_ACCESS_TOKEN",
+      accessTokenSecret: "YOUR_X_ACCESS_TOKEN_SECRET"
+    }
+  };
+
+  document.getElementById("credentialProviderId").value = providerId;
+  document.getElementById("credentialJson").value =
+    JSON.stringify(templates[providerId] || {}, null, 2);
+}
+
+async function savePublishingCredentialsFromUi() {
+  const providerId = document.getElementById("credentialProviderId").value.trim();
+  const rawJson = document.getElementById("credentialJson").value.trim();
+
+  let secrets = {};
+
+  try {
+    secrets = JSON.parse(rawJson || "{}");
+  } catch (error) {
+    const status = document.getElementById("publishingStatus");
+    if (status) status.textContent = "Invalid JSON: " + error.message;
+    return;
+  }
+
+  const result = await api("/api/admin/publishing/credentials/save", {
+    method: "POST",
+    body: JSON.stringify({
+      providerId,
+      secrets
+    })
+  });
+
+  await loadPublishingManager();
+
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Credentials saved." : result.error || "Credential save failed.";
+}
+
+async function deletePublishingSecretsFromUi(providerId) {
+  const ok = confirm("Delete saved secrets for " + providerId + "?");
+  if (!ok) return;
+
+  const result = await api("/api/admin/publishing/credentials/delete", {
+    method: "POST",
+    body: JSON.stringify({ providerId })
+  });
+
+  await loadPublishingManager();
+
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Secrets deleted." : result.error || "Delete failed.";
 }
