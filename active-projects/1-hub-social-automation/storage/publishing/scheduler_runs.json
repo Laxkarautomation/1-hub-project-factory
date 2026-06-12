@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "id": "scheduler_run_1781242148691",
+      "startedAt": "2026-06-12T05:29:08.691Z",
+      "nowIso": "2026-06-12T05:29:08.690Z",
+      "dryRun": true,
+      "dueCount": 1,
+      "enqueuedCount": 1,
+      "failedCount": 0,
+      "results": [
+        {
+          "scheduleId": "schedule_1781242148618",
+          "status": "queued",
+          "queueJobId": "pub_job_1781242148697_490ddcc98e28c8"
+        }
+      ],
+      "success": true,
+      "finishedAt": "2026-06-12T05:29:08.698Z"
+    }
+  ]
+}

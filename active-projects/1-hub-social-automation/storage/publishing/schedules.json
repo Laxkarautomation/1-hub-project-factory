@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "schedules": [
+    {
+      "id": "schedule_1781242148618",
+      "channelId": "unraaz",
+      "providerId": "dry_run",
+      "contentId": "test_content_001",
+      "payload": {
+        "title": "Test scheduled publish",
+        "description": "Dry-run scheduled publishing test"
+      },
+      "publishAt": "2026-06-12T05:28:08.618Z",
+      "status": "queued",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": "2026-06-12T05:29:08.618Z",
+      "updatedAt": "2026-06-12T05:29:08.698Z",
+      "lastEnqueuedAt": "2026-06-12T05:29:08.697Z",
+      "queueJobId": "pub_job_1781242148697_490ddcc98e28c8"
+    }
+  ]
+}
