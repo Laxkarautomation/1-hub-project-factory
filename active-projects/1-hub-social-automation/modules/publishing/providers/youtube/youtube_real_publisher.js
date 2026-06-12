@@ -1,23 +1,35 @@
-const { getProviderSecrets } = require("../../secrets/publishing_secret_store");
+const {
+  validateYouTubeCredentials,
+  refreshYouTubeAccessToken,
+  getYouTubeChannelStatus
+} = require("./youtube_oauth_service");
+
+const {
+  uploadYouTubeVideo
+} = require("./youtube_upload_service");
 
 function getYouTubeOAuthStatus(providerId = "youtube_api") {
-  const secrets = getProviderSecrets(providerId);
-
-  const required = ["clientId", "clientSecret", "refreshToken"];
-  const missing = required.filter((key) => !secrets[key]);
+  const status =
+    validateYouTubeCredentials(providerId);
 
   return {
     success: true,
     providerId,
-    ready: missing.length === 0,
-    missing,
+    ready: status.ready,
+    missing: status.missing,
     authMode: "oauth_refresh_token"
   };
 }
 
 async function publishYouTube(job, config = {}) {
-  const providerId = config.providerId || "youtube_api";
-  const status = getYouTubeOAuthStatus(providerId);
+  const providerId =
+    config.providerId || "youtube_api";
+
+  const safeMode =
+    config.safeMode !== false;
+
+  const status =
+    getYouTubeOAuthStatus(providerId);
 
   if (!status.ready) {
     return {
@@ -31,21 +43,18 @@ async function publishYouTube(job, config = {}) {
     };
   }
 
-  return {
-    success: true,
-    realPublish: false,
-    dryRun: true,
-    providerId,
-    platform: "youtube",
-    jobId: job.jobId,
-    message: "YouTube upload publisher configured but upload is disabled in safe mode",
-    title: job.payload?.title || null,
-    filePath: job.payload?.filePath || null,
-    publishedAt: new Date().toISOString()
-  };
+  return uploadYouTubeVideo(
+    job,
+    {
+      providerId,
+      safeMode
+    }
+  );
 }
 
 module.exports = {
   getYouTubeOAuthStatus,
+  refreshYouTubeAccessToken,
+  getYouTubeChannelStatus,
   publishYouTube
 };

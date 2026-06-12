@@ -68,6 +68,22 @@ const {
   disableRealPublishing
 } = require("../../publishing/services/publishing_provider_runtime_service");
 
+const {
+  validateTelegramProvider,
+  checkTelegramConnection
+} = require("../../publishing/providers/telegram/telegram_real_publisher");
+
+const {
+  validateYouTubeCredentials,
+  refreshYouTubeAccessToken,
+  getYouTubeChannelStatus
+} = require("../../publishing/providers/youtube/youtube_oauth_service");
+
+const {
+  validateYouTubeUploadJob,
+  buildYouTubeMetadata
+} = require("../../publishing/providers/youtube/youtube_upload_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -304,6 +320,90 @@ function createAdminServer() {
 
 
 
+
+
+
+    if (req.url === "/api/admin/publishing/youtube/oauth-check" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          const providerId = body.providerId || "youtube_api";
+          const live = body.live === true;
+
+          const validation = validateYouTubeCredentials(providerId);
+          const token = await refreshYouTubeAccessToken(providerId, {
+            safeMode: !live
+          });
+          const channel = await getYouTubeChannelStatus(providerId, {
+            safeMode: !live
+          });
+
+          sendJson(res, 200, {
+            success: validation.success && token.success && channel.success,
+            validation,
+            token: {
+              ...token,
+              accessToken: token.accessToken ? "***masked***" : null
+            },
+            channel
+          });
+        } catch (error) {
+          sendJson(res, 500, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/youtube/validate-upload" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          const job = {
+            jobId: body.jobId || "admin_youtube_upload_validation",
+            platform: "youtube",
+            contentType: "video",
+            payload: body.payload || body
+          };
+
+          sendJson(res, 200, {
+            success: true,
+            validation: validateYouTubeUploadJob(job),
+            metadata: buildYouTubeMetadata(job)
+          });
+        } catch (error) {
+          sendJson(res, 500, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/telegram/check" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          const providerId = body.providerId || "telegram_bot_api";
+          const validation = await validateTelegramProvider(providerId);
+          const connection = await checkTelegramConnection(providerId, {
+            safeMode: body.live !== true
+          });
+
+          sendJson(res, 200, {
+            success: validation.success && connection.success,
+            validation,
+            connection
+          });
+        } catch (error) {
+          sendJson(res, 500, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
 
     if (req.url === "/api/admin/publishing/provider-runtime" && req.method === "GET") {
       return withAuth(req, res, () => {

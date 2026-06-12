@@ -13,14 +13,15 @@ const {
 
 async function main() {
   savePublishingProviderSecrets({
-    providerId: "telegram_bot_api",
+    providerId: "youtube_api",
     secrets: {
-      botToken: "TEST_BOT_TOKEN_SAFE_MODE",
-      chatId: "TEST_CHAT_ID_SAFE_MODE"
+      clientId: "TEST_YOUTUBE_CLIENT_ID",
+      clientSecret: "TEST_YOUTUBE_CLIENT_SECRET",
+      refreshToken: "TEST_YOUTUBE_REFRESH_TOKEN"
     }
   });
 
-  setPublishingProviderRuntime("telegram", "telegram_bot_api", {
+  setPublishingProviderRuntime("youtube", "youtube_api", {
     enabled: true,
     realPublishing: true,
     safeMode: true
@@ -28,18 +29,21 @@ async function main() {
 
   const enqueueResult = enqueuePublishingJob({
     channelId: "unraaz",
-    platform: "telegram",
-    providerId: "telegram_bot_api",
-    contentType: "text",
+    platform: "youtube",
+    providerId: "youtube_api",
+    contentType: "video",
     payload: {
-      title: "Safe real publisher test",
-      description: "Provider realPublishing ON but safeMode ON. No HTTP request should be sent."
+      title: "YouTube safe upload test",
+      description: "Safe mode enabled. No upload should be sent.",
+      filePath: "storage/videos/test.mp4",
+      privacyStatus: "private",
+      tags: ["unraaz", "test"]
     }
   });
 
   const publishResult = await runNextPublishingJob();
 
-  setPublishingProviderRuntime("telegram", "telegram_bot_api", {
+  setPublishingProviderRuntime("youtube", "youtube_api", {
     enabled: false,
     realPublishing: false,
     safeMode: true
@@ -47,7 +51,7 @@ async function main() {
 
   console.log(JSON.stringify({
     success: publishResult.success,
-    expectedPath: "telegram_real_publisher_safe_mode",
+    expectedPath: "youtube_upload_safe_mode",
     enqueueResult,
     publishResult
   }, null, 2));
