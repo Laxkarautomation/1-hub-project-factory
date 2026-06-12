@@ -275,3 +275,8 @@ textarea {
 /* PHASE_24_5_DECISION_GATED_DISPATCH_STYLES */
 .decision-gated-dispatch-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_24_5_DECISION_GATED_DISPATCH_STYLES */
+
+
+/* PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_STYLES */
+.autonomous-control-loop-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_STYLES */

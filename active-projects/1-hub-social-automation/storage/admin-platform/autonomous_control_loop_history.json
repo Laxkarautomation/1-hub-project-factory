@@ -1,0 +1,101 @@
+{
+  "cycles": [
+    {
+      "cycleId": "acl_8d3cdf65510e",
+      "status": "completed",
+      "dryRun": true,
+      "createdAt": "2026-06-12T09:37:17.093Z",
+      "guard": {
+        "allowed": true,
+        "reason": "CONTROL_LOOP_ALLOWED"
+      },
+      "steps": [
+        {
+          "step": "scheduler_status",
+          "success": true,
+          "result": {
+            "due": false,
+            "reason": "SCHEDULER_DISABLED"
+          }
+        },
+        {
+          "step": "decision_gate_evaluated",
+          "success": true,
+          "result": {
+            "totalDecisions": 0,
+            "allowedCount": 0
+          }
+        },
+        {
+          "step": "decision_gated_dispatch",
+          "success": true,
+          "result": {
+            "status": "decision_gate_dry_run_completed",
+            "results": 0
+          }
+        },
+        {
+          "step": "retry_scan",
+          "success": true,
+          "result": {
+            "added": 0,
+            "totalQueued": 1
+          }
+        }
+      ],
+      "gatePreview": {
+        "success": true,
+        "gateId": "gate_88a9fd7efb3d",
+        "createdAt": "2026-06-12T09:37:17.086Z",
+        "config": {
+          "enabled": true,
+          "dryRun": true,
+          "requireDecisionApproval": true,
+          "allowDecisionAutoApproval": false,
+          "requireDispatchRecommendation": true,
+          "blockOnRiskFlags": true,
+          "maxDispatchPerRun": 3
+        },
+        "emergencyStop": false,
+        "totalDecisions": 0,
+        "allowedCount": 0,
+        "gated": [],
+        "allowed": []
+      },
+      "dispatchRun": {
+        "success": true,
+        "run": {
+          "runId": "dgd_334d97d18e7c",
+          "status": "decision_gate_dry_run_completed",
+          "createdAt": "2026-06-12T09:37:17.092Z",
+          "gate": {
+            "success": true,
+            "gateId": "gate_73bcdb80b364",
+            "createdAt": "2026-06-12T09:37:17.092Z",
+            "config": {
+              "enabled": true,
+              "dryRun": true,
+              "requireDecisionApproval": true,
+              "allowDecisionAutoApproval": false,
+              "requireDispatchRecommendation": true,
+              "blockOnRiskFlags": true,
+              "maxDispatchPerRun": 3
+            },
+            "emergencyStop": false,
+            "totalDecisions": 0,
+            "allowedCount": 0,
+            "gated": [],
+            "allowed": []
+          },
+          "results": []
+        }
+      },
+      "retryScan": {
+        "success": true,
+        "added": [],
+        "totalQueued": 1
+      },
+      "retryRun": null
+    }
+  ]
+}

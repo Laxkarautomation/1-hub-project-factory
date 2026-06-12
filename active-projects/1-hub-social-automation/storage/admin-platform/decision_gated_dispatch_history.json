@@ -24,6 +24,31 @@
         "allowed": []
       },
       "results": []
+    },
+    {
+      "runId": "dgd_334d97d18e7c",
+      "status": "decision_gate_dry_run_completed",
+      "createdAt": "2026-06-12T09:37:17.092Z",
+      "gate": {
+        "success": true,
+        "gateId": "gate_73bcdb80b364",
+        "createdAt": "2026-06-12T09:37:17.092Z",
+        "config": {
+          "enabled": true,
+          "dryRun": true,
+          "requireDecisionApproval": true,
+          "allowDecisionAutoApproval": false,
+          "requireDispatchRecommendation": true,
+          "blockOnRiskFlags": true,
+          "maxDispatchPerRun": 3
+        },
+        "emergencyStop": false,
+        "totalDecisions": 0,
+        "allowedCount": 0,
+        "gated": [],
+        "allowed": []
+      },
+      "results": []
     }
   ]
 }

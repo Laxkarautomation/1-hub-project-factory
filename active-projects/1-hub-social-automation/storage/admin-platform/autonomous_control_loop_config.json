@@ -1,0 +1,11 @@
+{
+  "enabled": false,
+  "dryRun": true,
+  "requireSafeMode": true,
+  "requireSchedulerDue": false,
+  "runDecisionGate": true,
+  "runDispatch": true,
+  "scanRetriesAfterCycle": true,
+  "runRetryAfterScan": false,
+  "maxCyclesPerManualRun": 1
+}

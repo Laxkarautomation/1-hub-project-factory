@@ -1793,3 +1793,86 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadDecisionGatedDispatchCenter);
 }
 /* END_PHASE_24_5_DECISION_GATED_DISPATCH_UI */
+
+
+/* PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_UI */
+async function loadAutonomousControlLoopCenter() {
+  const mountId = "autonomous-control-loop-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card autonomous-control-loop-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Autonomous Control Loop</h2><p>Loading control loop...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/autonomous-control-loop");
+    const data = await res.json();
+    const config = data.config || {};
+    const guard = data.guard || {};
+
+    mount.innerHTML = `
+      <h2>Autonomous Control Loop Orchestrator</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Loop: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE SAFE LOOP"}</span>
+        <span class="${guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleAutonomousControlLoop(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Loop</button>
+        <button onclick="runAutonomousControlLoopCycle()">Run Cycle</button>
+        <button onclick="loadAutonomousControlLoopCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Decision Gate: <b>${config.runDecisionGate ? "ON" : "OFF"}</b></div>
+        <div>Dispatch: <b>${config.runDispatch ? "ON" : "OFF"}</b></div>
+        <div>Retry Scan: <b>${config.scanRetriesAfterCycle ? "ON" : "OFF"}</b></div>
+        <div>Cycles: <b>${(data.recentCycles || []).length}</b></div>
+      </div>
+
+      <h3>Control Loop Snapshot</h3>
+      <pre class="ops-json">${JSON.stringify({
+        schedulerDue: data.scheduler && data.scheduler.due,
+        gateAllowed: data.decisionGate && data.decisionGate.gatePreview && data.decisionGate.gatePreview.allowedCount,
+        retrySummary: data.retry && data.retry.summary
+      }, null, 2)}</pre>
+
+      <h3>Recent Cycles</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentCycles || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Autonomous Control Loop</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleAutonomousControlLoop(enabled) {
+  await fetch("/api/admin/factory/autonomous-control-loop/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadAutonomousControlLoopCenter();
+}
+
+async function runAutonomousControlLoopCycle() {
+  await fetch("/api/admin/factory/autonomous-control-loop/run-cycle", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadAutonomousControlLoopCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadAutonomousControlLoopCenter = loadAutonomousControlLoopCenter;
+  window.toggleAutonomousControlLoop = toggleAutonomousControlLoop;
+  window.runAutonomousControlLoopCycle = runAutonomousControlLoopCycle;
+  window.addEventListener("DOMContentLoaded", loadAutonomousControlLoopCenter);
+}
+/* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_UI */

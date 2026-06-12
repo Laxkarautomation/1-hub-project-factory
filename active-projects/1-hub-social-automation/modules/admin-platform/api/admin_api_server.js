@@ -1,4 +1,7 @@
 
+// PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_API
+const autonomousControlLoopService = require("../services/autonomous_control_loop_service");
+
 // PHASE_24_5_DECISION_GATED_DISPATCH_API
 const decisionGatedDispatchService = require("../services/decision_gated_dispatch_service");
 
@@ -889,4 +892,21 @@ app.post("/api/admin/factory/decision-gated-dispatch/run", (req, res) => {
   res.json(decisionGatedDispatchService.runDecisionGatedDispatch(actor));
 });
 /* END_PHASE_24_5_DECISION_GATED_DISPATCH_API */
+
+
+/* PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_API */
+app.get("/api/admin/factory/autonomous-control-loop", (req, res) => {
+  res.json(autonomousControlLoopService.getControlLoopCenter());
+});
+
+app.post("/api/admin/factory/autonomous-control-loop/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousControlLoopService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/autonomous-control-loop/run-cycle", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousControlLoopService.runCycle(actor));
+});
+/* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_API */
 
