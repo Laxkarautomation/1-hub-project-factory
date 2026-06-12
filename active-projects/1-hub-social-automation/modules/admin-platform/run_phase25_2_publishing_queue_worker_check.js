@@ -1,4 +1,4 @@
-const bridge = require("./publishing_dispatch_bridge_service");
+const bridge = require("./services/publishing_dispatch_bridge_service");
 const worker = require("./services/publishing_queue_worker_service");
 const ops = require("./services/factory_operations_service");
 

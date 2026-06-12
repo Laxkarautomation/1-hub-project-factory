@@ -350,6 +350,33 @@
       "approvalRecommendations": 0,
       "dispatchRecommendations": 0,
       "decisions": []
+    },
+    {
+      "evaluationId": "eval_39c05f2deb1a",
+      "createdAt": "2026-06-12T09:55:17.116Z",
+      "actor": "phase25_2_seed",
+      "config": {
+        "enabled": true,
+        "minScoreForApproval": 70,
+        "minScoreForDispatch": 80,
+        "requirePublishable": true,
+        "requireAssets": false,
+        "requireProviders": true,
+        "requireChannel": true,
+        "safeModeOnly": true,
+        "riskBlockThreshold": 2,
+        "allowedProviders": [],
+        "allowedChannels": []
+      },
+      "guard": {
+        "allowed": false,
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED"
+      },
+      "emergencyStop": false,
+      "totalPacks": 0,
+      "approvalRecommendations": 0,
+      "dispatchRecommendations": 0,
+      "decisions": []
     }
   ]
 }

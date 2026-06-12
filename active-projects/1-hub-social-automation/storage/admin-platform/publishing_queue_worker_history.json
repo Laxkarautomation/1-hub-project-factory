@@ -1,3 +1,12 @@
 {
-  "runs": []
+  "runs": [
+    {
+      "workerRunId": "pqw_f69d8332a681",
+      "status": "dry_run_worker_completed",
+      "dryRun": true,
+      "createdAt": "2026-06-12T09:55:17.122Z",
+      "selected": 0,
+      "executed": 0
+    }
+  ]
 }

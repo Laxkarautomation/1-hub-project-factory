@@ -107,6 +107,18 @@
       "actor": "phase25_1_check",
       "reason": "phase25_1_clear",
       "createdAt": "2026-06-12T09:46:30.013Z"
+    },
+    {
+      "type": "safe_mode_changed",
+      "actor": "phase25_2_check",
+      "enabled": true,
+      "createdAt": "2026-06-12T09:55:17.092Z"
+    },
+    {
+      "type": "emergency_stop_cleared",
+      "actor": "phase25_2_check",
+      "reason": "phase25_2_clear",
+      "createdAt": "2026-06-12T09:55:17.095Z"
     }
   ]
 }
