@@ -59,6 +59,18 @@
       "actor": "phase24_2_check",
       "reason": "phase24_2_clear",
       "createdAt": "2026-06-12T09:26:51.879Z"
+    },
+    {
+      "type": "safe_mode_changed",
+      "actor": "phase24_3_check",
+      "enabled": true,
+      "createdAt": "2026-06-12T09:29:03.403Z"
+    },
+    {
+      "type": "emergency_stop_cleared",
+      "actor": "phase24_3_check",
+      "reason": "phase24_3_clear",
+      "createdAt": "2026-06-12T09:29:03.405Z"
     }
   ]
 }

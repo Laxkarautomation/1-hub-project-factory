@@ -1545,3 +1545,93 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadAutonomousSchedulerCenter);
 }
 /* END_PHASE_24_2_AUTONOMOUS_SCHEDULER_UI */
+
+
+/* PHASE_24_3_SELF_HEALING_RETRY_UI */
+async function loadSelfHealingRetryCenter() {
+  const mountId = "self-healing-retry-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card self-healing-retry-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Self-Healing + Retry Engine</h2><p>Loading retry center...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/self-healing");
+    const data = await res.json();
+    const config = data.config || {};
+    const summary = data.summary || {};
+
+    mount.innerHTML = `
+      <h2>Self-Healing + Retry Engine</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Retry Engine: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE RETRY"}</span>
+        <span class="status-pill">Max Attempts: ${config.maxRetryAttempts}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleSelfHealingRetry(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Retry Engine</button>
+        <button onclick="scanSelfHealingFailures()">Scan Failures</button>
+        <button onclick="runNextSelfHealingRetry()">Run Next Retry</button>
+        <button onclick="loadSelfHealingRetryCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Total Retry Items: <b>${summary.totalItems || 0}</b></div>
+        <div>History Runs: <b>${summary.historyRuns || 0}</b></div>
+        <div>Queued: <b>${(summary.statusCounts || {}).queued || 0}</b></div>
+        <div>Dry Retry: <b>${(summary.statusCounts || {}).dry_run_retry_recorded || 0}</b></div>
+      </div>
+
+      <h3>Retry Queue</h3>
+      <pre class="ops-json">${JSON.stringify(data.queue || [], null, 2)}</pre>
+
+      <h3>Retry History</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentRuns || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Self-Healing + Retry Engine</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleSelfHealingRetry(enabled) {
+  await fetch("/api/admin/factory/self-healing/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadSelfHealingRetryCenter();
+}
+
+async function scanSelfHealingFailures() {
+  await fetch("/api/admin/factory/self-healing/scan", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadSelfHealingRetryCenter();
+}
+
+async function runNextSelfHealingRetry() {
+  await fetch("/api/admin/factory/self-healing/retry-next", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadSelfHealingRetryCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadSelfHealingRetryCenter = loadSelfHealingRetryCenter;
+  window.toggleSelfHealingRetry = toggleSelfHealingRetry;
+  window.scanSelfHealingFailures = scanSelfHealingFailures;
+  window.runNextSelfHealingRetry = runNextSelfHealingRetry;
+  window.addEventListener("DOMContentLoaded", loadSelfHealingRetryCenter);
+}
+/* END_PHASE_24_3_SELF_HEALING_RETRY_UI */

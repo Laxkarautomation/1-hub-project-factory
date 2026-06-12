@@ -15,6 +15,12 @@
       "createdAt": "2026-06-12T09:26:51.905Z",
       "plan": [],
       "launchResults": []
+    },
+    {
+      "runId": "afr_1922610f44a4",
+      "status": "blocked",
+      "reason": "AUTONOMOUS_RUNTIME_DISABLED",
+      "createdAt": "2026-06-12T09:29:03.418Z"
     }
   ]
 }

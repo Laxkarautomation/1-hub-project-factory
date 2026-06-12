@@ -1,6 +1,6 @@
 {
   "immutable": true,
-  "updatedAt": "2026-06-12T09:26:51.907Z",
+  "updatedAt": "2026-06-12T09:29:03.427Z",
   "events": [
     {
       "auditId": "aud_f3923642062b9ba7",
@@ -363,6 +363,145 @@
       },
       "previousHash": "a551a03623594d69ab65a5ff4b4955f24919f69e6b529a4a40eccbc6da753e6a",
       "hash": "d7be940ef85b6ce8f54f895ddff1381bd8b41928c173418798e50a014b0721bb"
+    },
+    {
+      "auditId": "aud_721094185a34df90",
+      "createdAt": "2026-06-12T09:29:03.403Z",
+      "actor": "phase24_3_check",
+      "action": "factory_safe_mode_changed",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true
+      },
+      "previousHash": "d7be940ef85b6ce8f54f895ddff1381bd8b41928c173418798e50a014b0721bb",
+      "hash": "afe8972e8484c84113ed8573b5d96b024c25df583a91fac31c77dd1963eea9b9"
+    },
+    {
+      "auditId": "aud_363a5c3a025b764b",
+      "createdAt": "2026-06-12T09:29:03.406Z",
+      "actor": "phase24_3_check",
+      "action": "factory_emergency_stop_cleared",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "reason": "phase24_3_clear"
+      },
+      "previousHash": "afe8972e8484c84113ed8573b5d96b024c25df583a91fac31c77dd1963eea9b9",
+      "hash": "74dfece2ee62c1b640d1b44e989b07b8f2b0f56a06691bc8a57b32d4c258821e"
+    },
+    {
+      "auditId": "aud_bb9f4ea60363b940",
+      "createdAt": "2026-06-12T09:29:03.406Z",
+      "actor": "phase24_3_check",
+      "action": "autonomous_runtime_config_updated",
+      "entityType": "factory_runtime",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": false,
+        "dryRun": true,
+        "requirePublishableStatus": true,
+        "requireSafeMode": true,
+        "autoApprovePublishable": false,
+        "maxPacksPerRun": 3,
+        "allowedProviders": [],
+        "allowedChannels": [],
+        "scheduleMode": "manual_safe",
+        "timezone": "Asia/Kolkata"
+      },
+      "previousHash": "74dfece2ee62c1b640d1b44e989b07b8f2b0f56a06691bc8a57b32d4c258821e",
+      "hash": "24f1eec7e6a5db271b1e4e8b7e5dad00c22a291dde506ff3a55943a6785fe2c5"
+    },
+    {
+      "auditId": "aud_751a6a8cbea9ba89",
+      "createdAt": "2026-06-12T09:29:03.419Z",
+      "actor": "phase24_3_check_blocked_seed",
+      "action": "autonomous_runtime_blocked",
+      "entityType": "factory_runtime",
+      "entityId": "afr_1922610f44a4",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "runId": "afr_1922610f44a4",
+        "status": "blocked",
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED",
+        "createdAt": "2026-06-12T09:29:03.418Z"
+      },
+      "previousHash": "24f1eec7e6a5db271b1e4e8b7e5dad00c22a291dde506ff3a55943a6785fe2c5",
+      "hash": "bc3537f25e19f25a76991d24e4cb2c6bc98e9e82a7ace22d9fb793c651f858b2"
+    },
+    {
+      "auditId": "aud_b30a2fad26e52073",
+      "createdAt": "2026-06-12T09:29:03.420Z",
+      "actor": "phase24_3_check",
+      "action": "self_healing_retry_config_updated",
+      "entityType": "retry_engine",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true,
+        "dryRun": true,
+        "maxRetryAttempts": 3,
+        "retryBlockedRuns": true,
+        "retryFailedLaunches": true,
+        "requireSafeMode": true,
+        "autoRetry": false,
+        "retryDelayMinutes": 15
+      },
+      "previousHash": "bc3537f25e19f25a76991d24e4cb2c6bc98e9e82a7ace22d9fb793c651f858b2",
+      "hash": "64dd41f3d33e5af15a94c35d8ba8e1d89dbc5a32222d821961464be6f43e3c26"
+    },
+    {
+      "auditId": "aud_82bba0fd647f6206",
+      "createdAt": "2026-06-12T09:29:03.421Z",
+      "actor": "phase24_3_check",
+      "action": "self_healing_scan_completed",
+      "entityType": "retry_engine",
+      "entityId": "scan",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "added": 1
+      },
+      "previousHash": "64dd41f3d33e5af15a94c35d8ba8e1d89dbc5a32222d821961464be6f43e3c26",
+      "hash": "e90a867d2ab5115ef7237a8a9a4fdcf5581c991d3bb6d86f4e77fc8596935a38"
+    },
+    {
+      "auditId": "aud_bb763cb8cf00580b",
+      "createdAt": "2026-06-12T09:29:03.427Z",
+      "actor": "phase24_3_check",
+      "action": "self_healing_retry_run",
+      "entityType": "retry_item",
+      "entityId": "rty_fadb82b5252e",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "retryRunId": "rtr_41770051e0b8",
+        "retryId": "rty_fadb82b5252e",
+        "status": "dry_run_retry_recorded",
+        "runtimeResult": {
+          "success": true,
+          "dryRun": true,
+          "message": "Retry dry-run recorded. Runtime not triggered."
+        },
+        "createdAt": "2026-06-12T09:29:03.427Z"
+      },
+      "previousHash": "e90a867d2ab5115ef7237a8a9a4fdcf5581c991d3bb6d86f4e77fc8596935a38",
+      "hash": "313ca10728b3232a2d7e7ab25624f24937ccb1a7d5bd1d305fd99da4ea888f72"
     }
   ]
 }

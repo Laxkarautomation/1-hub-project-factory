@@ -260,3 +260,8 @@ textarea {
 /* PHASE_24_2_AUTONOMOUS_SCHEDULER_STYLES */
 .autonomous-scheduler-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_24_2_AUTONOMOUS_SCHEDULER_STYLES */
+
+
+/* PHASE_24_3_SELF_HEALING_RETRY_STYLES */
+.self-healing-retry-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_24_3_SELF_HEALING_RETRY_STYLES */

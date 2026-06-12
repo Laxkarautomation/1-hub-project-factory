@@ -1,0 +1,15 @@
+{
+  "runs": [
+    {
+      "retryRunId": "rtr_41770051e0b8",
+      "retryId": "rty_fadb82b5252e",
+      "status": "dry_run_retry_recorded",
+      "runtimeResult": {
+        "success": true,
+        "dryRun": true,
+        "message": "Retry dry-run recorded. Runtime not triggered."
+      },
+      "createdAt": "2026-06-12T09:29:03.427Z"
+    }
+  ]
+}

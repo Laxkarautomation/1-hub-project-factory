@@ -1,4 +1,7 @@
 
+// PHASE_24_3_SELF_HEALING_RETRY_API
+const selfHealingRetryService = require("../services/self_healing_retry_service");
+
 // PHASE_24_2_AUTONOMOUS_SCHEDULER_API
 const autonomousSchedulerService = require("../services/autonomous_scheduler_service");
 
@@ -814,4 +817,31 @@ app.post("/api/admin/factory/autonomous-scheduler/evaluate", (req, res) => {
   res.json(autonomousSchedulerService.evaluateAndRun(actor));
 });
 /* END_PHASE_24_2_AUTONOMOUS_SCHEDULER_API */
+
+
+/* PHASE_24_3_SELF_HEALING_RETRY_API */
+app.get("/api/admin/factory/self-healing", (req, res) => {
+  res.json(selfHealingRetryService.getRetryCenter());
+});
+
+app.post("/api/admin/factory/self-healing/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(selfHealingRetryService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/self-healing/scan", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(selfHealingRetryService.scanRuntimeFailures(actor));
+});
+
+app.post("/api/admin/factory/self-healing/retry-next", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(selfHealingRetryService.runNextRetry(actor));
+});
+
+app.post("/api/admin/factory/self-healing/retry/:retryId", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(selfHealingRetryService.runRetry(req.params.retryId, actor));
+});
+/* END_PHASE_24_3_SELF_HEALING_RETRY_API */
 

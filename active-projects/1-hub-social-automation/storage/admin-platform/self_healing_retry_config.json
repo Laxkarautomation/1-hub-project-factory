@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "dryRun": true,
+  "maxRetryAttempts": 3,
+  "retryBlockedRuns": true,
+  "retryFailedLaunches": true,
+  "requireSafeMode": true,
+  "autoRetry": false,
+  "retryDelayMinutes": 15
+}

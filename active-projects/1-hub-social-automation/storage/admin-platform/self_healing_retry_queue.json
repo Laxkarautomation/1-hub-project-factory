@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "retryId": "rty_fadb82b5252e",
+      "sourceKey": "afr_1922610f44a4",
+      "sourceType": "autonomous_runtime_run",
+      "status": "dry_run_retry_recorded",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "classification": {
+        "type": "runtime_blocked",
+        "retryable": true,
+        "severity": "warning"
+      },
+      "source": {
+        "runId": "afr_1922610f44a4",
+        "status": "blocked",
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED",
+        "createdAt": "2026-06-12T09:29:03.418Z"
+      },
+      "createdAt": "2026-06-12T09:29:03.421Z",
+      "updatedAt": "2026-06-12T09:29:03.425Z"
+    }
+  ]
+}
