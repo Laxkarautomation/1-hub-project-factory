@@ -1,0 +1,12 @@
+{
+  "runs": [
+    {
+      "executorRunId": "pae_896fa10c776d",
+      "status": "dry_run_provider_executor_completed",
+      "dryRun": true,
+      "selected": 0,
+      "executed": 0,
+      "createdAt": "2026-06-12T10:00:21.600Z"
+    }
+  ]
+}

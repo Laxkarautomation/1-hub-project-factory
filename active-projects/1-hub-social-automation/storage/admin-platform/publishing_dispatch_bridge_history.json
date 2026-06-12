@@ -26,6 +26,15 @@
       "built": 0,
       "added": 0,
       "queueSize": 0
+    },
+    {
+      "bridgeRunId": "pbr_332541dc908e",
+      "status": "dry_run_bridge_completed",
+      "dryRun": true,
+      "createdAt": "2026-06-12T10:00:21.578Z",
+      "built": 0,
+      "added": 0,
+      "queueSize": 0
     }
   ]
 }

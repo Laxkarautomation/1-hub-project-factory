@@ -1,4 +1,7 @@
 
+// PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_API
+const providerAdapterExecutorService = require("../services/provider_adapter_executor_service");
+
 // PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_API
 const providerExecutionHandoffService = require("../services/provider_execution_handoff_service");
 
@@ -969,4 +972,21 @@ app.post("/api/admin/factory/provider-handoff/enqueue", (req, res) => {
   res.json(providerExecutionHandoffService.enqueueHandoffJobs(actor));
 });
 /* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_API */
+
+
+/* PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_API */
+app.get("/api/admin/factory/provider-executor", (req, res) => {
+  res.json(providerAdapterExecutorService.getExecutorCenter());
+});
+
+app.post("/api/admin/factory/provider-executor/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(providerAdapterExecutorService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/provider-executor/run-once", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(providerAdapterExecutorService.runExecutorOnce(actor));
+});
+/* END_PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_API */
 

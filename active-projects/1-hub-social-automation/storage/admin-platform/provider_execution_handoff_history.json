@@ -8,6 +8,15 @@
       "added": 0,
       "queueSize": 0,
       "createdAt": "2026-06-12T09:55:31.288Z"
+    },
+    {
+      "handoffRunId": "phr_1d0849a5afe1",
+      "status": "handoff_jobs_enqueued",
+      "dryRun": true,
+      "built": 0,
+      "added": 0,
+      "queueSize": 0,
+      "createdAt": "2026-06-12T10:00:21.594Z"
     }
   ]
 }

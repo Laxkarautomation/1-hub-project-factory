@@ -1,6 +1,6 @@
 {
   "immutable": true,
-  "updatedAt": "2026-06-12T09:55:31.288Z",
+  "updatedAt": "2026-06-12T10:00:21.601Z",
   "events": [
     {
       "auditId": "aud_f3923642062b9ba7",
@@ -1367,6 +1367,164 @@
       },
       "previousHash": "c7a8551714eca6c484316795a43f04f3c202d523546b23501f80d8a5057b24f4",
       "hash": "93d42ba38f1b4955b22748a29213859ebe2ed6331fb10235cb501f98722afdd3"
+    },
+    {
+      "auditId": "aud_393fe979b4fdaee9",
+      "createdAt": "2026-06-12T10:00:21.514Z",
+      "actor": "phase25_4_check",
+      "action": "factory_safe_mode_changed",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true
+      },
+      "previousHash": "93d42ba38f1b4955b22748a29213859ebe2ed6331fb10235cb501f98722afdd3",
+      "hash": "78c0dacb34ddb5b52222a89b75a79ca3ba85dc1217fc14601f2d9289c0f4ca3e"
+    },
+    {
+      "auditId": "aud_930e00c8b29ab22f",
+      "createdAt": "2026-06-12T10:00:21.520Z",
+      "actor": "phase25_4_check",
+      "action": "factory_emergency_stop_cleared",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "reason": "phase25_4_clear"
+      },
+      "previousHash": "78c0dacb34ddb5b52222a89b75a79ca3ba85dc1217fc14601f2d9289c0f4ca3e",
+      "hash": "be3971a2a6312b9cbada2f6bb2110f03bcd1469cbc62af14da936357035bf2c1"
+    },
+    {
+      "auditId": "aud_f09d425127535d47",
+      "createdAt": "2026-06-12T10:00:21.576Z",
+      "actor": "phase25_4_seed_bridge",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_cebd8af5adca",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "be3971a2a6312b9cbada2f6bb2110f03bcd1469cbc62af14da936357035bf2c1",
+      "hash": "d6a4c95ab664064b239aeb537bb5ccf7ee9feda54f567160e0000dcb270804b4"
+    },
+    {
+      "auditId": "aud_69b143b3f8ae273d",
+      "createdAt": "2026-06-12T10:00:21.579Z",
+      "actor": "phase25_4_seed_bridge",
+      "action": "publishing_dispatch_bridge_enqueued",
+      "entityType": "publishing_bridge",
+      "entityId": "pbr_332541dc908e",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "bridgeRunId": "pbr_332541dc908e",
+        "status": "dry_run_bridge_completed",
+        "dryRun": true,
+        "createdAt": "2026-06-12T10:00:21.578Z",
+        "built": 0,
+        "added": 0,
+        "queueSize": 0
+      },
+      "previousHash": "d6a4c95ab664064b239aeb537bb5ccf7ee9feda54f567160e0000dcb270804b4",
+      "hash": "b7d59199fcc3c0f4c1825efbeacbb5f8056ee96109c66028172d97562aa876f9"
+    },
+    {
+      "auditId": "aud_875fc4e56f554c80",
+      "createdAt": "2026-06-12T10:00:21.587Z",
+      "actor": "phase25_4_seed_worker",
+      "action": "publishing_queue_worker_run",
+      "entityType": "publishing_worker",
+      "entityId": "pqw_19ed93a3196c",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "workerRunId": "pqw_19ed93a3196c",
+        "status": "dry_run_worker_completed",
+        "dryRun": true,
+        "createdAt": "2026-06-12T10:00:21.586Z",
+        "selected": 0,
+        "executed": 0
+      },
+      "previousHash": "b7d59199fcc3c0f4c1825efbeacbb5f8056ee96109c66028172d97562aa876f9",
+      "hash": "7fc8c1445ff0a25821c6211f8f6dfa348bb7fac1ae9c125c25a693589185e2c3"
+    },
+    {
+      "auditId": "aud_01aeb45648648f66",
+      "createdAt": "2026-06-12T10:00:21.595Z",
+      "actor": "phase25_4_seed_handoff",
+      "action": "provider_execution_handoff_enqueued",
+      "entityType": "provider_handoff",
+      "entityId": "phr_1d0849a5afe1",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "handoffRunId": "phr_1d0849a5afe1",
+        "status": "handoff_jobs_enqueued",
+        "dryRun": true,
+        "built": 0,
+        "added": 0,
+        "queueSize": 0,
+        "createdAt": "2026-06-12T10:00:21.594Z"
+      },
+      "previousHash": "7fc8c1445ff0a25821c6211f8f6dfa348bb7fac1ae9c125c25a693589185e2c3",
+      "hash": "32f3632ecca0443b7a694e082803cc6474d899b16ff6e0cb611f435d999eb3c2"
+    },
+    {
+      "auditId": "aud_ddfc2158d4654aeb",
+      "createdAt": "2026-06-12T10:00:21.597Z",
+      "actor": "phase25_4_check",
+      "action": "provider_adapter_executor_config_updated",
+      "entityType": "provider_executor",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true,
+        "dryRun": true,
+        "requireSafeMode": true,
+        "maxJobsPerRun": 3,
+        "allowedProviders": [],
+        "allowedChannels": [],
+        "realExecutionAllowed": false
+      },
+      "previousHash": "32f3632ecca0443b7a694e082803cc6474d899b16ff6e0cb611f435d999eb3c2",
+      "hash": "a00cbed288d31d398c078778ff774205df72a5882cbbcf2330b3506827a4fc7b"
+    },
+    {
+      "auditId": "aud_7861703343e7617a",
+      "createdAt": "2026-06-12T10:00:21.601Z",
+      "actor": "phase25_4_check",
+      "action": "provider_adapter_executor_run",
+      "entityType": "provider_executor",
+      "entityId": "pae_896fa10c776d",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "executorRunId": "pae_896fa10c776d",
+        "status": "dry_run_provider_executor_completed",
+        "dryRun": true,
+        "selected": 0,
+        "executed": 0,
+        "createdAt": "2026-06-12T10:00:21.600Z"
+      },
+      "previousHash": "a00cbed288d31d398c078778ff774205df72a5882cbbcf2330b3506827a4fc7b",
+      "hash": "7e3ffa2fed0799efc7c288a79df12898f6dbe62420b64f198f26968360c435e3"
     }
   ]
 }

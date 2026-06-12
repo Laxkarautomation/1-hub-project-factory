@@ -295,3 +295,8 @@ textarea {
 /* PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_STYLES */
 .provider-handoff-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_STYLES */
+
+
+/* PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_STYLES */
+.provider-executor-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_STYLES */

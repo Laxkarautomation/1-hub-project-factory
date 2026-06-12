@@ -15,6 +15,14 @@
       "createdAt": "2026-06-12T09:55:31.283Z",
       "selected": 0,
       "executed": 0
+    },
+    {
+      "workerRunId": "pqw_19ed93a3196c",
+      "status": "dry_run_worker_completed",
+      "dryRun": true,
+      "createdAt": "2026-06-12T10:00:21.586Z",
+      "selected": 0,
+      "executed": 0
     }
   ]
 }

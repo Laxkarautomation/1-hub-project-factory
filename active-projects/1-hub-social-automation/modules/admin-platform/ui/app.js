@@ -2112,3 +2112,81 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadProviderHandoffCenter);
 }
 /* END_PHASE_25_3_PROVIDER_EXECUTION_HANDOFF_UI */
+
+
+/* PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_UI */
+async function loadProviderExecutorCenter() {
+  const mountId = "provider-executor-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card provider-executor-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Provider Adapter Executor</h2><p>Loading executor...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/provider-executor");
+    const data = await res.json();
+    const config = data.config || {};
+
+    mount.innerHTML = `
+      <h2>Provider Adapter Executor Shell</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Executor: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE PROVIDER"}</span>
+        <span class="${data.guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${data.guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleProviderExecutor(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Executor</button>
+        <button onclick="runProviderExecutorOnce()">Run Executor Once</button>
+        <button onclick="loadProviderExecutorCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Ready Jobs: <b>${data.queueSummary.ready || 0}</b></div>
+        <div>Executed Jobs: <b>${data.queueSummary.executed || 0}</b></div>
+        <div>Results: <b>${data.resultSummary.totalResults || 0}</b></div>
+        <div>Dry Proofs: <b>${data.resultSummary.dryRunProofs || 0}</b></div>
+      </div>
+
+      <h3>Provider Execution Results</h3>
+      <pre class="ops-json">${JSON.stringify(data.results || [], null, 2)}</pre>
+
+      <h3>Provider Handoff Queue</h3>
+      <pre class="ops-json">${JSON.stringify(data.queue || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Provider Adapter Executor</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleProviderExecutor(enabled) {
+  await fetch("/api/admin/factory/provider-executor/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadProviderExecutorCenter();
+}
+
+async function runProviderExecutorOnce() {
+  await fetch("/api/admin/factory/provider-executor/run-once", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadProviderExecutorCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadProviderExecutorCenter = loadProviderExecutorCenter;
+  window.toggleProviderExecutor = toggleProviderExecutor;
+  window.runProviderExecutorOnce = runProviderExecutorOnce;
+  window.addEventListener("DOMContentLoaded", loadProviderExecutorCenter);
+}
+/* END_PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_UI */

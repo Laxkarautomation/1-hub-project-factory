@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "dryRun": true,
+  "requireSafeMode": true,
+  "maxJobsPerRun": 3,
+  "allowedProviders": [],
+  "allowedChannels": [],
+  "realExecutionAllowed": false
+}
