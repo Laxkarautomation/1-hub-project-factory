@@ -242,3 +242,11 @@ textarea {
 .danger-pill { font-weight: 700; color: #c0392b; }
 .ops-json { max-height: 320px; overflow: auto; padding: 12px; border-radius: 12px; background: #111; color: #eee; }
 /* END_PHASE_23_3_FACTORY_OPERATIONS_STYLES */
+
+
+/* PHASE_23_4_FACTORY_AUDIT_STYLES */
+.factory-audit-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+.audit-feed { display: grid; gap: 12px; }
+.audit-card { border: 1px solid #ddd; border-radius: 14px; padding: 12px; }
+.audit-card-head { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+/* END_PHASE_23_4_FACTORY_AUDIT_STYLES */

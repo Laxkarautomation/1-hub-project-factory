@@ -1,3 +1,4 @@
+const auditService = require("./factory_audit_service");
 const fs = require("fs");
 const path = require("path");
 
@@ -207,6 +208,15 @@ function setSafeMode(enabled, actor = "admin") {
     actor,
     enabled: state.safeMode
   });
+
+  auditService.appendAuditEvent({
+    actor,
+    action: "factory_safe_mode_changed",
+    entityType: "factory",
+    entityId: "global",
+    severity: "info",
+    metadata: { enabled: state.safeMode }
+  });
   return { success: true, safeMode: state.safeMode };
 }
 
@@ -229,6 +239,15 @@ function setEmergencyStop(enabled, reason = "", actor = "admin") {
     reason
   });
 
+  auditService.appendAuditEvent({
+    actor,
+    action: emergency.enabled ? "factory_emergency_stop_enabled" : "factory_emergency_stop_cleared",
+    entityType: "factory",
+    entityId: "global",
+    severity: emergency.enabled ? "critical" : "warning",
+    metadata: { reason }
+  });
+
   return { success: true, emergencyStop: emergency };
 }
 
@@ -243,6 +262,15 @@ function runRecoveryAction(actionId, actor = "admin") {
 
   addHistory({ type: "recovery_action", actor, actionId });
 
+  auditService.appendAuditEvent({
+    actor,
+    action: "factory_recovery_action",
+    entityType: "factory",
+    entityId: "global",
+    severity: "warning",
+    metadata: { actionId }
+  });
+
   return {
     success: true,
     actionId,
@@ -256,3 +284,5 @@ module.exports = {
   setEmergencyStop,
   runRecoveryAction
 };
+
+// PHASE_23_4_AUDIT_WIRE_OPERATIONS

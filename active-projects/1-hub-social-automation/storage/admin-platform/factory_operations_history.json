@@ -23,6 +23,18 @@
       "actor": "phase23_3_check",
       "actionId": "refresh_status",
       "createdAt": "2026-06-12T09:04:52.159Z"
+    },
+    {
+      "type": "safe_mode_changed",
+      "actor": "phase23_4_check",
+      "enabled": true,
+      "createdAt": "2026-06-12T09:07:43.714Z"
+    },
+    {
+      "type": "emergency_stop_cleared",
+      "actor": "phase23_4_check",
+      "reason": "phase23_4_check_clear",
+      "createdAt": "2026-06-12T09:07:43.715Z"
     }
   ]
 }

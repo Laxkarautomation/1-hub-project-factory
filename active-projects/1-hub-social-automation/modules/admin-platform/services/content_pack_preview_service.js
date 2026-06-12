@@ -1,3 +1,4 @@
+const auditService = require("./factory_audit_service");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
@@ -216,6 +217,20 @@ function approveContentPack(contentPackId, approvedBy = "admin") {
   };
   saveApprovalState(state);
 
+  auditService.appendAuditEvent({
+    actor: approvedBy,
+    action: "content_pack_approved",
+    entityType: "content_pack",
+    entityId: contentPackId,
+    channelId: preview.preview.channelId,
+    severity: "info",
+    metadata: {
+      title: preview.preview.title,
+      status: preview.preview.status,
+      safeMode: preview.preview.safeMode
+    }
+  });
+
   return {
     success: true,
     contentPackId,
@@ -265,6 +280,21 @@ function launchContentPack(contentPackId, options = {}) {
   };
   saveApprovalState(state);
 
+  auditService.appendAuditEvent({
+    actor: options.actor || "admin",
+    action: "content_pack_launch_recorded",
+    entityType: "content_pack",
+    entityId: contentPackId,
+    channelId: pack.channelId,
+    severity: "info",
+    metadata: {
+      runId,
+      providers,
+      safeMode: run.safeMode,
+      status: run.status
+    }
+  });
+
   return { success: true, run };
 }
 
@@ -292,3 +322,5 @@ module.exports = {
   launchContentPack,
   getApprovalCenter
 };
+
+// PHASE_23_4_AUDIT_WIRE_CONTENT_PACKS

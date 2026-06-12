@@ -1299,3 +1299,79 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadFactoryOperationsCenter);
 }
 /* END_PHASE_23_3_FACTORY_OPERATIONS_UI */
+
+
+/* PHASE_23_4_FACTORY_AUDIT_UI */
+async function loadFactoryAuditCenter() {
+  const mountId = "factory-audit-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card factory-audit-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Factory Audit + Compliance</h2><p>Loading audit trail...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/audit");
+    const data = await res.json();
+
+    const summary = data.summary || {};
+    const valid = summary.chainValid;
+
+    mount.innerHTML = `
+      <h2>Factory Audit + Compliance</h2>
+
+      <div class="ops-status-row">
+        <span class="${valid ? "ok-pill" : "danger-pill"}">Immutable Chain: ${valid ? "VALID" : "INVALID"}</span>
+        <span class="status-pill">Events: ${summary.totalEvents || 0}</span>
+        <button onclick="exportFactoryAuditReport()">Export Audit Report</button>
+        <button onclick="loadFactoryAuditCenter()">Refresh Audit</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Total Events: <b>${summary.totalEvents || 0}</b></div>
+        <div>Visible Feed: <b>${summary.visibleEvents || 0}</b></div>
+        <div>Compliance Flags: <b>${(data.complianceFlags || []).length}</b></div>
+        <div>Chain Issues: <b>${(data.immutableChain.issues || []).length}</b></div>
+      </div>
+
+      <h3>Admin Activity Feed</h3>
+      <div class="audit-feed">
+        ${(data.activityFeed || []).map(e => `
+          <div class="audit-card">
+            <div class="audit-card-head">
+              <b>${e.action}</b>
+              <span class="${e.severity === "critical" ? "danger-pill" : "ok-pill"}">${e.severity}</span>
+            </div>
+            <p>${e.entityType} / ${e.entityId || "global"} • Actor: ${e.actor}</p>
+            <small>${e.createdAt}</small>
+            <pre class="ops-json">${JSON.stringify(e.metadata || {}, null, 2)}</pre>
+          </div>
+        `).join("") || "<p>No audit events yet.</p>"}
+      </div>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Factory Audit + Compliance</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function exportFactoryAuditReport() {
+  const res = await fetch("/api/admin/factory/audit/export", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ format: "json" })
+  });
+  const data = await res.json();
+  alert(data.success ? "Audit report exported: " + data.file : "Export failed");
+  await loadFactoryAuditCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadFactoryAuditCenter = loadFactoryAuditCenter;
+  window.exportFactoryAuditReport = exportFactoryAuditReport;
+  window.addEventListener("DOMContentLoaded", loadFactoryAuditCenter);
+}
+/* END_PHASE_23_4_FACTORY_AUDIT_UI */

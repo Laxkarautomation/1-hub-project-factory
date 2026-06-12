@@ -1,4 +1,7 @@
 
+// PHASE_23_4_FACTORY_AUDIT_API
+const factoryAuditService = require("../services/factory_audit_service");
+
 // PHASE_23_3_FACTORY_OPERATIONS_API
 const factoryOperationsService = require("../services/factory_operations_service");
 
@@ -751,4 +754,24 @@ app.post("/api/admin/factory/recovery-action", (req, res) => {
   res.json(factoryOperationsService.runRecoveryAction(actionId, actor));
 });
 /* END_PHASE_23_3_FACTORY_OPERATIONS_API */
+
+
+/* PHASE_23_4_FACTORY_AUDIT_API */
+app.get("/api/admin/factory/audit", (req, res) => {
+  res.json(factoryAuditService.getAuditCenter());
+});
+
+app.get("/api/admin/factory/audit/events", (req, res) => {
+  res.json(factoryAuditService.listAuditEvents(req.query || {}));
+});
+
+app.get("/api/admin/factory/audit/verify", (req, res) => {
+  res.json(factoryAuditService.verifyAuditChain());
+});
+
+app.post("/api/admin/factory/audit/export", (req, res) => {
+  const format = (req.body && req.body.format) || "json";
+  res.json(factoryAuditService.exportAuditReport(format));
+});
+/* END_PHASE_23_4_FACTORY_AUDIT_API */
 

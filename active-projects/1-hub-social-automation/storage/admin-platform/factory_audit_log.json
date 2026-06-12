@@ -1,0 +1,71 @@
+{
+  "immutable": true,
+  "updatedAt": "2026-06-12T09:07:43.717Z",
+  "events": [
+    {
+      "auditId": "aud_f3923642062b9ba7",
+      "createdAt": "2026-06-12T09:07:43.713Z",
+      "actor": "phase23_4_check",
+      "action": "audit_check_event",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "check": true
+      },
+      "previousHash": null,
+      "hash": "7717714f338a7b0204945573c11c094a2430d67b19748d7e0f6f2e3d1b208076"
+    },
+    {
+      "auditId": "aud_87c532bb31f901f0",
+      "createdAt": "2026-06-12T09:07:43.714Z",
+      "actor": "phase23_4_check",
+      "action": "factory_safe_mode_changed",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true
+      },
+      "previousHash": "7717714f338a7b0204945573c11c094a2430d67b19748d7e0f6f2e3d1b208076",
+      "hash": "36ac80541fb67438978ce84fe60f22dc875737647e9b7190727f542dd8db3bf1"
+    },
+    {
+      "auditId": "aud_8bb055004e58ec3d",
+      "createdAt": "2026-06-12T09:07:43.715Z",
+      "actor": "phase23_4_check",
+      "action": "factory_emergency_stop_cleared",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "reason": "phase23_4_check_clear"
+      },
+      "previousHash": "36ac80541fb67438978ce84fe60f22dc875737647e9b7190727f542dd8db3bf1",
+      "hash": "513b22bb03bc196c250a000dc0f9a83b8935bf065b42e183e8081c59df1d96c4"
+    },
+    {
+      "auditId": "aud_b0b72c0e460cff55",
+      "createdAt": "2026-06-12T09:07:43.717Z",
+      "actor": "system",
+      "action": "audit_report_exported",
+      "entityType": "audit_report",
+      "entityId": "factory_audit_report_2026-06-12T09-07-43-716Z.json",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "file": "storage/admin-platform/audit-reports/factory_audit_report_2026-06-12T09-07-43-716Z.json",
+        "format": "json"
+      },
+      "previousHash": "513b22bb03bc196c250a000dc0f9a83b8935bf065b42e183e8081c59df1d96c4",
+      "hash": "3987f081702bb512323559eefc5d3c7b448dbe1c554e7d645a8f67164674f3ed"
+    }
+  ]
+}
