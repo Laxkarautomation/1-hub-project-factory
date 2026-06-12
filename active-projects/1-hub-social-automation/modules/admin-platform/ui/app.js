@@ -547,15 +547,20 @@ async function reloadSettingsFromUi() {
 
 async function loadPublishingManager() {
   const data = await api("/api/admin/publishing");
+  const schedulerData = await api("/api/admin/publishing/scheduler");
+
   const platforms = data.platforms || [];
   const queue = data.queue || [];
   const history = data.history || [];
+  const scheduler = schedulerData.scheduler || {};
+  const schedules = schedulerData.schedules || [];
+  const runs = schedulerData.runs || [];
 
   document.getElementById("summary").innerHTML = `
     <div class="tile"><strong>Platforms</strong><br>${platforms.length}</div>
     <div class="tile"><strong>Queue</strong><br>${queue.length}</div>
-    <div class="tile"><strong>History</strong><br>${history.length}</div>
-    <div class="tile"><strong>Status</strong><br>Foundation Ready</div>
+    <div class="tile"><strong>Schedules</strong><br>${scheduler.totalSchedules || schedules.length}</div>
+    <div class="tile"><strong>Due Now</strong><br>${scheduler.dueNow || 0}</div>
   `;
 
   const platformRows = platforms.map((item) => `
@@ -573,8 +578,27 @@ async function loadPublishingManager() {
       <p><b>Platform:</b> ${job.platform}</p>
       <p><b>Status:</b> ${job.status}</p>
       <p><b>Scheduled:</b> ${job.scheduledAt}</p>
+      <p><b>Schedule:</b> ${job.payload?.scheduleId || "-"}</p>
     </div>
   `).join("") || "<p>No publishing jobs queued.</p>";
+
+  const scheduleRows = schedules.map((schedule) => `
+    <div class="publishing-card">
+      <h4>${schedule.id}</h4>
+      <p><b>Channel:</b> ${schedule.channelId || "-"}</p>
+      <p><b>Platform:</b> ${schedule.platform || schedule.payload?.platform || "youtube"}</p>
+      <p><b>Provider:</b> ${schedule.providerId || "-"}</p>
+      <p><b>Publish At:</b> ${schedule.publishAt || "-"}</p>
+      <p><b>Status:</b> ${schedule.status || "-"}</p>
+      <p><b>Attempts:</b> ${schedule.attempts || 0}/${schedule.maxAttempts || 3}</p>
+      <p><b>Queue Job:</b> ${schedule.queueJobId || "-"}</p>
+      ${
+        schedule.status === "scheduled"
+          ? `<button onclick="cancelScheduleFromUi('${schedule.id}')">Cancel</button>`
+          : ""
+      }
+    </div>
+  `).join("") || "<p>No schedules created.</p>";
 
   const historyRows = history.slice(0, 5).map((job) => `
     <div class="publishing-card">
@@ -585,22 +609,60 @@ async function loadPublishingManager() {
     </div>
   `).join("") || "<p>No publishing history.</p>";
 
+  const latestRun = scheduler.latestRun || runs[0] || null;
+
   document.getElementById("output").innerHTML = `
     <div class="manager">
-      <h2>Publishing Foundation</h2>
+      <h2>Publishing Manager</h2>
+
+      <div class="publishing-grid">
+        <div class="publishing-card">
+          <h3>Scheduler Dashboard</h3>
+          <p><b>Total:</b> ${scheduler.totalSchedules || 0}</p>
+          <p><b>Scheduled:</b> ${scheduler.scheduled || 0}</p>
+          <p><b>Queued:</b> ${scheduler.queued || 0}</p>
+          <p><b>Failed:</b> ${scheduler.failed || 0}</p>
+          <p><b>Due Now:</b> ${scheduler.dueNow || 0}</p>
+          <button onclick="runPublishingSchedulerFromUi()">Run Scheduler</button>
+        </div>
+
+        <div class="publishing-card">
+          <h3>Latest Scheduler Run</h3>
+          <p><b>ID:</b> ${latestRun?.id || "-"}</p>
+          <p><b>Due:</b> ${latestRun?.dueCount ?? "-"}</p>
+          <p><b>Enqueued:</b> ${latestRun?.enqueuedCount ?? "-"}</p>
+          <p><b>Failed:</b> ${latestRun?.failedCount ?? "-"}</p>
+          <p><b>Finished:</b> ${latestRun?.finishedAt || "-"}</p>
+        </div>
+
+        <div class="publishing-card">
+          <h3>Manual Publish</h3>
+          <input id="publishChannelId" placeholder="Channel ID" value="test-channel">
+          <input id="publishPlatform" placeholder="Platform e.g. youtube" value="youtube">
+          <input id="publishContentType" placeholder="Content Type" value="video">
+          <input id="publishTitle" placeholder="Title" value="Test publish title">
+          <input id="publishFilePath" placeholder="File Path" value="storage/videos/test.mp4">
+          <button onclick="enqueuePublishFromUi()">Enqueue</button>
+          <button onclick="runNextPublishFromUi()">Run Next Dry Run</button>
+        </div>
+      </div>
 
       <div class="form-card">
-        <h3>Create Dry Run Publish Job</h3>
-        <input id="publishChannelId" placeholder="Channel ID" value="test-channel">
-        <input id="publishPlatform" placeholder="Platform e.g. youtube" value="youtube">
-        <input id="publishContentType" placeholder="Content Type" value="video">
-        <input id="publishTitle" placeholder="Title" value="Test publish title">
-        <input id="publishFilePath" placeholder="File Path" value="storage/videos/test.mp4">
-        <button onclick="enqueuePublishFromUi()">Enqueue</button>
-        <button onclick="runNextPublishFromUi()">Run Next Dry Run</button>
+        <h3>Create Future Schedule</h3>
+        <input id="scheduleChannelId" placeholder="Channel ID" value="unraaz">
+        <input id="schedulePlatform" placeholder="Platform" value="youtube">
+        <input id="scheduleProviderId" placeholder="Provider ID" value="dry_run">
+        <input id="scheduleContentType" placeholder="Content Type" value="video">
+        <input id="scheduleTitle" placeholder="Title" value="Scheduled video title">
+        <input id="scheduleDescription" placeholder="Description" value="Scheduled video description">
+        <input id="schedulePublishAt" type="datetime-local">
+        <button onclick="createScheduleFromUi()">Create Schedule</button>
         <button onclick="loadPublishingManager()">Reload</button>
         <p id="publishingStatus"></p>
       </div>
+
+      <h3>Schedules</h3>
+      <div class="publishing-grid">${scheduleRows}</div>
 
       <h3>Platforms</h3>
       <div class="publishing-grid">${platformRows}</div>
@@ -612,6 +674,13 @@ async function loadPublishingManager() {
       <div class="publishing-grid">${historyRows}</div>
     </div>
   `;
+
+  const publishAtInput = document.getElementById("schedulePublishAt");
+  if (publishAtInput && !publishAtInput.value) {
+    const date = new Date(Date.now() + 10 * 60 * 1000);
+    date.setSeconds(0, 0);
+    publishAtInput.value = date.toISOString().slice(0, 16);
+  }
 }
 
 async function enqueuePublishFromUi() {
@@ -643,4 +712,53 @@ async function runNextPublishFromUi() {
   await loadPublishingManager();
   const status = document.getElementById("publishingStatus");
   if (status) status.textContent = result.success ? "Dry run publish completed." : result.error || "Dry run failed.";
+}
+
+
+async function createScheduleFromUi() {
+  const rawDate = document.getElementById("schedulePublishAt").value;
+
+  const payload = {
+    channelId: document.getElementById("scheduleChannelId").value.trim() || "unraaz",
+    platform: document.getElementById("schedulePlatform").value.trim() || "youtube",
+    providerId: document.getElementById("scheduleProviderId").value.trim() || "dry_run",
+    contentType: document.getElementById("scheduleContentType").value.trim() || "video",
+    title: document.getElementById("scheduleTitle").value.trim(),
+    description: document.getElementById("scheduleDescription").value.trim(),
+    publishAt: rawDate ? new Date(rawDate).toISOString() : new Date().toISOString()
+  };
+
+  const result = await api("/api/admin/publishing/schedules/create", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+
+  await loadPublishingManager();
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Schedule created." : result.error || "Schedule create failed.";
+}
+
+async function cancelScheduleFromUi(scheduleId) {
+  const ok = confirm("Cancel this schedule?");
+  if (!ok) return;
+
+  const result = await api("/api/admin/publishing/schedules/cancel", {
+    method: "POST",
+    body: JSON.stringify({ scheduleId })
+  });
+
+  await loadPublishingManager();
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Schedule cancelled." : result.error || "Cancel failed.";
+}
+
+async function runPublishingSchedulerFromUi() {
+  const result = await api("/api/admin/publishing/scheduler/run", {
+    method: "POST",
+    body: JSON.stringify({ dryRun: true })
+  });
+
+  await loadPublishingManager();
+  const status = document.getElementById("publishingStatus");
+  if (status) status.textContent = result.success ? "Scheduler run completed." : result.error || "Scheduler failed.";
 }
