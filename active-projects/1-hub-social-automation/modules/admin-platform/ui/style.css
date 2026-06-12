@@ -212,3 +212,20 @@ textarea {
   margin-top: 4px;
   color: #cbd5e1;
 }
+
+
+/* PHASE_23_2_CONTENT_PACK_APPROVAL_STYLES */
+.content-pack-approval-center { margin: 24px 0; padding: 20px; }
+.summary-grid { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 12px; margin: 14px 0 20px; }
+.summary-grid > div { padding: 12px; border: 1px solid #ddd; border-radius: 12px; background: rgba(255,255,255,.04); }
+.content-pack-list { display: grid; gap: 14px; }
+.content-pack-card { border: 1px solid #ddd; border-radius: 14px; padding: 14px; }
+.content-pack-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.status-pill, .provider-pill, .safe-badge { display: inline-block; padding: 4px 8px; border-radius: 999px; border: 1px solid #bbb; margin: 2px; font-size: 12px; }
+.safe-badge { font-weight: 700; }
+.provider-row, .approval-row, .button-row { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.button-row button { padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+.pack-preview { margin-top: 12px; max-height: 360px; overflow: auto; padding: 12px; border-radius: 12px; background: #111; color: #eee; }
+.hidden { display: none; }
+.danger { color: #c0392b; }
+/* END_PHASE_23_2_CONTENT_PACK_APPROVAL_STYLES */

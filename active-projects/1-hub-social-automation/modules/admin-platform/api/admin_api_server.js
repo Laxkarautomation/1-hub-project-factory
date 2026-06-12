@@ -1,3 +1,6 @@
+
+// PHASE_23_2_CONTENT_PACK_PREVIEW_API
+const contentPackPreviewService = require("../services/content_pack_preview_service");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -695,3 +698,28 @@ module.exports = {
   createAdminServer,
   startAdminApi
 };
+
+
+/* PHASE_23_2_CONTENT_PACK_PREVIEW_API */
+app.get("/api/admin/content-packs", (req, res) => {
+  res.json(contentPackPreviewService.listContentPacks(req.query || {}));
+});
+
+app.get("/api/admin/content-packs/approval-center", (req, res) => {
+  res.json(contentPackPreviewService.getApprovalCenter());
+});
+
+app.get("/api/admin/content-packs/:contentPackId/preview", (req, res) => {
+  res.json(contentPackPreviewService.getPreview(req.params.contentPackId));
+});
+
+app.post("/api/admin/content-packs/:contentPackId/approve", (req, res) => {
+  const approvedBy = (req.body && req.body.approvedBy) || "admin";
+  res.json(contentPackPreviewService.approveContentPack(req.params.contentPackId, approvedBy));
+});
+
+app.post("/api/admin/content-packs/:contentPackId/launch", (req, res) => {
+  res.json(contentPackPreviewService.launchContentPack(req.params.contentPackId, req.body || {}));
+});
+/* END_PHASE_23_2_CONTENT_PACK_PREVIEW_API */
+

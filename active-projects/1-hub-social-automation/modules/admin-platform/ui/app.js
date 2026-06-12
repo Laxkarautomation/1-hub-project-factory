@@ -1075,3 +1075,104 @@ async function cancelFactoryRun(runId) {
   show(result);
   await loadFactoryManager();
 }
+
+
+/* PHASE_23_2_CONTENT_PACK_APPROVAL_UI */
+async function loadContentPackApprovalCenter() {
+  const mountId = "content-pack-approval-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card content-pack-approval-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Content Pack Preview + Approval Center</h2><p>Loading content packs...</p>";
+
+  try {
+    const res = await fetch("/api/admin/content-packs/approval-center");
+    const data = await res.json();
+
+    if (!data.success) {
+      mount.innerHTML = "<h2>Content Pack Preview + Approval Center</h2><p class='danger'>Failed to load approval center.</p>";
+      return;
+    }
+
+    const cards = (data.packs || []).map((pack) => {
+      const approval = pack.approval || {};
+      const safe = pack.safeMode ? "<span class='safe-badge'>SAFE MODE</span>" : "";
+      const providers = (pack.providerTargets || []).map((p) => "<span class='provider-pill'>" + p + "</span>").join(" ");
+      return `
+        <div class="content-pack-card" data-pack-id="${pack.contentPackId}">
+          <div class="content-pack-head">
+            <div>
+              <h3>${pack.title || pack.contentPackId}</h3>
+              <p>${pack.contentPackId} • Channel: ${pack.channelId}</p>
+            </div>
+            <div>${safe}<span class="status-pill">${pack.status}</span></div>
+          </div>
+          <p>${pack.description || ""}</p>
+          <div class="provider-row">${providers}</div>
+          <div class="approval-row">
+            <span>Approval: ${approval.approved ? "Approved" : "Pending"}</span>
+            <span>Launch: ${approval.launchStatus || "not_launched"}</span>
+          </div>
+          <div class="button-row">
+            <button onclick="previewContentPack('${pack.contentPackId}')">Preview</button>
+            <button onclick="approveContentPack('${pack.contentPackId}')">Approve</button>
+            <button onclick="launchContentPack('${pack.contentPackId}')">Launch</button>
+          </div>
+          <pre id="preview-${pack.contentPackId}" class="pack-preview hidden"></pre>
+        </div>
+      `;
+    }).join("");
+
+    mount.innerHTML = `
+      <h2>Content Pack Preview + Approval Center</h2>
+      <div class="summary-grid">
+        <div>Total Packs: <b>${data.summary.totalPacks}</b></div>
+        <div>Publishable: <b>${data.summary.publishable}</b></div>
+        <div>Approved: <b>${data.summary.approved}</b></div>
+        <div>Safe Mode: <b>${data.summary.safeMode}</b></div>
+      </div>
+      <div class="content-pack-list">${cards || "<p>No content packs found.</p>"}</div>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Content Pack Preview + Approval Center</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function previewContentPack(contentPackId) {
+  const box = document.getElementById("preview-" + contentPackId);
+  const res = await fetch("/api/admin/content-packs/" + contentPackId + "/preview");
+  const data = await res.json();
+  box.classList.remove("hidden");
+  box.textContent = JSON.stringify(data.preview || data, null, 2);
+}
+
+async function approveContentPack(contentPackId) {
+  await fetch("/api/admin/content-packs/" + contentPackId + "/approve", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ approvedBy: "admin-ui" })
+  });
+  await loadContentPackApprovalCenter();
+}
+
+async function launchContentPack(contentPackId) {
+  await fetch("/api/admin/content-packs/" + contentPackId + "/launch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ safeMode: true })
+  });
+  await loadContentPackApprovalCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.previewContentPack = previewContentPack;
+  window.approveContentPack = approveContentPack;
+  window.launchContentPack = launchContentPack;
+  window.addEventListener("DOMContentLoaded", loadContentPackApprovalCenter);
+}
+/* END_PHASE_23_2_CONTENT_PACK_APPROVAL_UI */
