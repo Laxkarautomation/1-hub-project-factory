@@ -8,7 +8,9 @@
         "platform": "youtube",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   },
@@ -21,7 +23,9 @@
         "platform": "instagram",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   },
@@ -34,7 +38,9 @@
         "platform": "facebook",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   },
@@ -47,7 +53,9 @@
         "platform": "linkedin",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   },
@@ -60,7 +68,9 @@
         "platform": "x",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   },
@@ -73,7 +83,9 @@
         "platform": "telegram",
         "enabled": false,
         "mode": "api",
-        "requiresAuth": true
+        "requiresAuth": true,
+        "realPublishing": false,
+        "safeMode": true
       }
     }
   }

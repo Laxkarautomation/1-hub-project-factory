@@ -75,7 +75,8 @@ function createPublishingAdapter(platformConfig = {}, providerId = null) {
     ...resolved.providerConfig,
     providerId: resolved.providerId,
     platform,
-    dryRun: true
+    dryRun: resolved.providerConfig.realPublishing !== true,
+    realPublishing: resolved.providerConfig.realPublishing === true
   });
 }
 

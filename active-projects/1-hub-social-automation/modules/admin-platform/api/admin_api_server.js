@@ -61,6 +61,13 @@ const {
   getPublishingHealthDashboard
 } = require("../../publishing/monitoring/publishing_health_service");
 
+const {
+  getPublishingProviderRuntimeDashboard,
+  setPublishingProviderRuntime,
+  enableRealPublishing,
+  disableRealPublishing
+} = require("../../publishing/services/publishing_provider_runtime_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -296,6 +303,59 @@ function createAdminServer() {
 
 
 
+
+
+    if (req.url === "/api/admin/publishing/provider-runtime" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getPublishingProviderRuntimeDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/provider-runtime/save" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, setPublishingProviderRuntime(
+            body.platform,
+            body.providerId,
+            body.settings || {}
+          ));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/provider-runtime/enable-real" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, enableRealPublishing(body.platform, body.providerId));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/provider-runtime/disable-real" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, disableRealPublishing(body.platform, body.providerId));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
 
     if (req.url === "/api/admin/publishing/health" && req.method === "GET") {
       return withAuth(req, res, () => {
