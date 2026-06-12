@@ -77,8 +77,16 @@ async function runNextPublishingJob() {
   }
 }
 
+function retryPublishingJob(jobId) {
+  return {
+    success: true,
+    job: queue.retryPublishJob(jobId)
+  };
+}
+
 module.exports = {
   getPublishingDashboard,
   enqueuePublishingJob,
-  runNextPublishingJob
+  runNextPublishingJob,
+  retryPublishingJob
 };

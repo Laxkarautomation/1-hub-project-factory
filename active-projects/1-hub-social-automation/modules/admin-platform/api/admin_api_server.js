@@ -40,7 +40,8 @@ const {
 const {
   getPublishingDashboard,
   enqueuePublishingJob,
-  runNextPublishingJob
+  runNextPublishingJob,
+  retryPublishingJob
 } = require("../../publishing/services/publishing_service");
 
 const {
@@ -55,6 +56,10 @@ const {
   savePublishingProviderSecrets,
   removePublishingProviderSecrets
 } = require("../../publishing/services/publishing_credentials_service");
+
+const {
+  getPublishingHealthDashboard
+} = require("../../publishing/monitoring/publishing_health_service");
 
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
@@ -290,6 +295,27 @@ function createAdminServer() {
     }
 
 
+
+
+    if (req.url === "/api/admin/publishing/health" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getPublishingHealthDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/retry" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, retryPublishingJob(body.jobId));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
 
     if (req.url === "/api/admin/publishing/credentials" && req.method === "GET") {
       return withAuth(req, res, () => {

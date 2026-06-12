@@ -111,6 +111,38 @@ function moveJobToHistory(jobId, finalStatus, result = {}) {
   return completedJob;
 }
 
+function retryPublishJob(jobId) {
+  const queue = listQueue();
+  const history = listHistory();
+
+  const index = history.findIndex((job) => job.jobId === jobId);
+
+  if (index === -1) {
+    throw new Error(`History job not found: ${jobId}`);
+  }
+
+  const [job] = history.splice(index, 1);
+
+  if ((job.attempts || 0) >= (job.maxAttempts || 3)) {
+    throw new Error(`Max attempts reached for job: ${jobId}`);
+  }
+
+  const retryJob = {
+    ...job,
+    status: "queued",
+    result: undefined,
+    completedAt: undefined,
+    updatedAt: new Date().toISOString()
+  };
+
+  queue.push(retryJob);
+
+  writeJson(QUEUE_PATH, queue);
+  writeJson(HISTORY_PATH, history);
+
+  return retryJob;
+}
+
 module.exports = {
   QUEUE_PATH,
   HISTORY_PATH,
@@ -119,5 +151,6 @@ module.exports = {
   listQueue,
   listHistory,
   updatePublishJob,
-  moveJobToHistory
+  moveJobToHistory,
+  retryPublishJob
 };
