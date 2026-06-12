@@ -1,11 +1,16 @@
 const registry = require("../registry/publishing_registry");
 const queue = require("../queue/publishing_queue");
-const { createPublishingAdapter } = require("./publishing_adapter_factory");
+const { createPublishingAdapter, getAdapterHealth } = require("./publishing_adapter_factory");
 
 function getPublishingDashboard() {
+  const platforms = registry.listPlatforms();
+
   return {
     success: true,
-    platforms: registry.listPlatforms(),
+    platforms,
+    adapterHealth: platforms.map((platform) =>
+      getAdapterHealth(registry.getPlatformConfig(platform.platform))
+    ),
     queue: queue.listQueue(),
     history: queue.listHistory()
   };

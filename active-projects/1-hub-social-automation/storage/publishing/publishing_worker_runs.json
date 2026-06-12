@@ -2,6 +2,77 @@
   "version": 1,
   "runs": [
     {
+      "id": "publishing_worker_run_1781243023936",
+      "mode": "once",
+      "dryRun": true,
+      "startedAt": "2026-06-12T05:43:43.936Z",
+      "status": "completed",
+      "result": {
+        "success": true,
+        "job": {
+          "jobId": "publish_1781243023847",
+          "channelId": "unraaz",
+          "platform": "youtube",
+          "providerId": null,
+          "contentType": "video",
+          "status": "completed",
+          "priority": 5,
+          "scheduledAt": "2026-06-12T05:42:43.734Z",
+          "payload": {
+            "title": "Test scheduled publish",
+            "description": "Dry-run scheduled publishing test",
+            "scheduleId": "schedule_1781243023734"
+          },
+          "attempts": 1,
+          "maxAttempts": 3,
+          "createdAt": "2026-06-12T05:43:43.847Z",
+          "updatedAt": "2026-06-12T05:43:43.938Z",
+          "result": {
+            "success": true,
+            "dryRun": true,
+            "providerId": "youtube_api",
+            "platform": "youtube",
+            "jobId": "publish_1781243023847",
+            "validation": {
+              "success": true,
+              "platform": "youtube",
+              "contentType": "video",
+              "requiredFields": [
+                "title"
+              ],
+              "warnings": []
+            },
+            "simulatedUrl": "https://example.com/youtube/publish_1781243023847",
+            "publishedAt": "2026-06-12T05:43:43.938Z"
+          },
+          "completedAt": "2026-06-12T05:43:43.938Z"
+        },
+        "result": {
+          "success": true,
+          "dryRun": true,
+          "providerId": "youtube_api",
+          "platform": "youtube",
+          "jobId": "publish_1781243023847",
+          "validation": {
+            "success": true,
+            "platform": "youtube",
+            "contentType": "video",
+            "requiredFields": [
+              "title"
+            ],
+            "warnings": []
+          },
+          "simulatedUrl": "https://example.com/youtube/publish_1781243023847",
+          "publishedAt": "2026-06-12T05:43:43.938Z"
+        }
+      },
+      "error": null,
+      "beforeQueueCount": 1,
+      "afterQueueCount": 0,
+      "afterHistoryCount": 3,
+      "finishedAt": "2026-06-12T05:43:43.939Z"
+    },
+    {
       "id": "publishing_worker_run_1781242890990",
       "mode": "once",
       "dryRun": true,
