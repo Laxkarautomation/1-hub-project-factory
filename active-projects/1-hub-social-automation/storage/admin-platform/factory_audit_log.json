@@ -1,6 +1,6 @@
 {
   "immutable": true,
-  "updatedAt": "2026-06-12T09:09:49.565Z",
+  "updatedAt": "2026-06-12T09:26:51.907Z",
   "events": [
     {
       "auditId": "aud_f3923642062b9ba7",
@@ -166,6 +166,203 @@
       },
       "previousHash": "5dc172f41c6706a471660cda9bbdc2a4554bbc4f983b717bac19da5785f40e01",
       "hash": "722478d3008cc91e6da7edc7b27b553b56c3bae5f82b192932d727f4adf6d4c3"
+    },
+    {
+      "auditId": "aud_2f8cbde30eb64c11",
+      "createdAt": "2026-06-12T09:26:51.878Z",
+      "actor": "phase24_2_check",
+      "action": "factory_safe_mode_changed",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true
+      },
+      "previousHash": "722478d3008cc91e6da7edc7b27b553b56c3bae5f82b192932d727f4adf6d4c3",
+      "hash": "b0551ab6be4f97b550d21517c3268b95484375f2ae66b70d3fad7952dc3937e6"
+    },
+    {
+      "auditId": "aud_5e25861815479f62",
+      "createdAt": "2026-06-12T09:26:51.880Z",
+      "actor": "phase24_2_check",
+      "action": "factory_emergency_stop_cleared",
+      "entityType": "factory",
+      "entityId": "global",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "reason": "phase24_2_clear"
+      },
+      "previousHash": "b0551ab6be4f97b550d21517c3268b95484375f2ae66b70d3fad7952dc3937e6",
+      "hash": "32c909200c230aa206339b21d2f255093534169652301eb6e1f06cae558c888c"
+    },
+    {
+      "auditId": "aud_3298598337fa75d9",
+      "createdAt": "2026-06-12T09:26:51.881Z",
+      "actor": "phase24_2_check",
+      "action": "autonomous_runtime_config_updated",
+      "entityType": "factory_runtime",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true,
+        "dryRun": true,
+        "requirePublishableStatus": true,
+        "requireSafeMode": true,
+        "autoApprovePublishable": false,
+        "maxPacksPerRun": 3,
+        "allowedProviders": [],
+        "allowedChannels": [],
+        "scheduleMode": "manual_safe",
+        "timezone": "Asia/Kolkata"
+      },
+      "previousHash": "32c909200c230aa206339b21d2f255093534169652301eb6e1f06cae558c888c",
+      "hash": "bbd856e0dbcefb5ca0d59a5a3fe137664020d04555cc1173f762551ba77a742d"
+    },
+    {
+      "auditId": "aud_e89d3257b5591595",
+      "createdAt": "2026-06-12T09:26:51.881Z",
+      "actor": "phase24_2_check",
+      "action": "autonomous_scheduler_config_updated",
+      "entityType": "factory_scheduler",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true,
+        "timezone": "Asia/Kolkata",
+        "intervalMinutes": 60,
+        "allowedHours": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "manualRunWindowEnabled": true,
+        "maxRunsPerDay": 99,
+        "channelFilters": [],
+        "providerFilters": [],
+        "lastEvaluatedAt": null
+      },
+      "previousHash": "bbd856e0dbcefb5ca0d59a5a3fe137664020d04555cc1173f762551ba77a742d",
+      "hash": "764003e6362c2b742db99a0ef4edfe0fbf4731ebc3177c165de1b0e6c9ad9794"
+    },
+    {
+      "auditId": "aud_ded26bfbc0538872",
+      "createdAt": "2026-06-12T09:26:51.905Z",
+      "actor": "phase24_2_check",
+      "action": "autonomous_runtime_run",
+      "entityType": "factory_runtime",
+      "entityId": "afr_c800ae57a7c5",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "status": "dry_run_completed",
+        "plannedItems": 0,
+        "dryRun": true
+      },
+      "previousHash": "764003e6362c2b742db99a0ef4edfe0fbf4731ebc3177c165de1b0e6c9ad9794",
+      "hash": "67644882454cd6dfb12444ff228ff00f6eb96750e84df2e80e947b6e14ade2d6"
+    },
+    {
+      "auditId": "aud_f6e22208ea6894e5",
+      "createdAt": "2026-06-12T09:26:51.906Z",
+      "actor": "phase24_2_check",
+      "action": "autonomous_scheduler_evaluated",
+      "entityType": "factory_scheduler",
+      "entityId": "sch_388b34ec86ff",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "status": "runtime_triggered",
+        "due": {
+          "due": true,
+          "reason": "NO_PREVIOUS_RUN"
+        },
+        "runtimeStatus": "dry_run_completed"
+      },
+      "previousHash": "67644882454cd6dfb12444ff228ff00f6eb96750e84df2e80e947b6e14ade2d6",
+      "hash": "2b570668c4a932df9872082d94e635a2938fb1c50e93bce10437610d70b30309"
+    },
+    {
+      "auditId": "aud_54816870efb0cff8",
+      "createdAt": "2026-06-12T09:26:51.906Z",
+      "actor": "phase24_2_cleanup",
+      "action": "autonomous_scheduler_config_updated",
+      "entityType": "factory_scheduler",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": false,
+        "timezone": "Asia/Kolkata",
+        "intervalMinutes": 60,
+        "allowedHours": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "manualRunWindowEnabled": true,
+        "maxRunsPerDay": 99,
+        "channelFilters": [],
+        "providerFilters": [],
+        "lastEvaluatedAt": "2026-06-12T09:26:51.902Z"
+      },
+      "previousHash": "2b570668c4a932df9872082d94e635a2938fb1c50e93bce10437610d70b30309",
+      "hash": "a551a03623594d69ab65a5ff4b4955f24919f69e6b529a4a40eccbc6da753e6a"
+    },
+    {
+      "auditId": "aud_675993ca109b879b",
+      "createdAt": "2026-06-12T09:26:51.907Z",
+      "actor": "phase24_2_cleanup",
+      "action": "autonomous_runtime_config_updated",
+      "entityType": "factory_runtime",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": false,
+        "dryRun": true,
+        "requirePublishableStatus": true,
+        "requireSafeMode": true,
+        "autoApprovePublishable": false,
+        "maxPacksPerRun": 3,
+        "allowedProviders": [],
+        "allowedChannels": [],
+        "scheduleMode": "manual_safe",
+        "timezone": "Asia/Kolkata"
+      },
+      "previousHash": "a551a03623594d69ab65a5ff4b4955f24919f69e6b529a4a40eccbc6da753e6a",
+      "hash": "d7be940ef85b6ce8f54f895ddff1381bd8b41928c173418798e50a014b0721bb"
     }
   ]
 }

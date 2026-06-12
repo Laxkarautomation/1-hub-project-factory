@@ -1,4 +1,7 @@
 
+// PHASE_24_2_AUTONOMOUS_SCHEDULER_API
+const autonomousSchedulerService = require("../services/autonomous_scheduler_service");
+
 // PHASE_24_1_AUTONOMOUS_RUNTIME_API
 const autonomousRuntimeService = require("../services/autonomous_factory_runtime_service");
 
@@ -794,4 +797,21 @@ app.post("/api/admin/factory/autonomous-runtime/run-once", (req, res) => {
   res.json(autonomousRuntimeService.runOnce(actor));
 });
 /* END_PHASE_24_1_AUTONOMOUS_RUNTIME_API */
+
+
+/* PHASE_24_2_AUTONOMOUS_SCHEDULER_API */
+app.get("/api/admin/factory/autonomous-scheduler", (req, res) => {
+  res.json(autonomousSchedulerService.getSchedulerCenter());
+});
+
+app.post("/api/admin/factory/autonomous-scheduler/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousSchedulerService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/autonomous-scheduler/evaluate", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(autonomousSchedulerService.evaluateAndRun(actor));
+});
+/* END_PHASE_24_2_AUTONOMOUS_SCHEDULER_API */
 

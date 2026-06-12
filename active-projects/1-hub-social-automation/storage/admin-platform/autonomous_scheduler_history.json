@@ -1,0 +1,24 @@
+{
+  "runs": [
+    {
+      "scheduleRunId": "sch_388b34ec86ff",
+      "status": "runtime_triggered",
+      "due": {
+        "due": true,
+        "reason": "NO_PREVIOUS_RUN"
+      },
+      "runtimeRun": {
+        "success": true,
+        "run": {
+          "runId": "afr_c800ae57a7c5",
+          "status": "dry_run_completed",
+          "dryRun": true,
+          "createdAt": "2026-06-12T09:26:51.905Z",
+          "plan": [],
+          "launchResults": []
+        }
+      },
+      "createdAt": "2026-06-12T09:26:51.905Z"
+    }
+  ]
+}

@@ -1466,3 +1466,82 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadAutonomousRuntimeCenter);
 }
 /* END_PHASE_24_1_AUTONOMOUS_RUNTIME_UI */
+
+
+/* PHASE_24_2_AUTONOMOUS_SCHEDULER_UI */
+async function loadAutonomousSchedulerCenter() {
+  const mountId = "autonomous-scheduler-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card autonomous-scheduler-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Autonomous Scheduler</h2><p>Loading scheduler...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/autonomous-scheduler");
+    const data = await res.json();
+    const config = data.config || {};
+    const due = data.due || {};
+
+    mount.innerHTML = `
+      <h2>Autonomous Scheduler + Cron Control</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Scheduler: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${due.due ? "ok-pill" : "danger-pill"}">Due: ${due.due ? "YES" : "NO"} — ${due.reason}</span>
+        <span class="safe-badge">Interval: ${config.intervalMinutes} min</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleAutonomousScheduler(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Scheduler</button>
+        <button onclick="evaluateAutonomousScheduler()">Evaluate Now</button>
+        <button onclick="loadAutonomousSchedulerCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Max Runs/Day: <b>${config.maxRunsPerDay}</b></div>
+        <div>Allowed Hours: <b>${(config.allowedHours || []).join(",")}</b></div>
+        <div>Runtime Plan: <b>${data.cronPlan.runtimeDispatchPlanCount || 0}</b></div>
+        <div>Timezone: <b>${config.timezone}</b></div>
+      </div>
+
+      <h3>Cron Plan</h3>
+      <pre class="ops-json">${JSON.stringify(data.cronPlan || {}, null, 2)}</pre>
+
+      <h3>Scheduler History</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentRuns || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Autonomous Scheduler</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleAutonomousScheduler(enabled) {
+  await fetch("/api/admin/factory/autonomous-scheduler/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadAutonomousSchedulerCenter();
+}
+
+async function evaluateAutonomousScheduler() {
+  await fetch("/api/admin/factory/autonomous-scheduler/evaluate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadAutonomousSchedulerCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadAutonomousSchedulerCenter = loadAutonomousSchedulerCenter;
+  window.toggleAutonomousScheduler = toggleAutonomousScheduler;
+  window.evaluateAutonomousScheduler = evaluateAutonomousScheduler;
+  window.addEventListener("DOMContentLoaded", loadAutonomousSchedulerCenter);
+}
+/* END_PHASE_24_2_AUTONOMOUS_SCHEDULER_UI */
