@@ -2,6 +2,60 @@
   "version": 1,
   "runs": [
     {
+      "id": "scheduler_run_1781243023844",
+      "startedAt": "2026-06-12T05:43:43.844Z",
+      "nowIso": "2026-06-12T05:43:43.842Z",
+      "dryRun": true,
+      "dueCount": 1,
+      "enqueuedCount": 1,
+      "failedCount": 0,
+      "results": [
+        {
+          "scheduleId": "schedule_1781243023734",
+          "queueJobId": "publish_1781243023847",
+          "status": "queued"
+        }
+      ],
+      "success": true,
+      "finishedAt": "2026-06-12T05:43:43.850Z"
+    },
+    {
+      "id": "scheduler_run_1781242890926",
+      "startedAt": "2026-06-12T05:41:30.926Z",
+      "nowIso": "2026-06-12T05:41:30.926Z",
+      "dryRun": true,
+      "dueCount": 1,
+      "enqueuedCount": 1,
+      "failedCount": 0,
+      "results": [
+        {
+          "scheduleId": "schedule_1781242890869",
+          "queueJobId": "publish_1781242890927",
+          "status": "queued"
+        }
+      ],
+      "success": true,
+      "finishedAt": "2026-06-12T05:41:30.927Z"
+    },
+    {
+      "id": "scheduler_run_1781242847998",
+      "startedAt": "2026-06-12T05:40:47.998Z",
+      "nowIso": "2026-06-12T05:40:47.997Z",
+      "dryRun": true,
+      "dueCount": 1,
+      "enqueuedCount": 1,
+      "failedCount": 0,
+      "results": [
+        {
+          "scheduleId": "schedule_1781242847927",
+          "queueJobId": "publish_1781242847998",
+          "status": "queued"
+        }
+      ],
+      "success": true,
+      "finishedAt": "2026-06-12T05:40:47.999Z"
+    },
+    {
       "id": "scheduler_run_1781242647168",
       "startedAt": "2026-06-12T05:37:27.168Z",
       "nowIso": "2026-06-12T05:37:27.167Z",

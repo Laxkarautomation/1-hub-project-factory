@@ -1,5 +1,247 @@
 [
   {
+    "jobId": "publish_1781251578193",
+    "channelId": "unraaz",
+    "platform": "youtube",
+    "providerId": "youtube_api",
+    "contentType": "video",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T08:06:18.193Z",
+    "payload": {
+      "title": "YouTube safe upload test",
+      "description": "Safe mode enabled. No upload should be sent.",
+      "filePath": "storage/videos/test.mp4",
+      "privacyStatus": "private",
+      "tags": [
+        "unraaz",
+        "test"
+      ]
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T08:06:18.193Z",
+    "updatedAt": "2026-06-12T08:06:18.195Z",
+    "result": {
+      "success": true,
+      "providerId": "youtube_api",
+      "platform": "youtube",
+      "jobId": "publish_1781251578193",
+      "realPublish": false,
+      "dryRun": true,
+      "safeMode": true,
+      "message": "YouTube upload ready; safe mode active, no upload sent",
+      "validation": {
+        "success": true,
+        "missing": [],
+        "warnings": [
+          "video file not found: storage/videos/test.mp4"
+        ],
+        "filePath": "storage/videos/test.mp4",
+        "title": "YouTube safe upload test",
+        "description": "Safe mode enabled. No upload should be sent.",
+        "privacyStatus": "private",
+        "tags": [
+          "unraaz",
+          "test"
+        ]
+      },
+      "metadata": {
+        "snippet": {
+          "title": "YouTube safe upload test",
+          "description": "Safe mode enabled. No upload should be sent.",
+          "tags": [
+            "unraaz",
+            "test"
+          ],
+          "categoryId": "22"
+        },
+        "status": {
+          "privacyStatus": "private",
+          "selfDeclaredMadeForKids": false
+        }
+      },
+      "publishedAt": "2026-06-12T08:06:18.194Z"
+    },
+    "completedAt": "2026-06-12T08:06:18.195Z"
+  },
+  {
+    "jobId": "publish_1781251031782",
+    "channelId": "unraaz",
+    "platform": "telegram",
+    "providerId": "telegram_bot_api",
+    "contentType": "text",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T07:57:11.782Z",
+    "payload": {
+      "title": "Safe real publisher test",
+      "description": "Provider realPublishing ON but safeMode ON. No HTTP request should be sent."
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T07:57:11.782Z",
+    "updatedAt": "2026-06-12T07:57:11.783Z",
+    "result": {
+      "success": true,
+      "realPublish": false,
+      "dryRun": true,
+      "safeMode": true,
+      "providerId": "telegram_bot_api",
+      "platform": "telegram",
+      "jobId": "publish_1781251031782",
+      "message": "Telegram publisher ready; safe mode active, no HTTP request sent",
+      "targetChatId": "TES***DE",
+      "validation": {
+        "success": true,
+        "text": "Safe real publisher test\\n\\nProvider realPublishing ON but safeMode ON. No HTTP request should be sent.",
+        "filePath": null,
+        "warnings": []
+      },
+      "publishedAt": "2026-06-12T07:57:11.783Z"
+    },
+    "completedAt": "2026-06-12T07:57:11.783Z"
+  },
+  {
+    "jobId": "publish_1781250912706",
+    "channelId": "unraaz",
+    "platform": "telegram",
+    "providerId": "telegram_bot_api",
+    "contentType": "text",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T07:55:12.703Z",
+    "payload": {
+      "title": "1 Hub Telegram publish test",
+      "description": "SAFE mode test. No message will be sent."
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T07:55:12.703Z",
+    "updatedAt": "2026-06-12T07:55:12.711Z",
+    "result": {
+      "success": true,
+      "dryRun": true,
+      "providerId": "telegram_bot_api",
+      "platform": "telegram",
+      "jobId": "publish_1781250912706",
+      "validation": {
+        "success": true,
+        "platform": "telegram",
+        "contentType": "text",
+        "requiredFields": [
+          "title"
+        ],
+        "warnings": []
+      },
+      "simulatedUrl": "https://example.com/telegram/publish_1781250912706",
+      "publishedAt": "2026-06-12T07:55:12.709Z"
+    },
+    "completedAt": "2026-06-12T07:55:12.711Z"
+  },
+  {
+    "jobId": "publish_1781249923383",
+    "channelId": "unraaz",
+    "platform": "telegram",
+    "providerId": "telegram_bot_api",
+    "contentType": "text",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T07:38:43.383Z",
+    "payload": {
+      "title": "Safe real publisher test",
+      "description": "This is safe mode. No HTTP request is sent."
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T07:38:43.383Z",
+    "updatedAt": "2026-06-12T07:38:43.386Z",
+    "result": {
+      "success": true,
+      "realPublish": false,
+      "dryRun": true,
+      "providerId": "telegram_bot_api",
+      "platform": "telegram",
+      "jobId": "publish_1781249923383",
+      "message": "Telegram real publisher configured but HTTP send is disabled in safe mode",
+      "targetChatId": "TES***",
+      "publishedAt": "2026-06-12T07:38:43.386Z"
+    },
+    "completedAt": "2026-06-12T07:38:43.386Z"
+  },
+  {
+    "jobId": "publish_1781243023847",
+    "channelId": "unraaz",
+    "platform": "youtube",
+    "providerId": null,
+    "contentType": "video",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T05:42:43.734Z",
+    "payload": {
+      "title": "Test scheduled publish",
+      "description": "Dry-run scheduled publishing test",
+      "scheduleId": "schedule_1781243023734"
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T05:43:43.847Z",
+    "updatedAt": "2026-06-12T05:43:43.938Z",
+    "result": {
+      "success": true,
+      "dryRun": true,
+      "providerId": "youtube_api",
+      "platform": "youtube",
+      "jobId": "publish_1781243023847",
+      "validation": {
+        "success": true,
+        "platform": "youtube",
+        "contentType": "video",
+        "requiredFields": [
+          "title"
+        ],
+        "warnings": []
+      },
+      "simulatedUrl": "https://example.com/youtube/publish_1781243023847",
+      "publishedAt": "2026-06-12T05:43:43.938Z"
+    },
+    "completedAt": "2026-06-12T05:43:43.938Z"
+  },
+  {
+    "jobId": "publish_1781242890927",
+    "channelId": "unraaz",
+    "platform": "youtube",
+    "providerId": null,
+    "contentType": "video",
+    "status": "completed",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T05:40:30.868Z",
+    "payload": {
+      "title": "Test scheduled publish",
+      "description": "Dry-run scheduled publishing test",
+      "scheduleId": "schedule_1781242890869"
+    },
+    "attempts": 1,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T05:41:30.927Z",
+    "updatedAt": "2026-06-12T05:41:30.992Z",
+    "result": {
+      "success": true,
+      "dryRun": true,
+      "providerId": "youtube_api",
+      "platform": "youtube",
+      "jobId": "publish_1781242890927",
+      "validation": {
+        "success": true,
+        "platform": "youtube",
+        "contentType": "video"
+      },
+      "simulatedUrl": "https://example.com/youtube/publish_1781242890927",
+      "publishedAt": "2026-06-12T05:41:30.991Z"
+    },
+    "completedAt": "2026-06-12T05:41:30.992Z"
+  },
+  {
     "jobId": "publish_service_test_job",
     "channelId": "test-channel",
     "platform": "youtube",

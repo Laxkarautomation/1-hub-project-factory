@@ -2,7 +2,7 @@
   "version": 1,
   "schedules": [
     {
-      "id": "schedule_1781242148618",
+      "id": "schedule_1781242890869",
       "channelId": "unraaz",
       "providerId": "dry_run",
       "contentId": "test_content_001",
@@ -10,17 +10,17 @@
         "title": "Test scheduled publish",
         "description": "Dry-run scheduled publishing test"
       },
-      "publishAt": "2026-06-12T05:28:08.618Z",
+      "publishAt": "2026-06-12T05:40:30.868Z",
       "status": "queued",
       "attempts": 1,
       "maxAttempts": 3,
-      "createdAt": "2026-06-12T05:29:08.618Z",
-      "updatedAt": "2026-06-12T05:29:08.698Z",
-      "lastEnqueuedAt": "2026-06-12T05:29:08.697Z",
-      "queueJobId": "pub_job_1781242148697_490ddcc98e28c8"
+      "createdAt": "2026-06-12T05:41:30.869Z",
+      "updatedAt": "2026-06-12T05:41:30.927Z",
+      "lastEnqueuedAt": "2026-06-12T05:41:30.927Z",
+      "queueJobId": "publish_1781242890927"
     },
     {
-      "id": "schedule_1781242250620",
+      "id": "schedule_1781243023734",
       "channelId": "unraaz",
       "providerId": "dry_run",
       "contentId": "test_content_001",
@@ -28,14 +28,14 @@
         "title": "Test scheduled publish",
         "description": "Dry-run scheduled publishing test"
       },
-      "publishAt": "2026-06-12T05:29:50.619Z",
+      "publishAt": "2026-06-12T05:42:43.734Z",
       "status": "queued",
       "attempts": 1,
       "maxAttempts": 3,
-      "createdAt": "2026-06-12T05:30:50.620Z",
-      "updatedAt": "2026-06-12T05:30:50.703Z",
-      "lastEnqueuedAt": "2026-06-12T05:30:50.703Z",
-      "queueJobId": "publish_1781242250703"
+      "createdAt": "2026-06-12T05:43:43.734Z",
+      "updatedAt": "2026-06-12T05:43:43.849Z",
+      "lastEnqueuedAt": "2026-06-12T05:43:43.849Z",
+      "queueJobId": "publish_1781243023847"
     }
   ]
 }

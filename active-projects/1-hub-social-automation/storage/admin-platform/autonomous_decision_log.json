@@ -269,6 +269,87 @@
       "approvalRecommendations": 0,
       "dispatchRecommendations": 0,
       "decisions": []
+    },
+    {
+      "evaluationId": "eval_a29bbe37a267",
+      "createdAt": "2026-06-12T09:46:30.041Z",
+      "actor": "phase25_1_check",
+      "config": {
+        "enabled": true,
+        "minScoreForApproval": 70,
+        "minScoreForDispatch": 80,
+        "requirePublishable": true,
+        "requireAssets": false,
+        "requireProviders": true,
+        "requireChannel": true,
+        "safeModeOnly": true,
+        "riskBlockThreshold": 2,
+        "allowedProviders": [],
+        "allowedChannels": []
+      },
+      "guard": {
+        "allowed": false,
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED"
+      },
+      "emergencyStop": false,
+      "totalPacks": 0,
+      "approvalRecommendations": 0,
+      "dispatchRecommendations": 0,
+      "decisions": []
+    },
+    {
+      "evaluationId": "eval_b3c410d47950",
+      "createdAt": "2026-06-12T09:46:30.052Z",
+      "actor": "phase25_1_check",
+      "config": {
+        "enabled": true,
+        "minScoreForApproval": 70,
+        "minScoreForDispatch": 80,
+        "requirePublishable": true,
+        "requireAssets": false,
+        "requireProviders": true,
+        "requireChannel": true,
+        "safeModeOnly": true,
+        "riskBlockThreshold": 2,
+        "allowedProviders": [],
+        "allowedChannels": []
+      },
+      "guard": {
+        "allowed": false,
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED"
+      },
+      "emergencyStop": false,
+      "totalPacks": 0,
+      "approvalRecommendations": 0,
+      "dispatchRecommendations": 0,
+      "decisions": []
+    },
+    {
+      "evaluationId": "eval_367e9e460703",
+      "createdAt": "2026-06-12T09:46:30.063Z",
+      "actor": "bridge-preview",
+      "config": {
+        "enabled": true,
+        "minScoreForApproval": 70,
+        "minScoreForDispatch": 80,
+        "requirePublishable": true,
+        "requireAssets": false,
+        "requireProviders": true,
+        "requireChannel": true,
+        "safeModeOnly": true,
+        "riskBlockThreshold": 2,
+        "allowedProviders": [],
+        "allowedChannels": []
+      },
+      "guard": {
+        "allowed": false,
+        "reason": "AUTONOMOUS_RUNTIME_DISABLED"
+      },
+      "emergencyStop": false,
+      "totalPacks": 0,
+      "approvalRecommendations": 0,
+      "dispatchRecommendations": 0,
+      "decisions": []
     }
   ]
 }

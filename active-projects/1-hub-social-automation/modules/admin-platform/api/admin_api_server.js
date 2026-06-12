@@ -1,4 +1,7 @@
 
+// PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_API
+const publishingDispatchBridgeService = require("../services/publishing_dispatch_bridge_service");
+
 // PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_API
 const autonomousControlLoopService = require("../services/autonomous_control_loop_service");
 
@@ -909,4 +912,21 @@ app.post("/api/admin/factory/autonomous-control-loop/run-cycle", (req, res) => {
   res.json(autonomousControlLoopService.runCycle(actor));
 });
 /* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_API */
+
+
+/* PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_API */
+app.get("/api/admin/factory/publishing-dispatch-bridge", (req, res) => {
+  res.json(publishingDispatchBridgeService.getBridgeCenter());
+});
+
+app.post("/api/admin/factory/publishing-dispatch-bridge/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(publishingDispatchBridgeService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/publishing-dispatch-bridge/enqueue", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(publishingDispatchBridgeService.enqueueDispatchIntents(actor));
+});
+/* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_API */
 

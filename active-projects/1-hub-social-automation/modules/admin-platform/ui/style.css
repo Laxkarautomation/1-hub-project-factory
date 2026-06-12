@@ -280,3 +280,8 @@ textarea {
 /* PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_STYLES */
 .autonomous-control-loop-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
 /* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_STYLES */
+
+
+/* PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_STYLES */
+.publishing-dispatch-bridge-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+/* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_STYLES */

@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "bridgeRunId": "pbr_7a02990f2321",
+      "status": "dry_run_bridge_completed",
+      "dryRun": true,
+      "createdAt": "2026-06-12T09:46:30.053Z",
+      "built": 0,
+      "added": 0,
+      "queueSize": 0
+    }
+  ]
+}

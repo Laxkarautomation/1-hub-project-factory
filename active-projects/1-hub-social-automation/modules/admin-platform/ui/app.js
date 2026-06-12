@@ -1876,3 +1876,82 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadAutonomousControlLoopCenter);
 }
 /* END_PHASE_24_6_AUTONOMOUS_CONTROL_LOOP_UI */
+
+
+/* PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_UI */
+async function loadPublishingDispatchBridgeCenter() {
+  const mountId = "publishing-dispatch-bridge-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card publishing-dispatch-bridge-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Publishing Dispatch Bridge</h2><p>Loading bridge...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/publishing-dispatch-bridge");
+    const data = await res.json();
+    const config = data.config || {};
+    const preview = data.preview || {};
+
+    mount.innerHTML = `
+      <h2>Publishing Dispatch Bridge</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Bridge: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE QUEUE"}</span>
+        <span class="${data.guard.allowed ? "ok-pill" : "danger-pill"}">Guard: ${data.guard.reason}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="togglePublishingDispatchBridge(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Bridge</button>
+        <button onclick="enqueuePublishingDispatchBridge()">Enqueue Dispatch Intents</button>
+        <button onclick="loadPublishingDispatchBridgeCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Preview Intents: <b>${(preview.intents || []).length}</b></div>
+        <div>Queue Items: <b>${data.queueSummary.totalItems || 0}</b></div>
+        <div>Dry Items: <b>${data.queueSummary.dryRunItems || 0}</b></div>
+        <div>Max/Run: <b>${config.maxItemsPerBridgeRun}</b></div>
+      </div>
+
+      <h3>Intent Preview</h3>
+      <pre class="ops-json">${JSON.stringify(preview.intents || [], null, 2)}</pre>
+
+      <h3>Dispatch Bridge Queue</h3>
+      <pre class="ops-json">${JSON.stringify(data.queue || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Publishing Dispatch Bridge</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function togglePublishingDispatchBridge(enabled) {
+  await fetch("/api/admin/factory/publishing-dispatch-bridge/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadPublishingDispatchBridgeCenter();
+}
+
+async function enqueuePublishingDispatchBridge() {
+  await fetch("/api/admin/factory/publishing-dispatch-bridge/enqueue", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadPublishingDispatchBridgeCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadPublishingDispatchBridgeCenter = loadPublishingDispatchBridgeCenter;
+  window.togglePublishingDispatchBridge = togglePublishingDispatchBridge;
+  window.enqueuePublishingDispatchBridge = enqueuePublishingDispatchBridge;
+  window.addEventListener("DOMContentLoaded", loadPublishingDispatchBridgeCenter);
+}
+/* END_PHASE_25_1_PUBLISHING_DISPATCH_BRIDGE_UI */
