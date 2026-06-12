@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "dryRun": true,
+  "requireDecisionApproval": true,
+  "allowDecisionAutoApproval": false,
+  "requireDispatchRecommendation": true,
+  "blockOnRiskFlags": true,
+  "maxDispatchPerRun": 3
+}

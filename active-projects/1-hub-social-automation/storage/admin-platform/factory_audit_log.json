@@ -1,6 +1,6 @@
 {
   "immutable": true,
-  "updatedAt": "2026-06-12T09:32:32.715Z",
+  "updatedAt": "2026-06-12T09:34:52.921Z",
   "events": [
     {
       "auditId": "aud_f3923642062b9ba7",
@@ -546,6 +546,101 @@
       },
       "previousHash": "97a8999803172d3193dd2a15ef6f8d2db3d5e6316c5995d8e881c2e9971ee6c6",
       "hash": "cd842fa968bf2bd1b2f7929d7e0ca75cb5039fa1fc38071c6903c8af47d94e87"
+    },
+    {
+      "auditId": "aud_78d28a029c6490a9",
+      "createdAt": "2026-06-12T09:34:52.885Z",
+      "actor": "phase24_5_check",
+      "action": "decision_gated_dispatch_config_updated",
+      "entityType": "dispatch_gate",
+      "entityId": "config",
+      "severity": "warning",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "enabled": true,
+        "dryRun": true,
+        "requireDecisionApproval": true,
+        "allowDecisionAutoApproval": false,
+        "requireDispatchRecommendation": true,
+        "blockOnRiskFlags": true,
+        "maxDispatchPerRun": 3
+      },
+      "previousHash": "cd842fa968bf2bd1b2f7929d7e0ca75cb5039fa1fc38071c6903c8af47d94e87",
+      "hash": "effe864f2e7c3655efeffa872bf74c62eafc0e1f9268ad802b60645669ce2b09"
+    },
+    {
+      "auditId": "aud_d1f66ab78cb7e304",
+      "createdAt": "2026-06-12T09:34:52.907Z",
+      "actor": "phase24_5_check",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_dd77f09824a4",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "effe864f2e7c3655efeffa872bf74c62eafc0e1f9268ad802b60645669ce2b09",
+      "hash": "1d82e91cf85a553823f73f202246e53863a1b1b6b3c3469b41f1d457f9275bcf"
+    },
+    {
+      "auditId": "aud_a6eac4fe7b9d4bdb",
+      "createdAt": "2026-06-12T09:34:52.914Z",
+      "actor": "phase24_5_check",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_1b4aaffa732c",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "1d82e91cf85a553823f73f202246e53863a1b1b6b3c3469b41f1d457f9275bcf",
+      "hash": "bc49660adec14911696f8e859301fb8434fc41e8ab08039aa77c306bf0b99b35"
+    },
+    {
+      "auditId": "aud_eb2ddb6a157073ee",
+      "createdAt": "2026-06-12T09:34:52.915Z",
+      "actor": "phase24_5_check",
+      "action": "decision_gated_dispatch_run",
+      "entityType": "dispatch_gate",
+      "entityId": "dgd_419881d26b87",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "status": "decision_gate_dry_run_completed",
+        "totalDecisions": 0,
+        "allowedCount": 0,
+        "results": 0
+      },
+      "previousHash": "bc49660adec14911696f8e859301fb8434fc41e8ab08039aa77c306bf0b99b35",
+      "hash": "848747f80c076d4b93e40dc5f0b31d0649bc6d80baa7b52ea9602e73b2b29ff1"
+    },
+    {
+      "auditId": "aud_78bc4eb037409735",
+      "createdAt": "2026-06-12T09:34:52.921Z",
+      "actor": "dispatch-gate-preview",
+      "action": "autonomous_decision_evaluation",
+      "entityType": "decision_engine",
+      "entityId": "eval_447b483aa10d",
+      "severity": "info",
+      "channelId": null,
+      "provider": null,
+      "metadata": {
+        "totalPacks": 0,
+        "approvalRecommendations": 0,
+        "dispatchRecommendations": 0
+      },
+      "previousHash": "848747f80c076d4b93e40dc5f0b31d0649bc6d80baa7b52ea9602e73b2b29ff1",
+      "hash": "426d0bad98e46308645936a64ca08f29b2c58d32dae0883c8c8e9e34f5551c18"
     }
   ]
 }

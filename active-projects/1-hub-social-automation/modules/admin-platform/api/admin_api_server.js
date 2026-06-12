@@ -1,4 +1,7 @@
 
+// PHASE_24_5_DECISION_GATED_DISPATCH_API
+const decisionGatedDispatchService = require("../services/decision_gated_dispatch_service");
+
 // PHASE_24_4_AUTONOMOUS_DECISION_API
 const autonomousDecisionService = require("../services/autonomous_decision_engine_service");
 
@@ -864,4 +867,26 @@ app.post("/api/admin/factory/autonomous-decisions/evaluate", (req, res) => {
   res.json(autonomousDecisionService.evaluateAll(actor));
 });
 /* END_PHASE_24_4_AUTONOMOUS_DECISION_API */
+
+
+/* PHASE_24_5_DECISION_GATED_DISPATCH_API */
+app.get("/api/admin/factory/decision-gated-dispatch", (req, res) => {
+  res.json(decisionGatedDispatchService.getDispatchGateCenter());
+});
+
+app.post("/api/admin/factory/decision-gated-dispatch/config", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(decisionGatedDispatchService.updateConfig(req.body || {}, actor));
+});
+
+app.post("/api/admin/factory/decision-gated-dispatch/evaluate", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(decisionGatedDispatchService.evaluateGate(actor));
+});
+
+app.post("/api/admin/factory/decision-gated-dispatch/run", (req, res) => {
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(decisionGatedDispatchService.runDecisionGatedDispatch(actor));
+});
+/* END_PHASE_24_5_DECISION_GATED_DISPATCH_API */
 

@@ -1714,3 +1714,82 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadAutonomousDecisionCenter);
 }
 /* END_PHASE_24_4_AUTONOMOUS_DECISION_UI */
+
+
+/* PHASE_24_5_DECISION_GATED_DISPATCH_UI */
+async function loadDecisionGatedDispatchCenter() {
+  const mountId = "decision-gated-dispatch-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card decision-gated-dispatch-center";
+    document.body.appendChild(mount);
+  }
+
+  mount.innerHTML = "<h2>Decision-Gated Dispatch</h2><p>Loading dispatch gate...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/decision-gated-dispatch");
+    const data = await res.json();
+    const config = data.config || {};
+    const gate = data.gatePreview || {};
+
+    mount.innerHTML = `
+      <h2>Decision-Gated Autonomous Dispatch</h2>
+
+      <div class="ops-status-row">
+        <span class="${config.enabled ? "ok-pill" : "status-pill"}">Gate: ${config.enabled ? "ON" : "OFF"}</span>
+        <span class="${config.dryRun ? "safe-badge" : "danger-pill"}">Mode: ${config.dryRun ? "DRY RUN" : "LIVE SAFE DISPATCH"}</span>
+        <span class="${gate.allowedCount ? "ok-pill" : "status-pill"}">Allowed: ${gate.allowedCount || 0}</span>
+      </div>
+
+      <div class="button-row">
+        <button onclick="toggleDecisionGatedDispatch(${!config.enabled})">${config.enabled ? "Disable" : "Enable"} Gate</button>
+        <button onclick="runDecisionGatedDispatch()">Run Gated Dispatch</button>
+        <button onclick="loadDecisionGatedDispatchCenter()">Refresh</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Total Decisions: <b>${gate.totalDecisions || 0}</b></div>
+        <div>Allowed: <b>${gate.allowedCount || 0}</b></div>
+        <div>Max Dispatch: <b>${config.maxDispatchPerRun}</b></div>
+        <div>Risk Block: <b>${config.blockOnRiskFlags ? "ON" : "OFF"}</b></div>
+      </div>
+
+      <h3>Gate Preview</h3>
+      <pre class="ops-json">${JSON.stringify(gate.gated || [], null, 2)}</pre>
+
+      <h3>Recent Gated Dispatch Runs</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentRuns || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Decision-Gated Dispatch</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+async function toggleDecisionGatedDispatch(enabled) {
+  await fetch("/api/admin/factory/decision-gated-dispatch/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadDecisionGatedDispatchCenter();
+}
+
+async function runDecisionGatedDispatch() {
+  await fetch("/api/admin/factory/decision-gated-dispatch/run", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actor: "admin-ui" })
+  });
+  await loadDecisionGatedDispatchCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadDecisionGatedDispatchCenter = loadDecisionGatedDispatchCenter;
+  window.toggleDecisionGatedDispatch = toggleDecisionGatedDispatch;
+  window.runDecisionGatedDispatch = runDecisionGatedDispatch;
+  window.addEventListener("DOMContentLoaded", loadDecisionGatedDispatchCenter);
+}
+/* END_PHASE_24_5_DECISION_GATED_DISPATCH_UI */
