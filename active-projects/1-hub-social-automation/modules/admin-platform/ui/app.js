@@ -73,8 +73,12 @@ async function loadView(view) {
     return loadProviderManager();
   }
 
-  if (view === "settings") {
+  if (view === "runtime") {
     return loadRuntimeControls();
+  }
+
+  if (view === "settings") {
+    return loadSettingsEditor();
   }
 
   const routeMap = {
@@ -401,4 +405,137 @@ async function saveRuntimeControls() {
 
   show(result);
   await loadRuntimeControls();
+}
+
+
+async function loadSettingsEditor() {
+  const data = await api("/api/admin/settings");
+  const settings = data.settings || {};
+
+  document.getElementById("summary").innerHTML = `
+    <div class="tile"><strong>Workflow</strong><br>${settings.workflow?.autoRetry ? "Auto Retry On" : "Auto Retry Off"}</div>
+    <div class="tile"><strong>Scheduler</strong><br>${settings.scheduler?.enabled ? "Enabled" : "Disabled"}</div>
+    <div class="tile"><strong>Renderer</strong><br>${settings.renderer?.defaultAspectRatio || "9:16"}</div>
+    <div class="tile"><strong>Publishing</strong><br>${settings.publishing?.enabled ? "Enabled" : "Disabled"}</div>
+  `;
+
+  document.getElementById("output").innerHTML = `
+    <div class="manager">
+      <h2>Settings Editor</h2>
+
+      <div class="settings-grid">
+        <div class="settings-card">
+          <h3>Workflow</h3>
+          <label>Max Concurrent Jobs</label>
+          <input id="workflowMaxConcurrentJobs" type="number" value="${settings.workflow?.maxConcurrentJobs ?? 3}">
+          <label>Retry Limit</label>
+          <input id="workflowRetryLimit" type="number" value="${settings.workflow?.retryLimit ?? 3}">
+          <label>
+            <input id="workflowAutoRetry" type="checkbox" ${settings.workflow?.autoRetry ? "checked" : ""}>
+            Auto Retry
+          </label>
+        </div>
+
+        <div class="settings-card">
+          <h3>Scheduler</h3>
+          <label>
+            <input id="schedulerEnabled" type="checkbox" ${settings.scheduler?.enabled ? "checked" : ""}>
+            Enabled
+          </label>
+          <label>Poll Interval Seconds</label>
+          <input id="schedulerPollIntervalSeconds" type="number" value="${settings.scheduler?.pollIntervalSeconds ?? 30}">
+        </div>
+
+        <div class="settings-card">
+          <h3>Renderer</h3>
+          <label>Max Concurrent Renders</label>
+          <input id="rendererMaxConcurrentRenders" type="number" value="${settings.renderer?.maxConcurrentRenders ?? 2}">
+          <label>Default Aspect Ratio</label>
+          <input id="rendererDefaultAspectRatio" value="${settings.renderer?.defaultAspectRatio || "9:16"}">
+        </div>
+
+        <div class="settings-card">
+          <h3>Providers</h3>
+          <label>
+            <input id="providersFallbackEnabled" type="checkbox" ${settings.providers?.fallbackEnabled ? "checked" : ""}>
+            Fallback Enabled
+          </label>
+        </div>
+
+        <div class="settings-card">
+          <h3>Publishing</h3>
+          <label>
+            <input id="publishingEnabled" type="checkbox" ${settings.publishing?.enabled ? "checked" : ""}>
+            Enabled
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button onclick="saveSettingsFromUi()">Save Settings</button>
+        <button onclick="resetSettingsFromUi()">Reset Defaults</button>
+        <button onclick="reloadSettingsFromUi()">Reload</button>
+        <p id="settingsStatus"></p>
+      </div>
+    </div>
+  `;
+
+  window.__settings = settings;
+}
+
+function collectSettingsFromUi() {
+  return {
+    workflow: {
+      maxConcurrentJobs: Number(document.getElementById("workflowMaxConcurrentJobs").value || 3),
+      autoRetry: document.getElementById("workflowAutoRetry").checked,
+      retryLimit: Number(document.getElementById("workflowRetryLimit").value || 3)
+    },
+    scheduler: {
+      enabled: document.getElementById("schedulerEnabled").checked,
+      pollIntervalSeconds: Number(document.getElementById("schedulerPollIntervalSeconds").value || 30)
+    },
+    renderer: {
+      maxConcurrentRenders: Number(document.getElementById("rendererMaxConcurrentRenders").value || 2),
+      defaultAspectRatio: document.getElementById("rendererDefaultAspectRatio").value.trim() || "9:16"
+    },
+    providers: {
+      fallbackEnabled: document.getElementById("providersFallbackEnabled").checked
+    },
+    publishing: {
+      enabled: document.getElementById("publishingEnabled").checked
+    }
+  };
+}
+
+async function saveSettingsFromUi() {
+  const settings = collectSettingsFromUi();
+
+  const result = await api("/api/admin/settings/save", {
+    method: "POST",
+    body: JSON.stringify({ settings })
+  });
+
+  await loadSettingsEditor();
+  const status = document.getElementById("settingsStatus");
+  if (status) status.textContent = result.success ? "Settings saved successfully." : "Settings save failed.";
+}
+
+async function resetSettingsFromUi() {
+  const ok = confirm("Reset settings to defaults?");
+  if (!ok) return;
+
+  const result = await api("/api/admin/settings/reset", {
+    method: "POST"
+  });
+
+  await loadSettingsEditor();
+  const status = document.getElementById("settingsStatus");
+  if (status) status.textContent = result.success ? "Settings reset successfully." : "Settings reset failed.";
+}
+
+
+async function reloadSettingsFromUi() {
+  await loadSettingsEditor();
+  const status = document.getElementById("settingsStatus");
+  if (status) status.textContent = "Settings reloaded.";
 }

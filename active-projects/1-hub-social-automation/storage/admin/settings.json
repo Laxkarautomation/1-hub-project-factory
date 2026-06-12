@@ -1,0 +1,21 @@
+{
+  "workflow": {
+    "maxConcurrentJobs": 3,
+    "autoRetry": true,
+    "retryLimit": 3
+  },
+  "scheduler": {
+    "enabled": true,
+    "pollIntervalSeconds": 30
+  },
+  "renderer": {
+    "maxConcurrentRenders": 2,
+    "defaultAspectRatio": "9:16"
+  },
+  "providers": {
+    "fallbackEnabled": true
+  },
+  "publishing": {
+    "enabled": false
+  }
+}

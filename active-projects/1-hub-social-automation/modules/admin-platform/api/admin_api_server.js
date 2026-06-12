@@ -30,6 +30,13 @@ const {
   assertRuntimeAllowed
 } = require("../services/admin_runtime_service");
 
+const {
+  getSettings,
+  saveSettings,
+  updateSection,
+  resetDefaults
+} = require("../settings/settings_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -231,6 +238,44 @@ function createAdminServer() {
       return withAuth(req, res, async () => {
         const body = await readBody(req);
         sendJson(res, 200, assertRuntimeAllowed(body.action));
+      });
+    }
+
+    if (req.url === "/api/admin/settings" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, {
+          success: true,
+          settings: getSettings()
+        });
+      });
+    }
+
+    if (req.url === "/api/admin/settings/save" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, {
+          success: true,
+          settings: saveSettings(body.settings || body)
+        });
+      });
+    }
+
+    if (req.url === "/api/admin/settings/update" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        const body = await readBody(req);
+        sendJson(res, 200, {
+          success: true,
+          settings: updateSection(body.section, body.values || {})
+        });
+      });
+    }
+
+    if (req.url === "/api/admin/settings/reset" && req.method === "POST") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, {
+          success: true,
+          settings: resetDefaults()
+        });
       });
     }
 

@@ -128,3 +128,32 @@ button:disabled {
   display: block;
   margin: 10px 0;
 }
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.settings-card {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.settings-card label {
+  display: block;
+  margin: 10px 0 6px;
+}
+
+.settings-card input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 8px;
+}
+
+.settings-actions {
+  margin-top: 16px;
+}
