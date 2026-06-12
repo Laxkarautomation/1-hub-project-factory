@@ -43,6 +43,13 @@ const {
   runNextPublishingJob
 } = require("../../publishing/services/publishing_service");
 
+const {
+  getSchedulerDashboard,
+  createSchedule,
+  cancelSchedule,
+  runSchedulerNow
+} = require("../../publishing/services/publishing_scheduler_service");
+
 const SETTINGS_FILE = "modules/admin-platform/storage/admin_settings.json";
 const UI_DIR = path.join(__dirname, "..", "ui");
 
@@ -273,6 +280,55 @@ function createAdminServer() {
           success: true,
           settings: updateSection(body.section, body.values || {})
         });
+      });
+    }
+
+
+    if (req.url === "/api/admin/publishing/scheduler" && req.method === "GET") {
+      return withAuth(req, res, () => {
+        sendJson(res, 200, getSchedulerDashboard());
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/schedules/create" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, createSchedule(body));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/schedules/cancel" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, cancelSchedule(body.scheduleId));
+        } catch (error) {
+          sendJson(res, 400, {
+            success: false,
+            error: error.message
+          });
+        }
+      });
+    }
+
+    if (req.url === "/api/admin/publishing/scheduler/run" && req.method === "POST") {
+      return withAuth(req, res, async () => {
+        try {
+          const body = await readBody(req);
+          sendJson(res, 200, await runSchedulerNow(body || {}));
+        } catch (error) {
+          sendJson(res, 500, {
+            success: false,
+            error: error.message
+          });
+        }
       });
     }
 

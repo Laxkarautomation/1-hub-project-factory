@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "jobId": "publish_1781242250703",
+    "channelId": "unraaz",
+    "platform": "youtube",
+    "providerId": "dry_run",
+    "contentType": "video",
+    "status": "queued",
+    "priority": 5,
+    "scheduledAt": "2026-06-12T05:29:50.619Z",
+    "payload": {
+      "title": "Test scheduled publish",
+      "description": "Dry-run scheduled publishing test",
+      "scheduleId": "schedule_1781242250620"
+    },
+    "attempts": 0,
+    "maxAttempts": 3,
+    "createdAt": "2026-06-12T05:30:50.703Z",
+    "updatedAt": "2026-06-12T05:30:50.703Z"
+  }
+]
