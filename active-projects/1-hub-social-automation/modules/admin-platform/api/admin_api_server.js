@@ -1,4 +1,7 @@
 
+// PHASE_23_3_FACTORY_OPERATIONS_API
+const factoryOperationsService = require("../services/factory_operations_service");
+
 // PHASE_23_2_CONTENT_PACK_PREVIEW_API
 const contentPackPreviewService = require("../services/content_pack_preview_service");
 const http = require("http");
@@ -722,4 +725,30 @@ app.post("/api/admin/content-packs/:contentPackId/launch", (req, res) => {
   res.json(contentPackPreviewService.launchContentPack(req.params.contentPackId, req.body || {}));
 });
 /* END_PHASE_23_2_CONTENT_PACK_PREVIEW_API */
+
+
+/* PHASE_23_3_FACTORY_OPERATIONS_API */
+app.get("/api/admin/factory/operations", (req, res) => {
+  res.json(factoryOperationsService.getOperationsCenter());
+});
+
+app.post("/api/admin/factory/safe-mode", (req, res) => {
+  const enabled = Boolean(req.body && req.body.enabled);
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(factoryOperationsService.setSafeMode(enabled, actor));
+});
+
+app.post("/api/admin/factory/emergency-stop", (req, res) => {
+  const enabled = Boolean(req.body && req.body.enabled);
+  const reason = (req.body && req.body.reason) || "";
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(factoryOperationsService.setEmergencyStop(enabled, reason, actor));
+});
+
+app.post("/api/admin/factory/recovery-action", (req, res) => {
+  const actionId = req.body && req.body.actionId;
+  const actor = (req.body && req.body.actor) || "admin-api";
+  res.json(factoryOperationsService.runRecoveryAction(actionId, actor));
+});
+/* END_PHASE_23_3_FACTORY_OPERATIONS_API */
 

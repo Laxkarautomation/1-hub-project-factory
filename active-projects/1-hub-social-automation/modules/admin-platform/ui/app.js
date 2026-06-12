@@ -1176,3 +1176,126 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadContentPackApprovalCenter);
 }
 /* END_PHASE_23_2_CONTENT_PACK_APPROVAL_UI */
+
+
+/* PHASE_23_3_FACTORY_OPERATIONS_UI */
+async function loadFactoryOperationsCenter() {
+  const mountId = "factory-operations-center";
+  let mount = document.getElementById(mountId);
+  if (!mount) {
+    mount = document.createElement("section");
+    mount.id = mountId;
+    mount.className = "admin-card factory-operations-center";
+    document.body.insertBefore(mount, document.body.firstChild);
+  }
+
+  mount.innerHTML = "<h2>Factory Operations Center</h2><p>Loading factory status...</p>";
+
+  try {
+    const res = await fetch("/api/admin/factory/operations");
+    const data = await res.json();
+
+    const state = data.state || {};
+    const metrics = data.metrics || {};
+    const emergencyClass = state.emergencyStop ? "danger-pill" : "ok-pill";
+    const safeClass = state.safeMode ? "safe-badge" : "status-pill";
+
+    mount.innerHTML = `
+      <h2>Factory Operations Center</h2>
+
+      <div class="ops-status-row">
+        <span class="${safeClass}">Safe Mode: ${state.safeMode ? "ON" : "OFF"}</span>
+        <span class="${emergencyClass}">Emergency Stop: ${state.emergencyStop ? "ON" : "OFF"}</span>
+        <button onclick="toggleFactorySafeMode(${!state.safeMode})">${state.safeMode ? "Disable" : "Enable"} Safe Mode</button>
+        <button onclick="toggleFactoryEmergencyStop(${!state.emergencyStop})">${state.emergencyStop ? "Clear" : "Enable"} Emergency Stop</button>
+      </div>
+
+      <div class="summary-grid">
+        <div>Provider Sources: <b>${metrics.providerSourcesOnline || 0}</b></div>
+        <div>Queue Sources: <b>${metrics.queueSourcesOnline || 0}</b></div>
+        <div>Publishing Sources: <b>${metrics.publishingSourcesOnline || 0}</b></div>
+        <div>Failure Signals: <b>${metrics.failureSignals || 0}</b></div>
+      </div>
+
+      <h3>Monitors</h3>
+      <div class="ops-monitor-grid">
+        ${renderOpsMonitor("Provider Health", data.monitors.providerHealth)}
+        ${renderOpsMonitor("Queue Monitor", data.monitors.queue)}
+        ${renderOpsMonitor("Publishing Monitor", data.monitors.publishing)}
+      </div>
+
+      <h3>Channel Health</h3>
+      <pre class="ops-json">${JSON.stringify(data.monitors.channelHealth || {}, null, 2)}</pre>
+
+      <h3>Failure Diagnostics</h3>
+      <div class="content-pack-list">
+        ${(data.failureDiagnostics || []).map(d => `
+          <div class="mini-run-card">
+            <b>${d.source}</b>
+            <span class="${d.hasFailureSignal ? "danger-pill" : "ok-pill"}">${d.hasFailureSignal ? "Signal Found" : "OK"}</span>
+          </div>
+        `).join("")}
+      </div>
+
+      <h3>Recovery Actions</h3>
+      <div class="button-row">
+        ${(data.recoveryActions || []).map(a => `<button onclick="runFactoryRecoveryAction('${a.id}')">${a.label}</button>`).join("")}
+      </div>
+
+      <h3>Recent Runs Feed</h3>
+      <pre class="ops-json">${JSON.stringify(data.recentRuns || [], null, 2)}</pre>
+    `;
+  } catch (err) {
+    mount.innerHTML = "<h2>Factory Operations Center</h2><p class='danger'>" + err.message + "</p>";
+  }
+}
+
+function renderOpsMonitor(title, rows) {
+  return `
+    <div class="ops-monitor-card">
+      <h4>${title}</h4>
+      ${(rows || []).map(row => `
+        <div class="mini-run-card">
+          <span>${row.source}</span>
+          <span class="${row.exists ? "ok-pill" : "status-pill"}">${row.exists ? "Online" : "Missing"}</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+async function toggleFactorySafeMode(enabled) {
+  await fetch("/api/admin/factory/safe-mode", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, actor: "admin-ui" })
+  });
+  await loadFactoryOperationsCenter();
+}
+
+async function toggleFactoryEmergencyStop(enabled) {
+  await fetch("/api/admin/factory/emergency-stop", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enabled, reason: enabled ? "manual_admin_ui_stop" : "manual_admin_ui_clear", actor: "admin-ui" })
+  });
+  await loadFactoryOperationsCenter();
+}
+
+async function runFactoryRecoveryAction(actionId) {
+  await fetch("/api/admin/factory/recovery-action", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ actionId, actor: "admin-ui" })
+  });
+  await loadFactoryOperationsCenter();
+}
+
+if (typeof window !== "undefined") {
+  window.loadFactoryOperationsCenter = loadFactoryOperationsCenter;
+  window.toggleFactorySafeMode = toggleFactorySafeMode;
+  window.toggleFactoryEmergencyStop = toggleFactoryEmergencyStop;
+  window.runFactoryRecoveryAction = runFactoryRecoveryAction;
+  window.addEventListener("DOMContentLoaded", loadFactoryOperationsCenter);
+}
+/* END_PHASE_23_3_FACTORY_OPERATIONS_UI */

@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "type": "safe_mode_changed",
+      "actor": "phase23_3_check",
+      "enabled": true,
+      "createdAt": "2026-06-12T09:04:52.157Z"
+    },
+    {
+      "type": "emergency_stop_enabled",
+      "actor": "phase23_3_check",
+      "reason": "phase23_3_test",
+      "createdAt": "2026-06-12T09:04:52.158Z"
+    },
+    {
+      "type": "emergency_stop_cleared",
+      "actor": "phase23_3_check",
+      "reason": "phase23_3_test_clear",
+      "createdAt": "2026-06-12T09:04:52.158Z"
+    },
+    {
+      "type": "recovery_action",
+      "actor": "phase23_3_check",
+      "actionId": "refresh_status",
+      "createdAt": "2026-06-12T09:04:52.159Z"
+    }
+  ]
+}

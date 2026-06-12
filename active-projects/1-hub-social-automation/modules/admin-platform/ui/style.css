@@ -229,3 +229,16 @@ textarea {
 .hidden { display: none; }
 .danger { color: #c0392b; }
 /* END_PHASE_23_2_CONTENT_PACK_APPROVAL_STYLES */
+
+
+/* PHASE_23_3_FACTORY_OPERATIONS_STYLES */
+.factory-operations-center { margin: 24px 0; padding: 20px; border: 2px solid #ddd; border-radius: 16px; }
+.ops-status-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 12px 0 18px; }
+.ops-monitor-grid { display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 14px; }
+.ops-monitor-card { border: 1px solid #ddd; border-radius: 14px; padding: 12px; }
+.mini-run-card { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 8px; border-bottom: 1px solid rgba(160,160,160,.25); }
+.ok-pill, .danger-pill { display: inline-block; padding: 4px 8px; border-radius: 999px; border: 1px solid #bbb; font-size: 12px; }
+.ok-pill { font-weight: 700; }
+.danger-pill { font-weight: 700; color: #c0392b; }
+.ops-json { max-height: 320px; overflow: auto; padding: 12px; border-radius: 12px; background: #111; color: #eee; }
+/* END_PHASE_23_3_FACTORY_OPERATIONS_STYLES */
