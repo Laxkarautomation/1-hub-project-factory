@@ -1,29 +1,35 @@
 [
   {
     "scene": 1,
-    "status": "failed",
-    "provider": null,
+    "status": "generated",
+    "provider": "cloudflare",
     "outputPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/images/unraaz/research_script_001/scene_1.jpg",
     "attempts": [
       {
-        "provider": "placeholder",
-        "success": false,
-        "error": "Placeholder provider connected but no replacement image generated yet"
-      },
-      {
         "provider": "cloudflare",
-        "success": false,
-        "error": "Missing credentials: apiKey, accountId"
-      },
-      {
-        "provider": "google",
-        "success": false,
-        "error": "Missing credentials: apiKey"
-      },
-      {
-        "provider": "fal",
-        "success": false,
-        "error": "Missing credentials: apiKey"
+        "success": true,
+        "status": "generated",
+        "error": null,
+        "keyStatus": null,
+        "rotation": {
+          "attempted": false,
+          "reason": "missing_key"
+        },
+        "usage": {
+          "id": "usage_1781357220187_jsg9iy",
+          "provider": "cloudflare",
+          "type": "image",
+          "status": "generated",
+          "success": true,
+          "keyId": null,
+          "model": "@cf/black-forest-labs/flux-1-schnell",
+          "durationMs": 1565,
+          "error": null,
+          "createdAt": "2026-06-13T13:27:00.188Z",
+          "metadata": {
+            "fallbackEngine": true
+          }
+        }
       }
     ]
   },
