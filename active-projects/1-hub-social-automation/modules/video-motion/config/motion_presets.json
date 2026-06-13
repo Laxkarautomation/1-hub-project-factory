@@ -1,0 +1,128 @@
+{
+  "motionPresets": {
+    "suspense": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "in",
+        "intensity": 0.08,
+        "easeCurve": "easeInOutSine"
+      },
+      "pan": {
+        "enabled": true,
+        "direction": "left",
+        "distance": 0.15,
+        "easeCurve": "linear"
+      },
+      "description": "Slow zoom-in with subtle left pan for building tension"
+    },
+    "documentary": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "out",
+        "intensity": 0.12,
+        "easeCurve": "easeInOutQuad"
+      },
+      "pan": {
+        "enabled": true,
+        "direction": "right",
+        "distance": 0.2,
+        "easeCurve": "easeInOutCubic"
+      },
+      "description": "Slow zoom-out with right pan for establishing shots"
+    },
+    "dramatic": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "in",
+        "intensity": 0.15,
+        "easeCurve": "easeInExpo"
+      },
+      "pan": {
+        "enabled": false,
+        "direction": null,
+        "distance": 0,
+        "easeCurve": null
+      },
+      "description": "Aggressive zoom-in for emotional impact"
+    },
+    "calm": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "out",
+        "intensity": 0.05,
+        "easeCurve": "easeInOutSine"
+      },
+      "pan": {
+        "enabled": true,
+        "direction": "bottom",
+        "distance": 0.1,
+        "easeCurve": "easeInOutSine"
+      },
+      "description": "Gentle zoom-out with subtle upward pan for peaceful scenes"
+    },
+    "action": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "in",
+        "intensity": 0.18,
+        "easeCurve": "linear"
+      },
+      "pan": {
+        "enabled": true,
+        "direction": "right",
+        "distance": 0.25,
+        "easeCurve": "linear"
+      },
+      "description": "Fast zoom with right pan for dynamic energy"
+    },
+    "reveal": {
+      "kenBurns": {
+        "type": "zoom",
+        "direction": "out",
+        "intensity": 0.2,
+        "easeCurve": "easeOutExpo"
+      },
+      "pan": {
+        "enabled": false,
+        "direction": null,
+        "distance": 0,
+        "easeCurve": null
+      },
+      "description": "Zoom out to reveal full context"
+    }
+  },
+  "transitionPresets": {
+    "fade": {
+      "type": "fade",
+      "duration": 1.0,
+      "ffmpegFilter": "fade=t=in:st=0:d=0.5,fade=t=out:st={duration-0.5}:d=0.5",
+      "description": "Simple fade in and fade out"
+    },
+    "crossfade": {
+      "type": "crossfade",
+      "duration": 1.5,
+      "ffmpegFilter": "xfade=transition=fade:duration=0.5:offset={offset}",
+      "description": "Smooth crossfade between scenes"
+    },
+    "dissolve": {
+      "type": "dissolve",
+      "duration": 2.0,
+      "ffmpegFilter": "xfade=transition=dissolve:duration=1:offset={offset}",
+      "description": "Gradual dissolve transition"
+    }
+  },
+  "easeCurves": {
+    "linear": "linear",
+    "easeInSine": "0.5-0.5*t^2",
+    "easeOutSine": "sqrt(1-t^2)",
+    "easeInOutSine": "-0.5*(cos(pi*t)-1)",
+    "easeInQuad": "t^2",
+    "easeOutQuad": "1-(1-t)*(1-t)",
+    "easeInOutQuad": "t<0.5 ? 2*t*t : 1-pow(-2*t+2,2)/2",
+    "easeInCubic": "t^3",
+    "easeOutCubic": "1-pow(1-t,3)",
+    "easeInOutCubic": "t<0.5 ? 4*t*t*t : 1-pow(-2*t+2,3)/2",
+    "easeInExpo": "t==0 ? 0 : pow(2,10*t-10)",
+    "easeOutExpo": "t==1 ? 1 : 1-pow(2,-10*t)"
+  }
+}
