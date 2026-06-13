@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const { executeProvider } = require("../modules/providers/core/provider_resolver");
+const { runQualityEngine } = require("../modules/content-quality");
 
 const ROOT = process.cwd();
 const channelId = "unraaz";
@@ -77,7 +78,7 @@ JSON schema:
     throw new Error("Script JSON must contain exactly 5 scenes");
   }
 
-  const manifestItem = {
+  let manifestItem = {
     script_id: scriptId,
     title: parsed.title,
     voice_file: `storage/audio/${channelId}/${scriptId}.mp3`,
@@ -91,6 +92,8 @@ JSON schema:
     }))
   };
 
+  console.log("Applying content quality engine...");
+  manifestItem = runQualityEngine({ ...manifestItem, channel: "UNRAAZ" }, { verbose: false });
   writeJson(path.join(baseDir, "script.json"), manifestItem);
 
   console.log("2/4 Generating 5 real images...");

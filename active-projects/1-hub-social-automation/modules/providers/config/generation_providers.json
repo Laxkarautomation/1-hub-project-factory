@@ -14,7 +14,9 @@
         "endpoint": "https://generativelanguage.googleapis.com/v1beta",
         "priority": 1,
         "active": true,
-        "updatedAt": "2026-06-13T10:45:31.982Z"
+        "updatedAt": "2026-06-13T13:57:06.429Z",
+        "accountId": "",
+        "cloudflareAccountId": ""
       },
       "openai": {
         "providerType": "script",
@@ -68,7 +70,7 @@
         "endpoint": "",
         "priority": 1,
         "active": true,
-        "updatedAt": "2026-06-13T13:26:28.049Z",
+        "updatedAt": "2026-06-13T13:57:51.997Z",
         "accountId": "c2740a368543d6fc5b3de049d811dacc",
         "cloudflareAccountId": "c2740a368543d6fc5b3de049d811dacc"
       },
@@ -85,19 +87,19 @@
   "audio": {
     "active": "edge_tts",
     "fallbacks": [
-      "edge_tts",
-      "cloudflare_tts",
-      "openai_tts",
-      "elevenlabs"
+      "edge_tts"
     ],
     "providers": {
       "edge_tts": {
         "providerType": "audio",
         "providerName": "edge_tts",
-        "modelName": "en-US-EmmaMultilingualNeural",
+        "modelName": "hi-IN-SwaraNeural",
         "endpoint": "python3 -m edge_tts",
         "priority": 1,
-        "active": true
+        "active": true,
+        "accountId": "",
+        "cloudflareAccountId": "",
+        "updatedAt": "2026-06-13T15:02:27.140Z"
       },
       "cloudflare_tts": {
         "providerType": "audio",

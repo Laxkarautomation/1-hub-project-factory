@@ -1,0 +1,91 @@
+{
+  "channels": {
+    "UNRAAZ": {
+      "name": "UNRAAZ",
+      "description": "Dark, cinematic, high-drama visual storytelling with bold narration",
+      "narration": {
+        "tone": "dramatic",
+        "pacing": "punchy",
+        "sentence_max_words": 18,
+        "forbidden_words": ["very", "really", "basically", "actually", "stuff", "things", "got"],
+        "preferred_openers": ["In the shadows of", "What no one tells you about", "The truth behind", "Hidden beneath", "Beneath the surface"],
+        "power_words": ["shocking", "unseen", "brutal", "raw", "exposed", "forbidden", "classified", "unstoppable"],
+        "sentence_style": "short-punchy"
+      },
+      "visuals": {
+        "color_palette": "dark, desaturated, high-contrast",
+        "lighting": "chiaroscuro, dramatic shadows, single-point light source",
+        "camera_style": "cinematic close-ups, dutch angles, slow push-ins",
+        "mood": "tense, mysterious, high-stakes",
+        "forbidden_styles": ["bright", "cheerful", "pastel", "cartoon", "flat lay", "minimalist white"],
+        "required_qualifiers": ["cinematic", "dramatic lighting", "high contrast", "4K", "photorealistic"],
+        "aspect_ratio": "16:9",
+        "negative_prompt_hints": ["blurry", "low resolution", "cartoonish", "overexposed", "flat lighting"]
+      },
+      "consistency_rules": {
+        "scene_transition": "visual_continuity",
+        "subject_lock": true,
+        "color_grade_lock": "dark_cinematic",
+        "max_scene_style_drift": 0.2
+      }
+    },
+    "BRIGHTFLOW": {
+      "name": "BRIGHTFLOW",
+      "description": "Upbeat, energetic, educational content with clean visuals",
+      "narration": {
+        "tone": "friendly",
+        "pacing": "moderate",
+        "sentence_max_words": 22,
+        "forbidden_words": ["terrifying", "brutal", "dark", "forbidden", "shocking"],
+        "preferred_openers": ["Did you know", "Here's why", "Let's explore", "The fascinating truth about"],
+        "power_words": ["amazing", "discover", "learn", "explore", "understand", "proven", "science"],
+        "sentence_style": "conversational"
+      },
+      "visuals": {
+        "color_palette": "vibrant, clean, warm-toned",
+        "lighting": "soft natural light, even exposure, bright highlights",
+        "camera_style": "wide establishing shots, clean close-ups, steady cam",
+        "mood": "optimistic, clear, engaging",
+        "forbidden_styles": ["dark", "gritty", "horror", "shadowy", "black-and-white", "gloomy", "ominous", "sinister"],
+        "required_qualifiers": ["bright", "clean", "vibrant colors", "sharp focus", "professional"],
+        "aspect_ratio": "16:9",
+        "negative_prompt_hints": ["dark", "gloomy", "harsh shadows", "low contrast", "blurry"]
+      },
+      "consistency_rules": {
+        "scene_transition": "visual_continuity",
+        "subject_lock": true,
+        "color_grade_lock": "warm_bright",
+        "max_scene_style_drift": 0.15
+      }
+    },
+    "DEFAULT": {
+      "name": "DEFAULT",
+      "description": "Neutral, balanced style for general-purpose content",
+      "narration": {
+        "tone": "neutral",
+        "pacing": "moderate",
+        "sentence_max_words": 25,
+        "forbidden_words": ["very", "really", "basically"],
+        "preferred_openers": ["In this story", "Today we explore", "The story of"],
+        "power_words": ["important", "key", "essential", "critical", "significant"],
+        "sentence_style": "balanced"
+      },
+      "visuals": {
+        "color_palette": "balanced, natural",
+        "lighting": "natural, even lighting",
+        "camera_style": "standard angles, clear composition",
+        "mood": "neutral, informative",
+        "forbidden_styles": [],
+        "required_qualifiers": ["high quality", "sharp focus", "professional", "photorealistic"],
+        "aspect_ratio": "16:9",
+        "negative_prompt_hints": ["blurry", "low quality", "watermark", "text overlay"]
+      },
+      "consistency_rules": {
+        "scene_transition": "visual_continuity",
+        "subject_lock": true,
+        "color_grade_lock": "neutral",
+        "max_scene_style_drift": 0.25
+      }
+    }
+  }
+}
