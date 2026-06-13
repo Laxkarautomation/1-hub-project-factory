@@ -35,8 +35,10 @@
     }
   },
   "image": {
-    "active": "google",
+    "active": "cloudflare",
     "fallbacks": [
+      "cloudflare",
+      "pollinations",
       "google",
       "fal"
     ],
@@ -46,7 +48,7 @@
         "providerName": "fal",
         "modelName": "fal-ai/flux/schnell",
         "endpoint": "https://fal.run",
-        "priority": 2,
+        "priority": 3,
         "active": true,
         "updatedAt": "2026-06-12T14:37:27.832Z"
       },
@@ -55,17 +57,28 @@
         "providerName": "google",
         "modelName": "gemini-3.1-flash-image-preview",
         "endpoint": "https://generativelanguage.googleapis.com/v1beta",
-        "priority": 1,
+        "priority": 2,
         "active": true,
         "updatedAt": "2026-06-13T10:55:24.387Z"
       },
       "cloudflare": {
         "providerType": "image",
         "providerName": "cloudflare",
-        "modelName": "",
+        "modelName": "@cf/black-forest-labs/flux-1-schnell",
         "endpoint": "",
-        "priority": 3,
-        "active": false
+        "priority": 1,
+        "active": true,
+        "updatedAt": "2026-06-13T13:05:25.090Z",
+        "accountId": "c2740a368543d6fc5b3de049d811dacc",
+        "cloudflareAccountId": "c2740a368543d6fc5b3de049d811dacc"
+      },
+      "pollinations": {
+        "providerType": "image",
+        "providerName": "pollinations",
+        "modelName": "flux",
+        "endpoint": "https://image.pollinations.ai/prompt",
+        "priority": 1,
+        "active": true
       }
     }
   },

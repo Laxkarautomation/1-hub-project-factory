@@ -59,6 +59,8 @@ function saveGenerationProvider(input = {}) {
     providerName,
     modelName: String(input.modelName || "").trim(),
     endpoint: String(input.endpoint || "").trim(),
+    accountId: String(input.accountId || input.cloudflareAccountId || "").trim(),
+    cloudflareAccountId: String(input.accountId || input.cloudflareAccountId || "").trim(),
     priority: normalizePriority(input.priority),
     active: input.active !== false,
     updatedAt: new Date().toISOString()

@@ -261,6 +261,9 @@ async function loadProviderManager() {
       <label>Endpoint</label>
       <input id="providerEndpoint" placeholder="endpoint url">
 
+      <label>Account ID / Extra ID</label>
+      <input id="providerAccountId" placeholder="Cloudflare Account ID">
+
       <label>API Key</label>
       <input id="providerApiKey" placeholder="paste api key here">
 
@@ -2265,17 +2268,24 @@ function fillProviderForm(type, providerName) {
   document.getElementById("providerName").value = providerName || provider.providerName || "";
   document.getElementById("providerModelName").value = provider.modelName || "";
   document.getElementById("providerEndpoint").value = provider.endpoint || "";
+  if (document.getElementById("providerAccountId")) {
+    document.getElementById("providerAccountId").value = provider.accountId || provider.cloudflareAccountId || "";
+  }
   document.getElementById("providerPriority").value = provider.priority || 1;
   document.getElementById("providerActive").checked = provider.active !== false;
   document.getElementById("providerApiKey").value = "";
 }
 
 async function saveGenerationProviderFromForm() {
+  const accountEl = document.getElementById("providerAccountId");
+
   const body = {
     providerType: document.getElementById("providerType").value.trim(),
     providerName: document.getElementById("providerName").value.trim(),
     modelName: document.getElementById("providerModelName").value.trim(),
     endpoint: document.getElementById("providerEndpoint").value.trim(),
+    accountId: accountEl ? accountEl.value.trim() : "",
+    cloudflareAccountId: accountEl ? accountEl.value.trim() : "",
     apiKey: document.getElementById("providerApiKey").value.trim(),
     priority: Number(document.getElementById("providerPriority").value || 100),
     active: document.getElementById("providerActive").checked
