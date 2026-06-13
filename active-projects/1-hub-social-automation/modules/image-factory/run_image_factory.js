@@ -23,7 +23,7 @@ if (!script) {
 }
 
 const stack = getProviderStack("image");
-const providers = getImageProviders(stack.fallbacks, stack.keys);
+const providers = getImageProviders(stack.fallbacks, stack.keys, stack.providerConfig);
 
 const workspace = workspaceResolver.getWorkspace(scriptId);
 const outputDir = workspace.getImagesPath();

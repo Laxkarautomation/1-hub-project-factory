@@ -146,6 +146,7 @@ async function loadChannelManager() {
   `;
 
   document.getElementById("output").innerHTML = `
+    ${providerForm}
     <div class="manager">
       <h2>Channel Management</h2>
 
@@ -239,11 +240,73 @@ async function loadProviderManager() {
     <div class="tile"><strong>Usage Failed</strong><br>${totals.usageFailed || 0}</div>
   `;
 
+  const adminProviderForm = `
+    <div class="form-card provider-admin-form">
+      <h3>Add / Edit Generation Provider</h3>
+
+      <label>Provider Type</label>
+      <select id="providerType">
+        <option value="script">script</option>
+        <option value="image">image</option>
+        <option value="audio">audio</option>
+        <option value="video">video</option>
+      </select>
+
+      <label>Provider Name</label>
+      <input id="providerName" placeholder="gemini / fal / openai / cloudflare">
+
+      <label>Model Name</label>
+      <input id="providerModelName" placeholder="model name">
+
+      <label>Endpoint</label>
+      <input id="providerEndpoint" placeholder="endpoint url">
+
+      <label>API Key</label>
+      <input id="providerApiKey" placeholder="paste api key here">
+
+      <label>Priority</label>
+      <input id="providerPriority" type="number" value="1">
+
+      <label>
+        <input id="providerActive" type="checkbox" checked>
+        Active
+      </label>
+
+      <button onclick="saveGenerationProviderFromForm()">Save Provider</button>
+      <p><small>Keys save to modules/providers/storage/provider_keys.json. Do not commit keys.</small></p>
+    </div>
+  `;
+
+  window.__providerConfig = config;
+
   const grouped = providers.reduce((acc, item) => {
     acc[item.category] = acc[item.category] || [];
     acc[item.category].push(item);
     return acc;
   }, {});
+
+  const providerForm = `
+    <div class="form-card">
+      <h3>Add / Edit Generation Provider</h3>
+      <select id="providerType">
+        <option value="script">script</option>
+        <option value="image">image</option>
+        <option value="audio">audio</option>
+        <option value="video">video</option>
+      </select>
+      <input id="providerName" placeholder="Provider Name e.g. gemini, fal, openai">
+      <input id="providerModelName" placeholder="Model Name">
+      <input id="providerEndpoint" placeholder="Endpoint">
+      <input id="providerApiKey" placeholder="API Key">
+      <input id="providerPriority" placeholder="Priority e.g. 1" type="number" value="1">
+      <label>
+        <input id="providerActive" type="checkbox" checked>
+        Active
+      </label>
+      <button onclick="saveGenerationProviderFromForm()">Save Provider</button>
+      <p><small>API key is saved to provider_keys.json. Do not commit that file.</small></p>
+    </div>
+  `;
 
   const sections = Object.keys(config).map((type) => {
     const providerList = grouped[type] || [];
@@ -258,6 +321,7 @@ async function loadProviderManager() {
           <h4>${provider.providerId}</h4>
           <p><b>Mode:</b> ${isActive ? "active" : "fallback"}</p>
           <p><b>Priority:</b> ${provider.priority || "-"}</p>
+          <button onclick="fillProviderForm('${provider.category}', '${provider.providerId}')">Edit</button>
           <p><b>Enabled:</b> ${provider.enabled ? "yes" : "no"}</p>
           <p><b>Keys:</b> ${provider.keyCount || 0}</p>
           <p><b>Health:</b> ${provider.health?.status || "unknown"}</p>
@@ -285,6 +349,7 @@ async function loadProviderManager() {
   document.getElementById("output").innerHTML = `
     <div class="manager">
       <h2>Provider Management</h2>
+      ${adminProviderForm}
       ${sections}
     </div>
   `;
@@ -1219,7 +1284,7 @@ async function loadFactoryOperationsCenter() {
 
       <h3>Monitors</h3>
       <div class="ops-monitor-grid">
-        ${renderOpsMonitor("Provider Health", data.monitors.providerHealth)}
+        ${renderOpsMonitor("Provider Health", data.monitors?.providerHealth || [])}
         ${renderOpsMonitor("Queue Monitor", data.monitors.queue)}
         ${renderOpsMonitor("Publishing Monitor", data.monitors.publishing)}
       </div>
@@ -2190,3 +2255,37 @@ if (typeof window !== "undefined") {
   window.addEventListener("DOMContentLoaded", loadProviderExecutorCenter);
 }
 /* END_PHASE_25_4_PROVIDER_ADAPTER_EXECUTOR_UI */
+
+
+function fillProviderForm(type, providerName) {
+  const config = window.__providerConfig || {};
+  const provider = config[type]?.providers?.[providerName] || {};
+
+  document.getElementById("providerType").value = type || provider.providerType || "";
+  document.getElementById("providerName").value = providerName || provider.providerName || "";
+  document.getElementById("providerModelName").value = provider.modelName || "";
+  document.getElementById("providerEndpoint").value = provider.endpoint || "";
+  document.getElementById("providerPriority").value = provider.priority || 1;
+  document.getElementById("providerActive").checked = provider.active !== false;
+  document.getElementById("providerApiKey").value = "";
+}
+
+async function saveGenerationProviderFromForm() {
+  const body = {
+    providerType: document.getElementById("providerType").value.trim(),
+    providerName: document.getElementById("providerName").value.trim(),
+    modelName: document.getElementById("providerModelName").value.trim(),
+    endpoint: document.getElementById("providerEndpoint").value.trim(),
+    apiKey: document.getElementById("providerApiKey").value.trim(),
+    priority: Number(document.getElementById("providerPriority").value || 100),
+    active: document.getElementById("providerActive").checked
+  };
+
+  const result = await api("/api/admin/providers/save-generation", {
+    method: "POST",
+    body: JSON.stringify(body)
+  });
+
+  show(result);
+  await loadProviderManager();
+}

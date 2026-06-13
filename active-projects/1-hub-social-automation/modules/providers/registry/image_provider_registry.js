@@ -2,40 +2,43 @@ const cloudflare = require("../connectors/image/cloudflare_provider");
 const google = require("../connectors/image/google_provider");
 const fal = require("../connectors/image/fal_provider");
 
-function getImageProviders(providerNames = [], keys = {}) {
-  const map = {
-    cloudflare,
-    google,
-    fal,
-    placeholder: {
-      name: "placeholder",
-      run: async () => ({
-        success: false,
-        provider: "placeholder",
-        error: "Placeholder provider connected but no replacement image generated yet"
-      })
-    }
-  };
+const connectorMap = {
+  cloudflare,
+  google,
+  fal
+};
 
-  return providerNames.map(name => {
-    const provider = map[name];
+function firstActiveKey(providerKeys = []) {
+  if (!Array.isArray(providerKeys)) return {};
+  return providerKeys.find((key) => key && key.isActive === true && key.status === "active") || providerKeys[0] || {};
+}
 
-    if (!provider) {
+function getImageProviders(providerNames = [], keys = {}, providerConfig = {}) {
+  return providerNames
+    .filter((name) => name && name !== "placeholder")
+    .map((name) => {
+      const provider = connectorMap[name];
+
+      if (!provider) {
+        return {
+          name,
+          run: async () => ({
+            success: false,
+            provider: name,
+            status: "provider_unavailable",
+            error: "Image connector not found for provider: " + name
+          })
+        };
+      }
+
       return {
-        name,
-        run: async () => ({
-          success: false,
-          provider: name,
-          error: `Unknown image provider: ${name}`
+        name: provider.name || name,
+        run: (payload) => provider.run(payload, {
+          ...firstActiveKey(keys[name]),
+          ...(providerConfig[name] || {})
         })
       };
-    }
-
-    return {
-      name: provider.name,
-      run: payload => provider.run(payload, keys[name] || {})
-    };
-  });
+    });
 }
 
 module.exports = { getImageProviders };

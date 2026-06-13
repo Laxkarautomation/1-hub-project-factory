@@ -37,7 +37,7 @@ function resolveProviders(type, overrideProviderNames = null) {
   return {
     type,
     providerNames,
-    providers: registryFactory(providerNames, stack.keys || {})
+    providers: registryFactory(providerNames, stack.keys || {}, stack.providerConfig || {})
   };
 }
 

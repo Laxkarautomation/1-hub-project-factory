@@ -1,18 +1,124 @@
 {
   "script": {
-    "active": "template",
-    "fallbacks": ["template", "gemini", "openai", "claude"]
+    "active": "gemini",
+    "fallbacks": [
+      "gemini",
+      "openai",
+      "claude"
+    ],
+    "providers": {
+      "gemini": {
+        "providerType": "script",
+        "providerName": "gemini",
+        "modelName": "gemini-2.5-flash",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+        "priority": 1,
+        "active": true,
+        "updatedAt": "2026-06-13T10:45:31.982Z"
+      },
+      "openai": {
+        "providerType": "script",
+        "providerName": "openai",
+        "modelName": "gpt-5.1-mini",
+        "endpoint": "https://api.openai.com/v1/responses",
+        "priority": 2,
+        "active": true
+      },
+      "claude": {
+        "providerType": "script",
+        "providerName": "claude",
+        "modelName": "claude-sonnet-4-5",
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "priority": 3,
+        "active": true
+      }
+    }
   },
   "image": {
-    "active": "placeholder",
-    "fallbacks": ["placeholder", "cloudflare", "google", "fal"]
+    "active": "google",
+    "fallbacks": [
+      "google",
+      "fal"
+    ],
+    "providers": {
+      "fal": {
+        "providerType": "image",
+        "providerName": "fal",
+        "modelName": "fal-ai/flux/schnell",
+        "endpoint": "https://fal.run",
+        "priority": 2,
+        "active": true,
+        "updatedAt": "2026-06-12T14:37:27.832Z"
+      },
+      "google": {
+        "providerType": "image",
+        "providerName": "google",
+        "modelName": "gemini-3.1-flash-image-preview",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+        "priority": 1,
+        "active": true,
+        "updatedAt": "2026-06-13T10:55:24.387Z"
+      },
+      "cloudflare": {
+        "providerType": "image",
+        "providerName": "cloudflare",
+        "modelName": "",
+        "endpoint": "",
+        "priority": 3,
+        "active": false
+      }
+    }
   },
   "audio": {
     "active": "edge_tts",
-    "fallbacks": ["edge_tts", "cloudflare_tts", "openai_tts", "elevenlabs"]
+    "fallbacks": [
+      "edge_tts",
+      "cloudflare_tts",
+      "openai_tts",
+      "elevenlabs"
+    ],
+    "providers": {
+      "edge_tts": {
+        "providerType": "audio",
+        "providerName": "edge_tts",
+        "modelName": "en-US-EmmaMultilingualNeural",
+        "endpoint": "python3 -m edge_tts",
+        "priority": 1,
+        "active": true
+      },
+      "cloudflare_tts": {
+        "providerType": "audio",
+        "providerName": "cloudflare_tts",
+        "modelName": "",
+        "endpoint": "",
+        "priority": 2,
+        "active": false
+      },
+      "openai_tts": {
+        "providerType": "audio",
+        "providerName": "openai_tts",
+        "modelName": "",
+        "endpoint": "",
+        "priority": 3,
+        "active": false
+      },
+      "elevenlabs": {
+        "providerType": "audio",
+        "providerName": "elevenlabs",
+        "modelName": "",
+        "endpoint": "",
+        "priority": 4,
+        "active": false
+      }
+    }
   },
   "video": {
     "active": "ffmpeg",
-    "fallbacks": ["ffmpeg", "remotion", "fal_video", "runway"]
+    "fallbacks": [
+      "ffmpeg",
+      "remotion",
+      "fal_video",
+      "runway"
+    ]
   }
 }
