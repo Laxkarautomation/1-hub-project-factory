@@ -1,0 +1,45 @@
+{
+  "script_id": "fresh_script_001",
+  "title": "Kuldhara: The Cursed Village",
+  "voice_file": "storage/audio/unraaz/fresh_script_001.mp3",
+  "caption": "Ek aisi jagah jahan raat ko koi nahi rukta. Kya sach mein yahan bhoot hain? Jaanne ke liye dekhiye yeh mystery. #UNRAAZ #Mystery #Horror",
+  "hashtags": [
+    "#UNRAAZ",
+    "#Mystery",
+    "#Kuldhara",
+    "#HorrorStories",
+    "#IndianMystery"
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "duration_seconds": 5,
+      "narration": "Rajasthan ke sunsaan registaan mein basa hai ek aisa gaon, jahan ki galiyan aaj bhi cheekhti hain.",
+      "image_prompt": "vertical 9:16 cinematic realistic image, wide shot of an abandoned ancient stone village in the Thar desert during twilight, eerie atmosphere, golden hour lighting, crumbling stone houses."
+    },
+    {
+      "scene": 2,
+      "duration_seconds": 5,
+      "narration": "Kuldhara. Ek raat mein 1500 log gayab ho gaye, bina kisi nishaan ke. Kahan gaye woh sab?",
+      "image_prompt": "vertical 9:16 cinematic realistic image, close up of an old rusted wooden door slightly open, dusty floor, dark interior, cinematic shadows, high contrast."
+    },
+    {
+      "scene": 3,
+      "duration_seconds": 5,
+      "narration": "Kehte hain ki gaanv ke mukhiya ne shraap diya tha, ki yahan kabhi koi insaan phir nahi bas payega.",
+      "image_prompt": "vertical 9:16 cinematic realistic image, silhouette of an old man standing in front of a ruined stone structure, mystical atmosphere, fog, dramatic lighting."
+    },
+    {
+      "scene": 4,
+      "duration_seconds": 5,
+      "narration": "Aaj bhi, yahan aane wale log ajeeb aawazein aur parchhaiyon ka anubhav karte hain.",
+      "image_prompt": "vertical 9:16 cinematic realistic image, POV shot walking through narrow dark abandoned stone alleyway, grainy footage style, creepy shadows on the wall."
+    },
+    {
+      "scene": 5,
+      "duration_seconds": 5,
+      "narration": "Kya aap mein himmat hai yahan raat bitane ki? Comments mein batayein aur subscribe karein UNRAAZ ko.",
+      "image_prompt": "vertical 9:16 cinematic realistic image, extreme wide shot of Kuldhara village under a full moon night, starry sky, cold blue tones, mysterious and lonely."
+    }
+  ]
+}
