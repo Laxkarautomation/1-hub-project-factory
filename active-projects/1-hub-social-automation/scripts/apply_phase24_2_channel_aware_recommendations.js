@@ -1,4 +1,9 @@
-function pickTop(items = [], count = 5) {
+const fs = require("fs");
+
+const builderPath = "modules/intelligence/core/recommendation_builder.js";
+const servicePath = "modules/intelligence/services/build_unraaz_recommendations.js";
+
+const builderCode = `function pickTop(items = [], count = 5) {
   return items.slice(0, count);
 }
 
@@ -103,7 +108,7 @@ function scoreTopic(topic, patterns = [], gaps = []) {
 
   for (const gap of gapTopics) {
     if (gap && text.includes(gap)) score += 4;
-    const gapWords = gap.split(/\s+/).filter(word => word.length > 3);
+    const gapWords = gap.split(/\\s+/).filter(word => word.length > 3);
     for (const word of gapWords) {
       if (text.includes(word)) score += 1;
     }
@@ -133,7 +138,7 @@ function buildRecommendedTopics({ patterns = [], gaps = [], formulas = [], chann
     .map((item, index) => ({
       rank: index + 1,
       topic: item.topic,
-      reason: `Channel profile: ${profile.type}. Matches patterns: ${topPatterns.join(", ")}`,
+      reason: \`Channel profile: \${profile.type}. Matches patterns: \${topPatterns.join(", ")}\`,
       suggested_formula: topFormula
     }));
 }
@@ -167,9 +172,9 @@ function buildTitleSuggestions(topics = []) {
   return topics.map(item => ({
     topic: item.topic,
     titles: [
-      `${item.topic}: ek kahani jisme hidden warning chhupi thi`,
-      `${item.topic} ka woh sach jo pehle kisi ko samajh nahi aaya`,
-      `${item.topic}: real story, shocking twist`
+      \`\${item.topic}: ek kahani jisme hidden warning chhupi thi\`,
+      \`\${item.topic} ka woh sach jo pehle kisi ko samajh nahi aaya\`,
+      \`\${item.topic}: real story, shocking twist\`
     ]
   }));
 }
@@ -180,3 +185,90 @@ module.exports = {
   buildTitleSuggestions,
   getChannelProfile
 };
+`;
+
+const serviceCode = `const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
+
+const { resolveChannelRuntime } = require("../../channels/channel_runtime_resolver");
+
+const {
+  buildRecommendedTopics,
+  buildHookSuggestions,
+  buildTitleSuggestions
+} = require("../core/recommendation_builder");
+
+const outputDir = path.join(process.cwd(), "modules/intelligence/output");
+
+const runtimeResult = resolveChannelRuntime();
+if (!runtimeResult.success) {
+  throw new Error(\`Unable to resolve active channel: \${runtimeResult.reason || runtimeResult.status}\`);
+}
+
+const channel = runtimeResult.channel;
+const outputPath = path.join(outputDir, \`\${channel.channelId}_recommendations.json\`);
+
+const competitorReportPath = path.join(outputDir, "competitor_intelligence_report.json");
+const patternReportPath = path.join(outputDir, "pattern_intelligence_report.json");
+
+fs.mkdirSync(outputDir, { recursive: true });
+
+function ensureReport(filePath, command) {
+  if (!fs.existsSync(filePath)) {
+    execSync(command, { stdio: "inherit" });
+  }
+}
+
+ensureReport(
+  competitorReportPath,
+  "node modules/intelligence/services/build_competitor_intelligence.js"
+);
+
+ensureReport(
+  patternReportPath,
+  "node modules/intelligence/services/build_pattern_intelligence.js"
+);
+
+const competitorReport = JSON.parse(fs.readFileSync(competitorReportPath, "utf8"));
+const patternReport = JSON.parse(fs.readFileSync(patternReportPath, "utf8"));
+
+const recommendedTopics = buildRecommendedTopics({
+  patterns: patternReport.top_patterns || [],
+  gaps: competitorReport.content_gaps || [],
+  formulas: patternReport.story_formulas || [],
+  channel
+});
+
+const report = {
+  generated_at: new Date().toISOString(),
+  channel: channel.name,
+  channelId: channel.channelId,
+  channel_profile: {
+    niche: channel.niche,
+    language: channel.language,
+    contentStyle: channel.contentStyle
+  },
+  strategy_summary: {
+    strongest_patterns: patternReport.top_patterns || [],
+    strongest_competitors: patternReport.top_competitors || [],
+    best_story_formulas: patternReport.story_formulas || []
+  },
+  recommended_topics: recommendedTopics,
+  hook_suggestions: buildHookSuggestions(patternReport.top_patterns || [], channel),
+  title_suggestions: buildTitleSuggestions(recommendedTopics),
+  next_action: "Use top recommended topic to generate script brief."
+};
+
+fs.writeFileSync(outputPath, JSON.stringify(report, null, 2));
+
+console.log(\`✅ \${channel.name} recommendations generated\`);
+console.log(outputPath);
+`;
+
+fs.writeFileSync(builderPath, builderCode);
+fs.writeFileSync(servicePath, serviceCode);
+
+console.log("✅ Phase 24.2 channel-aware recommendations patch applied");
+console.log("Updated:", builderPath);
+console.log("Updated:", servicePath);
