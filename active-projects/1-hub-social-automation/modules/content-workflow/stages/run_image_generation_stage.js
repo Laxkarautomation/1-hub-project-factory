@@ -9,8 +9,8 @@ function pad(num) {
 
 function detectScriptIds() {
   const scripts =
-    readJson("modules/scripts/output/unraaz_research_scripts.json", null) ||
     readJson("modules/intelligence/output/generated_unraaz_scripts.json", null) ||
+    readJson("modules/scripts/output/unraaz_research_scripts.json", null) ||
     readJson("modules/scripts/output/unraaz_smart_scripts.json", null);
 
   let count = 10;
