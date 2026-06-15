@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputPath = path.join(__dirname, "../../scripts/output/unraaz_research_scripts.json");
+const intelligenceScriptsPath = path.join(__dirname, "../../intelligence/output/generated_unraaz_scripts.json");
+const researchScriptsPath = path.join(__dirname, "../../scripts/output/unraaz_research_scripts.json");
 const outputPath = path.join(__dirname, "../output/unraaz_varied_image_prompts.json");
 
 const style = "vertical 9:16, dark cinematic realistic documentary style, moody lighting, dramatic shadows, high detail, no text, no watermark, no gore";
@@ -51,20 +52,31 @@ const sceneTemplates = {
   ]
 };
 
+function loadScripts() {
+  if (fs.existsSync(intelligenceScriptsPath)) {
+    const report = JSON.parse(fs.readFileSync(intelligenceScriptsPath, "utf-8"));
+    return Array.isArray(report) ? report : (report.scripts || report.items || []);
+  }
+
+  return JSON.parse(fs.readFileSync(researchScriptsPath, "utf-8"));
+}
+
 function run() {
-  const scripts = JSON.parse(fs.readFileSync(inputPath, "utf-8"));
+  const scripts = loadScripts();
 
   const output = scripts.map(script => {
-    const templates = sceneTemplates[script.sub_theme] || sceneTemplates.general_mystery;
+    const subTheme = script.sub_theme || script.subTheme || "general_mystery";
+    const selectedAngle = script.selected_angle || script.working_title || script.topic || "UNRAAZ mystery story";
+    const templates = sceneTemplates[subTheme] || sceneTemplates.general_mystery;
 
     return {
       script_id: script.script_id,
-      sub_theme: script.sub_theme,
-      selected_angle: script.selected_angle,
+      sub_theme: subTheme,
+      selected_angle: selectedAngle,
       scenes: script.script.map((line, index) => ({
         scene: index + 1,
         time: line.time,
-        narration: line.text,
+        narration: line.text || line.narration || "",
         image_prompt: `${templates[index] || templates[0]}, ${style}`
       })),
       status: "varied_image_prompts_ready"

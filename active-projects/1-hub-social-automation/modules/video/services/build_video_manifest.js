@@ -1,14 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 
-const INPUT =
-  path.join(process.cwd(),
-  "modules/publishing/output/unraaz_content_pack.json");
+const routedInputPath = path.join(
+  process.cwd(),
+  "storage/publishing/unraaz/content_pack.json"
+);
+
+const legacyInputPath = path.join(
+  process.cwd(),
+  "modules/publishing/output/unraaz_content_pack.json"
+);
 
 const OUTPUT =
   path.join(process.cwd(),
   "modules/video/output/video_manifest.json");
 
+const INPUT = fs.existsSync(routedInputPath) ? routedInputPath : legacyInputPath;
 const packs = JSON.parse(fs.readFileSync(INPUT, "utf8"));
 
 const manifest = packs.map(pack => {

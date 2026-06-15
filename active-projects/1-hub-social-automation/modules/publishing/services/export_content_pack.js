@@ -2,15 +2,25 @@ const fs = require("fs");
 const path = require("path");
 const workspaceResolver = require("../../channels/channel_workspace_resolver");
 
-const scriptsPath = path.join(__dirname, "../../scripts/output/unraaz_research_scripts.json");
+const intelligenceScriptsPath = path.join(__dirname, "../../intelligence/output/generated_unraaz_scripts.json");
+const researchScriptsPath = path.join(__dirname, "../../scripts/output/unraaz_research_scripts.json");
 const imagesPath = path.join(__dirname, "../../images/output/unraaz_varied_image_prompts.json");
 const captionsPath = path.join(__dirname, "../../captions/output/unraaz_captions.json");
 
 const workspace = workspaceResolver.getWorkspace();
 const outputPath = workspace.getPublishingPath("content_pack.json");
 
+function loadScripts() {
+  if (fs.existsSync(intelligenceScriptsPath)) {
+    const report = JSON.parse(fs.readFileSync(intelligenceScriptsPath, "utf-8"));
+    return Array.isArray(report) ? report : (report.scripts || report.items || []);
+  }
+
+  return JSON.parse(fs.readFileSync(researchScriptsPath, "utf-8"));
+}
+
 function run() {
-  const scripts = JSON.parse(fs.readFileSync(scriptsPath, "utf-8"));
+  const scripts = loadScripts();
   const images = JSON.parse(fs.readFileSync(imagesPath, "utf-8"));
   const captions = JSON.parse(fs.readFileSync(captionsPath, "utf-8"));
 
@@ -20,8 +30,8 @@ function run() {
 
     return {
       script_id: script.script_id,
-      sub_theme: script.sub_theme,
-      selected_angle: script.selected_angle,
+      sub_theme: script.sub_theme || script.subTheme || "general_mystery",
+      selected_angle: script.selected_angle || script.working_title || script.topic || "UNRAAZ mystery story",
 
       script: script.script,
 
