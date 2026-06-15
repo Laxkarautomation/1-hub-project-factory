@@ -20,7 +20,9 @@ function writePreflightReport(scriptId, preflight) {
 function renderVideo(video) {
   const scriptId = video.script_id;
   const imageDir = outputRouter.getImageOutputPath(scriptId);
-  const audioFile = path.join(process.cwd(), video.voice_file);
+  const audioFile = path.isAbsolute(video.voice_file)
+    ? video.voice_file
+    : path.join(process.cwd(), video.voice_file);
   const outputFile = path.join(outputDir, `${scriptId}.mp4`);
   const listFile = path.join(outputDir, `${scriptId}_images.txt`);
 
