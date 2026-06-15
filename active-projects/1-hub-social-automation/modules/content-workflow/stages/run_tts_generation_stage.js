@@ -1,4 +1,4 @@
-const { readJson, writeJson, getChannelId, stageReport } = require("./_stage_utils");
+const { readJson, writeJson, getChannelId, runNode, stageReport } = require("./_stage_utils");
 
 const scripts =
   readJson("modules/intelligence/output/generated_unraaz_scripts.json", null) ||
@@ -27,8 +27,13 @@ const manifest = {
 
 writeJson("storage/workflows/tts_generation_manifest.json", manifest);
 
+const attempts = [
+  runNode("providers/edge-tts/services/generate_voice.js")
+];
+
 const report = stageReport("tts_generation", {
-  success: true,
+  success: attempts.every(attempt => attempt.ok),
+  attempts,
   output: "storage/workflows/tts_generation_manifest.json",
   totalItems: manifest.totalScripts
 });

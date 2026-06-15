@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const { readJson, writeJson, stageReport, ROOT } = require("./_stage_utils");
+const { readJson, writeJson, runNode, stageReport, ROOT } = require("./_stage_utils");
 
 function pad(num) {
   return String(num).padStart(3, "0");
@@ -13,13 +13,20 @@ function detectScriptIds() {
     readJson("modules/scripts/output/unraaz_research_scripts.json", null) ||
     readJson("modules/scripts/output/unraaz_smart_scripts.json", null);
 
-  let count = 10;
+  const items = Array.isArray(scripts)
+    ? scripts
+    : (scripts?.scripts || scripts?.items || []);
 
-  if (Array.isArray(scripts)) count = scripts.length || 10;
-  else if (scripts && Array.isArray(scripts.scripts)) count = scripts.scripts.length || 10;
-  else if (scripts && Array.isArray(scripts.items)) count = scripts.items.length || 10;
+  const ids = items
+    .map((item, index) =>
+      item.script_id ||
+      item.scriptId ||
+      item.id ||
+      `research_script_${pad(index + 1)}`
+    )
+    .filter(Boolean);
 
-  return Array.from({ length: count }, (_, i) => `research_script_${pad(i + 1)}`);
+  return ids.length ? ids : Array.from({ length: 10 }, (_, i) => `research_script_${pad(i + 1)}`);
 }
 
 function statusExists(scriptId) {
@@ -57,8 +64,16 @@ function runImageFactory(scriptId) {
   };
 }
 
+const setupAttempts = [
+  runNode("modules/images/services/generate_scene_varied_prompts.js"),
+  runNode("modules/publishing/services/export_content_pack.js"),
+  runNode("modules/video/services/build_video_manifest.js")
+];
+
 const scriptIds = detectScriptIds();
-const results = scriptIds.map(runImageFactory);
+const results = setupAttempts.every(attempt => attempt.ok)
+  ? scriptIds.map(runImageFactory)
+  : [];
 const failed = results.filter(r => r.status === "failed");
 
 const report = stageReport("image_generation", {
