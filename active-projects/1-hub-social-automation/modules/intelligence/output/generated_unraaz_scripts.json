@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T13:31:28.692Z",
+  "generated_at": "2026-06-15T12:17:46.377Z",
   "channel": "UNRAAZ",
   "source_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json",
   "total_scripts": 5,
@@ -17,27 +17,27 @@
       "script": [
         {
           "time": "0-5s",
-          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+          "text": "Loan ke naam par ek aadmi ko madad ka bharosa diya gaya, lekin asli khel uske documents ke saath hua..."
         },
         {
           "time": "5-12s",
-          "text": "loan fraud story ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+          "text": "Ek aadmi ko laga loan process simple hai, bas documents dene hain aur approval ka wait karna hai."
         },
         {
           "time": "12-22s",
-          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+          "text": "Pehle approval ka promise mila, phir processing ke naam par naye papers maange gaye, aur dheere dheere uske naam ka misuse shuru ho gaya."
         },
         {
           "time": "22-35s",
-          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+          "text": "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
         },
         {
           "time": "35-50s",
-          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+          "text": "Asli twist tab aaya jab pata chala ki problem loan reject hone ki nahi thi, balki documents kisi aur kaam me use ho chuke the."
         },
         {
           "time": "50-60s",
-          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+          "text": "loan fraud story jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo."
         }
       ],
       "image_prompt_seed": {
@@ -45,12 +45,14 @@
         "format": "9:16 vertical",
         "style": "realistic documentary mystery",
         "scenes": [
-          "Opening hook with curiosity",
-          "Normal world setup",
-          "Incident or conflict begins",
-          "Twist / discovery / danger point",
-          "Final reveal and lesson"
-        ]
+          "loan fraud story ka real-life setup",
+          "loan fraud story me trust ya greed ka trigger",
+          "loan fraud story ki situation dheere dheere serious hoti hai",
+          "loan fraud story ka hidden twist saamne aata hai",
+          "loan fraud story se milne wali warning"
+        ],
+        "topic": "loan fraud story",
+        "visual_direction": "topic-specific realistic scenes, no generic fog unless story needs it"
       },
       "status": "script_from_brief_draft"
     },
@@ -67,27 +69,27 @@
       "script": [
         {
           "time": "0-5s",
-          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+          "text": "Kabhi kabhi sabse bada dhokha bahar wala nahi, ghar ka apna aadmi deta hai..."
         },
         {
           "time": "5-12s",
-          "text": "family betrayal story ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+          "text": "Ghar ke andar sab kuch normal lag raha tha, lekin rishton ke peeche ek alag hi planning chal rahi thi."
         },
         {
           "time": "12-22s",
-          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+          "text": "Pehle chhoti chhoti baatein chhupayi gayi, phir documents aur property ke decisions bina bataye hone lage."
         },
         {
           "time": "22-35s",
-          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+          "text": "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
         },
         {
           "time": "35-50s",
-          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+          "text": "Twist ye tha ki jisse sab apna samajh rahe the, wahi aadmi sabse zyada fayda uthane ki planning kar raha tha."
         },
         {
           "time": "50-60s",
-          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+          "text": "family betrayal story jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo."
         }
       ],
       "image_prompt_seed": {
@@ -95,12 +97,14 @@
         "format": "9:16 vertical",
         "style": "realistic documentary mystery",
         "scenes": [
-          "Opening hook with curiosity",
-          "Normal world setup",
-          "Incident or conflict begins",
-          "Twist / discovery / danger point",
-          "Final reveal and lesson"
-        ]
+          "family betrayal story ka real-life setup",
+          "family betrayal story me trust ya greed ka trigger",
+          "family betrayal story ki situation dheere dheere serious hoti hai",
+          "family betrayal story ka hidden twist saamne aata hai",
+          "family betrayal story se milne wali warning"
+        ],
+        "topic": "family betrayal story",
+        "visual_direction": "topic-specific realistic scenes, no generic fog unless story needs it"
       },
       "status": "script_from_brief_draft"
     },
@@ -117,27 +121,27 @@
       "script": [
         {
           "time": "0-5s",
-          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+          "text": "Ek chhote se Indian village me kuch aisa hua jiske baare me log aaj bhi dheere awaaz me baat karte hain..."
         },
         {
           "time": "5-12s",
-          "text": "indian village mystery ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+          "text": "Gaon ke log apni daily life me busy the, lekin ek chhoti si baat ne poore village ka mahaul badal diya."
         },
         {
           "time": "12-22s",
-          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+          "text": "Ek rumour se shuru hui baat me naye clues judte gaye, aur har clue pehle wale se zyada ajeeb nikla."
         },
         {
           "time": "22-35s",
-          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+          "text": "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
         },
         {
           "time": "35-50s",
-          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+          "text": "Sabse shocking baat ye thi ki gaon wale jise accident samajh rahe the, uske peeche kuch aur hi connection nikal raha tha."
         },
         {
           "time": "50-60s",
-          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+          "text": "indian village mystery jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo."
         }
       ],
       "image_prompt_seed": {
@@ -145,12 +149,14 @@
         "format": "9:16 vertical",
         "style": "realistic documentary mystery",
         "scenes": [
-          "Opening hook with curiosity",
-          "Normal world setup",
-          "Incident or conflict begins",
-          "Twist / discovery / danger point",
-          "Final reveal and lesson"
-        ]
+          "indian village mystery ka real-life setup",
+          "indian village mystery me trust ya greed ka trigger",
+          "indian village mystery ki situation dheere dheere serious hoti hai",
+          "indian village mystery ka hidden twist saamne aata hai",
+          "indian village mystery se milne wali warning"
+        ],
+        "topic": "indian village mystery",
+        "visual_direction": "topic-specific realistic scenes, no generic fog unless story needs it"
       },
       "status": "script_from_brief_draft"
     },
@@ -167,27 +173,27 @@
       "script": [
         {
           "time": "0-5s",
-          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+          "text": "Paise ki ek galat planning kabhi kabhi poori zindagi ka sabse bada lesson ban jaati hai..."
         },
         {
           "time": "5-12s",
-          "text": "real money lesson ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+          "text": "Paise ke decision me usne ek chhoti si warning ignore ki, aur wahi baat baad me sabse mehengi pad gayi."
         },
         {
           "time": "12-22s",
-          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+          "text": "Shuruaat me loss chhota laga, lekin jab calculation samne aayi to pata chala damage kaafi bada ho chuka tha."
         },
         {
           "time": "22-35s",
-          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+          "text": "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
         },
         {
           "time": "35-50s",
-          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+          "text": "Twist tab samne aaya jab usne realise kiya ki loss market ya kismat se nahi, apni hi jaldbazi se hua tha."
         },
         {
           "time": "50-60s",
-          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+          "text": "real money lesson jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo."
         }
       ],
       "image_prompt_seed": {
@@ -195,12 +201,14 @@
         "format": "9:16 vertical",
         "style": "realistic documentary mystery",
         "scenes": [
-          "Opening hook with curiosity",
-          "Normal world setup",
-          "Incident or conflict begins",
-          "Twist / discovery / danger point",
-          "Final reveal and lesson"
-        ]
+          "real money lesson ka real-life setup",
+          "real money lesson me trust ya greed ka trigger",
+          "real money lesson ki situation dheere dheere serious hoti hai",
+          "real money lesson ka hidden twist saamne aata hai",
+          "real money lesson se milne wali warning"
+        ],
+        "topic": "real money lesson",
+        "visual_direction": "topic-specific realistic scenes, no generic fog unless story needs it"
       },
       "status": "script_from_brief_draft"
     },
@@ -217,27 +225,27 @@
       "script": [
         {
           "time": "0-5s",
-          "text": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya..."
+          "text": "Ek chhote shehar ki shaant gali me hua ek incident, jiska sach pehle kisi ko samajh hi nahi aaya..."
         },
         {
           "time": "5-12s",
-          "text": "small town crime ek aisi kahani hai jahan shuruaat bilkul normal lagti hai."
+          "text": "Chhote shehar ki ek normal jagah par hua incident pehle routine case jaisa laga."
         },
         {
           "time": "12-22s",
-          "text": "Normal world setup ke baad dheere dheere situation serious hone lagti hai."
+          "text": "Police ko pehle kuch clear nahi mila, lekin local logon ki baaton me ek pattern dikhne laga."
         },
         {
           "time": "22-35s",
-          "text": "Incident or conflict begins yahan story ka sabse important turning point ban jaata hai."
+          "text": "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
         },
         {
           "time": "35-50s",
-          "text": "Twist / discovery / danger point ke baad samajh aata hai ki asli danger pehle se chhupa hua tha."
+          "text": "Case ka twist tab aaya jab saboot us jagah se mila jahan kisi ne search karne ke baare me socha bhi nahi tha."
         },
         {
           "time": "50-60s",
-          "text": "Har real incident ke peeche ek warning hoti hai — ignore mat karo."
+          "text": "small town crime jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo."
         }
       ],
       "image_prompt_seed": {
@@ -245,12 +253,14 @@
         "format": "9:16 vertical",
         "style": "realistic documentary mystery",
         "scenes": [
-          "Opening hook with curiosity",
-          "Normal world setup",
-          "Incident or conflict begins",
-          "Twist / discovery / danger point",
-          "Final reveal and lesson"
-        ]
+          "small town crime ka real-life setup",
+          "small town crime me trust ya greed ka trigger",
+          "small town crime ki situation dheere dheere serious hoti hai",
+          "small town crime ka hidden twist saamne aata hai",
+          "small town crime se milne wali warning"
+        ],
+        "topic": "small town crime",
+        "visual_direction": "topic-specific realistic scenes, no generic fog unless story needs it"
       },
       "status": "script_from_brief_draft"
     }

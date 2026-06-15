@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T13:31:28.684Z",
+  "generated_at": "2026-06-15T12:17:46.312Z",
   "channel": "UNRAAZ",
   "source_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/unraaz_recommendations.json",
   "total_briefs": 5,
@@ -8,90 +8,90 @@
       "rank": 1,
       "topic": "loan fraud story",
       "working_title": "loan fraud story: ek real kahani jo sabko warning deti hai",
-      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "opening_hook": "Loan ke naam par ek aadmi ko madad ka bharosa diya gaya, lekin asli khel uske documents ke saath hua...",
       "target_emotion": "curiosity, fear, shock, lesson",
       "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
       "scene_plan": [
-        "Opening hook with curiosity",
-        "Normal world setup",
-        "Incident or conflict begins",
-        "Twist / discovery / danger point",
-        "Final reveal and lesson"
+        "loan fraud story ka real-life setup",
+        "loan fraud story me trust ya greed ka trigger",
+        "loan fraud story ki situation dheere dheere serious hoti hai",
+        "loan fraud story ka hidden twist saamne aata hai",
+        "loan fraud story se milne wali warning"
       ],
       "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
-      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "ending_lesson": "loan fraud story jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.",
       "estimated_duration_seconds": 60
     },
     {
       "rank": 2,
       "topic": "family betrayal story",
       "working_title": "family betrayal story: ek real kahani jo sabko warning deti hai",
-      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "opening_hook": "Kabhi kabhi sabse bada dhokha bahar wala nahi, ghar ka apna aadmi deta hai...",
       "target_emotion": "curiosity, fear, shock, lesson",
       "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
       "scene_plan": [
-        "Opening hook with curiosity",
-        "Normal world setup",
-        "Incident or conflict begins",
-        "Twist / discovery / danger point",
-        "Final reveal and lesson"
+        "family betrayal story ka real-life setup",
+        "family betrayal story me trust ya greed ka trigger",
+        "family betrayal story ki situation dheere dheere serious hoti hai",
+        "family betrayal story ka hidden twist saamne aata hai",
+        "family betrayal story se milne wali warning"
       ],
       "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
-      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "ending_lesson": "family betrayal story jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.",
       "estimated_duration_seconds": 60
     },
     {
       "rank": 3,
       "topic": "indian village mystery",
       "working_title": "indian village mystery: ek real kahani jo sabko warning deti hai",
-      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "opening_hook": "Ek chhote se Indian village me kuch aisa hua jiske baare me log aaj bhi dheere awaaz me baat karte hain...",
       "target_emotion": "curiosity, fear, shock, lesson",
       "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
       "scene_plan": [
-        "Opening hook with curiosity",
-        "Normal world setup",
-        "Incident or conflict begins",
-        "Twist / discovery / danger point",
-        "Final reveal and lesson"
+        "indian village mystery ka real-life setup",
+        "indian village mystery me trust ya greed ka trigger",
+        "indian village mystery ki situation dheere dheere serious hoti hai",
+        "indian village mystery ka hidden twist saamne aata hai",
+        "indian village mystery se milne wali warning"
       ],
       "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
-      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "ending_lesson": "indian village mystery jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.",
       "estimated_duration_seconds": 60
     },
     {
       "rank": 4,
       "topic": "real money lesson",
       "working_title": "real money lesson: ek real kahani jo sabko warning deti hai",
-      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "opening_hook": "Paise ki ek galat planning kabhi kabhi poori zindagi ka sabse bada lesson ban jaati hai...",
       "target_emotion": "curiosity, fear, shock, lesson",
       "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
       "scene_plan": [
-        "Opening hook with curiosity",
-        "Normal world setup",
-        "Incident or conflict begins",
-        "Twist / discovery / danger point",
-        "Final reveal and lesson"
+        "real money lesson ka real-life setup",
+        "real money lesson me trust ya greed ka trigger",
+        "real money lesson ki situation dheere dheere serious hoti hai",
+        "real money lesson ka hidden twist saamne aata hai",
+        "real money lesson se milne wali warning"
       ],
       "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
-      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "ending_lesson": "real money lesson jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.",
       "estimated_duration_seconds": 60
     },
     {
       "rank": 5,
       "topic": "small town crime",
       "working_title": "small town crime: ek real kahani jo sabko warning deti hai",
-      "opening_hook": "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
+      "opening_hook": "Ek chhote shehar ki shaant gali me hua ek incident, jiska sach pehle kisi ko samajh hi nahi aaya...",
       "target_emotion": "curiosity, fear, shock, lesson",
       "story_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
       "scene_plan": [
-        "Opening hook with curiosity",
-        "Normal world setup",
-        "Incident or conflict begins",
-        "Twist / discovery / danger point",
-        "Final reveal and lesson"
+        "small town crime ka real-life setup",
+        "small town crime me trust ya greed ka trigger",
+        "small town crime ki situation dheere dheere serious hoti hai",
+        "small town crime ka hidden twist saamne aata hai",
+        "small town crime se milne wali warning"
       ],
       "narration_style": "Hindi/Hinglish, suspenseful, simple, emotional",
-      "ending_lesson": "Har real incident ke peeche ek warning hoti hai — ignore mat karo.",
+      "ending_lesson": "small town crime jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.",
       "estimated_duration_seconds": 60
     }
   ]
