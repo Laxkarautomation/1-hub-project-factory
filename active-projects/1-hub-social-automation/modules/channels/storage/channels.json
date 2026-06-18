@@ -4,7 +4,9 @@
     "name": "UNRAAZ",
     "brand": "UNRAAZ",
     "status": "active",
-    "platforms": ["youtube"],
+    "platforms": [
+      "youtube"
+    ],
     "niche": "mystery_real_incidents_money_lessons",
     "language": "hinglish",
     "outputBasePath": "storage/videos/unraaz",
@@ -24,14 +26,60 @@
     },
     "metadata": {
       "createdBy": "phase_10_2_runtime_registry"
-    }
+    },
+    "contentMode": "story",
+    "contentCategories": [
+      "mystery",
+      "true_crime",
+      "real_incident",
+      "money_lesson"
+    ],
+    "blockedCategories": [
+      "loan_lead_generation",
+      "generic_finance"
+    ],
+    "contentPillars": [
+      "unsolved stories",
+      "real incidents",
+      "crime twists",
+      "money greed lessons"
+    ],
+    "topicKeywords": [
+      "village",
+      "missing",
+      "crime",
+      "mystery",
+      "incident",
+      "greed",
+      "documents"
+    ],
+    "blockedKeywords": [
+      "home loan",
+      "cibil",
+      "msme",
+      "emi"
+    ],
+    "storyFormulas": [
+      "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    ],
+    "hookStyles": [
+      "curiosity",
+      "shock",
+      "unanswered_question"
+    ],
+    "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+    "targetAudience": "Hindi/Hinglish mystery and real story viewers"
   },
   {
     "channelId": "malwa_loan_hub",
     "name": "Malwa Loan Hub",
     "brand": "Malwa Loan Hub",
     "status": "active",
-    "platforms": ["instagram", "youtube", "facebook"],
+    "platforms": [
+      "instagram",
+      "youtube",
+      "facebook"
+    ],
     "niche": "loan_lead_generation",
     "language": "hindi_hinglish",
     "outputBasePath": "storage/videos/malwa_loan_hub",
@@ -43,19 +91,72 @@
     "publishing": {
       "instagram": {
         "enabled": true,
-        "dailySlots": ["12:00", "18:00"]
+        "dailySlots": [
+          "12:00",
+          "18:00"
+        ]
       },
       "youtube": {
         "enabled": true,
-        "dailySlots": ["12:00", "18:00"]
+        "dailySlots": [
+          "12:00",
+          "18:00"
+        ]
       },
       "facebook": {
         "enabled": true,
-        "dailySlots": ["12:00", "18:00"]
+        "dailySlots": [
+          "12:00",
+          "18:00"
+        ]
       }
     },
     "metadata": {
       "createdBy": "phase_10_2_runtime_registry"
-    }
+    },
+    "contentMode": "education",
+    "contentCategories": [
+      "home_loan",
+      "business_loan",
+      "msme_loan",
+      "cibil",
+      "loan_documents"
+    ],
+    "blockedCategories": [
+      "horror",
+      "crime",
+      "adult"
+    ],
+    "contentPillars": [
+      "loan education",
+      "local trust",
+      "document guidance",
+      "customer awareness"
+    ],
+    "topicKeywords": [
+      "home loan",
+      "business loan",
+      "cibil",
+      "emi",
+      "property",
+      "documents",
+      "approval"
+    ],
+    "blockedKeywords": [
+      "murder",
+      "ghost",
+      "missing person",
+      "crime scene"
+    ],
+    "storyFormulas": [
+      "PROBLEM → EXPLANATION → SOLUTION → CTA"
+    ],
+    "hookStyles": [
+      "problem_solution",
+      "trust",
+      "local_advice"
+    ],
+    "visualStyle": "clean local finance visuals, trust-building, Hindi text, 9:16",
+    "targetAudience": "Mandsaur Ratlam Neemuch loan customers and small business owners"
   }
 ]

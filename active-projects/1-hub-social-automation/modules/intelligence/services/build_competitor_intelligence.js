@@ -5,6 +5,7 @@ const { scoreVideo } = require("../core/trend_scorer");
 const { extractHooks, buildHookSummary } = require("../core/hook_extractor");
 const { findContentGaps } = require("../core/content_gap_finder");
 const { calculateQuality } = require("../core/quality_filter");
+const { resolveChannelRuntime } = require("../../channels/channel_runtime_resolver");
 
 const inputPath = path.join(process.cwd(), "storage/exports/normalized/relevant_competitor_videos.json");
 const outputDir = path.join(process.cwd(), "modules/intelligence/output");
@@ -19,6 +20,8 @@ function readJson(file, fallback = []) {
 
 function run() {
   const videos = readJson(inputPath, []);
+  const runtimeResult = resolveChannelRuntime();
+  const channel = runtimeResult.success ? runtimeResult.channel : {};
 
   const scoredVideos = videos
     .map(video => {
@@ -51,8 +54,23 @@ function run() {
       trend_signals: video.trend_signals,
       hooks: video.hooks
     })),
+    channel: channel.name || channel.channelId || "active_channel",
+    channelId: channel.channelId || "active_channel",
+    channel_strategy: {
+      niche: channel.niche || "",
+      contentMode: channel.contentMode || "",
+      contentCategories: channel.contentCategories || [],
+      blockedCategories: channel.blockedCategories || [],
+      contentPillars: channel.contentPillars || [],
+      topicKeywords: channel.topicKeywords || [],
+      blockedKeywords: channel.blockedKeywords || [],
+      storyFormulas: channel.storyFormulas || [],
+      hookStyles: channel.hookStyles || [],
+      visualStyle: channel.visualStyle || "",
+      targetAudience: channel.targetAudience || ""
+    },
     hook_summary: buildHookSummary(scoredVideos),
-    content_gaps: findContentGaps(scoredVideos)
+    content_gaps: findContentGaps(scoredVideos, { channel })
   };
 
   fs.writeFileSync(outputPath, JSON.stringify(report, null, 2));
