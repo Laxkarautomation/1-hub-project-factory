@@ -1,3 +1,5 @@
+const { buildArchetypeVocabulary } = require("./topic_archetype_library");
+
 function cleanText(value = "") {
   return String(value || "").trim();
 }
@@ -70,6 +72,7 @@ function buildStoryContext(topic = "", channel = {}) {
   const categories = toList(channel.contentCategories);
   const hookStyles = toList(channel.hookStyles);
   const vocabulary = deriveTopicVocabulary(cleanTopic, channel);
+  const archetypeVocabulary = buildArchetypeVocabulary(cleanTopic, channel);
 
   const primaryCategory = pickRanked(categories, cleanTopic, 0, mode);
 
@@ -82,14 +85,16 @@ function buildStoryContext(topic = "", channel = {}) {
       : hookStyles.includes("curiosity")
         ? "slow suspense"
         : "serious focus",
-    location_context: vocabulary.primary,
-    central_tension: vocabulary.tension,
-    trigger_detail: vocabulary.secondary,
-    evidence_object: vocabulary.tertiary,
-    twist_source: vocabulary.twist,
+    archetype: archetypeVocabulary.archetypeId,
+    location_context: archetypeVocabulary.location || vocabulary.primary,
+    central_tension: archetypeVocabulary.tension || vocabulary.tension,
+    trigger_detail: archetypeVocabulary.trigger || vocabulary.secondary,
+    evidence_object: archetypeVocabulary.evidence || vocabulary.tertiary,
+    twist_source: archetypeVocabulary.twist || vocabulary.twist,
     audience_context: channel.targetAudience || "general audience",
     visual_style: channel.visualStyle || "",
-    vocabulary
+    vocabulary,
+    archetype_vocabulary: archetypeVocabulary
   };
 }
 
