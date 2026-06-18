@@ -39,9 +39,24 @@ function getScene(brief, index, fallback = "") {
   return cleanText(scenes[index]) || fallback;
 }
 
+function getSkeletonLine(brief, role) {
+  const skeleton = brief.story_skeleton || {};
+
+  const map = {
+    intro: skeleton.setting,
+    escalation: skeleton.conflict,
+    turn: skeleton.clue,
+    twist: skeleton.twist,
+    ending: skeleton.takeaway
+  };
+
+  return cleanText(map[role] || "");
+}
+
 function buildLineFromScene(scene, role, brief) {
   const topic = cleanTopicLabel(brief.topic);
-  const cleanScene = stripTemplateLanguage(scene, topic);
+  const skeletonLine = getSkeletonLine(brief, role);
+  const cleanScene = skeletonLine || stripTemplateLanguage(scene, topic);
 
   if (role === "intro") {
     return cleanScene

@@ -128,6 +128,26 @@ function buildWorkingTitle(topic, channel = {}) {
   return `${cleanTopic}: ek story jisme hidden warning chhupi thi`;
 }
 
+function buildStorySkeleton(topic, channel = {}) {
+  const cleanTopic = normalizeTopic(topic);
+  const pillars = toList(channel.contentPillars);
+  const keywords = toList(channel.topicKeywords);
+  const mode = channel.contentMode || "story";
+
+  const setting = keywords[0] || cleanTopic;
+  const conflict = pillars[0] || "hidden problem";
+  const clue = keywords[1] || "small detail";
+  const twist = pillars[1] || "unexpected reveal";
+
+  return {
+    setting: `${cleanTopic} ki shuruaat ${setting} se judi ek normal situation se hoti hai`,
+    conflict: `${conflict} saamne aate hi situation serious hone lagti hai`,
+    clue: `${clue} se judi ek chhoti detail poori direction badal deti hai`,
+    twist: `Aakhir me ${twist} se connection nikalta hai aur story ka asli angle saamne aata hai`,
+    takeaway: `Is ${mode} ka sabse bada lesson audience ko yaad rehna chahiye`
+  };
+}
+
 function buildScriptBriefs(recommendations = [], options = {}) {
   const channel = options.channel || {};
   const strategyFormulas = toList(channel.storyFormulas);
@@ -143,7 +163,8 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       opening_hook: buildTopicHook(topic, channel),
       target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
-      scene_plan: buildScenePlan(topic, formula, channel),
+      story_skeleton: buildStorySkeleton(topic, channel),
+      scene_plan: Object.values(buildStorySkeleton(topic, channel)),
       narration_style: buildNarrationStyle(channel),
       visual_style: channel.visualStyle || "",
       target_audience: channel.targetAudience || "",
@@ -156,5 +177,6 @@ function buildScriptBriefs(recommendations = [], options = {}) {
 module.exports = {
   buildScriptBriefs,
   buildTopicHook,
-  buildScenePlan
+  buildScenePlan,
+  buildStorySkeleton
 };
