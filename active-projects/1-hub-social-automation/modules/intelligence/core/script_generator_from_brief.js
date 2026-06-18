@@ -2,82 +2,40 @@ function cleanText(value = "") {
   return String(value || "").trim();
 }
 
-function topicIntro(topic) {
-  const cleanTopic = cleanText(topic);
-
-  if (cleanTopic.includes("loan fraud")) {
-    return "Ek aadmi ko laga loan process simple hai, bas documents dene hain aur approval ka wait karna hai.";
-  }
-
-  if (cleanTopic.includes("family betrayal")) {
-    return "Ghar ke andar sab kuch normal lag raha tha, lekin rishton ke peeche ek alag hi planning chal rahi thi.";
-  }
-
-  if (cleanTopic.includes("village")) {
-    return "Gaon ke log apni daily life me busy the, lekin ek chhoti si baat ne poore village ka mahaul badal diya.";
-  }
-
-  if (cleanTopic.includes("money")) {
-    return "Paise ke decision me usne ek chhoti si warning ignore ki, aur wahi baat baad me sabse mehengi pad gayi.";
-  }
-
-  if (cleanTopic.includes("crime")) {
-    return "Chhote shehar ki ek normal jagah par hua incident pehle routine case jaisa laga.";
-  }
-
-  return `${cleanTopic} ki shuruaat simple thi, lekin kahani dheere dheere serious hoti gayi.`;
+function getScene(brief, index, fallback = "") {
+  const scenes = Array.isArray(brief.scene_plan) ? brief.scene_plan : [];
+  return cleanText(scenes[index]) || fallback;
 }
 
-function buildEscalation(topic) {
-  const cleanTopic = cleanText(topic);
+function buildLineFromScene(scene, role, brief) {
+  const topic = cleanText(brief.topic);
+  const cleanScene = cleanText(scene);
 
-  if (cleanTopic.includes("loan fraud")) {
-    return "Pehle approval ka promise mila, phir processing ke naam par naye papers maange gaye, aur dheere dheere uske naam ka misuse shuru ho gaya.";
+  if (role === "intro") {
+    return cleanScene
+      ? `${cleanScene}. Yahin se ${topic} ki story shuru hoti hai.`
+      : `${topic} ki shuruaat simple lagti hai, lekin context dheere dheere serious hota hai.`;
   }
 
-  if (cleanTopic.includes("family betrayal")) {
-    return "Pehle chhoti chhoti baatein chhupayi gayi, phir documents aur property ke decisions bina bataye hone lage.";
+  if (role === "escalation") {
+    return cleanScene
+      ? `${cleanScene}. Isi point par story me tension aur curiosity dono badhne lagte hain.`
+      : `${topic} me ek ke baad ek details saamne aati hain, aur situation clear hone ke bajay aur confusing banne lagti hai.`;
   }
 
-  if (cleanTopic.includes("village")) {
-    return "Ek rumour se shuru hui baat me naye clues judte gaye, aur har clue pehle wale se zyada ajeeb nikla.";
+  if (role === "turn") {
+    return cleanScene
+      ? `${cleanScene}. Ye detail poori story ka direction badal deti hai.`
+      : `Phir ek detail saamne aati hai jo ${topic} ka angle badal deti hai.`;
   }
 
-  if (cleanTopic.includes("money")) {
-    return "Shuruaat me loss chhota laga, lekin jab calculation samne aayi to pata chala damage kaafi bada ho chuka tha.";
+  if (role === "twist") {
+    return cleanScene
+      ? `${cleanScene}. Yahin par samajh aata hai ki asli baat shuruaat se hi chhupi hui thi.`
+      : `${topic} ka twist tab samne aata hai jab chhupi hui detail connect hone lagti hai.`;
   }
 
-  if (cleanTopic.includes("crime")) {
-    return "Police ko pehle kuch clear nahi mila, lekin local logon ki baaton me ek pattern dikhne laga.";
-  }
-
-  return "Pehle sab normal laga, phir ek ke baad ek aise clues mile jisse story ka direction badalne laga.";
-}
-
-function buildTwist(topic) {
-  const cleanTopic = cleanText(topic);
-
-  if (cleanTopic.includes("loan fraud")) {
-    return "Asli twist tab aaya jab pata chala ki problem loan reject hone ki nahi thi, balki documents kisi aur kaam me use ho chuke the.";
-  }
-
-  if (cleanTopic.includes("family betrayal")) {
-    return "Twist ye tha ki jisse sab apna samajh rahe the, wahi aadmi sabse zyada fayda uthane ki planning kar raha tha.";
-  }
-
-  if (cleanTopic.includes("village")) {
-    return "Sabse shocking baat ye thi ki gaon wale jise accident samajh rahe the, uske peeche kuch aur hi connection nikal raha tha.";
-  }
-
-  if (cleanTopic.includes("money")) {
-    return "Twist tab samne aaya jab usne realise kiya ki loss market ya kismat se nahi, apni hi jaldbazi se hua tha.";
-  }
-
-  if (cleanTopic.includes("crime")) {
-    return "Case ka twist tab aaya jab saboot us jagah se mila jahan kisi ne search karne ke baare me socha bhi nahi tha.";
-  }
-
-  return "Asli twist tab samne aaya jab pata chala ki jo danger end me dikh raha tha, woh shuruaat se hi kahani me chhupa hua tha.";
+  return cleanScene || `${topic} ka important takeaway audience ke saamne aata hai.`;
 }
 
 function buildTimedScript(brief) {
@@ -86,27 +44,27 @@ function buildTimedScript(brief) {
   return [
     {
       time: "0-5s",
-      text: cleanText(brief.opening_hook) || `${topic} ki ek real kahani hai, jiska twist end tak samajh nahi aata...`
+      text: cleanText(brief.opening_hook) || `${topic} ki ek story hai jiska twist end tak clear nahi hota...`
     },
     {
       time: "5-12s",
-      text: topicIntro(topic)
+      text: buildLineFromScene(getScene(brief, 0), "intro", brief)
     },
     {
       time: "12-22s",
-      text: buildEscalation(topic)
+      text: buildLineFromScene(getScene(brief, 1), "escalation", brief)
     },
     {
       time: "22-35s",
-      text: "Phir ek detail saamne aayi jisne poori kahani ka angle badal diya."
+      text: buildLineFromScene(getScene(brief, 2), "turn", brief)
     },
     {
       time: "35-50s",
-      text: buildTwist(topic)
+      text: buildLineFromScene(getScene(brief, 3), "twist", brief)
     },
     {
       time: "50-60s",
-      text: cleanText(brief.ending_lesson) || "Isliye har real incident ke peeche ek warning hoti hai."
+      text: cleanText(brief.ending_lesson) || buildLineFromScene(getScene(brief, 4), "ending", brief)
     }
   ];
 }
@@ -120,16 +78,18 @@ function generateScriptFromBrief(brief, index) {
     target_emotion: brief.target_emotion,
     story_formula: brief.story_formula,
     duration_seconds: brief.estimated_duration_seconds || 60,
-    voice_style: "deep suspense narrator",
+    voice_style: brief.voice_style || "deep suspense narrator",
     narration_style: brief.narration_style,
+    visual_style: brief.visual_style || "",
+    target_audience: brief.target_audience || "",
     script: buildTimedScript(brief),
     image_prompt_seed: {
-      mood: "dark cinematic realistic suspense",
+      mood: brief.visual_style || "channel strategy visual style",
       format: "9:16 vertical",
-      style: "realistic documentary mystery",
+      style: brief.visual_style || "strategy-driven realistic visuals",
       scenes: brief.scene_plan || [],
       topic: brief.topic,
-      visual_direction: "topic-specific realistic scenes, no generic fog unless story needs it"
+      visual_direction: brief.visual_style || "topic-specific realistic scenes based on channel strategy"
     },
     status: "script_from_brief_draft"
   };
@@ -141,5 +101,6 @@ function generateScriptsFromBriefs(briefs = []) {
 
 module.exports = {
   generateScriptFromBrief,
-  generateScriptsFromBriefs
+  generateScriptsFromBriefs,
+  buildTimedScript
 };
