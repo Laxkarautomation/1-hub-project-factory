@@ -1,4 +1,5 @@
 const { buildStoryContext } = require("./story_context_builder");
+const { realizeStory } = require("./story_realizer");
 
 function normalizeTopic(topic = "") {
   return String(topic || "real incident").trim();
@@ -166,6 +167,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
       story_context: buildStoryContext(topic, channel),
+      story_blocks: realizeStory(buildStoryContext(topic, channel)),
       story_skeleton: buildStorySkeleton(topic, channel),
       scene_plan: Object.values(buildStorySkeleton(topic, channel)),
       narration_style: buildNarrationStyle(channel),

@@ -39,6 +39,19 @@ function getScene(brief, index, fallback = "") {
   return cleanText(scenes[index]) || fallback;
 }
 
+function getStoryBlock(brief, role) {
+  const blocks = brief.story_blocks || {};
+  const map = {
+    intro: blocks.setup,
+    escalation: blocks.conflict,
+    turn: blocks.clue,
+    twist: blocks.twist,
+    ending: blocks.lesson
+  };
+
+  return cleanText(map[role] || "");
+}
+
 function getSkeletonLine(brief, role) {
   const skeleton = brief.story_skeleton || {};
 
@@ -55,6 +68,12 @@ function getSkeletonLine(brief, role) {
 
 function buildLineFromScene(scene, role, brief) {
   const topic = cleanTopicLabel(brief.topic);
+  const storyBlock = getStoryBlock(brief, role);
+
+  if (storyBlock) {
+    return removeRepeatedTopic(sentence(storyBlock), topic);
+  }
+
   const skeletonLine = getSkeletonLine(brief, role);
   const cleanScene = skeletonLine || stripTemplateLanguage(scene, topic);
 
@@ -93,7 +112,7 @@ function buildTimedScript(brief) {
   return [
     {
       time: "0-5s",
-      text: cleanText(brief.opening_hook) || `${topic} ki ek story hai jiska twist end tak clear nahi hota...`
+      text: cleanText(brief.story_blocks?.hook) || cleanText(brief.opening_hook) || `${topic} ki ek story hai jiska twist end tak clear nahi hota...`
     },
     {
       time: "5-12s",
@@ -113,7 +132,7 @@ function buildTimedScript(brief) {
     },
     {
       time: "50-60s",
-      text: cleanText(brief.ending_lesson) || buildLineFromScene(getScene(brief, 4), "ending", brief)
+      text: cleanText(brief.story_blocks?.lesson) || cleanText(brief.ending_lesson) || buildLineFromScene(getScene(brief, 4), "ending", brief)
     }
   ];
 }
