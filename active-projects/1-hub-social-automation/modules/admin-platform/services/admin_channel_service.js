@@ -5,6 +5,17 @@ const ROOT = path.resolve(__dirname, "..", "..", "..");
 const CHANNELS_FILE = path.join(ROOT, "modules/channels/storage/channels.json");
 const ACTIVE_FILE = path.join(ROOT, "modules/channels/storage/active_channel.json");
 
+function parseListInput(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item || "").trim()).filter(Boolean);
+  }
+
+  return String(value || "")
+    .split(",")
+    .map((item) => item.replace(/^["']|["']$/g, "").trim())
+    .filter(Boolean);
+}
+
 function readJson(file, fallback) {
   try {
     if (!fs.existsSync(file)) return fallback;
@@ -91,6 +102,16 @@ function saveChannel(input) {
     status: input.status || "active",
     platforms: Array.isArray(input.platforms) ? input.platforms : [],
     niche: input.niche || "",
+    contentMode: input.contentMode || "",
+    contentCategories: parseListInput(input.contentCategories),
+    blockedCategories: parseListInput(input.blockedCategories),
+    contentPillars: parseListInput(input.contentPillars),
+    topicKeywords: parseListInput(input.topicKeywords),
+    blockedKeywords: parseListInput(input.blockedKeywords),
+    storyFormulas: parseListInput(input.storyFormulas),
+    hookStyles: parseListInput(input.hookStyles),
+    visualStyle: input.visualStyle || "",
+    targetAudience: input.targetAudience || "",
     language: input.language || "hinglish",
     outputBasePath: input.outputBasePath || `storage/videos/${input.channelId}`,
     contentStyle: input.contentStyle || {

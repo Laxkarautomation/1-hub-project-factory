@@ -128,6 +128,9 @@ async function loadChannelManager() {
         <p><b>Status:</b> ${channel.status || ""}</p>
         <p><b>Platforms:</b> ${(channel.platforms || []).join(", ")}</p>
         <p><b>Language:</b> ${channel.language || ""}</p>
+        <p><b>Niche:</b> ${channel.niche || ""}</p>
+        <p><b>Mode:</b> ${channel.contentMode || ""}</p>
+        <p><b>Categories:</b> ${(channel.contentCategories || []).join(", ")}</p>
         <p><b>Output:</b> ${channel.outputBasePath || ""}</p>
         <button onclick="previewChannelRuntime('${channel.channelId}')">Runtime Preview</button>
         <button onclick="fillChannelForm('${channel.channelId}')">Edit</button>
@@ -158,6 +161,16 @@ async function loadChannelManager() {
         <input id="channelStatus" placeholder="Status" value="active">
         <input id="channelPlatforms" placeholder="Platforms comma separated">
         <input id="channelNiche" placeholder="Niche">
+        <input id="channelContentMode" placeholder="Content mode e.g. story, facts, education">
+        <input id="channelContentCategories" placeholder="Content categories comma separated">
+        <input id="channelBlockedCategories" placeholder="Blocked categories comma separated">
+        <input id="channelContentPillars" placeholder="Content pillars comma separated">
+        <input id="channelTopicKeywords" placeholder="Topic keywords comma separated">
+        <input id="channelBlockedKeywords" placeholder="Blocked keywords comma separated">
+        <input id="channelStoryFormulas" placeholder="Story formulas comma separated">
+        <input id="channelHookStyles" placeholder="Hook styles comma separated">
+        <input id="channelVisualStyle" placeholder="Visual style">
+        <input id="channelTargetAudience" placeholder="Target audience">
         <input id="channelLanguage" placeholder="Language">
         <input id="channelOutput" placeholder="Output base path">
         <button onclick="saveChannelFromForm()">Save Channel</button>
@@ -197,6 +210,16 @@ function fillChannelForm(channelId) {
   document.getElementById("channelStatus").value = channel.status || "active";
   document.getElementById("channelPlatforms").value = (channel.platforms || []).join(",");
   document.getElementById("channelNiche").value = channel.niche || "";
+  document.getElementById("channelContentMode").value = channel.contentMode || "";
+  document.getElementById("channelContentCategories").value = (channel.contentCategories || []).join(",");
+  document.getElementById("channelBlockedCategories").value = (channel.blockedCategories || []).join(",");
+  document.getElementById("channelContentPillars").value = (channel.contentPillars || []).join(",");
+  document.getElementById("channelTopicKeywords").value = (channel.topicKeywords || []).join(",");
+  document.getElementById("channelBlockedKeywords").value = (channel.blockedKeywords || []).join(",");
+  document.getElementById("channelStoryFormulas").value = (channel.storyFormulas || []).join(",");
+  document.getElementById("channelHookStyles").value = (channel.hookStyles || []).join(",");
+  document.getElementById("channelVisualStyle").value = channel.visualStyle || "";
+  document.getElementById("channelTargetAudience").value = channel.targetAudience || "";
   document.getElementById("channelLanguage").value = channel.language || "";
   document.getElementById("channelOutput").value = channel.outputBasePath || "";
 }
@@ -212,6 +235,16 @@ async function saveChannelFromForm() {
       .map((item) => item.trim())
       .filter(Boolean),
     niche: document.getElementById("channelNiche").value.trim(),
+    contentMode: document.getElementById("channelContentMode").value.trim(),
+    contentCategories: document.getElementById("channelContentCategories").value.trim(),
+    blockedCategories: document.getElementById("channelBlockedCategories").value.trim(),
+    contentPillars: document.getElementById("channelContentPillars").value.trim(),
+    topicKeywords: document.getElementById("channelTopicKeywords").value.trim(),
+    blockedKeywords: document.getElementById("channelBlockedKeywords").value.trim(),
+    storyFormulas: document.getElementById("channelStoryFormulas").value.trim(),
+    hookStyles: document.getElementById("channelHookStyles").value.trim(),
+    visualStyle: document.getElementById("channelVisualStyle").value.trim(),
+    targetAudience: document.getElementById("channelTargetAudience").value.trim(),
     language: document.getElementById("channelLanguage").value.trim(),
     outputBasePath: document.getElementById("channelOutput").value.trim()
   };
