@@ -1,4 +1,8 @@
-function pickTop(items = [], count = 5) {
+const fs = require("fs");
+
+const filePath = "modules/intelligence/core/recommendation_builder.js";
+
+const code = `function pickTop(items = [], count = 5) {
   return items.slice(0, count);
 }
 
@@ -22,7 +26,7 @@ function unique(items = []) {
 }
 
 function wordsOf(value = "") {
-  return cleanText(value).replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  return cleanText(value).replace(/[^a-z0-9 ]/g, " ").split(/\\s+/).filter(Boolean);
 }
 
 function buildPhrase(parts = []) {
@@ -115,31 +119,31 @@ function buildHookBase({ hookStyles = [], categories = [], pillars = [], keyword
   const hooks = [];
 
   if (hookStyles.includes("curiosity")) {
-    hooks.push(`${mainKeyword} se judi ek baat hai jise log aksar ignore kar dete hain...`);
+    hooks.push(\`\${mainKeyword} se judi ek baat hai jise log aksar ignore kar dete hain...\`);
   }
 
   if (hookStyles.includes("shock")) {
-    hooks.push(`${mainCategory} me ek aisa twist aaya jiske baad poori kahani badal gayi...`);
+    hooks.push(\`\${mainCategory} me ek aisa twist aaya jiske baad poori kahani badal gayi...\`);
   }
 
   if (hookStyles.includes("unanswered_question")) {
-    hooks.push(`Sawal simple tha, lekin ${mainKeyword} ka jawab aaj tak clear nahi hua...`);
+    hooks.push(\`Sawal simple tha, lekin \${mainKeyword} ka jawab aaj tak clear nahi hua...\`);
   }
 
   if (hookStyles.includes("problem_solution")) {
-    hooks.push(`${mainKeyword} ki problem ka solution aksar ek chhoti si detail me chhupa hota hai...`);
+    hooks.push(\`\${mainKeyword} ki problem ka solution aksar ek chhoti si detail me chhupa hota hai...\`);
   }
 
   if (hookStyles.includes("trust")) {
-    hooks.push(`${mainKeyword} me trust zaroori hai, lekin bina verify kiye decision mehenga pad sakta hai...`);
+    hooks.push(\`\${mainKeyword} me trust zaroori hai, lekin bina verify kiye decision mehenga pad sakta hai...\`);
   }
 
   if (hookStyles.includes("local_advice")) {
-    hooks.push(`Local level par ${mainKeyword} me ek chhoti mistake poori file rok sakti hai...`);
+    hooks.push(\`Local level par \${mainKeyword} me ek chhoti mistake poori file rok sakti hai...\`);
   }
 
   if (!hooks.length) {
-    hooks.push(`${mainKeyword} se judi ek kahani hai jo end tak sochne par majboor kar degi...`);
+    hooks.push(\`\${mainKeyword} se judi ek kahani hai jo end tak sochne par majboor kar degi...\`);
   }
 
   return unique(hooks).slice(0, 6);
@@ -177,7 +181,7 @@ function scoreTopic(topic, patterns = [], gaps = [], profile = {}) {
 
   for (const pillar of profile.pillars || []) {
     const pillarText = cleanText(pillar);
-    const pillarWords = pillarText.split(/\s+/).filter(word => word.length > 3);
+    const pillarWords = pillarText.split(/\\s+/).filter(word => word.length > 3);
     for (const word of pillarWords) {
       if (text.includes(word)) score += 1;
     }
@@ -185,7 +189,7 @@ function scoreTopic(topic, patterns = [], gaps = [], profile = {}) {
 
   for (const gap of gapTopics) {
     if (gap && text.includes(gap)) score += 5;
-    const gapWords = gap.split(/\s+/).filter(word => word.length > 3);
+    const gapWords = gap.split(/\\s+/).filter(word => word.length > 3);
     for (const word of gapWords) {
       if (text.includes(word)) score += 1;
     }
@@ -219,7 +223,7 @@ function buildRecommendedTopics({ patterns = [], gaps = [], formulas = [], chann
     .map((item, index) => ({
       rank: index + 1,
       topic: item.topic,
-      reason: `Channel strategy: ${profile.contentMode}. Matches patterns: ${topPatterns.join(", ")}`,
+      reason: \`Channel strategy: \${profile.contentMode}. Matches patterns: \${topPatterns.join(", ")}\`,
       suggested_formula: topFormula
     }));
 }
@@ -232,19 +236,19 @@ function buildHookSuggestions(patterns = [], channel = {}) {
   const mainKeyword = profile.keywords[0] || profile.categories[0] || profile.contentMode || "story";
 
   if (names.includes("real_story")) {
-    hooks.push(`${mainKeyword} ki ye kahani real lagti hai kyunki isme warning chhupi hai...`);
+    hooks.push(\`\${mainKeyword} ki ye kahani real lagti hai kyunki isme warning chhupi hai...\`);
   }
 
   if (names.includes("horror")) {
-    hooks.push(`${mainKeyword} me jo hua, uska jawab seedha nahi tha...`);
+    hooks.push(\`\${mainKeyword} me jo hua, uska jawab seedha nahi tha...\`);
   }
 
   if (names.includes("true_crime")) {
-    hooks.push(`${mainKeyword} se judi ek chhoti detail ne poora case badal diya...`);
+    hooks.push(\`\${mainKeyword} se judi ek chhoti detail ne poora case badal diya...\`);
   }
 
   if (names.includes("mystery")) {
-    hooks.push(`${mainKeyword} ka sach saamne tha, phir bhi log use samajh nahi paaye...`);
+    hooks.push(\`\${mainKeyword} ka sach saamne tha, phir bhi log use samajh nahi paaye...\`);
   }
 
   return unique(hooks).slice(0, 6);
@@ -254,9 +258,9 @@ function buildTitleSuggestions(topics = []) {
   return topics.map(item => ({
     topic: item.topic,
     titles: [
-      `${item.topic}: ek story jisme hidden warning chhupi thi`,
-      `${item.topic} ka woh sach jo pehle kisi ko samajh nahi aaya`,
-      `${item.topic}: real story, shocking twist`
+      \`\${item.topic}: ek story jisme hidden warning chhupi thi\`,
+      \`\${item.topic} ka woh sach jo pehle kisi ko samajh nahi aaya\`,
+      \`\${item.topic}: real story, shocking twist\`
     ]
   }));
 }
@@ -268,3 +272,9 @@ module.exports = {
   getChannelProfile,
   buildTopicPool
 };
+`;
+
+fs.writeFileSync(filePath, code);
+
+console.log("✅ Phase 24.5 strategy-driven recommendations patch applied");
+console.log("Updated:", filePath);
