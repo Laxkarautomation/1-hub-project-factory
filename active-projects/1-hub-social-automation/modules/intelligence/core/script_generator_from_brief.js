@@ -34,6 +34,23 @@ function sentence(value = "") {
   return /[.!?…]$/.test(text) ? text : `${text}.`;
 }
 
+function removeRepeatedTopic(text = "", topic = "") {
+  const cleanTopic = cleanTopicLabel(topic);
+  if (!cleanTopic) return cleanText(text);
+
+  const escaped = cleanTopic.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(escaped, "gi");
+  let seen = false;
+
+  return cleanText(text).replace(re, (match) => {
+    if (!seen) {
+      seen = true;
+      return match;
+    }
+    return "ye case";
+  });
+}
+
 function getScene(brief, index, fallback = "") {
   const scenes = Array.isArray(brief.scene_plan) ? brief.scene_plan : [];
   return cleanText(scenes[index]) || fallback;
