@@ -2,84 +2,159 @@ function normalizeTopic(topic = "") {
   return String(topic || "real incident").trim();
 }
 
-function buildTopicHook(topic) {
-  const cleanTopic = normalizeTopic(topic);
-
-  if (cleanTopic.includes("loan fraud")) {
-    return "Loan ke naam par ek aadmi ko madad ka bharosa diya gaya, lekin asli khel uske documents ke saath hua...";
+function toList(value = []) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item || "").trim()).filter(Boolean);
   }
 
-  if (cleanTopic.includes("family betrayal")) {
-    return "Kabhi kabhi sabse bada dhokha bahar wala nahi, ghar ka apna aadmi deta hai...";
-  }
-
-  if (cleanTopic.includes("village")) {
-    return "Ek chhote se Indian village me kuch aisa hua jiske baare me log aaj bhi dheere awaaz me baat karte hain...";
-  }
-
-  if (cleanTopic.includes("money")) {
-    return "Paise ki ek galat planning kabhi kabhi poori zindagi ka sabse bada lesson ban jaati hai...";
-  }
-
-  if (cleanTopic.includes("crime")) {
-    return "Ek chhote shehar ki shaant gali me hua ek incident, jiska sach pehle kisi ko samajh hi nahi aaya...";
-  }
-
-  return `${cleanTopic} se judi ek kahani hai, jisme shuruaat simple thi lekin end ne sabko hila diya...`;
+  return String(value || "")
+    .split(",")
+    .map((item) => item.replace(/^["']|["']$/g, "").trim())
+    .filter(Boolean);
 }
 
-function buildScenePlan(topic, formula) {
-  const cleanTopic = normalizeTopic(topic);
+function pickFirst(items = [], fallback = "") {
+  return items.find(Boolean) || fallback;
+}
 
-  if ((formula || "").includes("CRIME")) {
+function buildTopicHook(topic, channel = {}) {
+  const cleanTopic = normalizeTopic(topic);
+  const hookStyles = toList(channel.hookStyles);
+  const targetAudience = channel.targetAudience || "viewers";
+
+  if (hookStyles.includes("curiosity")) {
+    return `${cleanTopic} me ek aisi detail chhupi hai jise zyadatar ${targetAudience} ignore kar dete hain...`;
+  }
+
+  if (hookStyles.includes("shock")) {
+    return `${cleanTopic} ka twist itna unexpected tha ki poori story ka meaning badal gaya...`;
+  }
+
+  if (hookStyles.includes("unanswered_question")) {
+    return `${cleanTopic} ka sawal simple lagta hai, lekin iska jawab aaj bhi clear nahi hai...`;
+  }
+
+  if (hookStyles.includes("problem_solution")) {
+    return `${cleanTopic} ki problem ka solution ek chhoti si detail me chhupa hota hai...`;
+  }
+
+  if (hookStyles.includes("trust")) {
+    return `${cleanTopic} me trust zaroori hai, lekin bina verify kiye decision mehenga pad sakta hai...`;
+  }
+
+  return `${cleanTopic} se judi ek kahani hai, jisme shuruaat simple thi lekin end ne sabko sochne par majboor kar diya...`;
+}
+
+function buildScenePlan(topic, formula, channel = {}) {
+  const cleanTopic = normalizeTopic(topic);
+  const contentMode = channel.contentMode || "story";
+  const pillars = toList(channel.contentPillars);
+  const primaryPillar = pickFirst(pillars, "main context");
+
+  if ((formula || "").includes("PROBLEM")) {
     return [
-      `${cleanTopic} ka victim aur situation setup`,
-      `${cleanTopic} me crime trigger point`,
-      `${cleanTopic} investigation clues`,
-      `${cleanTopic} suspect angle ya reveal`,
-      `${cleanTopic} warning lesson`
+      `${cleanTopic} problem setup for audience`,
+      `${cleanTopic} common mistake or confusion`,
+      `${cleanTopic} important explanation`,
+      `${cleanTopic} practical solution angle`,
+      `${cleanTopic} clear action or reminder`
     ];
   }
 
-  if ((formula || "").includes("FEAR")) {
+  if ((formula || "").includes("FACT")) {
     return [
-      `${cleanTopic} ka normal location setup`,
-      `${cleanTopic} me pehla strange sign`,
-      `${cleanTopic} me fear escalation`,
-      `${cleanTopic} ka shocking twist`,
-      `${cleanTopic} unanswered ending`
+      `${cleanTopic} surprising fact setup`,
+      `${cleanTopic} background context`,
+      `${cleanTopic} key detail or proof point`,
+      `${cleanTopic} reveal or misconception break`,
+      `${cleanTopic} final takeaway`
+    ];
+  }
+
+  if ((formula || "").includes("QUESTION")) {
+    return [
+      `${cleanTopic} unanswered question setup`,
+      `${cleanTopic} known clues`,
+      `${cleanTopic} conflicting detail`,
+      `${cleanTopic} strongest theory or twist`,
+      `${cleanTopic} unresolved ending`
     ];
   }
 
   return [
-    `${cleanTopic} ka real-life setup`,
-    `${cleanTopic} me trust ya greed ka trigger`,
-    `${cleanTopic} ki situation dheere dheere serious hoti hai`,
-    `${cleanTopic} ka hidden twist saamne aata hai`,
-    `${cleanTopic} se milne wali warning`
+    `${cleanTopic} opening context based on ${contentMode}`,
+    `${cleanTopic} connection with ${primaryPillar}`,
+    `${cleanTopic} escalation or key development`,
+    `${cleanTopic} twist, reveal, or important insight`,
+    `${cleanTopic} audience takeaway`
   ];
 }
 
-function buildScriptBriefs(recommendations = []) {
+function buildNarrationStyle(channel = {}) {
+  const language = channel.language || "Hindi/Hinglish";
+  const tone = channel.tone || channel.contentStyle?.tone || "simple, engaging";
+  const audience = channel.targetAudience || "general audience";
+
+  return `${language}, ${tone}, made for ${audience}`;
+}
+
+function buildEndingLesson(topic, channel = {}) {
+  const cleanTopic = normalizeTopic(topic);
+  const mode = channel.contentMode || "story";
+
+  if (mode === "education" || mode === "finance") {
+    return `${cleanTopic} ka simple lesson hai — decision lene se pehle details verify karo aur document clear rakho.`;
+  }
+
+  if (mode === "facts") {
+    return `${cleanTopic} hume dikhata hai ki har fact ke peeche ek context hota hai — sirf headline nahi, detail samjho.`;
+  }
+
+  return `${cleanTopic} jaisi kahani hume ek baat samjhati hai — jo detail chhoti lagti hai, wahi kabhi kabhi poori story badal deti hai.`;
+}
+
+function buildWorkingTitle(topic, channel = {}) {
+  const cleanTopic = normalizeTopic(topic);
+  const mode = channel.contentMode || "story";
+
+  if (mode === "facts") {
+    return `${cleanTopic}: ek fact jo pehle simple lagta hai`;
+  }
+
+  if (mode === "education" || mode === "finance") {
+    return `${cleanTopic}: simple explanation for better decision`;
+  }
+
+  return `${cleanTopic}: ek story jisme hidden warning chhupi thi`;
+}
+
+function buildScriptBriefs(recommendations = [], options = {}) {
+  const channel = options.channel || {};
+  const strategyFormulas = toList(channel.storyFormulas);
+
   return recommendations.map(item => {
     const topic = item.topic;
-    const formula = item.suggested_formula;
+    const formula = strategyFormulas[0] || item.suggested_formula;
 
     return {
       rank: item.rank,
       topic,
-      working_title: `${topic}: ek real kahani jo sabko warning deti hai`,
-      opening_hook: buildTopicHook(topic),
-      target_emotion: "curiosity, fear, shock, lesson",
+      working_title: buildWorkingTitle(topic, channel),
+      opening_hook: buildTopicHook(topic, channel),
+      target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
-      scene_plan: buildScenePlan(topic, formula),
-      narration_style: "Hindi/Hinglish, suspenseful, simple, emotional",
-      ending_lesson: `${topic} jaisi kahani hume ek baat samjhati hai — trust karo, lekin bina verify kiye kabhi decision mat lo.`,
+      scene_plan: buildScenePlan(topic, formula, channel),
+      narration_style: buildNarrationStyle(channel),
+      visual_style: channel.visualStyle || "",
+      target_audience: channel.targetAudience || "",
+      ending_lesson: buildEndingLesson(topic, channel),
       estimated_duration_seconds: 60
     };
   });
 }
 
 module.exports = {
-  buildScriptBriefs
+  buildScriptBriefs,
+  buildTopicHook,
+  buildScenePlan
 };
