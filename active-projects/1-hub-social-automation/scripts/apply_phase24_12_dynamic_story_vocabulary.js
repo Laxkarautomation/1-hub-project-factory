@@ -1,4 +1,8 @@
-function cleanText(value = "") {
+const fs = require("fs");
+
+const filePath = "modules/intelligence/core/story_context_builder.js";
+
+const code = `function cleanText(value = "") {
   return String(value || "").trim();
 }
 
@@ -28,7 +32,7 @@ function scoreTerm(term = "", topic = "") {
   if (!x) return 0;
   if (t.includes(x)) return 5;
 
-  return x.split(/\s+/).filter(word => word.length > 3 && t.includes(word)).length;
+  return x.split(/\\s+/).filter(word => word.length > 3 && t.includes(word)).length;
 }
 
 function rankTerms(terms = [], topic = "") {
@@ -52,7 +56,7 @@ function deriveTopicVocabulary(topic = "", channel = {}) {
     ...keywords,
     ...categories,
     ...pillars,
-    ...normalize(topic).split(/\s+/).filter(word => word.length > 3)
+    ...normalize(topic).split(/\\s+/).filter(word => word.length > 3)
   ]);
 
   return {
@@ -98,3 +102,9 @@ module.exports = {
   deriveTopicVocabulary,
   rankTerms
 };
+`;
+
+fs.writeFileSync(filePath, code);
+
+console.log("✅ Phase 24.12 dynamic story vocabulary patch applied");
+console.log("Updated:", filePath);
