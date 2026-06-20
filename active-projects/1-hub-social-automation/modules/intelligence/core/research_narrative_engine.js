@@ -62,6 +62,43 @@ function bestResearchEntity(researchContext = {}, topic = "") {
   return cleanText(strong?.name || entities[0]?.name || cleanTopic || "main subject");
 }
 
+
+function humanizeNarration(text = "", topic = "") {
+  let value = cleanText(text);
+  const cleanTopic = cleanText(topic);
+
+  if (!value) return "";
+
+  const replacements = [
+    {
+      match: /timeline important angle hai/i,
+      replace: "Investigation ka sabse important point timeline me chhupa hua tha."
+    },
+    {
+      match: /Evidence or statement contradiction/i,
+      replace: "Jab statements aur evidence compare kiye gaye, kuch details match nahi kar rahi thi."
+    },
+    {
+      match: /Ignored clue becomes important/i,
+      replace: "Ek ignored clue dheere dheere poori investigation ka center ban gaya."
+    },
+    {
+      match: /Final reveal or unresolved question/i,
+      replace: "End tak kahani ek aise point par pahunch gayi jahan sach aur sawaal dono saath khade the."
+    },
+    {
+      match: new RegExp(cleanTopic + " me " + cleanTopic + " se judi detail audience ko yaad rehni chahiye\.", "i"),
+      replace: "Is case ki sabse important detail audience ko yaad rehni chahiye."
+    }
+  ];
+
+  replacements.forEach(rule => {
+    value = value.replace(rule.match, rule.replace);
+  });
+
+  return cleanText(value);
+}
+
 function convertBeatToNarration(topic = "", beat = {}, mode = "story_documentary") {
   const line = cleanText(beat.line || "");
   const cleanTopic = cleanText(topic || "ye topic");
@@ -101,7 +138,7 @@ function convertBeatToNarration(topic = "", beat = {}, mode = "story_documentary
     return "End me ye story loss, lesson ya warning me convert ho jaati hai.";
   }
 
-  return line;
+  return humanizeNarration(line, cleanTopic);
 }
 
 function buildDocumentaryBlocks(topic = "", researchNarrative = {}) {

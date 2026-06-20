@@ -398,21 +398,61 @@ function buildEndingFormula(context = {}, topic = "") {
 }
 
 
+
+function humanizeDocumentaryBlock(text = "", topic = "") {
+  let value = String(text || "").trim();
+
+  if (!value) return "";
+
+  value = value
+    .replace(/\bcase file\b/gi, "investigation records")
+    .replace(/\btimeline gap\b/gi, "timeline me chhupa hua gap")
+    .replace(/\bevidence mismatch\b/gi, "evidence aur statements ka mismatch")
+    .replace(/\bfinancial records\b/gi, "financial documents")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return value;
+}
+
+function buildHumanLesson(topic = "", narrative = {}) {
+  const mode = narrative.narrative_mode || "";
+
+  if (mode === "investigation_documentary") {
+    return "Investigation me chhoti inconsistencies hi aksar sabse bade clues ban jaati hain.";
+  }
+
+  if (mode === "risk_breakdown") {
+    return "Financial decisions me risk ko ignore karna sabse mehngi galti sabit ho sakta hai.";
+  }
+
+  if (mode === "record_based_mystery") {
+    return "Purane records kabhi kabhi popular kahaniyon se zyada sach bolte hain.";
+  }
+
+  return "";
+}
+
 function realizeDocumentaryStory(context = {}) {
   const narrative = context.research_narrative || {};
   const blocks = narrative.documentary_blocks || {};
 
   if (!blocks.documentary_setup) return null;
 
+  const customLesson = buildHumanLesson(
+    context.topic || "",
+    narrative
+  );
+
   return {
-    hook: blocks.documentary_hook || "",
-    setup: blocks.documentary_setup || "",
-    conflict: blocks.documentary_conflict || "",
-    clue: blocks.documentary_evidence || "",
-    escalation: blocks.documentary_turn || "",
-    twist: blocks.documentary_turn || "",
+    hook: humanizeDocumentaryBlock(blocks.documentary_hook || "", context.topic || ""),
+    setup: humanizeDocumentaryBlock(blocks.documentary_setup || "", context.topic || ""),
+    conflict: humanizeDocumentaryBlock(blocks.documentary_conflict || "", context.topic || ""),
+    clue: humanizeDocumentaryBlock(blocks.documentary_evidence || "", context.topic || ""),
+    escalation: humanizeDocumentaryBlock(blocks.documentary_turn || "", context.topic || ""),
+    twist: humanizeDocumentaryBlock(blocks.documentary_turn || "", context.topic || ""),
     callback: clean(context.callback_line || "Aakhir me wahi ignored detail sabse bada clue ban gayi."),
-    lesson: avoidDuplicatePhrase(blocks.documentary_takeaway || buildEndingFormula(context, context.display_topic || context.topic || "ye kahani"))
+    lesson: customLesson || avoidDuplicatePhrase(blocks.documentary_takeaway || buildEndingFormula(context, context.display_topic || context.topic || "ye kahani"))
   };
 }
 
