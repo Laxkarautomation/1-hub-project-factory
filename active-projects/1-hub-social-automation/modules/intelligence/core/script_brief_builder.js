@@ -1,5 +1,6 @@
 const { buildStoryContext } = require("./story_context_builder");
 const { realizeStory } = require("./story_realizer");
+const { buildResearchNarrative } = require("./research_narrative_engine");
 
 function normalizeTopic(topic = "") {
   return String(topic || "real incident").trim();
@@ -182,6 +183,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
     const topic = item.topic;
     const formula = strategyFormulas[0] || item.suggested_formula;
     const storyContext = buildStoryContext(topic, channel, researchContext);
+    const researchNarrative = buildResearchNarrative(topic, channel, researchContext);
 
     return {
       rank: item.rank,
@@ -191,10 +193,13 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
       research_context: researchContext,
+      research_narrative: researchNarrative,
       story_context: storyContext,
       story_blocks: realizeStory(storyContext),
       story_skeleton: buildStorySkeleton(topic, channel),
-      scene_plan: Object.values(buildStorySkeleton(topic, channel)),
+      scene_plan: researchNarrative.scene_plan && researchNarrative.scene_plan.length
+        ? researchNarrative.scene_plan
+        : Object.values(buildStorySkeleton(topic, channel)),
       narration_style: buildNarrationStyle(channel),
       visual_style: channel.visualStyle || "",
       target_audience: channel.targetAudience || "",
