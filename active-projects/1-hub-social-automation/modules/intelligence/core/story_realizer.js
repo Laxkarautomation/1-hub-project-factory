@@ -18,11 +18,78 @@ function pickSeeded(options = [], seed = "") {
   return usable[hashSeed(seed) % usable.length];
 }
 
+
+function cleanForNarration(value = "") {
+  return String(value || "")
+    .replace(/\s+/g, " ")
+    .replace(/\s+\./g, ".")
+    .replace(/\.\.+/g, ".")
+    .replace(/\.\.\./g, "...")
+    .trim();
+}
+
+function compactEvidence(value = "", topic = "") {
+  const cleanValue = cleanForNarration(value);
+  const cleanTopic = cleanForNarration(topic);
+
+  if (!cleanValue) return "";
+
+  return cleanValue
+    .replace(cleanTopic + " me ", "")
+    .replace(cleanTopic + " ka ", "")
+    .replace(cleanTopic + " ke liye ", "")
+    .replace(/primary timeline/gi, "timeline")
+    .replace(/sabse important/gi, "important")
+    .replace(/research angle/gi, "angle")
+    .replace(/source context/gi, "source detail")
+    .trim();
+}
+
+function researchIntroLine(context = {}, displayTopic = "") {
+  if (!context.research_grounded) return "";
+
+  const type = clean(context.research_type || "");
+  const summary = clean(context.research_summary || "");
+
+  if (type === "case_investigation") {
+    return `${displayTopic} me sabse pehle timeline aur evidence gap ko dekhna padta hai.`;
+  }
+
+  if (type === "financial_case") {
+    return `${displayTopic} me asli kahani numbers, risk aur timing ke beech chhupi hoti hai.`;
+  }
+
+  if (type === "historical_context") {
+    return `${displayTopic} me popular story se zyada important old records aur dates ban jaate hain.`;
+  }
+
+  if (type === "local_mystery") {
+    return `${displayTopic} me local claims aur proof gap story ko suspicious banate hain.`;
+  }
+
+  if (type === "fact_explainer") {
+    return `${displayTopic} ko samajhne ke liye pehle common misconception todna zaroori hai.`;
+  }
+
+  if (summary) return summary;
+
+  return "";
+}
+
+function avoidDuplicatePhrase(text = "") {
+  return cleanForNarration(text)
+    .replace(/ye case ye yaad dilata hai/gi, "ye case yaad dilata hai")
+    .replace(/ye kahani ye yaad dilati hai/gi, "ye kahani yaad dilati hai")
+    .replace(/ye story ye batati hai/gi, "ye story batati hai")
+    .replace(/hume ye yaad dilata hai ki/gi, "hume yaad dilata hai ki")
+    .replace(/hume ye yaad dilati hai ki/gi, "hume yaad dilati hai ki");
+}
+
 function buildHookFormula(context = {}, topic = "") {
   const archetype = clean(context.archetype || "general_story");
   const location = clean(context.location_context || "ek jagah");
   const detail = clean(context.trigger_detail || "ek chhoti detail");
-  const evidence = clean(context.evidence_object || "ek purana record");
+  const evidence = compactEvidence(context.evidence_object || "ek purana record", topic);
   const tension = clean(context.central_tension || "ek ajeeb problem");
   const seed = [topic, archetype, location, detail, evidence, tension].join("|");
 
@@ -363,18 +430,22 @@ function realizeStory(context = {}) {
     callbackLine
   };
 
-  return {
+  const introLine = researchIntroLine(context, displayTopic);
+
+  const realized = {
     hook: openLoop
       ? `${buildHookFormula(context, displayTopic)} ${openLoop}...`
       : buildHookFormula(context, displayTopic),
-    setup: applySceneTemplate(sceneTemplates.setup, sceneValues),
+    setup: cleanForNarration([introLine, applySceneTemplate(sceneTemplates.setup, sceneValues)].filter(Boolean).join(" ")),
     conflict: applySceneTemplate(sceneTemplates.conflict, sceneValues),
     clue: applySceneTemplate(sceneTemplates.clue, sceneValues),
     escalation: applySceneTemplate(sceneTemplates.escalation, sceneValues),
     twist: applySceneTemplate(sceneTemplates.twist, sceneValues),
     callback: callbackLine,
-    lesson: buildEndingFormula(context, displayTopic)
+    lesson: avoidDuplicatePhrase(buildEndingFormula(context, displayTopic))
   };
+
+  return realized;
 }
 
 module.exports = {

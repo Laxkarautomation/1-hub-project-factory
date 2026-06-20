@@ -268,6 +268,88 @@ function firstResearchLocation(researchContext = {}) {
   return cleanText(locations[0] || "");
 }
 
+
+function hasResearchSignals(researchContext = {}) {
+  return Boolean(
+    cleanText(researchContext.summary || "") ||
+    (Array.isArray(researchContext.facts) && researchContext.facts.length) ||
+    (Array.isArray(researchContext.timeline) && researchContext.timeline.length) ||
+    (Array.isArray(researchContext.entities) && researchContext.entities.length)
+  );
+}
+
+function shortResearchFact(value = "", topic = "") {
+  const clean = cleanText(value);
+  const cleanTopic = cleanText(topic);
+
+  if (!clean) return "";
+
+  return clean
+    .replace(cleanTopic + " me ", "")
+    .replace(cleanTopic + " ka ", "")
+    .replace(cleanTopic + " ke liye ", "")
+    .replace(/research focus/gi, "focus")
+    .replace(/sabse important research angle/gi, "important angle")
+    .replace(/verify karna zaroori hai/gi, "verify karna zaroori point")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isGenericLocation(value = "") {
+  const lower = cleanText(value).toLowerCase();
+
+  return [
+    "railway platform",
+    "old house",
+    "purani building",
+    "ek jagah",
+    "market area",
+    "village",
+    "gaon",
+    "unknown place",
+    "location"
+  ].includes(lower);
+}
+
+function topicFallbackLocation(topic = "", researchContext = {}) {
+  const cleanTopic = cleanText(topic);
+  const type = cleanText(researchContext.research_type || "");
+
+  if (type === "financial_case") return "financial records";
+  if (type === "case_investigation") return "case file";
+  if (type === "historical_context") return "old records";
+  if (type === "local_mystery") return "local area";
+  if (type === "fact_explainer") return "main topic";
+
+  return cleanTopic || "main context";
+}
+
+function sanitizeResearchAwareContext(baseContext = {}, researchContext = {}) {
+  if (!hasResearchSignals(researchContext)) return baseContext;
+
+  const topic = cleanText(baseContext.topic || researchContext.topic || "");
+  const cleanFact = shortResearchFact(baseContext.evidence_object, topic);
+  const cleanLocation = cleanText(baseContext.location_context);
+  const cleanTrigger = cleanText(baseContext.trigger_detail);
+
+  const safeLocation =
+    cleanText(firstResearchLocation(researchContext)) ||
+    (isGenericLocation(cleanLocation) ? topicFallbackLocation(topic, researchContext) : cleanLocation);
+
+  const safeTrigger =
+    isGenericLocation(cleanTrigger)
+      ? topicFallbackLocation(topic, researchContext)
+      : cleanTrigger;
+
+  const mergedContext = {
+    ...baseContext,
+    location_context: safeLocation,
+    trigger_detail: safeTrigger,
+    evidence_object: cleanFact || baseContext.evidence_object,
+    research_grounded: true
+  };
+}
+
 function buildResearchAwareContext(baseContext = {}, researchContext = {}) {
   const fact = firstResearchFact(researchContext);
   const timelineEvent = firstResearchTimelineEvent(researchContext);
@@ -291,6 +373,8 @@ function buildResearchAwareContext(baseContext = {}, researchContext = {}) {
     escalation_stage_2: stage2 || baseContext.escalation_stage_2,
     escalation_stage_3: stage3 || baseContext.escalation_stage_3
   };
+
+  return sanitizeResearchAwareContext(mergedContext, researchContext);
 }
 
 function buildStoryContext(topic = "", channel = {}, researchContext = {}) {
