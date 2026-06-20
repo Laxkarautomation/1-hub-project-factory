@@ -101,7 +101,8 @@ async function run(payload = {}, credentials = {}) {
         generationConfig: {
           responseModalities: ["IMAGE"]
         }
-      })
+      }),
+      signal: payload.signal
     });
 
     const responseJson = await response.json().catch(() => ({}));

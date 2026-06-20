@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const workspaceResolver = require("../../channels/channel_workspace_resolver");
+const outputRouter = require("../../channels/channel_output_router");
 
 function resolveProjectPath(inputPath) {
   if (!inputPath) return inputPath;
@@ -20,8 +20,7 @@ function resolveProjectPath(inputPath) {
 
 function checkVideoAssets(script) {
   const issues = [];
-  const workspace = workspaceResolver.getWorkspace();
-  const imagesBasePath = resolveProjectPath(workspace.getImagesPath());
+  const imagesBasePath = resolveProjectPath(outputRouter.getImageOutputPath(script.script_id));
   const audioPath = resolveProjectPath(script.voice_file);
 
   if (!fs.existsSync(audioPath)) {
@@ -34,7 +33,6 @@ function checkVideoAssets(script) {
   for (const scene of script.scenes || []) {
     const imagePath = path.join(
       imagesBasePath,
-      script.script_id,
       `scene_${scene.scene}.jpg`
     );
 

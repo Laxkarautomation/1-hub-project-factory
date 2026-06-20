@@ -204,6 +204,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
     });
 
     return {
+      script_id: item.script_id || item.scriptId || item.id || `intelligence_script_${String((item.rank || 1)).padStart(3, "0")}`,
       rank: item.rank,
       topic,
       working_title: buildWorkingTitle(topic, channel),

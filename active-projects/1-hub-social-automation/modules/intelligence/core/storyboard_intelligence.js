@@ -192,6 +192,7 @@ function buildStoryboard(brief = {}, visualContext = null) {
     return {
       version: "phase_27a_storyboard_intelligence",
       status: "missing_documentary_scene_beats",
+      script_id: brief.script_id || brief.scriptId || brief.id || "",
       topic: cleanText(brief.topic || context.topic),
       scenes: [],
       visual_context: context,
@@ -204,6 +205,7 @@ function buildStoryboard(brief = {}, visualContext = null) {
   return {
     version: "phase_27a_storyboard_intelligence",
     status: "storyboard_ready",
+    script_id: brief.script_id || brief.scriptId || brief.id || "",
     topic: cleanText(brief.topic || context.topic),
     working_title: cleanText(brief.working_title || context.working_title),
     script_source: context.script_source,

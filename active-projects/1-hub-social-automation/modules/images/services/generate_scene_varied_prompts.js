@@ -90,8 +90,44 @@ function loadVisualStoryboards(options = {}) {
   return readJsonIfExists(visualStoryboardsPath, null);
 }
 
+function buildContractFailure({ channel = {}, visualStoryboards = null, failureReason = "visual_pipeline_contract_failed" } = {}) {
+  const expectedStoryboards = Number(
+    visualStoryboards?.expectedStoryboards ||
+    visualStoryboards?.total_input_briefs ||
+    0
+  );
+  const generatedStoryboards = toArray(visualStoryboards?.storyboards).length;
+
+  return {
+    success: false,
+    status: "visual_pipeline_contract_failed",
+    workflowRunId: process.env.WORKFLOW_RUN_ID || null,
+    channelId: channel.channelId || channelId,
+    failureReason,
+    source: "visual_pipeline_contract_failed",
+    expectedStoryboards,
+    generatedStoryboards,
+    source_file: visualStoryboardsPath,
+    output_file: outputPath,
+    items: []
+  };
+}
+
 function fallbackScriptId(index = 0) {
   return `${channelId}_visual_script_${String(index + 1).padStart(3, "0")}`;
+}
+
+function sanitizeImagePrompt(prompt = "") {
+  return String(prompt || "")
+    .replace(/small town crime/gi, "small town investigation")
+    .replace(/family betrayal story/gi, "family conflict story")
+    .replace(/crime twists?/gi, "mystery twists")
+    .replace(/crime/gi, "investigation")
+    .replace(/betrayal/gi, "conflict")
+    .replace(/evidence photo layout/gi, "document layout")
+    .replace(/case file/gi, "document file")
+    .replace(/dramatic reveal/gi, "important reveal")
+    .replace(/warning sign/gi, "risk signal");
 }
 
 function normalizeStoryboardScene(scene = {}, rewriteByScene = new Map()) {
@@ -107,7 +143,7 @@ function normalizeStoryboardScene(scene = {}, rewriteByScene = new Map()) {
     shot_type: scene.shot_type,
     retention_role: scene.retention_role,
     continuity_anchor: scene.continuity_anchor,
-    image_prompt: rewrite?.recommended_prompt || scene.image_prompt,
+    image_prompt: sanitizeImagePrompt(rewrite?.recommended_prompt || scene.image_prompt),
     original_image_prompt: rewrite ? scene.image_prompt : undefined,
     rewrite_applied: Boolean(rewrite)
   };
@@ -183,31 +219,58 @@ function buildFromLegacyScripts(scripts = [], options = {}) {
 }
 
 function buildImagePromptPacks(options = {}) {
+  const channel = options.channel || resolveChannel();
   const visualStoryboards = loadVisualStoryboards(options);
   const storyboards = toArray(visualStoryboards?.storyboards);
 
   if (storyboards.length) {
     return {
+      success: true,
       source: "phase_27_visual_storyboards",
-      items: buildFromStoryboards(storyboards, options)
+      workflowRunId: process.env.WORKFLOW_RUN_ID || null,
+      channelId: channel.channelId || channelId,
+      expectedStoryboards: Number(
+        visualStoryboards?.expectedStoryboards ||
+        visualStoryboards?.total_input_briefs ||
+        storyboards.length
+      ),
+      generatedStoryboards: storyboards.length,
+      items: buildFromStoryboards(storyboards, { ...options, channel })
     };
   }
 
-  return {
-    source: "legacy_script_templates",
-    items: buildFromLegacyScripts(loadScripts(options), options)
-  };
+  const failureReason = visualStoryboards
+    ? visualStoryboards.failureReason || "missing_scene_beats"
+    : "missing_storyboard_source";
+
+  return buildContractFailure({
+    channel,
+    visualStoryboards,
+    failureReason
+  });
 }
 
 function run(options = {}) {
   const result = buildImagePromptPacks(options);
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, JSON.stringify(result.items, null, 2));
+  fs.writeFileSync(outputPath, JSON.stringify(result.success ? result.items : result, null, 2));
 
-  console.log("Varied image prompts generated");
+  console.log(result.success ? "Varied image prompts generated" : "Visual prompt generation failed");
   console.log(outputPath);
   console.log(`Source: ${result.source}`);
   console.log(`Total packs: ${result.items.length}`);
+
+  if (!result.success) {
+    console.error(JSON.stringify({
+      status: result.status,
+      workflowRunId: result.workflowRunId,
+      channelId: result.channelId,
+      failureReason: result.failureReason,
+      expectedStoryboards: result.expectedStoryboards,
+      generatedStoryboards: result.generatedStoryboards
+    }, null, 2));
+    process.exit(1);
+  }
 
   return result;
 }

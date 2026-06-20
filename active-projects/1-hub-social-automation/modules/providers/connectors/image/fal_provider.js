@@ -58,7 +58,8 @@ async function run(payload = {}, credentials = {}) {
         prompt,
         image_size: "portrait_16_9",
         num_images: 1
-      })
+      }),
+      signal: payload.signal
     });
 
     const data = await response.json().catch(() => ({}));
@@ -89,7 +90,9 @@ async function run(payload = {}, credentials = {}) {
       };
     }
 
-    const imageResponse = await fetch(imageUrl);
+    const imageResponse = await fetch(imageUrl, {
+      signal: payload.signal
+    });
 
     if (!imageResponse.ok) {
       return {

@@ -92,7 +92,8 @@ async function run(payload = {}, credentials = {}) {
         width: 720,
         height: 1280,
         num_steps: 4
-      })
+      }),
+      signal: payload.signal
     });
 
     const contentType = response.headers.get("content-type") || "";

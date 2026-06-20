@@ -39,7 +39,9 @@ async function run(payload = {}, credentials = {}) {
     "&nologo=true&private=true&safe=true";
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      signal: payload.signal
+    });
 
     if (!response.ok) {
       return {

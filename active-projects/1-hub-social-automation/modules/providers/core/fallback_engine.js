@@ -38,10 +38,70 @@ function trackAttemptUsage({ type, provider, result, durationMs, metadata = {} }
   }
 }
 
+function getPositiveInt(value, fallback) {
+  const parsed = Number.parseInt(value, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function getProviderTimeoutMs(payload = {}) {
+  return getPositiveInt(
+    payload.providerTimeoutMs || process.env.IMAGE_PROVIDER_TIMEOUT_MS,
+    45000
+  );
+}
+
+function getMaxAttempts(providers = []) {
+  return Math.min(
+    providers.length,
+    getPositiveInt(process.env.IMAGE_PROVIDER_MAX_ATTEMPTS, providers.length)
+  );
+}
+
+async function runProviderWithTimeout(provider, payload, timeoutMs) {
+  const controller = typeof AbortController === "function" ? new AbortController() : null;
+  let timedOut = false;
+  let timer = null;
+
+  const timeoutResult = new Promise((resolve) => {
+    timer = setTimeout(() => {
+      timedOut = true;
+      if (controller) controller.abort();
+      resolve({
+        success: false,
+        provider: provider?.name || "unknown",
+        status: "provider_timeout",
+        error: `Provider timed out after ${timeoutMs}ms`
+      });
+    }, timeoutMs);
+
+    if (timer.unref) timer.unref();
+  });
+
+  const providerPayload = controller
+    ? { ...payload, signal: controller.signal }
+    : payload;
+
+  const providerResult = Promise.resolve(provider.run(providerPayload)).catch((error) => ({
+    success: false,
+    provider: provider?.name || "unknown",
+    status: timedOut || error.name === "AbortError" ? "provider_timeout" : "provider_exception",
+    error: timedOut
+      ? `Provider timed out after ${timeoutMs}ms`
+      : error.message
+  }));
+
+  const result = await Promise.race([providerResult, timeoutResult]);
+  if (timer) clearTimeout(timer);
+  return result;
+}
+
 async function runFallbackStack({ type, providers, payload }) {
   const attempts = [];
+  const timeoutMs = getProviderTimeoutMs(payload);
+  const maxAttempts = getMaxAttempts(providers);
+  const activeProviders = providers.slice(0, maxAttempts);
 
-  for (const provider of providers) {
+  for (const provider of activeProviders) {
     if (!provider || typeof provider.run !== "function") {
       const invalidResult = {
         success: false,
@@ -73,7 +133,7 @@ async function runFallbackStack({ type, providers, payload }) {
     const startedAt = Date.now();
 
     try {
-      const result = await provider.run(payload);
+      const result = await runProviderWithTimeout(provider, payload, timeoutMs);
       const durationMs = Date.now() - startedAt;
 
       const usage = trackAttemptUsage({
@@ -166,7 +226,8 @@ async function runFallbackStack({ type, providers, payload }) {
     type,
     provider: null,
     result: null,
-    attempts
+    attempts,
+    maxAttempts
   };
 }
 

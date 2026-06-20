@@ -21,12 +21,33 @@ function resolveDefaultChannel() {
   return runtime.success ? runtime.channel : {};
 }
 
+function buildContractFields(channel = {}, expectedStoryboards = 0, generatedStoryboards = 0, failureReason = null) {
+  return {
+    success: !failureReason,
+    workflowRunId: process.env.WORKFLOW_RUN_ID || null,
+    channelId: channel.channelId || "active_channel",
+    failureReason,
+    expectedStoryboards,
+    generatedStoryboards
+  };
+}
+
+function resolveFailureReason(expectedStoryboards, generatedStoryboards, skippedBriefs = []) {
+  if (generatedStoryboards > 0) return null;
+  if (expectedStoryboards === 0) return "missing_storyboard_source";
+  if (skippedBriefs.some(brief => brief.reason === "missing_documentary_scene_beats")) {
+    return "missing_scene_beats";
+  }
+  return "visual_pipeline_contract_failed";
+}
+
 function buildVisualStoryboards(briefs = [], options = {}) {
   const channel = options.channel || resolveDefaultChannel();
   const storyboards = [];
   const skippedBriefs = [];
+  const inputBriefs = toArray(briefs);
 
-  toArray(briefs).forEach((brief, index) => {
+  inputBriefs.forEach((brief, index) => {
     if (!hasDocumentarySceneBeats(brief)) {
       skippedBriefs.push({
         index,
@@ -40,12 +61,14 @@ function buildVisualStoryboards(briefs = [], options = {}) {
     storyboards.push(buildStoryboard(brief, visualContext));
   });
 
+  const failureReason = resolveFailureReason(inputBriefs.length, storyboards.length, skippedBriefs);
+
   return {
     version: "phase_27a_visual_storyboards",
-    status: "visual_storyboards_ready",
+    status: failureReason ? "visual_pipeline_contract_failed" : "visual_storyboards_ready",
     generated_at: new Date().toISOString(),
-    channelId: channel.channelId || "active_channel",
-    total_input_briefs: toArray(briefs).length,
+    ...buildContractFields(channel, inputBriefs.length, storyboards.length, failureReason),
+    total_input_briefs: inputBriefs.length,
     total_storyboards: storyboards.length,
     skipped_briefs: skippedBriefs,
     storyboards
@@ -71,6 +94,18 @@ function run() {
   console.log(outputPath);
   console.log(`Total storyboards: ${report.total_storyboards}`);
   console.log(`Skipped briefs: ${report.skipped_briefs.length}`);
+
+  if (!report.success) {
+    console.error(JSON.stringify({
+      status: report.status,
+      workflowRunId: report.workflowRunId,
+      channelId: report.channelId,
+      failureReason: report.failureReason,
+      expectedStoryboards: report.expectedStoryboards,
+      generatedStoryboards: report.generatedStoryboards
+    }, null, 2));
+    process.exit(1);
+  }
 }
 
 if (require.main === module) {

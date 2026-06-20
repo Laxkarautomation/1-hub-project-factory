@@ -34,7 +34,8 @@ function loadScripts(options = {}) {
 
 function loadImagePromptPacks(options = {}) {
   if (options.imagePromptPacks) return options.imagePromptPacks;
-  return readJsonIfExists(imagesPath, []);
+  const promptPacks = readJsonIfExists(imagesPath, []);
+  return Array.isArray(promptPacks) ? promptPacks : toArray(promptPacks?.items);
 }
 
 function loadCaptions(options = {}) {
@@ -45,6 +46,33 @@ function loadCaptions(options = {}) {
 function loadVisualStoryboards(options = {}) {
   if (options.visualStoryboards) return options.visualStoryboards;
   return readJsonIfExists(visualStoryboardsPath, null);
+}
+
+function buildContractFailure({
+  visualStoryboards = null,
+  imagePromptPacks = [],
+  failureReason = "visual_pipeline_contract_failed"
+} = {}) {
+  const expectedStoryboards = Number(
+    visualStoryboards?.expectedStoryboards ||
+    visualStoryboards?.total_input_briefs ||
+    0
+  );
+  const generatedStoryboards = toArray(visualStoryboards?.storyboards).length;
+
+  return {
+    success: false,
+    status: "visual_pipeline_contract_failed",
+    workflowRunId: process.env.WORKFLOW_RUN_ID || null,
+    channelId,
+    failureReason,
+    expectedStoryboards,
+    generatedStoryboards,
+    promptPacks: toArray(imagePromptPacks).length,
+    source_file: visualStoryboardsPath,
+    prompt_source_file: imagesPath,
+    items: []
+  };
 }
 
 function fallbackScriptId(index = 0) {
@@ -117,16 +145,29 @@ function buildContentPack(options = {}) {
   const imagePromptPacks = loadImagePromptPacks(options);
   const captions = loadCaptions(options);
 
-  if (storyboards.length) {
-    return {
-      source: "phase_27_visual_storyboards",
-      items: buildFromVisualStoryboards(storyboards, imagePromptPacks, captions, workspace)
-    };
+  if (!storyboards.length) {
+    return buildContractFailure({
+      visualStoryboards,
+      imagePromptPacks,
+      failureReason: visualStoryboards
+        ? visualStoryboards.failureReason || "missing_scene_beats"
+        : "missing_storyboard_source"
+    });
   }
 
   return {
-    source: "legacy_script_pack",
-    items: buildFromLegacyScripts(loadScripts(options), imagePromptPacks, captions, workspace)
+    success: true,
+    source: "phase_27_visual_storyboards",
+    workflowRunId: process.env.WORKFLOW_RUN_ID || null,
+    channelId,
+    expectedStoryboards: Number(
+      visualStoryboards?.expectedStoryboards ||
+      visualStoryboards?.total_input_briefs ||
+      storyboards.length
+    ),
+    generatedStoryboards: storyboards.length,
+    promptPacks: toArray(imagePromptPacks).length,
+    items: buildFromVisualStoryboards(storyboards, imagePromptPacks, captions, workspace)
   };
 }
 
@@ -134,16 +175,38 @@ function run(options = {}) {
   const workspace = options.workspace || workspaceResolver.getWorkspace();
   const outputPath = workspace.getPublishingPath("content_pack.json");
   const result = buildContentPack({ ...options, workspace });
+  const hasPromptPacks = Number(result.promptPacks || 0) > 0;
+  const hasItems = toArray(result.items).length > 0;
+  const finalResult = result.success && (!hasPromptPacks || !hasItems)
+    ? {
+        ...result,
+        success: false,
+        status: "visual_pipeline_contract_failed",
+        failureReason: !hasPromptPacks ? "missing_image_prompt_packs" : "visual_pipeline_contract_failed"
+      }
+    : result;
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, JSON.stringify(result.items, null, 2));
+  fs.writeFileSync(outputPath, JSON.stringify(finalResult.success ? finalResult.items : finalResult, null, 2));
 
-  console.log("Content pack exported");
+  console.log(finalResult.success ? "Content pack exported" : "Content pack export failed");
   console.log(outputPath);
-  console.log(`Source: ${result.source}`);
-  console.log(`Total packs: ${result.items.length}`);
+  console.log(`Source: ${finalResult.source}`);
+  console.log(`Total packs: ${finalResult.items.length}`);
 
-  return result;
+  if (!finalResult.success) {
+    console.error(JSON.stringify({
+      status: finalResult.status,
+      workflowRunId: finalResult.workflowRunId,
+      channelId: finalResult.channelId,
+      failureReason: finalResult.failureReason,
+      expectedStoryboards: finalResult.expectedStoryboards,
+      generatedStoryboards: finalResult.generatedStoryboards
+    }, null, 2));
+    process.exit(1);
+  }
+
+  return finalResult;
 }
 
 if (require.main === module) {
