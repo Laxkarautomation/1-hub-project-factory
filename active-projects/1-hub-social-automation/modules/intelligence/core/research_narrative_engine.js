@@ -371,10 +371,46 @@ function buildNarrativeFocus(topic = "", researchContext = {}, mode = "story_doc
   };
 }
 
+
+function safeBeatLine(line = "", researchContext = {}) {
+  const verification = researchContext.verification || {};
+  const safeMode = Boolean(researchContext.safe_language_mode || verification.safe_language_mode);
+
+  if (!safeMode) return cleanText(line);
+
+  let value = cleanText(line)
+    .replace(/ye prove karta hai/gi, "ye point indicate karta hai")
+    .replace(/confirmed hai/gi, "verify karna zaroori hai")
+    .replace(/pakka/gi, "possible")
+    .replace(/actual culprit/gi, "possible responsible angle")
+    .trim();
+
+  if (!value) return "";
+
+  if (
+    /available|context|is type|investigation-style|reports|kuch/i.test(value.slice(0, 35))
+  ) {
+    return value;
+  }
+
+  if (verification.risk_level === "high") {
+    return "Available details ke hisab se, " + value.charAt(0).toLowerCase() + value.slice(1);
+  }
+
+  if (verification.risk_level === "medium") {
+    return "Context ke hisab se, " + value.charAt(0).toLowerCase() + value.slice(1);
+  }
+
+  return value;
+}
+
 function buildResearchNarrative(topic = "", channel = {}, researchContext = {}) {
   const cleanTopic = cleanText(topic || researchContext.topic || "research topic");
   const mode = inferNarrativeMode(researchContext, channel);
-  const beats = buildBeatsFromTimeline(cleanTopic, researchContext, mode);
+  const beats = buildBeatsFromTimeline(cleanTopic, researchContext, mode).map(beat => ({
+    ...beat,
+    line: safeBeatLine(beat.line, researchContext)
+  }));
   const focus = buildNarrativeFocus(cleanTopic, researchContext, mode);
 
   const documentary_blocks = buildDocumentaryBlocks(cleanTopic, { narrative_mode: mode, beats });
@@ -386,11 +422,20 @@ function buildResearchNarrative(topic = "", channel = {}, researchContext = {}) 
     beats,
     documentary_blocks,
     scene_plan: beats.map(item => convertBeatToNarration(cleanTopic, item, mode)),
+    verification: researchContext.verification || {},
+    safety_profile: {
+      verification_status: researchContext.verification_status || "offline_inferred",
+      source_status: researchContext.source_status || "not_source_verified",
+      confidence_score: researchContext.confidence_score,
+      risk_level: researchContext.risk_level,
+      safe_language_mode: researchContext.safe_language_mode
+    },
     quality_notes: [
       "Use timeline beats in order",
       "Do not present inferred beats as verified facts",
       "Keep unresolved claims cautious",
-      "Prefer evidence and timeline over random scene vocabulary"
+      "Prefer evidence and timeline over random scene vocabulary",
+      "Respect offline verification safety profile"
     ]
   };
 }

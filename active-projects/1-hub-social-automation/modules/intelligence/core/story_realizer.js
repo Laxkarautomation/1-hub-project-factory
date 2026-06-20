@@ -471,6 +471,42 @@ function buildPolishedHook(topic = "", narrative = {}, blocks = {}) {
   return blocks.documentary_hook || cleanTopic + " me ek detail poori kahani ka angle badal deti hai...";
 }
 
+
+function applyStorySafetyGuard(blocks = {}, context = {}) {
+  const verification =
+    context.verification ||
+    context.research_context?.verification ||
+    context.research_narrative?.verification ||
+    {};
+
+  const safeMode = Boolean(
+    context.safe_language_mode ||
+    context.research_context?.safe_language_mode ||
+    context.research_narrative?.safety_profile?.safe_language_mode ||
+    verification.safe_language_mode
+  );
+
+  if (!safeMode) return blocks;
+
+  function safeLine(value = "") {
+    let text = clean(value || "");
+
+    text = text
+      .replace(/confirmed hai/gi, "verify karna zaroori hai")
+      .replace(/ye prove karta hai/gi, "ye point indicate karta hai")
+      .replace(/pakka/gi, "possible")
+      .replace(/actual culprit/gi, "possible responsible angle")
+      .replace(/100%/g, "strongly")
+      .trim();
+
+    return text;
+  }
+
+  return Object.fromEntries(
+    Object.entries(blocks).map(([key, value]) => [key, safeLine(value)])
+  );
+}
+
 function realizeDocumentaryStory(context = {}) {
   const narrative = context.research_narrative || {};
   const blocks = narrative.documentary_blocks || {};
@@ -485,7 +521,7 @@ function realizeDocumentaryStory(context = {}) {
   const polishedHook = buildPolishedHook(context.topic || "", narrative, blocks);
   const polishedTwist = splitRepeatedTwist(blocks);
 
-  return {
+  const safeBlocks = applyStorySafetyGuard({
     hook: humanizeDocumentaryBlock(polishedHook, context.topic || ""),
     setup: humanizeDocumentaryBlock(blocks.documentary_setup || "", context.topic || ""),
     conflict: humanizeDocumentaryBlock(blocks.documentary_conflict || "", context.topic || ""),
@@ -494,7 +530,9 @@ function realizeDocumentaryStory(context = {}) {
     twist: humanizeDocumentaryBlock(polishedTwist || blocks.documentary_turn || "", context.topic || ""),
     callback: clean(context.callback_line || "Aakhir me wahi ignored detail sabse bada clue ban gayi."),
     lesson: customLesson || avoidDuplicatePhrase(blocks.documentary_takeaway || buildEndingFormula(context, context.display_topic || context.topic || "ye kahani"))
-  };
+  }, context);
+
+  return safeBlocks;
 }
 
 function realizeStory(context = {}) {

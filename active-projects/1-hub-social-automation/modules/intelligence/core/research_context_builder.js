@@ -1,3 +1,5 @@
+const { applyOfflineVerification } = require("./offline_verification_engine");
+
 function cleanText(value = "") {
   return String(value || "")
     .replace(/_/g, " ")
@@ -483,7 +485,7 @@ function buildResearchContext(topic = "", channel = {}, options = {}) {
     generation_mode: options.generationMode || "offline_inferred_foundation"
   };
 
-  return normalizeResearchContext(context);
+  return applyOfflineVerification(normalizeResearchContext(context));
 }
 
 module.exports = {
