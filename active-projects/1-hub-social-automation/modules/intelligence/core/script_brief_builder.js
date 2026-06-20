@@ -1,6 +1,7 @@
 const { buildStoryContext } = require("./story_context_builder");
 const { realizeStory } = require("./story_realizer");
 const { buildResearchNarrative } = require("./research_narrative_engine");
+const { buildThirtySecondScript } = require("./script_generation_v2");
 
 function normalizeTopic(topic = "") {
   return String(topic || "real incident").trim();
@@ -188,6 +189,12 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       ...storyContext,
       research_narrative: researchNarrative
     };
+    const storyBlocks = realizeStory(storyContextWithNarrative);
+    const documentaryScript = buildThirtySecondScript(topic, {
+      researchContext,
+      researchNarrative,
+      storyBlocks
+    });
 
     return {
       rank: item.rank,
@@ -199,7 +206,11 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       research_context: researchContext,
       research_narrative: researchNarrative,
       story_context: storyContextWithNarrative,
-      story_blocks: realizeStory(storyContextWithNarrative),
+      story_blocks: storyBlocks,
+      documentary_script: documentaryScript,
+      narration_script: documentaryScript.narration_script,
+      scene_beats: documentaryScript.scene_beats,
+      script_quality_score: documentaryScript.quality_score,
       story_skeleton: buildStorySkeleton(topic, channel),
       scene_plan: researchNarrative.scene_plan && researchNarrative.scene_plan.length
         ? researchNarrative.scene_plan
@@ -208,7 +219,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       visual_style: channel.visualStyle || "",
       target_audience: channel.targetAudience || "",
       ending_lesson: buildEndingLesson(topic, channel),
-      estimated_duration_seconds: 60
+      estimated_duration_seconds: documentaryScript.quality_score.estimated_duration_seconds || 30
     };
   });
 }
