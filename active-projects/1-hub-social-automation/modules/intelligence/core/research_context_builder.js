@@ -238,31 +238,131 @@ function buildTimeline(topic = "", channel = {}) {
   }));
 }
 
+
+function isGenericResearchEntity(value = "") {
+  const lower = cleanText(value).toLowerCase();
+
+  return [
+    "village",
+    "gaon",
+    "missing",
+    "crime",
+    "mystery",
+    "incident",
+    "victim",
+    "witness",
+    "investigator",
+    "suspect",
+    "case file",
+    "customer",
+    "investor",
+    "company",
+    "bank",
+    "transaction",
+    "record",
+    "archive",
+    "local source",
+    "historical figure",
+    "local people",
+    "village elder",
+    "location",
+    "audience",
+    "expert source",
+    "example",
+    "main subject",
+    "source"
+  ].includes(lower);
+}
+
+function buildRankedEntity(name = "", topic = "", index = 0, source = "inferred") {
+  const cleanName = cleanText(name);
+  const cleanTopic = cleanText(topic);
+  const lowerName = cleanName.toLowerCase();
+  const lowerTopic = cleanTopic.toLowerCase();
+
+  let score = 20;
+
+  if (lowerName === lowerTopic) score += 100;
+  if (lowerTopic.includes(lowerName) && cleanName.length > 3) score += 25;
+  if (lowerName.includes(lowerTopic) && cleanTopic.length > 3) score += 25;
+  if (source === "topic") score += 60;
+  if (source === "capitalized_topic") score += 35;
+  if (source === "channel_keyword") score += 10;
+  if (source === "role") score -= 20;
+  if (isGenericResearchEntity(cleanName)) score -= 35;
+  if (cleanName.length < 4) score -= 10;
+
+  return {
+    name: cleanName,
+    role: lowerName === lowerTopic || source === "topic"
+      ? "primary_subject"
+      : "supporting_context",
+    confidence: score >= 80 ? "high" : score >= 40 ? "medium" : "inferred",
+    source,
+    score
+  };
+}
+
+function rankResearchEntities(topic = "", candidates = []) {
+  const cleanTopic = cleanText(topic);
+
+  return unique([cleanTopic, ...candidates])
+    .map((name, index) => {
+      let source = "inferred";
+
+      if (cleanText(name).toLowerCase() === cleanTopic.toLowerCase()) source = "topic";
+      else if (/^[A-Z]/.test(cleanText(name))) source = "capitalized_topic";
+      else if (isGenericResearchEntity(name)) source = "role";
+
+      return buildRankedEntity(name, cleanTopic, index, source);
+    })
+    .filter(item => item.name)
+    .sort((a, b) => b.score - a.score || a.name.length - b.name.length)
+    .slice(0, 12)
+    .map((item, index) => ({
+      ...item,
+      role: index === 0 ? "primary_subject" : "supporting_context"
+    }));
+}
+
+function normalizeResearchContext(context = {}) {
+  const topic = cleanText(context.topic || "");
+  const rankedEntities = rankResearchEntities(topic, (context.entities || []).map(item => item.name || item));
+
+  return {
+    ...context,
+    primary_subject: rankedEntities[0]?.name || topic,
+    entities: rankedEntities,
+    entity_quality: {
+      primary_subject: rankedEntities[0]?.name || topic,
+      generic_entities_demoted: rankedEntities.filter(item => isGenericResearchEntity(item.name)).length,
+      ranking_version: "25B.3"
+    }
+  };
+}
+
 function buildEntities(topic = "", channel = {}) {
   const cleanTopic = cleanText(topic);
   const entities = [];
 
+  entities.push(cleanTopic);
   entities.push(...extractCapitalizedEntities(cleanTopic));
   entities.push(...toList(channel.topicKeywords).slice(0, 5));
 
   const type = inferResearchType(cleanTopic, channel);
 
   const roleEntities = {
-    case_investigation: ["victim", "witness", "investigator", "suspect", "case file"],
-    financial_case: ["customer", "investor", "company", "bank", "transaction"],
-    historical_context: ["record", "archive", "local source", "historical figure"],
-    local_mystery: ["local people", "witness", "village elder", "location"],
-    fact_explainer: ["audience", "expert source", "example"],
-    general_research: ["main subject", "source", "audience"]
+    case_investigation: ["timeline gap", "evidence mismatch", "case file", "ignored clue"],
+    financial_case: ["risk signal", "financial records", "transaction detail", "decision timing"],
+    historical_context: ["old records", "archive gap", "documented version", "source detail"],
+    local_mystery: ["local claim", "proof gap", "local witness detail", "repeated warning"],
+    fact_explainer: ["common misconception", "actual reason", "simple example"],
+    general_research: ["key detail", "main context", "source"]
   };
 
   entities.push(...(roleEntities[type] || roleEntities.general_research));
 
-  return unique(entities).slice(0, 12).map((name, index) => ({
-    name,
-    role: index === 0 ? "primary_subject" : "supporting_context",
-    confidence: index < 3 ? "medium" : "inferred"
-  }));
+  return rankResearchEntities(cleanTopic, entities);
 }
 
 function buildResearchQuestions(topic = "", channel = {}) {
@@ -358,7 +458,7 @@ function buildResearchContext(topic = "", channel = {}, options = {}) {
     generation_mode: options.generationMode || "offline_inferred_foundation"
   };
 
-  return context;
+  return normalizeResearchContext(context);
 }
 
 module.exports = {

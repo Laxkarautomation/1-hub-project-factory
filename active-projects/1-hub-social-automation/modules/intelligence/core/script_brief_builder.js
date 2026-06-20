@@ -184,6 +184,10 @@ function buildScriptBriefs(recommendations = [], options = {}) {
     const formula = strategyFormulas[0] || item.suggested_formula;
     const storyContext = buildStoryContext(topic, channel, researchContext);
     const researchNarrative = buildResearchNarrative(topic, channel, researchContext);
+    const storyContextWithNarrative = {
+      ...storyContext,
+      research_narrative: researchNarrative
+    };
 
     return {
       rank: item.rank,
@@ -194,8 +198,8 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       story_formula: formula,
       research_context: researchContext,
       research_narrative: researchNarrative,
-      story_context: storyContext,
-      story_blocks: realizeStory(storyContext),
+      story_context: storyContextWithNarrative,
+      story_blocks: realizeStory(storyContextWithNarrative),
       story_skeleton: buildStorySkeleton(topic, channel),
       scene_plan: researchNarrative.scene_plan && researchNarrative.scene_plan.length
         ? researchNarrative.scene_plan

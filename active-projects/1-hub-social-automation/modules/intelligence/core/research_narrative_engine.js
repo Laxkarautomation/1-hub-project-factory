@@ -19,6 +19,121 @@ function firstFact(researchContext = {}) {
   return cleanText(item ? item.fact : "");
 }
 
+
+function isGenericNarrativeEntity(value = "") {
+  const lower = cleanText(value).toLowerCase();
+
+  return [
+    "village",
+    "gaon",
+    "missing",
+    "crime",
+    "mystery",
+    "incident",
+    "victim",
+    "witness",
+    "investigator",
+    "suspect",
+    "customer",
+    "investor",
+    "company",
+    "bank",
+    "transaction",
+    "record",
+    "archive",
+    "audience",
+    "source",
+    "location"
+  ].includes(lower);
+}
+
+function bestResearchEntity(researchContext = {}, topic = "") {
+  const cleanTopic = cleanText(topic || researchContext.topic || "");
+  const primary = cleanText(researchContext.primary_subject || "");
+
+  if (primary && !isGenericNarrativeEntity(primary)) return primary;
+  if (cleanTopic) return cleanTopic;
+
+  const entities = toArray(researchContext.entities)
+    .filter(item => item && item.name)
+    .sort((a, b) => (b.score || 0) - (a.score || 0));
+
+  const strong = entities.find(item => !isGenericNarrativeEntity(item.name));
+  return cleanText(strong?.name || entities[0]?.name || cleanTopic || "main subject");
+}
+
+function convertBeatToNarration(topic = "", beat = {}, mode = "story_documentary") {
+  const line = cleanText(beat.line || "");
+  const cleanTopic = cleanText(topic || "ye topic");
+
+  if (!line) return "";
+
+  if (/^Initial incident or report$/i.test(line)) {
+    if (mode === "investigation_documentary") return cleanTopic + " me shuruaat ek simple report se hoti hai.";
+    return cleanTopic + " ki shuruaat ek normal situation se hoti hai.";
+  }
+
+  if (/^Evidence or statement contradiction$/i.test(line)) {
+    return "Phir evidence aur statement ke beech mismatch dikhna shuru hota hai.";
+  }
+
+  if (/^Ignored clue becomes important$/i.test(line)) {
+    return "Ek ignored clue dheere dheere poori story ka center banne lagta hai.";
+  }
+
+  if (/^Final reveal or unresolved question$/i.test(line)) {
+    return "End tak case ek reveal ya unresolved question ke point par pahunchta hai.";
+  }
+
+  if (/^Initial decision or offer$/i.test(line)) {
+    return cleanTopic + " me shuruaat ek normal offer ya decision se hoti hai.";
+  }
+
+  if (/^Risk signal appears$/i.test(line)) {
+    return "Phir ek risk signal saamne aata hai jise pehle ignore kiya jaata hai.";
+  }
+
+  if (/^Numbers stop matching expectation$/i.test(line)) {
+    return "Baad me numbers expectation se match karna band kar dete hain.";
+  }
+
+  if (/^Final loss, lesson, or warning$/i.test(line)) {
+    return "End me ye story loss, lesson ya warning me convert ho jaati hai.";
+  }
+
+  return line;
+}
+
+function buildDocumentaryBlocks(topic = "", researchNarrative = {}) {
+  const cleanTopic = cleanText(topic || researchNarrative.topic || "ye topic");
+  const mode = cleanText(researchNarrative.narrative_mode || "story_documentary");
+  const beats = toArray(researchNarrative.beats);
+
+  const normalized = beats.map(beat => ({
+    ...beat,
+    narration: convertBeatToNarration(cleanTopic, beat, mode)
+  }));
+
+  const byBeat = {};
+  normalized.forEach(item => {
+    byBeat[item.beat] = item.narration;
+  });
+
+  return {
+    documentary_hook:
+      mode === "investigation_documentary"
+        ? cleanTopic + " me ek timeline gap poori story ka direction badal deta hai..."
+        : mode === "risk_breakdown"
+          ? cleanTopic + " me ek small risk signal sabse bada warning point ban jaata hai..."
+          : cleanTopic + " me ek detail poori kahani ka angle badal deti hai...",
+    documentary_setup: byBeat.setup || cleanTopic + " ki shuruaat ek normal context se hoti hai.",
+    documentary_conflict: byBeat.conflict || "Phir ek hidden mismatch story ko serious bana deta hai.",
+    documentary_evidence: byBeat.evidence || "Ek important detail poori direction badal deti hai.",
+    documentary_turn: byBeat.turn || "Jab details connect hoti hain, kahani ka real angle saamne aata hai.",
+    documentary_takeaway: byBeat.takeaway || "Aakhir me chhoti detail hi sabse important point ban jaati hai."
+  };
+}
+
 function firstEntity(researchContext = {}) {
   const entities = toArray(researchContext.entities);
   const item = entities.find(entity => entity && entity.name);
@@ -121,7 +236,7 @@ function buildBeatsFromTimeline(topic = "", researchContext = {}, mode = "story_
   if (!events.length) return fallback;
 
   const fact = compactTopicFact(topic, firstFact(researchContext));
-  const entity = firstEntity(researchContext);
+  const entity = bestResearchEntity(researchContext, topic);
   const cleanTopic = cleanText(topic);
 
   const mapped = [
@@ -168,7 +283,7 @@ function buildBeatsFromTimeline(topic = "", researchContext = {}, mode = "story_
 
 function buildNarrativeFocus(topic = "", researchContext = {}, mode = "story_documentary") {
   const fact = compactTopicFact(topic, firstFact(researchContext));
-  const entity = firstEntity(researchContext);
+  const entity = bestResearchEntity(researchContext, topic);
   const events = timelineEvents(researchContext);
 
   return {
@@ -187,12 +302,15 @@ function buildResearchNarrative(topic = "", channel = {}, researchContext = {}) 
   const beats = buildBeatsFromTimeline(cleanTopic, researchContext, mode);
   const focus = buildNarrativeFocus(cleanTopic, researchContext, mode);
 
+  const documentary_blocks = buildDocumentaryBlocks(cleanTopic, { narrative_mode: mode, beats });
+
   return {
     topic: cleanTopic,
     narrative_mode: mode,
     focus,
     beats,
-    scene_plan: beats.map(item => item.line),
+    documentary_blocks,
+    scene_plan: beats.map(item => convertBeatToNarration(cleanTopic, item, mode)),
     quality_notes: [
       "Use timeline beats in order",
       "Do not present inferred beats as verified facts",
@@ -205,5 +323,7 @@ function buildResearchNarrative(topic = "", channel = {}, researchContext = {}) 
 module.exports = {
   buildResearchNarrative,
   inferNarrativeMode,
-  buildBeatsFromTimeline
+  buildBeatsFromTimeline,
+  buildDocumentaryBlocks,
+  bestResearchEntity
 };

@@ -397,7 +397,29 @@ function buildEndingFormula(context = {}, topic = "") {
   return pickSeeded(selectedPool, seed).replace(/\$\{topic\}/g, displayTopic);
 }
 
+
+function realizeDocumentaryStory(context = {}) {
+  const narrative = context.research_narrative || {};
+  const blocks = narrative.documentary_blocks || {};
+
+  if (!blocks.documentary_setup) return null;
+
+  return {
+    hook: blocks.documentary_hook || "",
+    setup: blocks.documentary_setup || "",
+    conflict: blocks.documentary_conflict || "",
+    clue: blocks.documentary_evidence || "",
+    escalation: blocks.documentary_turn || "",
+    twist: blocks.documentary_turn || "",
+    callback: clean(context.callback_line || "Aakhir me wahi ignored detail sabse bada clue ban gayi."),
+    lesson: avoidDuplicatePhrase(blocks.documentary_takeaway || buildEndingFormula(context, context.display_topic || context.topic || "ye kahani"))
+  };
+}
+
 function realizeStory(context = {}) {
+  const documentaryStory = realizeDocumentaryStory(context);
+  if (documentaryStory) return documentaryStory;
+
   const topic = topicTitle(context.topic || "story");
   const displayTopic = clean(context.display_topic || topic);
   const location = clean(context.location_context || "ek jagah");
