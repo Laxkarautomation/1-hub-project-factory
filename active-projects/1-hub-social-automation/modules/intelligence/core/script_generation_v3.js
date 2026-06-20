@@ -21,6 +21,18 @@ function wordCount(text = "") {
   return cleanText(text).split(/\s+/).filter(Boolean).length;
 }
 
+function hasContextLead(value = "") {
+  return /^(Context ke hisa{1,2}b se|Available details ke hisa{1,2}b se|Jo details available hain unke hisa{1,2}b se),?\s*/i.test(cleanText(value));
+}
+
+function stripContextLead(value = "") {
+  return cleanText(value).replace(/^(Context ke hisa{1,2}b se|Available details ke hisa{1,2}b se|Jo details available hain unke hisa{1,2}b se),?\s*/i, "");
+}
+
+function isLessonLike(value = "") {
+  return /lesson|takeaway|audience ko yaad|yaad rehni|samjhati hai|financial decisions me risk|chhoti warning ko ignore/i.test(cleanText(value));
+}
+
 function normalizeTopic(topic = "") {
   return cleanText(topic || "ye story");
 }
@@ -90,16 +102,14 @@ function extractEvidenceFacts(researchContext = {}, researchNarrative = {}) {
   ].filter(Boolean);
 
   return [...factLines, ...evidenceLines]
-    .filter(line => !/^Context ke hisab se/i.test(line))
-    .filter(line => !/lesson simple hai/i.test(line))
+    .map(line => stripContextLead(line))
+    .filter(line => !hasContextLead(line))
+    .filter(line => !isLessonLike(line))
     .slice(0, 3);
 }
 
 function cleanArcLine(value = "") {
-  return cleanText(value)
-    .replace(/^Context ke hisab se,\s*/i, "")
-    .replace(/^Available details ke hisab se,\s*/i, "")
-    .replace(/^Jo details available hain unke hisaab se,\s*/i, "")
+  return stripContextLead(value)
     .replace(/\bslowly\b/gi, "dheere dheere")
     .replace(/\s+/g, " ")
     .trim();
@@ -107,13 +117,15 @@ function cleanArcLine(value = "") {
 
 function evidenceSentence(topic = "", facts = [], fallback = "") {
   const cleanTopic = normalizeTopic(topic);
-  const picked = facts.find(line => line && line.length > 35 && !/lesson|takeaway/i.test(line));
+  const picked = facts.find(line => line && line.length > 35 && !isLessonLike(line));
 
   if (picked) {
     return sentence(cleanArcLine(picked));
   }
 
-  return sentence(fallback || `${cleanTopic} me records aur details compare karne par ek mismatch clear hone lagta hai`);
+  const safeFallback = !isLessonLike(fallback) ? fallback : "";
+
+  return sentence(safeFallback || `${cleanTopic} me records aur details compare karne par ek mismatch clear hone lagta hai`);
 }
 
 function compressBeatLine(value = "", beat = "") {
@@ -133,7 +145,7 @@ function compressBeatLine(value = "", beat = "") {
       .replace(/important angle hain/gi, "main angle ban gaya");
   }
 
-  if (beat === "evidence" && /lesson simple hai/i.test(line)) {
+  if (beat === "evidence" && isLessonLike(line)) {
     line = "Records aur numbers compare karne par mismatch clear hone lagta hai";
   }
 
@@ -158,10 +170,10 @@ function buildArc(topic = "", researchContext = {}, researchNarrative = {}, stor
   const modeLines = {
     risk_breakdown: {
       context: `${cleanTopic} me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha`,
-      complication: "Lekin asli problem yahan shuru hoti hai: ek warning signal ko normal samajhkar ignore kar diya gaya",
+      complication: "Lekin asli problem yahan shuru hoti hai: ek early signal ko normal samajhkar ignore kar diya gaya",
       evidence: "Jab records aur numbers dobara compare hue, expectation aur reality ek dusre se match nahi kar rahe the",
       escalation: "Delay badhta gaya, aur wahi chhota risk dheere dheere expensive mistake me convert hone laga",
-      reveal: "Tab samajh aaya ki warning end me nahi, shuruaat me hi saamne aa chuki thi"
+      reveal: "Tab samajh aaya ki real issue end me nahi, shuruaat me hi dikh raha tha"
     },
     investigation_documentary: {
       context: `${cleanTopic} me pehli report simple lagti hai, lekin timeline me ek gap chhupa hota hai`,
@@ -217,23 +229,23 @@ function buildArc(topic = "", researchContext = {}, researchNarrative = {}, stor
 function retentionTriggers(mode = "story_documentary") {
   const common = {
     after_context: "Lekin asli problem yahan shuru hoti hai.",
-    after_complication: "Ab sawal ye tha ki ye signal pehle kyu ignore hua?",
-    before_reveal: "Isi point par story ka angle palat jaata hai."
+    after_complication: "Ab sawal seedha tha.",
+    before_reveal: "Isi point par angle palat jaata hai."
   };
 
   if (mode === "risk_breakdown") {
     return {
       after_context: "Lekin numbers ke andar asli risk chhupa tha.",
-      after_complication: "Ab sawal ye tha ki warning pehle kyu nahi dikhi?",
-      before_reveal: "Isi calculation ne poori story palat di."
+      after_complication: "Ab sawal calculation ka tha.",
+      before_reveal: "Isi calculation ne story palat di."
     };
   }
 
   if (mode === "investigation_documentary") {
     return {
       after_context: "Lekin case file me ek gap chhupa tha.",
-      after_complication: "Ab sawal ye tha ki evidence kis taraf point kar raha tha?",
-      before_reveal: "Isi clue ne investigation ka direction badal diya."
+      after_complication: "Ab sawal evidence ka tha.",
+      before_reveal: "Isi clue ne direction badal diya."
     };
   }
 
@@ -293,19 +305,38 @@ function buildBeatsFromArc(arc = {}) {
 }
 
 function normalizeRepeatedConcepts(beats = []) {
-  let seenRisk = false;
+  const seenConcepts = new Set();
+  const conceptRewrites = {
+    warning: [
+      [/warning signal/gi, "early signal"],
+      [/warning point/gi, "risk point"],
+      [/\bwarning\b/gi, "signal"]
+    ],
+    risk: [
+      [/\brisk signal\b/gi, "hidden mismatch"],
+      [/\brisk\b/gi, "pressure"]
+    ]
+  };
+
+  function conceptsFor(text = "") {
+    const concepts = [];
+    if (/warning signal|risk signal|warning point|\bwarning\b/i.test(text)) concepts.push("warning");
+    if (/\brisk\b/i.test(text)) concepts.push("risk");
+    return concepts;
+  }
 
   return beats.map(beat => {
     let narration = cleanText(beat.narration);
+    const concepts = conceptsFor(narration);
 
-    if (/warning signal|risk signal/i.test(narration)) {
-      if (seenRisk && beat.beat !== "lesson") {
-        narration = narration
-          .replace(/warning signal/gi, "ignored detail")
-          .replace(/risk signal/gi, "hidden mismatch");
+    concepts.forEach(concept => {
+      if (seenConcepts.has(concept) && beat.beat !== "lesson") {
+        conceptRewrites[concept].forEach(([match, replacement]) => {
+          narration = narration.replace(match, replacement);
+        });
       }
-      seenRisk = true;
-    }
+      seenConcepts.add(concept);
+    });
 
     return {
       ...beat,
@@ -317,11 +348,12 @@ function normalizeRepeatedConcepts(beats = []) {
 function compactForThirtySeconds(beats = []) {
   const joined = beats.map(beat => beat.narration).join(" ");
 
-  if (wordCount(joined) <= 92) return beats;
+  if (wordCount(joined) <= 94) return beats;
 
-  return beats.map(beat => {
+  const compacted = beats.map(beat => {
     let narration = cleanText(beat.narration)
       .replace(/Jo details available hain unke hisaab se,\s*/gi, "")
+      .replace(/Context ke hisa{1,2}b se,\s*/gi, "")
       .replace(/Available offline clues ke basis par,\s*/gi, "")
       .replace(/normal samajhkar/gi, "normal maan kar")
       .replace(/ek dusre se match nahi kar rahe the/gi, "match nahi kar rahe the")
@@ -329,7 +361,53 @@ function compactForThirtySeconds(beats = []) {
 
     if (beat.beat === "evidence") {
       narration = narration.replace(/Ab sawal ye tha ki .*?\?\s*/i, "");
+      narration = narration.replace(/Ab sawal [^.?!]*[.?!]\s*/i, "");
     }
+
+    return {
+      ...beat,
+      narration: compressBeatLine(narration, beat.beat)
+    };
+  });
+
+  if (wordCount(compacted.map(beat => beat.narration).join(" ")) <= 94) {
+    return compacted;
+  }
+
+  const finalCompaction = {
+    context: [
+      [/numbers, pressure aur decision point main angle ban gaya/gi, "numbers aur pressure main angle bane"],
+      [/numbers, risk aur decision point main angle ban gaya/gi, "numbers aur risk main angle bane"]
+    ],
+    complication: [
+      [/Lekin asli problem yahan shuru hoti hai:\s*/gi, "Lekin problem yahan thi: "],
+      [/Lekin numbers ke andar asli risk chhupa tha\.\s*/gi, "Numbers me risk chhupa tha. "],
+      [/Lekin numbers ke andar asli pressure chhupa tha\.\s*/gi, "Numbers me pressure chhupa tha. "],
+      [/ek early signal ko normal maan kar ignore kar diya gaya/gi, "early signal ignore hua"]
+    ],
+    evidence: [
+      [/^[^.]+ me numbers, pressure aur decision point sabse important research angle hain/gi, "Numbers aur pressure ka mismatch key evidence tha"],
+      [/^[^.]+ me numbers, risk aur decision point sabse important research angle hain/gi, "Numbers aur risk ka mismatch key evidence tha"],
+      [/sabse important research angle hain/gi, "key evidence tha"]
+    ],
+    reveal: [
+      [/Isi point par angle palat jaata hai\.\s*/gi, "Yahin angle palta. "],
+      [/Isi calculation ne story palat di\.\s*/gi, "Yahin story palti. "],
+      [/Tab samajh aaya ki real issue end me nahi, shuruaat me hi dikh raha tha/gi, "Real issue shuruaat me hi dikh raha tha"]
+    ],
+    lesson: [
+      [/Is story ka lesson simple hai:\s*/gi, "Lesson simple hai: "],
+      [/chhoti warning ko ignore karna mehnga pad sakta hai/gi, "small signals ignore karna mehnga padta hai"],
+      [/Financial decisions me risk ko ignore karna sabse mehngi galti sabit ho sakta hai/gi, "Risk ignore karna mehngi galti ban sakta hai"]
+    ]
+  };
+
+  return compacted.map(beat => {
+    let narration = cleanText(beat.narration);
+
+    (finalCompaction[beat.beat] || []).forEach(([match, replacement]) => {
+      narration = narration.replace(match, replacement);
+    });
 
     return {
       ...beat,
@@ -352,15 +430,26 @@ function scoreV3(beats = [], verification = {}) {
 
   const hasLabels = /Initial decision or offer|Risk signal appears|Numbers stop matching expectation|Final loss/i.test(text);
   const hasHook = wordCount(beats[0]?.narration || "") >= 6;
-  const hasReveal = beats.some(item => item.beat === "reveal" && /palat|samajh|clear|twist|warning|direction/i.test(item.narration));
+  const hasReveal = beats.some(item => item.beat === "reveal" && /palat|palti|samajh|clear|twist|warning|direction|real issue/i.test(item.narration));
   const hasRetention = /Lekin|Ab sawal|Isi point|Isi clue|Isi calculation|story palat/i.test(text);
-  const hasBadContext = /Context ke hisab se/i.test(text);
-  const hasEvidenceAsLesson = beats.some(item => item.beat === "evidence" && /lesson simple hai/i.test(item.narration));
+  const hasBadContext = /Context ke hisa{1,2}b se/i.test(text);
+  const hasEvidenceAsLesson = beats.some(item => item.beat === "evidence" && isLessonLike(item.narration));
+  const hasDuplicateConcepts = (() => {
+    const conceptBeats = {};
+    beats.forEach(item => {
+      const narration = cleanText(item.narration);
+      if (/warning signal|risk signal|warning point|\bwarning\b/i.test(narration)) {
+        conceptBeats.warning = [...(conceptBeats.warning || []), item.beat];
+      }
+    });
+
+    return Object.values(conceptBeats).some(items => items.filter(beat => beat !== "lesson").length > 1);
+  })();
 
   let score = 100;
 
   if (words < 55) score -= 10;
-  if (words > 92) score -= 8;
+  if (words > 94) score -= 12;
   if (words > 100) score -= 15;
   if (words > 110) score -= 25;
   if (duplicateSentences.length) score -= 20;
@@ -370,6 +459,7 @@ function scoreV3(beats = [], verification = {}) {
   if (!hasRetention) score -= 10;
   if (hasBadContext) score -= 15;
   if (hasEvidenceAsLesson) score -= 20;
+  if (hasDuplicateConcepts) score -= 12;
   if ((verification.confidence_score || 0) < 0.6) score -= 3;
 
   return {
@@ -383,8 +473,7 @@ function scoreV3(beats = [], verification = {}) {
     retention_strength: hasRetention ? "good" : "weak",
     has_bad_context_phrase: hasBadContext,
     has_evidence_as_lesson: hasEvidenceAsLesson,
-    has_bad_context_phrase: hasBadContext,
-    has_evidence_as_lesson: hasEvidenceAsLesson,
+    has_duplicate_warning_concept: hasDuplicateConcepts,
     confidence_note:
       (verification.confidence_score || 0) < 0.6
         ? "Medium confidence: safe documentary wording used."
