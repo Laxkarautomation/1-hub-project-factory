@@ -20,7 +20,7 @@ function toList(value = []) {
 const ARCHETYPES = [
   {
     id: "historical_mystery",
-    match: ["historical", "history", "ancient", "india"],
+    match: ["historical", "history", "ancient"],
     location: ["old fort", "ancient temple", "forgotten palace"],
     tension: ["sealed record", "missing page", "forgotten event"],
     trigger: ["old diary", "hidden room", "archaeology note"],
@@ -74,20 +74,33 @@ const ARCHETYPES = [
   }
 ];
 
-function scoreArchetype(archetype, topic = "", channel = {}) {
-  const haystack = [
-    topic,
-    channel.contentMode,
-    ...toList(channel.contentCategories),
-    ...toList(channel.contentPillars),
-    ...toList(channel.topicKeywords)
-  ].map(normalize).join(" ");
+function scoreAgainstSource(matchTerms = [], sourceText = "", weight = 1) {
+  const haystack = normalize(sourceText);
+  const words = haystack.split(/\s+/).filter(Boolean);
 
-  return archetype.match.reduce((score, term) => {
+  return matchTerms.reduce((score, term) => {
     const normalized = normalize(term);
     if (!normalized) return score;
-    return score + (haystack.includes(normalized) ? 5 : 0);
+
+    const isPhrase = normalized.includes(" ");
+    const matched = isPhrase
+      ? haystack.includes(normalized)
+      : words.includes(normalized);
+
+    return score + (matched ? weight : 0);
   }, 0);
+}
+
+function scoreArchetype(archetype, topic = "", channel = {}) {
+  const matchTerms = archetype.match || [];
+
+  return [
+    scoreAgainstSource(matchTerms, topic, 1000),
+    scoreAgainstSource(matchTerms, toList(channel.contentCategories).join(" "), 30),
+    scoreAgainstSource(matchTerms, toList(channel.contentPillars).join(" "), 20),
+    scoreAgainstSource(matchTerms, toList(channel.topicKeywords).join(" "), 10),
+    scoreAgainstSource(matchTerms, channel.contentMode, 5)
+  ].reduce((total, score) => total + score, 0);
 }
 
 function pickFrom(list = [], seed = "") {
