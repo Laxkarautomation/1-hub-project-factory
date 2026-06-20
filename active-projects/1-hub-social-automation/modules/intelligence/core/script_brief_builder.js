@@ -181,6 +181,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       ] || {};
     const topic = item.topic;
     const formula = strategyFormulas[0] || item.suggested_formula;
+    const storyContext = buildStoryContext(topic, channel, researchContext);
 
     return {
       rank: item.rank,
@@ -190,8 +191,8 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
       research_context: researchContext,
-      story_context: buildStoryContext(topic, channel),
-      story_blocks: realizeStory(buildStoryContext(topic, channel)),
+      story_context: storyContext,
+      story_blocks: realizeStory(storyContext),
       story_skeleton: buildStorySkeleton(topic, channel),
       scene_plan: Object.values(buildStorySkeleton(topic, channel)),
       narration_style: buildNarrationStyle(channel),

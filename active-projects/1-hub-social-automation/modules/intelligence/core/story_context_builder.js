@@ -238,7 +238,62 @@ function buildNarrativeSignals(topic = "", archetypeVocabulary = {}, vocabulary 
   };
 }
 
-function buildStoryContext(topic = "", channel = {}) {
+
+function firstResearchFact(researchContext = {}) {
+  const facts = Array.isArray(researchContext.facts) ? researchContext.facts : [];
+  const first = facts.find(item => item && item.fact);
+  return first ? cleanText(first.fact) : "";
+}
+
+function firstResearchTimelineEvent(researchContext = {}) {
+  const timeline = Array.isArray(researchContext.timeline) ? researchContext.timeline : [];
+  const first = timeline.find(item => item && item.event);
+  return first ? cleanText(first.event) : "";
+}
+
+function researchTimelineStage(researchContext = {}, index = 0) {
+  const timeline = Array.isArray(researchContext.timeline) ? researchContext.timeline : [];
+  const item = timeline[index] || {};
+  return cleanText(item.event || item.label || "");
+}
+
+function firstResearchEntity(researchContext = {}) {
+  const entities = Array.isArray(researchContext.entities) ? researchContext.entities : [];
+  const first = entities.find(item => item && item.name);
+  return first ? cleanText(first.name) : "";
+}
+
+function firstResearchLocation(researchContext = {}) {
+  const locations = Array.isArray(researchContext.locations) ? researchContext.locations : [];
+  return cleanText(locations[0] || "");
+}
+
+function buildResearchAwareContext(baseContext = {}, researchContext = {}) {
+  const fact = firstResearchFact(researchContext);
+  const timelineEvent = firstResearchTimelineEvent(researchContext);
+  const entity = firstResearchEntity(researchContext);
+  const location = firstResearchLocation(researchContext);
+
+  const stage1 = researchTimelineStage(researchContext, 0);
+  const stage2 = researchTimelineStage(researchContext, 1);
+  const stage3 = researchTimelineStage(researchContext, 2);
+
+  return {
+    ...baseContext,
+    research_context: researchContext,
+    research_summary: cleanText(researchContext.summary || ""),
+    research_type: cleanText(researchContext.research_type || ""),
+    location_context: location || baseContext.location_context,
+    trigger_detail: entity || baseContext.trigger_detail,
+    evidence_object: fact || baseContext.evidence_object,
+    central_tension: timelineEvent || baseContext.central_tension,
+    escalation_stage_1: stage1 || baseContext.escalation_stage_1,
+    escalation_stage_2: stage2 || baseContext.escalation_stage_2,
+    escalation_stage_3: stage3 || baseContext.escalation_stage_3
+  };
+}
+
+function buildStoryContext(topic = "", channel = {}, researchContext = {}) {
   const cleanTopic = cleanText(topic);
   const mode = channel.contentMode || "story";
   const categories = toList(channel.contentCategories);
@@ -251,7 +306,7 @@ function buildStoryContext(topic = "", channel = {}) {
 
   const narrativeSignals = buildNarrativeSignals(cleanTopic, archetypeVocabulary, vocabulary);
 
-  return {
+  const baseContext = {
     topic: cleanTopic,
     display_topic: narrativeSignals.display_topic,
     mode,
@@ -277,6 +332,8 @@ function buildStoryContext(topic = "", channel = {}) {
     vocabulary,
     archetype_vocabulary: archetypeVocabulary
   };
+
+  return buildResearchAwareContext(baseContext, researchContext);
 }
 
 module.exports = {
