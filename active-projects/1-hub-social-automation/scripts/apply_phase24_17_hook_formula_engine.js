@@ -1,12 +1,20 @@
-function clean(value = "") {
-  return String(value || "").trim();
+const fs = require("fs");
+
+const realizerPath = "modules/intelligence/core/story_realizer.js";
+let code = fs.readFileSync(realizerPath, "utf8");
+
+if (code.includes("function buildHookFormula")) {
+  console.log("Phase 24.17 already applied.");
+  process.exit(0);
 }
 
-function topicTitle(topic = "") {
-  return clean(topic).replace(/_/g, " ").replace(/\s+/g, " ");
+const insertAfter = `function topicTitle(topic = "") {
+  return clean(topic).replace(/_/g, " ").replace(/\\s+/g, " ");
 }
 
-function hashSeed(value = "") {
+`;
+
+const hookEngine = `function hashSeed(value = "") {
   return String(value || "").split("").reduce((sum, char) => {
     return sum + char.charCodeAt(0);
   }, 0);
@@ -72,40 +80,25 @@ function buildHookFormula(context = {}, topic = "") {
     ],
 
     general_story: [
-      "${topic} me ek aisi baat chhupi thi jise pehle kisi ne seriously nahi liya...",
-      "${topic} ki kahani simple lagti hai, lekin andar ek twist chhupa hai...",
-      "${topic} me ek chhoti detail ne poora angle badal diya...",
-      "${topic} ke peeche jo sach tha, woh pehle kisi ko samajh nahi aaya..."
+      "\${topic} me ek aisi baat chhupi thi jise pehle kisi ne seriously nahi liya...",
+      "\${topic} ki kahani simple lagti hai, lekin andar ek twist chhupa hai...",
+      "\${topic} me ek chhoti detail ne poora angle badal diya...",
+      "\${topic} ke peeche jo sach tha, woh pehle kisi ko samajh nahi aaya..."
     ]
   };
 
   const selectedPool = hookPools[archetype] || hookPools.general_story;
-  return pickSeeded(selectedPool, seed).replace(/\$\{topic\}/g, topic);
+  return pickSeeded(selectedPool, seed).replace(/\\$\\{topic\\}/g, topic);
 }
 
-function realizeStory(context = {}) {
-  const topic = topicTitle(context.topic || "story");
-  const location = clean(context.location_context || "ek jagah");
-  const tension = clean(context.central_tension || "ek ajeeb problem");
-  const detail = clean(context.trigger_detail || "ek chhoti detail");
-  const evidence = clean(context.evidence_object || "ek purana record");
-  const escalation1 = clean(context.escalation_stage_1 || "pehli detail ignore ho gayi");
-  const escalation2 = clean(context.escalation_stage_2 || "dusri detail ne doubt badha diya");
-  const escalation3 = clean(context.escalation_stage_3 || "teesri detail ne asli angle khol diya");
-  const twist = clean(context.twist_source || "ek purana connection");
-  const atmosphere = clean(context.atmosphere || "serious");
+`;
 
-  return {
-    hook: buildHookFormula(context, topic),
-    setup: `Shuruaat ${location} se hoti hai, jahan sab kuch normal lag raha tha. Lekin mahaul me ek ${atmosphere} feeling dheere dheere banne lagi.`,
-    conflict: `Phir ${tension} ka angle saamne aaya. ${escalation1}. Logon ko laga ye bas ek normal baat hai, lekin details match nahi ho rahi thi.`,
-    clue: `Isi beech ${detail} se judi ek chhoti si information mili. Uske baad ${evidence} par sabki nazar gayi.`,
-    escalation: `${escalation2}. Phir ${escalation3}. Yahin se kahani simple incident se serious mystery banne lagi.`,
-    twist: `Jab ye sab details connect hui, to ${twist} se ek unexpected link nikla. Yahin se poori kahani ka asli angle saamne aaya.`,
-    lesson: `${topic} hume ye yaad dilata hai ki kabhi kabhi sabse chhoti detail hi sabse bada sach chhupa kar rakhti hai.`
-  };
-}
+code = code.replace(insertAfter, insertAfter + hookEngine);
 
-module.exports = {
-  realizeStory
-};
+code = code.replace(
+  `    hook: \`${'${topic}'} me ek aisi baat chhupi thi jise pehle kisi ne seriously nahi liya...\`,`,
+  `    hook: buildHookFormula(context, topic),`
+);
+
+fs.writeFileSync(realizerPath, code);
+console.log("Phase 24.17 Hook Formula Engine applied.");
