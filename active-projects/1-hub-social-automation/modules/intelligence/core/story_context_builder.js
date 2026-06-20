@@ -348,6 +348,8 @@ function sanitizeResearchAwareContext(baseContext = {}, researchContext = {}) {
     evidence_object: cleanFact || baseContext.evidence_object,
     research_grounded: true
   };
+
+  return mergedContext;
 }
 
 
@@ -440,7 +442,7 @@ function buildResearchAwareContext(baseContext = {}, researchContext = {}) {
   const stage2 = researchTimelineStage(researchContext, 1);
   const stage3 = researchTimelineStage(researchContext, 2);
 
-  return {
+  const mergedContext = {
     ...baseContext,
     research_context: researchContext,
     research_summary: cleanText(researchContext.summary || ""),
@@ -454,7 +456,10 @@ function buildResearchAwareContext(baseContext = {}, researchContext = {}) {
     escalation_stage_3: stage3 || baseContext.escalation_stage_3
   };
 
-  return strictResearchOverride(sanitizeResearchAwareContext(mergedContext, researchContext), researchContext);
+  return strictResearchOverride(
+    sanitizeResearchAwareContext(mergedContext, researchContext),
+    researchContext
+  );
 }
 
 function buildStoryContext(topic = "", channel = {}, researchContext = {}) {
