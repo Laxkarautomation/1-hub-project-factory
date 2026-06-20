@@ -2,6 +2,7 @@ const { buildStoryContext } = require("./story_context_builder");
 const { realizeStory } = require("./story_realizer");
 const { buildResearchNarrative } = require("./research_narrative_engine");
 const { buildThirtySecondScript } = require("./script_generation_v2");
+const { buildDocumentaryScriptV3 } = require("./script_generation_v3");
 
 function normalizeTopic(topic = "") {
   return String(topic || "real incident").trim();
@@ -195,6 +196,12 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       researchNarrative,
       storyBlocks
     });
+    const finalDocumentaryScript = buildDocumentaryScriptV3(topic, {
+      researchContext,
+      researchNarrative,
+      storyBlocks,
+      channel
+    });
 
     return {
       rank: item.rank,
@@ -207,10 +214,11 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       research_narrative: researchNarrative,
       story_context: storyContextWithNarrative,
       story_blocks: storyBlocks,
-      documentary_script: documentaryScript,
-      narration_script: documentaryScript.narration_script,
-      scene_beats: documentaryScript.scene_beats,
-      script_quality_score: documentaryScript.quality_score,
+      documentary_script_v2: documentaryScript,
+      documentary_script: finalDocumentaryScript,
+      narration_script: finalDocumentaryScript.narration_script,
+      scene_beats: finalDocumentaryScript.scene_beats,
+      script_quality_score: finalDocumentaryScript.quality_score,
       story_skeleton: buildStorySkeleton(topic, channel),
       scene_plan: researchNarrative.scene_plan && researchNarrative.scene_plan.length
         ? researchNarrative.scene_plan
@@ -219,7 +227,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       visual_style: channel.visualStyle || "",
       target_audience: channel.targetAudience || "",
       ending_lesson: buildEndingLesson(topic, channel),
-      estimated_duration_seconds: documentaryScript.quality_score.estimated_duration_seconds || 30
+      estimated_duration_seconds: finalDocumentaryScript.quality_score.estimated_duration_seconds || 30
     };
   });
 }
