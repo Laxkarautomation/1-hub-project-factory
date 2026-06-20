@@ -102,30 +102,55 @@ function detectLocations(topic = "", channel = {}) {
   return unique(locations);
 }
 
+
+function inferResearchTypeByScore(topic = "", channel = {}) {
+  const text = [
+    topic,
+    channel.niche,
+    channel.contentMode,
+    toList(channel.contentCategories).join(" "),
+    toList(channel.topicKeywords).join(" "),
+    toList(channel.contentPillars).join(" ")
+  ].join(" ").toLowerCase();
+
+  const scores = {
+    case_investigation: 0,
+    financial_case: 0,
+    historical_context: 0,
+    local_mystery: 0,
+    fact_explainer: 0,
+    general_research: 1
+  };
+
+  const add = (type, amount, pattern) => {
+    if (pattern.test(text)) scores[type] += amount;
+  };
+
+  add("case_investigation", 9, /crime|murder|case|police|investigation|missing|death|killer|forensic|betrayal|evidence|statement|victim|suspect|clue/);
+  add("financial_case", 8, /scam|fraud|stock|market|loan|bank|money|finance|business|profit|loss|emi|credit|transaction|risk|investor/);
+  add("historical_context", 7, /history|historical|ancient|king|war|empire|record|archive|purana|itihas|old records/);
+  add("local_mystery", 5, /village|gaon|local|afwaah|haunted|forest|temple|repeated warning/);
+  add("fact_explainer", 6, /fact|facts|science|why|kaise|explain|education|misconception/);
+
+  if (/fraud|scam|loan|bank|transaction|money|finance|risk/.test(text)) {
+    scores.financial_case += 4;
+  }
+
+  if (/story|documentary|real_story|true_crime|real incidents|unsolved/.test(text)) {
+    scores.case_investigation += 3;
+  }
+
+  if (/loan fraud|bank fraud|financial scam|money scam/.test(text)) {
+    scores.financial_case += 6;
+    scores.case_investigation += 4;
+  }
+
+  return Object.entries(scores)
+    .sort((a, b) => b[1] - a[1])[0][0];
+}
+
 function inferResearchType(topic = "", channel = {}) {
-  const text = [topic, channel.niche, channel.contentMode, toList(channel.contentCategories).join(" ")].join(" ").toLowerCase();
-
-  if (/crime|murder|case|police|investigation|missing|death|killer|forensic/.test(text)) {
-    return "case_investigation";
-  }
-
-  if (/scam|fraud|stock|market|loan|bank|money|finance|business|profit|loss|emi|credit/.test(text)) {
-    return "financial_case";
-  }
-
-  if (/history|historical|ancient|king|war|empire|record|archive|purana|itihas/.test(text)) {
-    return "historical_context";
-  }
-
-  if (/village|gaon|local|afwaah|mystery|haunted|forest|temple/.test(text)) {
-    return "local_mystery";
-  }
-
-  if (/fact|facts|science|why|kaise|explain|education/.test(text)) {
-    return "fact_explainer";
-  }
-
-  return "general_research";
+  return inferResearchTypeByScore(topic, channel);
 }
 
 function buildFactCandidates(topic = "", channel = {}) {

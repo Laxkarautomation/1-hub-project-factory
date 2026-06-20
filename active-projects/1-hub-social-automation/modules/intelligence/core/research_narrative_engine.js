@@ -201,18 +201,58 @@ function compactTopicFact(topic = "", value = "") {
     .trim();
 }
 
-function inferNarrativeMode(researchContext = {}, channel = {}) {
-  const type = cleanText(researchContext.research_type || "");
-  const mode = cleanText(channel.contentMode || "");
 
-  if (type === "case_investigation") return "investigation_documentary";
-  if (type === "financial_case") return "risk_breakdown";
-  if (type === "historical_context") return "record_based_mystery";
-  if (type === "local_mystery") return "local_claim_mystery";
-  if (type === "fact_explainer") return "misconception_explainer";
-  if (mode === "education" || mode === "finance") return "practical_explainer";
+function resolveNarrativeModeBySignals(topic = "", researchContext = {}, channel = {}) {
+  const cleanType = cleanText(researchContext.research_type || "");
+  const cleanTopic = cleanText(topic || researchContext.topic || "").toLowerCase();
+  const text = [
+    cleanTopic,
+    cleanType,
+    cleanText(channel.contentMode || ""),
+    cleanText(channel.niche || "")
+  ].join(" ").toLowerCase();
+
+  if (cleanType === "financial_case") return "risk_breakdown";
+  if (cleanType === "case_investigation") return "investigation_documentary";
+  if (cleanType === "historical_context") return "record_based_mystery";
+  if (cleanType === "local_mystery") return "local_claim_mystery";
+  if (cleanType === "fact_explainer") return "misconception_explainer";
+
+  if (/loan fraud|bank fraud|scam|money|transaction|risk|finance/.test(text)) return "risk_breakdown";
+  if (/case|crime|investigation|murder|missing|evidence|statement/.test(text)) return "investigation_documentary";
+  if (/history|record|archive|old/.test(text)) return "record_based_mystery";
 
   return "story_documentary";
+}
+
+function humanBeatTakeaway(topic = "", mode = "story_documentary") {
+  const cleanTopic = cleanText(topic || "is story");
+
+  if (mode === "investigation_documentary") {
+    return "Investigation me sabse chhoti inconsistency bhi poori case file ka direction badal sakti hai.";
+  }
+
+  if (mode === "risk_breakdown") {
+    return "Is case ka lesson simple hai: financial decision me risk signal ko kabhi ignore nahi karna chahiye.";
+  }
+
+  if (mode === "record_based_mystery") {
+    return "Is story ka sabse bada point ye hai ki purane records aksar popular kahani se zyada sach bolte hain.";
+  }
+
+  if (mode === "local_claim_mystery") {
+    return "Local stories me repeated claims aur silence dono important clues ban sakte hain.";
+  }
+
+  if (mode === "misconception_explainer") {
+    return "Is topic ko samajhne ke liye headline nahi, context dekhna zaroori hai.";
+  }
+
+  return cleanTopic + " ki sabse important detail audience ko yaad rehni chahiye.";
+}
+
+function inferNarrativeMode(researchContext = {}, channel = {}) {
+  return resolveNarrativeModeBySignals(researchContext.topic || "", researchContext, channel);
 }
 
 function fallbackBeats(topic = "", mode = "story_documentary") {
@@ -304,9 +344,7 @@ function buildBeatsFromTimeline(topic = "", researchContext = {}, mode = "story_
     {
       beat: "takeaway",
       purpose: "audience memory",
-      line: entity
-        ? cleanTopic + " me " + entity + " se judi detail audience ko yaad rehni chahiye."
-        : fallback[4].line,
+      line: humanBeatTakeaway(cleanTopic, mode),
       confidence: entity ? "entity_derived" : "inferred"
     }
   ];
@@ -324,7 +362,7 @@ function buildNarrativeFocus(topic = "", researchContext = {}, mode = "story_doc
   const events = timelineEvents(researchContext);
 
   return {
-    primary_subject: entity || cleanText(topic),
+    primary_subject: bestResearchEntity(researchContext, topic),
     main_tension: events[1]?.event || events[0]?.event || "hidden gap",
     strongest_evidence: fact || "key detail",
     reveal_path: events.map(item => item.event).filter(Boolean).slice(0, 4),

@@ -433,6 +433,44 @@ function buildHumanLesson(topic = "", narrative = {}) {
   return "";
 }
 
+
+function splitRepeatedTwist(blocks = {}) {
+  const escalation = clean(blocks.documentary_turn || "");
+  const evidence = clean(blocks.documentary_evidence || "");
+  const conflict = clean(blocks.documentary_conflict || "");
+
+  if (!escalation) return "";
+
+  if (escalation === evidence || escalation === conflict) {
+    return "Jab ye details ek saath dekhi gayi, kahani ka asli angle aur clear hone laga.";
+  }
+
+  if (/ignored clue/i.test(escalation)) {
+    return "Yahin se story simple incident se serious investigation me badal gayi.";
+  }
+
+  return escalation;
+}
+
+function buildPolishedHook(topic = "", narrative = {}, blocks = {}) {
+  const cleanTopic = clean(topic || "ye story");
+  const mode = narrative.narrative_mode || "";
+
+  if (mode === "investigation_documentary") {
+    return cleanTopic + " me ek chhota timeline gap poori investigation ka direction badal deta hai...";
+  }
+
+  if (mode === "risk_breakdown") {
+    return cleanTopic + " me ek ignored risk signal sabse badi warning ban gaya...";
+  }
+
+  if (mode === "record_based_mystery") {
+    return cleanTopic + " me ek old record ne popular story par sawal khada kar diya...";
+  }
+
+  return blocks.documentary_hook || cleanTopic + " me ek detail poori kahani ka angle badal deti hai...";
+}
+
 function realizeDocumentaryStory(context = {}) {
   const narrative = context.research_narrative || {};
   const blocks = narrative.documentary_blocks || {};
@@ -444,13 +482,16 @@ function realizeDocumentaryStory(context = {}) {
     narrative
   );
 
+  const polishedHook = buildPolishedHook(context.topic || "", narrative, blocks);
+  const polishedTwist = splitRepeatedTwist(blocks);
+
   return {
-    hook: humanizeDocumentaryBlock(blocks.documentary_hook || "", context.topic || ""),
+    hook: humanizeDocumentaryBlock(polishedHook, context.topic || ""),
     setup: humanizeDocumentaryBlock(blocks.documentary_setup || "", context.topic || ""),
     conflict: humanizeDocumentaryBlock(blocks.documentary_conflict || "", context.topic || ""),
     clue: humanizeDocumentaryBlock(blocks.documentary_evidence || "", context.topic || ""),
     escalation: humanizeDocumentaryBlock(blocks.documentary_turn || "", context.topic || ""),
-    twist: humanizeDocumentaryBlock(blocks.documentary_turn || "", context.topic || ""),
+    twist: humanizeDocumentaryBlock(polishedTwist || blocks.documentary_turn || "", context.topic || ""),
     callback: clean(context.callback_line || "Aakhir me wahi ignored detail sabse bada clue ban gayi."),
     lesson: customLesson || avoidDuplicatePhrase(blocks.documentary_takeaway || buildEndingFormula(context, context.display_topic || context.topic || "ye kahani"))
   };
