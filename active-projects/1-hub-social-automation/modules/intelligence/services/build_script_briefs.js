@@ -10,6 +10,7 @@ const outputDir = path.join(process.cwd(), "modules/intelligence/output");
 const channelIdentity = getActiveChannelIdentity();
 const recommendationPath = path.join(outputDir, `${channelIdentity.channelId}_recommendations.json`);
 const outputPath = path.join(outputDir, "script_briefs.json");
+const researchContextsPath = path.join(outputDir, "research_contexts.json");
 
 fs.mkdirSync(outputDir, { recursive: true });
 
@@ -18,16 +19,28 @@ if (!fs.existsSync(recommendationPath)) {
   process.exit(1);
 }
 
+if (!fs.existsSync(researchContextsPath)) {
+  console.log("ℹ️ Research contexts missing. Generating first...");
+  execSync("node modules/intelligence/services/build_research_contexts.js", {
+    stdio: "inherit"
+  });
+}
+
 const recommendations = JSON.parse(fs.readFileSync(recommendationPath, "utf8"));
+const researchReport = JSON.parse(fs.readFileSync(researchContextsPath, "utf8"));
 const runtimeResult = resolveChannelRuntime();
 const channel = runtimeResult.success ? runtimeResult.channel : {};
 
-const briefs = buildScriptBriefs(recommendations.recommended_topics || [], { channel });
+const briefs = buildScriptBriefs(recommendations.recommended_topics || [], {
+  channel,
+  researchContexts: researchReport.contexts || []
+});
 
 const report = {
   generated_at: new Date().toISOString(),
   channel: recommendations.channel || recommendations.channelId || "active_channel",
   source_file: recommendationPath,
+  research_source_file: researchContextsPath,
   channelId: channel.channelId || recommendations.channelId || "active_channel",
   channel_strategy: {
     contentMode: channel.contentMode || "",
