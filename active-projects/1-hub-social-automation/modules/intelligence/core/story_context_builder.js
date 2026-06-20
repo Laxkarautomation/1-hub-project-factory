@@ -123,6 +123,121 @@ function deriveTopicVocabulary(topic = "", channel = {}) {
   };
 }
 
+function displayTopicForArchetype(topic = "", archetype = "general_story") {
+  const cleanTopic = cleanText(topic).replace(/_/g, " ").replace(/\s+/g, " ");
+  const fallback = cleanTopic || "ye kahani";
+
+  const displayMap = {
+    historical_mystery: "ye historical mystery",
+    true_crime_case: "ye case",
+    village_mystery: "ye gaon ki kahani",
+    money_lesson_case: "ye financial case",
+    general_story: fallback
+  };
+
+  return displayMap[archetype] || fallback;
+}
+
+function buildNarrativeSignals(topic = "", archetypeVocabulary = {}, vocabulary = {}) {
+  const archetype = archetypeVocabulary.archetypeId || "general_story";
+  const trigger = archetypeVocabulary.trigger || vocabulary.secondary || "ek chhoti detail";
+  const evidence = archetypeVocabulary.evidence || vocabulary.tertiary || "ek purana record";
+  const tension = archetypeVocabulary.tension || vocabulary.tension || "ek ajeeb problem";
+  const twist = archetypeVocabulary.twist || vocabulary.twist || "ek purana connection";
+
+  const pools = {
+    historical_mystery: {
+      openLoop: [
+        "${evidence} me ek aisi entry thi jiska matlab turant samajh nahi aaya",
+        "${trigger} pehle normal laga, lekin wahi sabse bada signal nikla",
+        "${tension} ka jawab purane records me chhupa tha",
+        "ek purani line ne poori history par sawal khada kar diya"
+      ],
+      callback: [
+        "Aur wahi purani entry aakhir me poori mystery ka center ban gayi.",
+        "Jo record pehle ordinary lag raha tha, wahi sabse bada clue nikla.",
+        "Jis detail ko ignore kiya gaya tha, usne history ka angle palat diya.",
+        "Aakhir me samajh aaya ki purane records kabhi bina wajah repeat nahi hote."
+      ]
+    },
+
+    true_crime_case: {
+      openLoop: [
+        "${trigger} investigation ki sabse ignored detail thi",
+        "${evidence} normal evidence lag raha tha, lekin usme ek hidden gap tha",
+        "${tension} ka jawab case file ke ek chhote point me chhupa tha",
+        "ek statement poori timeline se match nahi kar raha tha"
+      ],
+      callback: [
+        "Aur wahi ignored detail aakhir me poori investigation ka direction badal gayi.",
+        "Jo evidence normal lag raha tha, wahi case ka turning point nikla.",
+        "Jis gap ko chhota maana gaya, wahi sabse bada clue ban gaya.",
+        "Aakhir me case wahi se khula jise sabne pehle ignore kiya tha."
+      ]
+    },
+
+    village_mystery: {
+      openLoop: [
+        "${trigger} ke baare me gaon wale khulkar baat nahi karte the",
+        "${evidence} ko lekar local logon ki khamoshi sabse ajeeb thi",
+        "${tension} ka darr gaon me saalon se bana hua tha",
+        "gaon ki ek purani baat har kahani me repeat ho rahi thi"
+      ],
+      callback: [
+        "Aur wahi khamoshi aakhir me sabse bada clue ban gayi.",
+        "Jo baat gaon wale bol nahi rahe the, wahi poori mystery ka answer nikli.",
+        "Jis jagah se log door rehte the, wahi kahani ka asli center nikli.",
+        "Aakhir me gaon ki purani afwaah sirf afwaah nahi lagi."
+      ]
+    },
+
+    money_lesson_case: {
+      openLoop: [
+        "${trigger} financial decision ka sabse ignored risk tha",
+        "${evidence} me warning clear thi, lekin use profit samajh liya gaya",
+        "${tension} numbers ke andar chhupa hua tha",
+        "ek chhoti calculation ne poori financial story palat di"
+      ],
+      callback: [
+        "Aur wahi ignored risk aakhir me sabse mehngi galti ban gaya.",
+        "Jo profit lag raha tha, wahi actual warning nikla.",
+        "Jis number ko chhota samjha gaya, usne poora result badal diya.",
+        "Aakhir me financial story wahi se palti jahan risk ignore hua tha."
+      ]
+    },
+
+    general_story: {
+      openLoop: [
+        "${trigger} pehle normal laga, lekin wahi sabse important detail thi",
+        "${evidence} ne kahani me ek hidden gap dikha diya",
+        "${tension} ka jawab ek chhoti si detail me chhupa tha",
+        "ek ignored clue ne poori story ka angle badal diya"
+      ],
+      callback: [
+        "Aur wahi chhoti detail aakhir me sabse bada clue ban gayi.",
+        "Jo baat pehle normal lag rahi thi, wahi kahani ka turning point nikli.",
+        "Aakhir me wahi ignored clue poori story ka answer ban gaya.",
+        "Jis detail ko side me rakha gaya tha, wahi sab kuch connect kar gayi."
+      ]
+    }
+  };
+
+  const selected = pools[archetype] || pools.general_story;
+  const seed = [topic, archetype, trigger, evidence, tension, twist].join("|narrative|");
+
+  const values = { trigger, evidence, tension, twist };
+
+  function apply(template = "") {
+    return String(template || "").replace(/\$\{([a-zA-Z0-9_]+)\}/g, (_, key) => values[key] || "");
+  }
+
+  return {
+    display_topic: displayTopicForArchetype(topic, archetype),
+    open_loop: apply(pickSeeded(selected.openLoop, seed, 13, selected.openLoop[0])),
+    callback_line: apply(pickSeeded(selected.callback, seed, 29, selected.callback[0]))
+  };
+}
+
 function buildStoryContext(topic = "", channel = {}) {
   const cleanTopic = cleanText(topic);
   const mode = channel.contentMode || "story";
@@ -134,8 +249,11 @@ function buildStoryContext(topic = "", channel = {}) {
 
   const primaryCategory = pickRanked(categories, cleanTopic, 0, mode);
 
+  const narrativeSignals = buildNarrativeSignals(cleanTopic, archetypeVocabulary, vocabulary);
+
   return {
     topic: cleanTopic,
+    display_topic: narrativeSignals.display_topic,
     mode,
     category: primaryCategory,
     atmosphere: hookStyles.includes("shock")
@@ -152,6 +270,8 @@ function buildStoryContext(topic = "", channel = {}) {
     escalation_stage_2: escalationStages.escalation_stage_2,
     escalation_stage_3: escalationStages.escalation_stage_3,
     twist_source: archetypeVocabulary.twist || vocabulary.twist,
+    open_loop: narrativeSignals.open_loop,
+    callback_line: narrativeSignals.callback_line,
     audience_context: channel.targetAudience || "general audience",
     visual_style: channel.visualStyle || "",
     vocabulary,

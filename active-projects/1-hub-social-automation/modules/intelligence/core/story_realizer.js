@@ -243,6 +243,40 @@ function buildSceneTemplates(context = {}) {
   };
 }
 
+function buildCallbackFormula(context = {}) {
+  const archetype = clean(context.archetype || "general_story");
+  const callback = clean(context.callback_line || "");
+  const openLoop = clean(context.open_loop || "");
+
+  if (callback) return callback;
+
+  const fallbackPools = {
+    historical_mystery: [
+      "Aakhir me wahi record poori mystery ka center ban gaya.",
+      "Jo detail purani file me chhupi thi, wahi sabse important clue nikli."
+    ],
+    true_crime_case: [
+      "Aakhir me wahi ignored clue poori investigation ka turning point ban gaya.",
+      "Jo detail chhoti lag rahi thi, wahi case ka asli answer nikli."
+    ],
+    village_mystery: [
+      "Aakhir me gaon ki wahi khamoshi sabse bada clue ban gayi.",
+      "Jo baat log bol nahi rahe the, wahi kahani ka center nikli."
+    ],
+    money_lesson_case: [
+      "Aakhir me wahi ignored risk sabse mehngi galti ban gaya.",
+      "Jo profit lag raha tha, wahi hidden warning nikla."
+    ],
+    general_story: [
+      "Aakhir me wahi ignored detail poori kahani ka answer ban gayi.",
+      "Jo baat pehle normal lag rahi thi, wahi turning point nikli."
+    ]
+  };
+
+  const selectedPool = fallbackPools[archetype] || fallbackPools.general_story;
+  return pickSeeded(selectedPool, [archetype, openLoop].join("|callback|"));
+}
+
 function buildEndingFormula(context = {}, topic = "") {
   const archetype = clean(context.archetype || "general_story");
   const tension = clean(context.central_tension || "ek ajeeb problem");
@@ -291,12 +325,14 @@ function buildEndingFormula(context = {}, topic = "") {
   };
 
   const selectedPool = endingPools[archetype] || endingPools.general_story;
-  const seed = [topic, archetype, tension, evidence, twist].join("|ending|");
-  return pickSeeded(selectedPool, seed).replace(/\$\{topic\}/g, topic);
+  const displayTopic = clean(context.display_topic || topic || "ye kahani");
+  const seed = [displayTopic, archetype, tension, evidence, twist].join("|ending|");
+  return pickSeeded(selectedPool, seed).replace(/\$\{topic\}/g, displayTopic);
 }
 
 function realizeStory(context = {}) {
   const topic = topicTitle(context.topic || "story");
+  const displayTopic = clean(context.display_topic || topic);
   const location = clean(context.location_context || "ek jagah");
   const tension = clean(context.central_tension || "ek ajeeb problem");
   const detail = clean(context.trigger_detail || "ek chhoti detail");
@@ -308,8 +344,12 @@ function realizeStory(context = {}) {
   const atmosphere = clean(context.atmosphere || "serious");
 
   const sceneTemplates = buildSceneTemplates(context);
+  const callbackLine = buildCallbackFormula(context);
+  const openLoop = clean(context.open_loop || "");
+
   const sceneValues = {
     topic,
+    displayTopic,
     location,
     tension,
     detail,
@@ -318,17 +358,22 @@ function realizeStory(context = {}) {
     escalation2,
     escalation3,
     twist,
-    atmosphere
+    atmosphere,
+    openLoop,
+    callbackLine
   };
 
   return {
-    hook: buildHookFormula(context, topic),
+    hook: openLoop
+      ? `${buildHookFormula(context, displayTopic)} ${openLoop}...`
+      : buildHookFormula(context, displayTopic),
     setup: applySceneTemplate(sceneTemplates.setup, sceneValues),
     conflict: applySceneTemplate(sceneTemplates.conflict, sceneValues),
     clue: applySceneTemplate(sceneTemplates.clue, sceneValues),
     escalation: applySceneTemplate(sceneTemplates.escalation, sceneValues),
     twist: applySceneTemplate(sceneTemplates.twist, sceneValues),
-    lesson: buildEndingFormula(context, topic)
+    callback: callbackLine,
+    lesson: buildEndingFormula(context, displayTopic)
   };
 }
 
