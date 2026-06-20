@@ -1,17 +1,29 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
-const { readJson, writeJson, runNode, stageReport, ROOT } = require("./_stage_utils");
+const { readJson, writeJson, runNode, stageReport, ROOT, getChannelId } = require("./_stage_utils");
 
 function pad(num) {
   return String(num).padStart(3, "0");
 }
 
 function detectScriptIds() {
+  const visualStoryboards = readJson("modules/intelligence/output/visual_storyboards.json", null);
+  const storyboardItems = visualStoryboards?.storyboards || [];
+  const storyboardIds = storyboardItems
+    .map((item, index) =>
+      item.script_id ||
+      item.scriptId ||
+      `${getChannelId()}_visual_script_${pad(index + 1)}`
+    )
+    .filter(Boolean);
+
+  if (storyboardIds.length) return storyboardIds;
+
   const scripts =
-    readJson("modules/intelligence/output/generated_unraaz_scripts.json", null) ||
-    readJson("modules/scripts/output/unraaz_research_scripts.json", null) ||
-    readJson("modules/scripts/output/unraaz_smart_scripts.json", null);
+    readJson(`modules/intelligence/output/generated_${getChannelId()}_scripts.json`, null) ||
+    readJson(`modules/scripts/output/${getChannelId()}_research_scripts.json`, null) ||
+    readJson(`modules/scripts/output/${getChannelId()}_smart_scripts.json`, null);
 
   const items = Array.isArray(scripts)
     ? scripts
@@ -65,6 +77,7 @@ function runImageFactory(scriptId) {
 }
 
 const setupAttempts = [
+  runNode("modules/intelligence/services/build_visual_storyboards.js"),
   runNode("modules/images/services/generate_scene_varied_prompts.js"),
   runNode("modules/publishing/services/export_content_pack.js"),
   runNode("modules/video/services/build_video_manifest.js")
