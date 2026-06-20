@@ -151,11 +151,34 @@ function buildStorySkeleton(topic, channel = {}) {
   };
 }
 
+
+function buildResearchLookup(researchContexts = []) {
+  const lookup = {};
+
+  (researchContexts || []).forEach(item => {
+    const topic = String(item.topic || "").trim().toLowerCase();
+
+    if (!topic) return;
+
+    lookup[topic] = item.research_context || {};
+  });
+
+  return lookup;
+}
+
 function buildScriptBriefs(recommendations = [], options = {}) {
   const channel = options.channel || {};
+  const researchLookup = buildResearchLookup(
+    options.researchContexts || []
+  );
   const strategyFormulas = toList(channel.storyFormulas);
 
   return recommendations.map(item => {
+
+    const researchContext =
+      researchLookup[
+        String(item.topic || "").trim().toLowerCase()
+      ] || {};
     const topic = item.topic;
     const formula = strategyFormulas[0] || item.suggested_formula;
 
@@ -166,6 +189,7 @@ function buildScriptBriefs(recommendations = [], options = {}) {
       opening_hook: buildTopicHook(topic, channel),
       target_emotion: toList(channel.hookStyles).join(", ") || "curiosity, clarity, retention",
       story_formula: formula,
+      research_context: researchContext,
       story_context: buildStoryContext(topic, channel),
       story_blocks: realizeStory(buildStoryContext(topic, channel)),
       story_skeleton: buildStorySkeleton(topic, channel),
