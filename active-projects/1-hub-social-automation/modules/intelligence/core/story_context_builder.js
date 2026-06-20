@@ -45,6 +45,63 @@ function pickRanked(terms = [], topic = "", index = 0, fallback = "") {
   return ranked[index] || ranked[0] || fallback;
 }
 
+function pickSeeded(terms = [], seed = "", offset = 0, fallback = "") {
+  const list = unique(terms);
+  if (!list.length) return fallback;
+  const base = Array.from(normalize(seed)).reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
+  return list[Math.abs(base + offset) % list.length] || fallback;
+}
+
+function buildEscalationStages(topic = "", archetypeVocabulary = {}, vocabulary = {}) {
+  const pool = unique([
+    archetypeVocabulary.tension,
+    archetypeVocabulary.trigger,
+    archetypeVocabulary.evidence,
+    archetypeVocabulary.twist,
+    vocabulary.primary,
+    vocabulary.secondary,
+    vocabulary.tertiary,
+    vocabulary.tension,
+    vocabulary.twist
+  ]);
+
+  return {
+    escalation_stage_1: pickSeeded(
+      [
+        `${archetypeVocabulary.trigger || vocabulary.secondary} ko pehle ignore kar diya gaya`,
+        `${archetypeVocabulary.tension || vocabulary.tension} par kisi ne khulkar baat nahi ki`,
+        `${vocabulary.primary || "main clue"} se judi ek chhoti baat repeat hone lagi`,
+        `local log ${archetypeVocabulary.evidence || vocabulary.tertiary} ke baare me chup rahe`
+      ],
+      topic,
+      11,
+      pool[0] || "pehli detail ignore ho gayi"
+    ),
+    escalation_stage_2: pickSeeded(
+      [
+        `${archetypeVocabulary.evidence || vocabulary.tertiary} ne purani story ko doubtful bana diya`,
+        `${archetypeVocabulary.tension || vocabulary.tension} aur ${archetypeVocabulary.trigger || vocabulary.secondary} ek dusre se connect hone lage`,
+        `ek naya record purani baat se match nahi hua`,
+        `${vocabulary.secondary || "second clue"} ne case ko aur complicated bana diya`
+      ],
+      topic,
+      23,
+      pool[1] || "dusri detail ne doubt badha diya"
+    ),
+    escalation_stage_3: pickSeeded(
+      [
+        `${archetypeVocabulary.twist || vocabulary.twist} ka hint tab mila jab sab clues ek jagah aaye`,
+        `jis baat ko coincidence maana gaya tha, wahi pattern nikla`,
+        `sabse important witness ya proof last moment par doubtful ho gaya`,
+        `${archetypeVocabulary.evidence || vocabulary.tertiary} ne hidden connection expose karna shuru kiya`
+      ],
+      topic,
+      37,
+      pool[2] || "teesri detail ne asli angle khol diya"
+    )
+  };
+}
+
 function deriveTopicVocabulary(topic = "", channel = {}) {
   const categories = toList(channel.contentCategories);
   const pillars = toList(channel.contentPillars);
@@ -73,6 +130,7 @@ function buildStoryContext(topic = "", channel = {}) {
   const hookStyles = toList(channel.hookStyles);
   const vocabulary = deriveTopicVocabulary(cleanTopic, channel);
   const archetypeVocabulary = buildArchetypeVocabulary(cleanTopic, channel);
+  const escalationStages = buildEscalationStages(cleanTopic, archetypeVocabulary, vocabulary);
 
   const primaryCategory = pickRanked(categories, cleanTopic, 0, mode);
 
@@ -90,6 +148,9 @@ function buildStoryContext(topic = "", channel = {}) {
     central_tension: archetypeVocabulary.tension || vocabulary.tension,
     trigger_detail: archetypeVocabulary.trigger || vocabulary.secondary,
     evidence_object: archetypeVocabulary.evidence || vocabulary.tertiary,
+    escalation_stage_1: escalationStages.escalation_stage_1,
+    escalation_stage_2: escalationStages.escalation_stage_2,
+    escalation_stage_3: escalationStages.escalation_stage_3,
     twist_source: archetypeVocabulary.twist || vocabulary.twist,
     audience_context: channel.targetAudience || "general audience",
     visual_style: channel.visualStyle || "",
