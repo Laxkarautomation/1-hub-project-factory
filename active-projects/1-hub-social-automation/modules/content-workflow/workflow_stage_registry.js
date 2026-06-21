@@ -42,6 +42,13 @@ const STAGES = [
     ]
   },
   {
+    key: "scene_timing_optimization",
+    name: "Scene Timing Optimization",
+    candidates: [
+      "modules/video/run_scene_timing_optimizer.js"
+    ]
+  },
+  {
     key: "video_rendering",
     name: "Video Rendering",
     candidates: [

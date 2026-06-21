@@ -10,26 +10,50 @@ const audioFile = path.join(outputRouter.getAudioOutputPath(), `${scriptId}.mp3`
 const outputDir = outputRouter.getVideoOutputPath();
 const outputFile = path.join(outputDir, `${scriptId}.mp4`);
 const listFile = path.join(outputDir, `${scriptId}_images.txt`);
+const optimizedManifestPath = path.join(process.cwd(), "modules/video/output/optimized_video_manifest.json");
+const baselineManifestPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
 
 fs.mkdirSync(outputDir, { recursive: true });
 
-const durations = [4, 6, 8, 10, 7];
+function loadScenes() {
+  const manifestPath = fs.existsSync(optimizedManifestPath)
+    ? optimizedManifestPath
+    : baselineManifestPath;
+
+  if (!fs.existsSync(manifestPath)) {
+    return [1, 2, 3, 4, 5].map(scene => ({
+      scene,
+      duration_seconds: 4
+    }));
+  }
+
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  const video = manifest.find(item => item.script_id === scriptId);
+  return video?.scenes?.length
+    ? video.scenes
+    : [1, 2, 3, 4, 5].map(scene => ({
+      scene,
+      duration_seconds: 4
+    }));
+}
 
 let listContent = "";
+const scenes = loadScenes();
 
-for (let i = 1; i <= 5; i++) {
-  const imagePath = path.join(imageDir, `scene_${i}.jpg`);
+for (const scene of scenes) {
+  const imagePath = path.join(imageDir, `scene_${scene.scene}.jpg`);
   if (!fs.existsSync(imagePath)) {
     console.error(`❌ Missing image: ${imagePath}`);
     process.exit(1);
   }
 
   listContent += `file '${imagePath}'\n`;
-  listContent += `duration ${durations[i - 1]}\n`;
+  listContent += `duration ${scene.duration_seconds}\n`;
 }
 
 // ffmpeg concat needs last image repeated
-listContent += `file '${path.join(imageDir, "scene_5.jpg")}'\n`;
+const lastScene = scenes[scenes.length - 1];
+listContent += `file '${path.join(imageDir, `scene_${lastScene.scene}.jpg`)}'\n`;
 
 fs.writeFileSync(listFile, listContent);
 

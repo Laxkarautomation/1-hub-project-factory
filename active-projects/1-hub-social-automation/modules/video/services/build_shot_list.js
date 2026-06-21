@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
+const optimizedInputPath = path.join(process.cwd(), "modules/video/output/optimized_video_manifest.json");
+const baselineInputPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
 const outputPath = path.join(process.cwd(), "modules/video/output/shot_list.json");
 
 function editNote(sceneIndex) {
@@ -17,6 +18,7 @@ function editNote(sceneIndex) {
 }
 
 function run() {
+  const inputPath = fs.existsSync(optimizedInputPath) ? optimizedInputPath : baselineInputPath;
   const manifest = JSON.parse(fs.readFileSync(inputPath, "utf8"));
 
   const shotList = manifest.map(video => ({

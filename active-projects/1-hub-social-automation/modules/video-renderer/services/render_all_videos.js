@@ -3,7 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const { checkVideoAssets } = require("./preflight_video_assets");
 
-const manifestPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
+const optimizedManifestPath = path.join(process.cwd(), "modules/video/output/optimized_video_manifest.json");
+const baselineManifestPath = path.join(process.cwd(), "modules/video/output/video_manifest.json");
 const outputRouter = require("../../channels/channel_output_router");
 const outputDir = outputRouter.getVideoOutputPath();
 const reportDir = path.join(process.cwd(), "modules/video-renderer/output");
@@ -73,12 +74,16 @@ function renderVideo(video) {
 }
 
 function run() {
+  const manifestPath = fs.existsSync(optimizedManifestPath)
+    ? optimizedManifestPath
+    : baselineManifestPath;
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
   const results = manifest.map(renderVideo);
 
   const batchReportPath = path.join(reportDir, "batch_render_report.json");
   fs.writeFileSync(batchReportPath, JSON.stringify({
     generated_at: new Date().toISOString(),
+    manifestPath,
     results
   }, null, 2));
 
