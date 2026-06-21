@@ -4,6 +4,40 @@ const { spawn } = require("child_process");
 const { readJson, writeJson, runNode, stageReport, ROOT, getChannelId } = require("./_stage_utils");
 const workspaceResolver = require("../../channels/channel_workspace_resolver");
 
+const IMAGE_PREFLIGHT_RUNNERS = [
+  {
+    key: "image_strategy",
+    file: "modules/image-factory/run_image_strategy_resolver.js"
+  },
+  {
+    key: "provider_fallback",
+    file: "modules/image-factory/run_provider_fallback_audit.js"
+  }
+];
+
+const IMAGE_QA_RUNNERS = [
+  {
+    key: "image_audit",
+    file: "modules/image-factory/run_image_audit.js"
+  },
+  {
+    key: "image_narration_match",
+    file: "modules/image-factory/run_image_narration_match.js"
+  },
+  {
+    key: "image_continuity_check",
+    file: "modules/image-factory/run_image_continuity_check.js"
+  },
+  {
+    key: "image_regeneration_decision",
+    file: "modules/image-factory/run_image_regeneration_decision.js"
+  },
+  {
+    key: "final_image_selection",
+    file: "modules/image-factory/run_final_image_selection.js"
+  }
+];
+
 function pad(num) {
   return String(num).padStart(3, "0");
 }
@@ -44,6 +78,12 @@ function detectScriptIds() {
 
 function statusExists(scriptId) {
   const status = readJson(`modules/image-factory/output/${scriptId}_image_status.json`, null);
+  if (Array.isArray(status)) {
+    return status.length > 0 && status.every(item =>
+      item.exists === true && Number(item.size_bytes || item.sizeBytes || 0) > 1000
+    );
+  }
+
   return status?.status === "completed";
 }
 
@@ -112,12 +152,9 @@ function summarizeScript(scriptId, runResult = {}) {
   };
 }
 
-function runFactoryProcess(scriptId, env, timeoutMs) {
+function runRunnerProcess(file, args, env, timeoutMs) {
   return new Promise((resolve) => {
-    const child = spawn("node", [
-      path.join(ROOT, "modules/image-factory/run_image_factory.js"),
-      scriptId
-    ], {
+    const child = spawn("node", [path.join(ROOT, file), ...args], {
       cwd: ROOT,
       env,
       stdio: ["ignore", "pipe", "pipe"]
@@ -162,10 +199,54 @@ function runFactoryProcess(scriptId, env, timeoutMs) {
         stdout,
         stderr,
         timedOut,
-        error: timedOut ? new Error(`Image factory timed out after ${timeoutMs}ms`) : null
+        error: timedOut ? new Error(`${file} timed out after ${timeoutMs}ms`) : null
       });
     });
   });
+}
+
+function runFactoryProcess(scriptId, env, timeoutMs) {
+  return runRunnerProcess(
+    "modules/image-factory/run_image_factory.js",
+    [scriptId],
+    env,
+    timeoutMs
+  );
+}
+
+async function runImageRunner(scriptId, runner, env, timeoutMs) {
+  const result = await runRunnerProcess(runner.file, [scriptId], env, timeoutMs);
+  const status = result.status === 0 ? "completed" : result.timedOut ? "timed_out" : "failed";
+
+  return {
+    key: runner.key,
+    file: runner.file,
+    status,
+    exitCode: result.status,
+    signal: result.signal || null,
+    timedOut: result.timedOut,
+    stdout: result.stdout,
+    stderr: result.stderr,
+    error: result.error?.message || null
+  };
+}
+
+async function runImageRunnerChain(scriptId, runners, env, timeoutMs) {
+  const results = [];
+
+  for (const runner of runners) {
+    const result = await runImageRunner(scriptId, runner, env, timeoutMs);
+    results.push(result);
+
+    if (result.status !== "completed") break;
+  }
+
+  return results;
+}
+
+function summarizeRunnerChain(results, expectedCount) {
+  if (results.length !== expectedCount) return "failed";
+  return results.every(result => result.status === "completed") ? "completed" : "failed";
 }
 
 async function runImageFactory(scriptId) {
@@ -228,6 +309,84 @@ async function runImageFactory(scriptId) {
   };
 }
 
+async function runIntegratedImageWorkflow(scriptId) {
+  fs.mkdirSync(path.join(ROOT, "modules/image-factory/output"), { recursive: true });
+
+  const runnerTimeoutMs = Number.parseInt(
+    process.env.IMAGE_WORKFLOW_RUNNER_TIMEOUT_MS || "120000",
+    10
+  );
+  const env = {
+    ...process.env,
+    CHANNEL_ID: getChannelId()
+  };
+
+  const preflightResults = await runImageRunnerChain(
+    scriptId,
+    IMAGE_PREFLIGHT_RUNNERS,
+    env,
+    runnerTimeoutMs
+  );
+  const preflightStatus = summarizeRunnerChain(
+    preflightResults,
+    IMAGE_PREFLIGHT_RUNNERS.length
+  );
+
+  if (preflightStatus !== "completed") {
+    const summary = summarizeScript(scriptId, {
+      error: preflightResults.find(result => result.status !== "completed")?.error ||
+        "Image preflight runner failed"
+    });
+
+    return {
+      ...summary,
+      scriptId,
+      workflowStatus: "failed",
+      status: summary.status,
+      preflightStatus,
+      preflightResults,
+      imageFactoryStatus: "not_run",
+      qaStatus: "not_run",
+      qaResults: []
+    };
+  }
+
+  const factoryResult = await runImageFactory(scriptId);
+  const factoryCompleted =
+    factoryResult.status === "completed" ||
+    factoryResult.status === "skipped_existing";
+
+  if (!factoryCompleted) {
+    return {
+      ...factoryResult,
+      workflowStatus: factoryResult.status,
+      preflightStatus,
+      preflightResults,
+      imageFactoryStatus: factoryResult.status,
+      qaStatus: "not_run",
+      qaResults: []
+    };
+  }
+
+  const qaResults = await runImageRunnerChain(
+    scriptId,
+    IMAGE_QA_RUNNERS,
+    env,
+    runnerTimeoutMs
+  );
+  const qaStatus = summarizeRunnerChain(qaResults, IMAGE_QA_RUNNERS.length);
+
+  return {
+    ...factoryResult,
+    workflowStatus: qaStatus === "completed" ? "completed" : "failed",
+    preflightStatus,
+    preflightResults,
+    imageFactoryStatus: factoryResult.status,
+    qaStatus,
+    qaResults
+  };
+}
+
 async function main() {
   const setupAttempts = [
     runNode("modules/intelligence/services/build_visual_storyboards.js"),
@@ -241,23 +400,25 @@ async function main() {
 
   if (setupAttempts.every(attempt => attempt.ok)) {
     for (const scriptId of scriptIds) {
-      results.push(await runImageFactory(scriptId));
+      results.push(await runIntegratedImageWorkflow(scriptId));
     }
   }
 
-  const failed = results.filter(r => r.status === "failed" || r.status === "timed_out" || r.status === "incomplete");
+  const failed = results.filter(r =>
+    ["failed", "timed_out", "incomplete"].includes(r.workflowStatus || r.status)
+  );
   const expectedImages = results.reduce((sum, result) => sum + (result.expectedImages || 0), 0);
   const generatedImages = results.reduce((sum, result) => sum + (result.generatedImages || 0), 0);
   const failedScenes = results.flatMap(result => result.failedScenes || []);
   const failedImages = failedScenes.length;
   const skippedImages = results
-    .filter(result => result.status === "skipped_existing")
+    .filter(result => result.imageFactoryStatus === "skipped_existing" || result.status === "skipped_existing")
     .reduce((sum, result) => sum + (result.generatedImages || 0), 0);
   const incompleteScriptIds = results
-    .filter(result => result.status !== "completed" && result.status !== "skipped_existing")
+    .filter(result => (result.workflowStatus || result.status) !== "completed")
     .map(result => result.scriptId);
   const completedScriptIds = results
-    .filter(result => result.status === "completed" || result.status === "skipped_existing")
+    .filter(result => (result.workflowStatus || result.status) === "completed")
     .map(result => result.scriptId);
   const setupFailed = !setupAttempts.every(attempt => attempt.ok);
   const success =
@@ -279,7 +440,9 @@ async function main() {
     completedScriptIds,
     incompleteScriptIds,
     completed: completedScriptIds.length,
-    skippedExisting: results.filter(r => r.status === "skipped_existing").length,
+    skippedExisting: results.filter(r =>
+      r.imageFactoryStatus === "skipped_existing" || r.status === "skipped_existing"
+    ).length,
     failed: failed.length,
     setupAttempts,
     results
