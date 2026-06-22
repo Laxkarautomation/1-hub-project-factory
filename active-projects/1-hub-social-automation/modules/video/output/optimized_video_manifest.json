@@ -1,0 +1,1332 @@
+[
+  {
+    "script_id": "intelligence_script_001",
+    "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+    "source": "phase_27_visual_storyboard",
+    "voice_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_001.mp3",
+    "caption": "mystery true crime: ek story jisme hidden warning chhupi thi",
+    "hashtags": [],
+    "visual_quality": {
+      "version": "phase_27b_documentary_visual_planner",
+      "status": "visual_quality_ready",
+      "channelId": "unraaz",
+      "topic": "mystery true crime",
+      "documentary_visual_quality_score": 94,
+      "scene_continuity": {
+        "version": "phase_27b_scene_continuity",
+        "score": 100,
+        "has_continuity_anchor": true,
+        "has_style_lock": true,
+        "anchor_match_count": 7,
+        "style_match_count": 7,
+        "duplicate_scenes": [],
+        "scene_count": 7
+      },
+      "image_relevance": {
+        "version": "phase_27b_image_relevance",
+        "score": 84,
+        "has_narration_alignment": true,
+        "weak_scenes": [],
+        "scene_scores": [
+          {
+            "scene": 1,
+            "beat": "hook",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 2,
+            "beat": "context",
+            "score": 73,
+            "narration_overlap_score": 64,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 3,
+            "beat": "complication",
+            "score": 79,
+            "narration_overlap_score": 80,
+            "subject_score": 100,
+            "intent_score": 44,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 4,
+            "beat": "evidence",
+            "score": 93,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 71,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 5,
+            "beat": "escalation",
+            "score": 81,
+            "narration_overlap_score": 89,
+            "subject_score": 100,
+            "intent_score": 40,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 6,
+            "beat": "reveal",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 7,
+            "beat": "lesson",
+            "score": 86,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          }
+        ]
+      },
+      "visual_retention": {
+        "version": "phase_27b_visual_retention",
+        "score": 100,
+        "has_hook_visual": true,
+        "has_evidence_visual": true,
+        "has_reveal_visual": true,
+        "has_retention_progression": true,
+        "shot_type_variety": 7,
+        "retention_role_variety": 7,
+        "scene_count": 7
+      },
+      "documentary_constraints": {
+        "score": 100,
+        "scene_checks": [
+          {
+            "scene": 1,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 2,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 3,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 4,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 5,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 6,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 7,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          }
+        ],
+        "has_documentary_constraints": true
+      },
+      "quality_band": "strong"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "beat": "hook",
+        "duration_seconds": 8,
+        "narration": "mystery true crime me ek ignored risk signal sabse badi warning ban gaya...",
+        "image_prompt": "opening hook frame, mystery true investigation, documents, bold topic text, fast suspense opener, narration cue: mystery true investigation ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "bold topic text, fast suspense opener",
+        "shot_type": "opening hook frame",
+        "retention_role": "stop scroll",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 2,
+        "beat": "context",
+        "duration_seconds": 11,
+        "narration": "mystery true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+        "image_prompt": "establishing context shot, mystery true investigation, documents, context scene, slow push-in, narration cue: mystery true investigation shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "context scene, slow push-in",
+        "shot_type": "establishing context shot",
+        "retention_role": "orient viewer",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 3,
+        "beat": "complication",
+        "duration_seconds": 8,
+        "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+        "image_prompt": "tension detail shot, mystery true investigation, documents, risk signal, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "warning sign, documents, uneasy transition",
+        "shot_type": "tension detail shot",
+        "retention_role": "raise concern",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 4,
+        "beat": "evidence",
+        "duration_seconds": 6,
+        "narration": "mystery true crime me primary timeline sabse important research angle hai.",
+        "image_prompt": "evidence insert shot, mystery true investigation, document file, records, timeline, highlighted detail, narration cue: mystery true investigation primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "records, timeline, highlighted detail",
+        "shot_type": "evidence insert shot",
+        "retention_role": "make claim concrete",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 6,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 5,
+        "beat": "escalation",
+        "duration_seconds": 5,
+        "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+        "image_prompt": "pressure-building shot, mystery true investigation, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "faster cuts, increasing pressure",
+        "shot_type": "pressure-building shot",
+        "retention_role": "increase pace",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 6,
+        "beat": "reveal",
+        "duration_seconds": 8,
+        "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+        "image_prompt": "reveal contrast shot, mystery true investigation, documents, important reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "dramatic reveal, contrast shift",
+        "shot_type": "reveal contrast shot",
+        "retention_role": "deliver turn",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 7,
+        "beat": "lesson",
+        "duration_seconds": 3,
+        "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+        "image_prompt": "final takeaway shot, mystery true investigation, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "clean lesson text, final pause",
+        "shot_type": "final takeaway shot",
+        "retention_role": "memory anchor",
+        "continuity_anchor": "mystery true crime",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      }
+    ],
+    "baseline_total_duration_seconds": 30,
+    "optimized_total_duration_seconds": 49,
+    "timing_source": "audio_duration_match_report"
+  },
+  {
+    "script_id": "intelligence_script_002",
+    "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+    "source": "phase_27_visual_storyboard",
+    "voice_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_002.mp3",
+    "caption": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+    "hashtags": [],
+    "visual_quality": {
+      "version": "phase_27b_documentary_visual_planner",
+      "status": "visual_quality_ready",
+      "channelId": "unraaz",
+      "topic": "mystery real incidents",
+      "documentary_visual_quality_score": 94,
+      "scene_continuity": {
+        "version": "phase_27b_scene_continuity",
+        "score": 100,
+        "has_continuity_anchor": true,
+        "has_style_lock": true,
+        "anchor_match_count": 7,
+        "style_match_count": 7,
+        "duplicate_scenes": [],
+        "scene_count": 7
+      },
+      "image_relevance": {
+        "version": "phase_27b_image_relevance",
+        "score": 84,
+        "has_narration_alignment": true,
+        "weak_scenes": [],
+        "scene_scores": [
+          {
+            "scene": 1,
+            "beat": "hook",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 2,
+            "beat": "context",
+            "score": 72,
+            "narration_overlap_score": 62,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 3,
+            "beat": "complication",
+            "score": 79,
+            "narration_overlap_score": 80,
+            "subject_score": 100,
+            "intent_score": 44,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 4,
+            "beat": "evidence",
+            "score": 93,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 71,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 5,
+            "beat": "escalation",
+            "score": 81,
+            "narration_overlap_score": 89,
+            "subject_score": 100,
+            "intent_score": 40,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 6,
+            "beat": "reveal",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 7,
+            "beat": "lesson",
+            "score": 86,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          }
+        ]
+      },
+      "visual_retention": {
+        "version": "phase_27b_visual_retention",
+        "score": 100,
+        "has_hook_visual": true,
+        "has_evidence_visual": true,
+        "has_reveal_visual": true,
+        "has_retention_progression": true,
+        "shot_type_variety": 7,
+        "retention_role_variety": 7,
+        "scene_count": 7
+      },
+      "documentary_constraints": {
+        "score": 100,
+        "scene_checks": [
+          {
+            "scene": 1,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 2,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 3,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 4,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 5,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 6,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 7,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          }
+        ],
+        "has_documentary_constraints": true
+      },
+      "quality_band": "strong"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "beat": "hook",
+        "duration_seconds": 8,
+        "narration": "mystery real incidents me ek ignored risk signal sabse badi warning ban gaya...",
+        "image_prompt": "opening hook frame, mystery real incidents, documents, bold topic text, fast suspense opener, narration cue: mystery real incidents ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "bold topic text, fast suspense opener",
+        "shot_type": "opening hook frame",
+        "retention_role": "stop scroll",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 2,
+        "beat": "context",
+        "duration_seconds": 11,
+        "narration": "mystery real incidents me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+        "image_prompt": "establishing context shot, mystery real incidents, documents, context scene, slow push-in, narration cue: mystery real incidents shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "context scene, slow push-in",
+        "shot_type": "establishing context shot",
+        "retention_role": "orient viewer",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 3,
+        "beat": "complication",
+        "duration_seconds": 8,
+        "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+        "image_prompt": "tension detail shot, mystery real incidents, documents, risk signal, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "warning sign, documents, uneasy transition",
+        "shot_type": "tension detail shot",
+        "retention_role": "raise concern",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 4,
+        "beat": "evidence",
+        "duration_seconds": 6,
+        "narration": "mystery real incidents me primary timeline sabse important research angle hai.",
+        "image_prompt": "evidence insert shot, mystery real incidents, document file, records, timeline, highlighted detail, narration cue: mystery real incidents primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "records, timeline, highlighted detail",
+        "shot_type": "evidence insert shot",
+        "retention_role": "make claim concrete",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 6,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 5,
+        "beat": "escalation",
+        "duration_seconds": 5,
+        "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+        "image_prompt": "pressure-building shot, mystery real incidents, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "faster cuts, increasing pressure",
+        "shot_type": "pressure-building shot",
+        "retention_role": "increase pace",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 6,
+        "beat": "reveal",
+        "duration_seconds": 8,
+        "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+        "image_prompt": "reveal contrast shot, mystery real incidents, documents, important reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "dramatic reveal, contrast shift",
+        "shot_type": "reveal contrast shot",
+        "retention_role": "deliver turn",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 7,
+        "beat": "lesson",
+        "duration_seconds": 3,
+        "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+        "image_prompt": "final takeaway shot, mystery real incidents, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "clean lesson text, final pause",
+        "shot_type": "final takeaway shot",
+        "retention_role": "memory anchor",
+        "continuity_anchor": "mystery real incidents",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      }
+    ],
+    "baseline_total_duration_seconds": 30,
+    "optimized_total_duration_seconds": 49,
+    "timing_source": "audio_duration_match_report"
+  },
+  {
+    "script_id": "intelligence_script_003",
+    "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+    "source": "phase_27_visual_storyboard",
+    "voice_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_003.mp3",
+    "caption": "mystery real incident: ek story jisme hidden warning chhupi thi",
+    "hashtags": [],
+    "visual_quality": {
+      "version": "phase_27b_documentary_visual_planner",
+      "status": "visual_quality_ready",
+      "channelId": "unraaz",
+      "topic": "mystery real incident",
+      "documentary_visual_quality_score": 94,
+      "scene_continuity": {
+        "version": "phase_27b_scene_continuity",
+        "score": 100,
+        "has_continuity_anchor": true,
+        "has_style_lock": true,
+        "anchor_match_count": 7,
+        "style_match_count": 7,
+        "duplicate_scenes": [],
+        "scene_count": 7
+      },
+      "image_relevance": {
+        "version": "phase_27b_image_relevance",
+        "score": 84,
+        "has_narration_alignment": true,
+        "weak_scenes": [],
+        "scene_scores": [
+          {
+            "scene": 1,
+            "beat": "hook",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 2,
+            "beat": "context",
+            "score": 72,
+            "narration_overlap_score": 62,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 3,
+            "beat": "complication",
+            "score": 79,
+            "narration_overlap_score": 80,
+            "subject_score": 100,
+            "intent_score": 44,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 4,
+            "beat": "evidence",
+            "score": 93,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 71,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 5,
+            "beat": "escalation",
+            "score": 81,
+            "narration_overlap_score": 89,
+            "subject_score": 100,
+            "intent_score": 40,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 6,
+            "beat": "reveal",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 7,
+            "beat": "lesson",
+            "score": 86,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          }
+        ]
+      },
+      "visual_retention": {
+        "version": "phase_27b_visual_retention",
+        "score": 100,
+        "has_hook_visual": true,
+        "has_evidence_visual": true,
+        "has_reveal_visual": true,
+        "has_retention_progression": true,
+        "shot_type_variety": 7,
+        "retention_role_variety": 7,
+        "scene_count": 7
+      },
+      "documentary_constraints": {
+        "score": 100,
+        "scene_checks": [
+          {
+            "scene": 1,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 2,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 3,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 4,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 5,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 6,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 7,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          }
+        ],
+        "has_documentary_constraints": true
+      },
+      "quality_band": "strong"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "beat": "hook",
+        "duration_seconds": 8,
+        "narration": "mystery real incident me ek ignored risk signal sabse badi warning ban gaya...",
+        "image_prompt": "opening hook frame, mystery real incident, documents, bold topic text, fast suspense opener, narration cue: mystery real incident ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "bold topic text, fast suspense opener",
+        "shot_type": "opening hook frame",
+        "retention_role": "stop scroll",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 2,
+        "beat": "context",
+        "duration_seconds": 11,
+        "narration": "mystery real incident me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+        "image_prompt": "establishing context shot, mystery real incident, documents, context scene, slow push-in, narration cue: mystery real incident shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "context scene, slow push-in",
+        "shot_type": "establishing context shot",
+        "retention_role": "orient viewer",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 3,
+        "beat": "complication",
+        "duration_seconds": 8,
+        "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+        "image_prompt": "tension detail shot, mystery real incident, documents, risk signal, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "warning sign, documents, uneasy transition",
+        "shot_type": "tension detail shot",
+        "retention_role": "raise concern",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 4,
+        "beat": "evidence",
+        "duration_seconds": 6,
+        "narration": "mystery real incident me primary timeline sabse important research angle hai.",
+        "image_prompt": "evidence insert shot, mystery real incident, document file, records, timeline, highlighted detail, narration cue: mystery real incident primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "records, timeline, highlighted detail",
+        "shot_type": "evidence insert shot",
+        "retention_role": "make claim concrete",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 6,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 5,
+        "beat": "escalation",
+        "duration_seconds": 5,
+        "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+        "image_prompt": "pressure-building shot, mystery real incident, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "faster cuts, increasing pressure",
+        "shot_type": "pressure-building shot",
+        "retention_role": "increase pace",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 6,
+        "beat": "reveal",
+        "duration_seconds": 8,
+        "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+        "image_prompt": "reveal contrast shot, mystery real incident, documents, important reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "dramatic reveal, contrast shift",
+        "shot_type": "reveal contrast shot",
+        "retention_role": "deliver turn",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 7,
+        "beat": "lesson",
+        "duration_seconds": 3,
+        "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+        "image_prompt": "final takeaway shot, mystery real incident, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "clean lesson text, final pause",
+        "shot_type": "final takeaway shot",
+        "retention_role": "memory anchor",
+        "continuity_anchor": "mystery real incident",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      }
+    ],
+    "baseline_total_duration_seconds": 30,
+    "optimized_total_duration_seconds": 49,
+    "timing_source": "audio_duration_match_report"
+  },
+  {
+    "script_id": "intelligence_script_004",
+    "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+    "source": "phase_27_visual_storyboard",
+    "voice_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_004.mp3",
+    "caption": "incident true crime: ek story jisme hidden warning chhupi thi",
+    "hashtags": [],
+    "visual_quality": {
+      "version": "phase_27b_documentary_visual_planner",
+      "status": "visual_quality_ready",
+      "channelId": "unraaz",
+      "topic": "incident true crime",
+      "documentary_visual_quality_score": 94,
+      "scene_continuity": {
+        "version": "phase_27b_scene_continuity",
+        "score": 100,
+        "has_continuity_anchor": true,
+        "has_style_lock": true,
+        "anchor_match_count": 7,
+        "style_match_count": 7,
+        "duplicate_scenes": [],
+        "scene_count": 7
+      },
+      "image_relevance": {
+        "version": "phase_27b_image_relevance",
+        "score": 84,
+        "has_narration_alignment": true,
+        "weak_scenes": [],
+        "scene_scores": [
+          {
+            "scene": 1,
+            "beat": "hook",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 2,
+            "beat": "context",
+            "score": 73,
+            "narration_overlap_score": 64,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 3,
+            "beat": "complication",
+            "score": 79,
+            "narration_overlap_score": 80,
+            "subject_score": 100,
+            "intent_score": 44,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 4,
+            "beat": "evidence",
+            "score": 93,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 71,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 5,
+            "beat": "escalation",
+            "score": 81,
+            "narration_overlap_score": 89,
+            "subject_score": 100,
+            "intent_score": 40,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 6,
+            "beat": "reveal",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 7,
+            "beat": "lesson",
+            "score": 86,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          }
+        ]
+      },
+      "visual_retention": {
+        "version": "phase_27b_visual_retention",
+        "score": 100,
+        "has_hook_visual": true,
+        "has_evidence_visual": true,
+        "has_reveal_visual": true,
+        "has_retention_progression": true,
+        "shot_type_variety": 7,
+        "retention_role_variety": 7,
+        "scene_count": 7
+      },
+      "documentary_constraints": {
+        "score": 100,
+        "scene_checks": [
+          {
+            "scene": 1,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 2,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 3,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 4,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 5,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 6,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 7,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          }
+        ],
+        "has_documentary_constraints": true
+      },
+      "quality_band": "strong"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "beat": "hook",
+        "duration_seconds": 8,
+        "narration": "incident true crime me ek ignored risk signal sabse badi warning ban gaya...",
+        "image_prompt": "opening hook frame, incident true investigation, documents, bold topic text, fast suspense opener, narration cue: incident true investigation ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "bold topic text, fast suspense opener",
+        "shot_type": "opening hook frame",
+        "retention_role": "stop scroll",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 2,
+        "beat": "context",
+        "duration_seconds": 11,
+        "narration": "incident true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+        "image_prompt": "establishing context shot, incident true investigation, documents, context scene, slow push-in, narration cue: incident true investigation shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "context scene, slow push-in",
+        "shot_type": "establishing context shot",
+        "retention_role": "orient viewer",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 3,
+        "beat": "complication",
+        "duration_seconds": 8,
+        "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+        "image_prompt": "tension detail shot, incident true investigation, documents, risk signal, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "warning sign, documents, uneasy transition",
+        "shot_type": "tension detail shot",
+        "retention_role": "raise concern",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 4,
+        "beat": "evidence",
+        "duration_seconds": 6,
+        "narration": "incident true crime me primary timeline sabse important research angle hai.",
+        "image_prompt": "evidence insert shot, incident true investigation, document file, records, timeline, highlighted detail, narration cue: incident true investigation primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "records, timeline, highlighted detail",
+        "shot_type": "evidence insert shot",
+        "retention_role": "make claim concrete",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 6,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 5,
+        "beat": "escalation",
+        "duration_seconds": 5,
+        "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+        "image_prompt": "pressure-building shot, incident true investigation, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "faster cuts, increasing pressure",
+        "shot_type": "pressure-building shot",
+        "retention_role": "increase pace",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 6,
+        "beat": "reveal",
+        "duration_seconds": 8,
+        "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+        "image_prompt": "reveal contrast shot, incident true investigation, documents, important reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "dramatic reveal, contrast shift",
+        "shot_type": "reveal contrast shot",
+        "retention_role": "deliver turn",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 7,
+        "beat": "lesson",
+        "duration_seconds": 3,
+        "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+        "image_prompt": "final takeaway shot, incident true investigation, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "clean lesson text, final pause",
+        "shot_type": "final takeaway shot",
+        "retention_role": "memory anchor",
+        "continuity_anchor": "incident true crime",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      }
+    ],
+    "baseline_total_duration_seconds": 30,
+    "optimized_total_duration_seconds": 49,
+    "timing_source": "audio_duration_match_report"
+  },
+  {
+    "script_id": "intelligence_script_005",
+    "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+    "source": "phase_27_visual_storyboard",
+    "voice_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_005.mp3",
+    "caption": "crime mystery: ek story jisme hidden warning chhupi thi",
+    "hashtags": [],
+    "visual_quality": {
+      "version": "phase_27b_documentary_visual_planner",
+      "status": "visual_quality_ready",
+      "channelId": "unraaz",
+      "topic": "crime mystery",
+      "documentary_visual_quality_score": 94,
+      "scene_continuity": {
+        "version": "phase_27b_scene_continuity",
+        "score": 100,
+        "has_continuity_anchor": true,
+        "has_style_lock": true,
+        "anchor_match_count": 7,
+        "style_match_count": 7,
+        "duplicate_scenes": [],
+        "scene_count": 7
+      },
+      "image_relevance": {
+        "version": "phase_27b_image_relevance",
+        "score": 84,
+        "has_narration_alignment": true,
+        "weak_scenes": [],
+        "scene_scores": [
+          {
+            "scene": 1,
+            "beat": "hook",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 2,
+            "beat": "context",
+            "score": 75,
+            "narration_overlap_score": 69,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 3,
+            "beat": "complication",
+            "score": 79,
+            "narration_overlap_score": 80,
+            "subject_score": 100,
+            "intent_score": 44,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 4,
+            "beat": "evidence",
+            "score": 93,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 71,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 5,
+            "beat": "escalation",
+            "score": 81,
+            "narration_overlap_score": 89,
+            "subject_score": 100,
+            "intent_score": 40,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 6,
+            "beat": "reveal",
+            "score": 88,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 50,
+            "documentary_score": 100,
+            "is_weak": false
+          },
+          {
+            "scene": 7,
+            "beat": "lesson",
+            "score": 86,
+            "narration_overlap_score": 100,
+            "subject_score": 100,
+            "intent_score": 43,
+            "documentary_score": 100,
+            "is_weak": false
+          }
+        ]
+      },
+      "visual_retention": {
+        "version": "phase_27b_visual_retention",
+        "score": 100,
+        "has_hook_visual": true,
+        "has_evidence_visual": true,
+        "has_reveal_visual": true,
+        "has_retention_progression": true,
+        "shot_type_variety": 7,
+        "retention_role_variety": 7,
+        "scene_count": 7
+      },
+      "documentary_constraints": {
+        "score": 100,
+        "scene_checks": [
+          {
+            "scene": 1,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 2,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 3,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 4,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 5,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 6,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          },
+          {
+            "scene": 7,
+            "has_documentary_language": true,
+            "has_vertical_format": true,
+            "avoids_text_artifacts": true,
+            "avoids_watermark": true
+          }
+        ],
+        "has_documentary_constraints": true
+      },
+      "quality_band": "strong"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "beat": "hook",
+        "duration_seconds": 8,
+        "narration": "crime mystery me ek ignored risk signal sabse badi warning ban gaya...",
+        "image_prompt": "opening hook frame, investigation mystery, documents, bold topic text, fast suspense opener, narration cue: investigation mystery ignored risk signal sabse badi warning ban gaya, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "bold topic text, fast suspense opener",
+        "shot_type": "opening hook frame",
+        "retention_role": "stop scroll",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 2,
+        "beat": "context",
+        "duration_seconds": 10,
+        "narration": "crime mystery me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+        "image_prompt": "establishing context shot, investigation mystery, documents, context scene, slow push-in, narration cue: investigation mystery shuruaat normal financial decision hoti hai, jahan sab, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "context scene, slow push-in",
+        "shot_type": "establishing context shot",
+        "retention_role": "orient viewer",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 3,
+        "beat": "complication",
+        "duration_seconds": 8,
+        "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+        "image_prompt": "tension detail shot, investigation mystery, documents, risk signal, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "warning sign, documents, uneasy transition",
+        "shot_type": "tension detail shot",
+        "retention_role": "raise concern",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 4,
+        "beat": "evidence",
+        "duration_seconds": 6,
+        "narration": "crime mystery me primary timeline sabse important research angle hai.",
+        "image_prompt": "evidence insert shot, investigation mystery, document file, records, timeline, highlighted detail, narration cue: investigation mystery primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "records, timeline, highlighted detail",
+        "shot_type": "evidence insert shot",
+        "retention_role": "make claim concrete",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 6,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 5,
+        "beat": "escalation",
+        "duration_seconds": 5,
+        "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+        "image_prompt": "pressure-building shot, investigation mystery, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "faster cuts, increasing pressure",
+        "shot_type": "pressure-building shot",
+        "retention_role": "increase pace",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 5,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 6,
+        "beat": "reveal",
+        "duration_seconds": 8,
+        "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+        "image_prompt": "reveal contrast shot, investigation mystery, documents, important reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "dramatic reveal, contrast shift",
+        "shot_type": "reveal contrast shot",
+        "retention_role": "deliver turn",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 4,
+        "timing_source": "audio_duration_match_report"
+      },
+      {
+        "scene": 7,
+        "beat": "lesson",
+        "duration_seconds": 3,
+        "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+        "image_prompt": "final takeaway shot, investigation mystery, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution",
+        "visual_intent": "clean lesson text, final pause",
+        "shot_type": "final takeaway shot",
+        "retention_role": "memory anchor",
+        "continuity_anchor": "crime mystery",
+        "baseline_duration_seconds": 3,
+        "timing_source": "audio_duration_match_report"
+      }
+    ],
+    "baseline_total_duration_seconds": 30,
+    "optimized_total_duration_seconds": 48,
+    "timing_source": "audio_duration_match_report"
+  }
+]

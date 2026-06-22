@@ -1,0 +1,1226 @@
+{
+  "version": "phase_27a_visual_storyboards",
+  "status": "visual_storyboards_ready",
+  "generated_at": "2026-06-21T11:20:48.549Z",
+  "success": true,
+  "workflowRunId": "default_content_workflow_unraaz_1782040847283",
+  "channelId": "unraaz",
+  "failureReason": null,
+  "expectedStoryboards": 5,
+  "generatedStoryboards": 5,
+  "total_input_briefs": 5,
+  "total_storyboards": 5,
+  "skipped_briefs": [],
+  "storyboards": [
+    {
+      "version": "phase_27a_storyboard_intelligence",
+      "status": "storyboard_ready",
+      "script_id": "intelligence_script_001",
+      "topic": "mystery true crime",
+      "working_title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "script_source": "documentary_script_v3",
+      "documentary_mode": "risk breakdown",
+      "scenes": [
+        {
+          "scene": 1,
+          "beat": "hook",
+          "time": "0-3",
+          "start_second": 0,
+          "end_second": 3,
+          "duration_seconds": 3,
+          "narration": "mystery true crime me ek ignored risk signal sabse badi warning ban gaya...",
+          "visual_intent": "bold topic text, fast suspense opener",
+          "shot_type": "opening hook frame",
+          "composition": "tight cinematic opener with one clear subject",
+          "retention_role": "stop scroll",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "opening hook frame, mystery true crime, documents, bold topic text, fast suspense opener, narration cue: mystery true crime ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 2,
+          "beat": "context",
+          "time": "3-7",
+          "start_second": 3,
+          "end_second": 7,
+          "duration_seconds": 4,
+          "narration": "mystery true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+          "visual_intent": "context scene, slow push-in",
+          "shot_type": "establishing context shot",
+          "composition": "wide-to-medium scene that sets place and stakes",
+          "retention_role": "orient viewer",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "establishing context shot, mystery true crime, documents, context scene, slow push-in, narration cue: mystery true crime shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 3,
+          "beat": "complication",
+          "time": "7-12",
+          "start_second": 7,
+          "end_second": 12,
+          "duration_seconds": 5,
+          "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+          "visual_intent": "warning sign, documents, uneasy transition",
+          "shot_type": "tension detail shot",
+          "composition": "medium close-up of the first visible problem",
+          "retention_role": "raise concern",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "tension detail shot, mystery true crime, documents, warning sign, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 4,
+          "beat": "evidence",
+          "time": "12-18",
+          "start_second": 12,
+          "end_second": 18,
+          "duration_seconds": 6,
+          "narration": "mystery true crime me primary timeline sabse important research angle hai.",
+          "visual_intent": "records, timeline, highlighted detail",
+          "shot_type": "evidence insert shot",
+          "composition": "close-up of records, objects, or visual proof without readable text",
+          "retention_role": "make claim concrete",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "evidence insert shot, mystery true crime, case file, records, timeline, highlighted detail, narration cue: mystery true crime primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 5,
+          "beat": "escalation",
+          "time": "18-23",
+          "start_second": 18,
+          "end_second": 23,
+          "duration_seconds": 5,
+          "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+          "visual_intent": "faster cuts, increasing pressure",
+          "shot_type": "pressure-building shot",
+          "composition": "dynamic documentary frame with increasing visual tension",
+          "retention_role": "increase pace",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "pressure-building shot, mystery true crime, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 6,
+          "beat": "reveal",
+          "time": "23-27",
+          "start_second": 23,
+          "end_second": 27,
+          "duration_seconds": 4,
+          "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+          "visual_intent": "dramatic reveal, contrast shift",
+          "shot_type": "reveal contrast shot",
+          "composition": "before-after style contrast without literal text overlays",
+          "retention_role": "deliver turn",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "reveal contrast shot, mystery true crime, documents, dramatic reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 7,
+          "beat": "lesson",
+          "time": "27-30",
+          "start_second": 27,
+          "end_second": 30,
+          "duration_seconds": 3,
+          "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+          "visual_intent": "clean lesson text, final pause",
+          "shot_type": "final takeaway shot",
+          "composition": "clean closing frame with subject and consequence visible",
+          "retention_role": "memory anchor",
+          "continuity_anchor": "mystery true crime",
+          "image_prompt": "final takeaway shot, mystery true crime, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        }
+      ],
+      "visual_context": {
+        "version": "phase_27a_visual_context",
+        "topic": "mystery true crime",
+        "working_title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+        "script_source": "documentary_script_v3",
+        "documentary_mode": "risk breakdown",
+        "channel": {
+          "channelId": "unraaz",
+          "contentMode": "story",
+          "niche": "mystery real incidents money lessons",
+          "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+          "targetAudience": "Hindi/Hinglish mystery and real story viewers",
+          "contentPillars": [
+            "unsolved stories",
+            "real incidents",
+            "crime twists",
+            "money greed lessons"
+          ],
+          "topicKeywords": [
+            "village",
+            "missing",
+            "crime",
+            "mystery",
+            "incident",
+            "greed",
+            "documents"
+          ],
+          "blockedKeywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ]
+        },
+        "visual_style": "dark realistic documentary mystery, 9:16 cinematic",
+        "target_audience": "Hindi/Hinglish mystery and real story viewers",
+        "aspect_ratio": "vertical 9:16",
+        "subject_anchor": "mystery true crime",
+        "continuity": {
+          "subject_lock": "mystery true crime",
+          "style_lock": "dark realistic documentary mystery, 9:16 cinematic",
+          "palette_lock": "dark cinematic documentary palette",
+          "recurring_visual_motifs": [
+            "documents",
+            "records",
+            "calculator",
+            "phone screen without readable text",
+            "mystery true crime",
+            "timeline gap"
+          ]
+        },
+        "evidence": {
+          "entities": [
+            "mystery true crime",
+            "timeline gap",
+            "ignored clue",
+            "evidence mismatch",
+            "crime",
+            "mystery"
+          ],
+          "facts": [
+            "mystery true crime me primary timeline sabse important research angle hai",
+            "mystery true crime se judi statements, evidence aur sequence verify karna zaroori hai",
+            "mystery true crime ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          ],
+          "evidence_objects": [
+            "case file",
+            "statement papers without readable text",
+            "evidence photo layout"
+          ]
+        },
+        "safety": {
+          "blocked_keywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ],
+          "negative_prompt_hints": [
+            "no readable text",
+            "no watermark",
+            "no gore",
+            "no distorted faces",
+            "no low resolution"
+          ],
+          "safe_documentary_framing": true
+        },
+        "visual_vocabulary": [
+          "mystery true crime",
+          "mystery true crime: ek story jisme hidden warning chhupi thi",
+          "story",
+          "mystery real incidents money lessons",
+          "dark realistic documentary mystery, 9:16 cinematic",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons",
+          "village",
+          "missing",
+          "crime",
+          "mystery",
+          "incident",
+          "greed",
+          "documents",
+          "timeline gap",
+          "ignored clue",
+          "evidence mismatch",
+          "hook",
+          "bold topic text, fast suspense opener",
+          "mystery true crime me ek ignored risk signal sabse badi warning ban gaya...",
+          "context",
+          "context scene, slow push-in"
+        ],
+        "scene_count": 7,
+        "source_quality": {
+          "script_quality_score": 97,
+          "has_timeline_labels": false
+        }
+      },
+      "visual_quality": {
+        "score": 100,
+        "has_scene_narration_alignment": true,
+        "has_continuity_anchor": true,
+        "has_documentary_constraints": true,
+        "scene_count": 7
+      }
+    },
+    {
+      "version": "phase_27a_storyboard_intelligence",
+      "status": "storyboard_ready",
+      "script_id": "intelligence_script_002",
+      "topic": "mystery real incidents",
+      "working_title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "script_source": "documentary_script_v3",
+      "documentary_mode": "risk breakdown",
+      "scenes": [
+        {
+          "scene": 1,
+          "beat": "hook",
+          "time": "0-3",
+          "start_second": 0,
+          "end_second": 3,
+          "duration_seconds": 3,
+          "narration": "mystery real incidents me ek ignored risk signal sabse badi warning ban gaya...",
+          "visual_intent": "bold topic text, fast suspense opener",
+          "shot_type": "opening hook frame",
+          "composition": "tight cinematic opener with one clear subject",
+          "retention_role": "stop scroll",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "opening hook frame, mystery real incidents, documents, bold topic text, fast suspense opener, narration cue: mystery real incidents ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 2,
+          "beat": "context",
+          "time": "3-7",
+          "start_second": 3,
+          "end_second": 7,
+          "duration_seconds": 4,
+          "narration": "mystery real incidents me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+          "visual_intent": "context scene, slow push-in",
+          "shot_type": "establishing context shot",
+          "composition": "wide-to-medium scene that sets place and stakes",
+          "retention_role": "orient viewer",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "establishing context shot, mystery real incidents, documents, context scene, slow push-in, narration cue: mystery real incidents shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 3,
+          "beat": "complication",
+          "time": "7-12",
+          "start_second": 7,
+          "end_second": 12,
+          "duration_seconds": 5,
+          "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+          "visual_intent": "warning sign, documents, uneasy transition",
+          "shot_type": "tension detail shot",
+          "composition": "medium close-up of the first visible problem",
+          "retention_role": "raise concern",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "tension detail shot, mystery real incidents, documents, warning sign, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 4,
+          "beat": "evidence",
+          "time": "12-18",
+          "start_second": 12,
+          "end_second": 18,
+          "duration_seconds": 6,
+          "narration": "mystery real incidents me primary timeline sabse important research angle hai.",
+          "visual_intent": "records, timeline, highlighted detail",
+          "shot_type": "evidence insert shot",
+          "composition": "close-up of records, objects, or visual proof without readable text",
+          "retention_role": "make claim concrete",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "evidence insert shot, mystery real incidents, case file, records, timeline, highlighted detail, narration cue: mystery real incidents primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 5,
+          "beat": "escalation",
+          "time": "18-23",
+          "start_second": 18,
+          "end_second": 23,
+          "duration_seconds": 5,
+          "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+          "visual_intent": "faster cuts, increasing pressure",
+          "shot_type": "pressure-building shot",
+          "composition": "dynamic documentary frame with increasing visual tension",
+          "retention_role": "increase pace",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "pressure-building shot, mystery real incidents, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 6,
+          "beat": "reveal",
+          "time": "23-27",
+          "start_second": 23,
+          "end_second": 27,
+          "duration_seconds": 4,
+          "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+          "visual_intent": "dramatic reveal, contrast shift",
+          "shot_type": "reveal contrast shot",
+          "composition": "before-after style contrast without literal text overlays",
+          "retention_role": "deliver turn",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "reveal contrast shot, mystery real incidents, documents, dramatic reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 7,
+          "beat": "lesson",
+          "time": "27-30",
+          "start_second": 27,
+          "end_second": 30,
+          "duration_seconds": 3,
+          "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+          "visual_intent": "clean lesson text, final pause",
+          "shot_type": "final takeaway shot",
+          "composition": "clean closing frame with subject and consequence visible",
+          "retention_role": "memory anchor",
+          "continuity_anchor": "mystery real incidents",
+          "image_prompt": "final takeaway shot, mystery real incidents, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        }
+      ],
+      "visual_context": {
+        "version": "phase_27a_visual_context",
+        "topic": "mystery real incidents",
+        "working_title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+        "script_source": "documentary_script_v3",
+        "documentary_mode": "risk breakdown",
+        "channel": {
+          "channelId": "unraaz",
+          "contentMode": "story",
+          "niche": "mystery real incidents money lessons",
+          "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+          "targetAudience": "Hindi/Hinglish mystery and real story viewers",
+          "contentPillars": [
+            "unsolved stories",
+            "real incidents",
+            "crime twists",
+            "money greed lessons"
+          ],
+          "topicKeywords": [
+            "village",
+            "missing",
+            "crime",
+            "mystery",
+            "incident",
+            "greed",
+            "documents"
+          ],
+          "blockedKeywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ]
+        },
+        "visual_style": "dark realistic documentary mystery, 9:16 cinematic",
+        "target_audience": "Hindi/Hinglish mystery and real story viewers",
+        "aspect_ratio": "vertical 9:16",
+        "subject_anchor": "mystery real incidents",
+        "continuity": {
+          "subject_lock": "mystery real incidents",
+          "style_lock": "dark realistic documentary mystery, 9:16 cinematic",
+          "palette_lock": "dark cinematic documentary palette",
+          "recurring_visual_motifs": [
+            "documents",
+            "records",
+            "calculator",
+            "phone screen without readable text",
+            "mystery real incidents",
+            "timeline gap"
+          ]
+        },
+        "evidence": {
+          "entities": [
+            "mystery real incidents",
+            "timeline gap",
+            "ignored clue",
+            "evidence mismatch",
+            "mystery",
+            "incident"
+          ],
+          "facts": [
+            "mystery real incidents me primary timeline sabse important research angle hai",
+            "mystery real incidents se judi statements, evidence aur sequence verify karna zaroori hai",
+            "mystery real incidents ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          ],
+          "evidence_objects": [
+            "case file",
+            "statement papers without readable text",
+            "evidence photo layout"
+          ]
+        },
+        "safety": {
+          "blocked_keywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ],
+          "negative_prompt_hints": [
+            "no readable text",
+            "no watermark",
+            "no gore",
+            "no distorted faces",
+            "no low resolution"
+          ],
+          "safe_documentary_framing": true
+        },
+        "visual_vocabulary": [
+          "mystery real incidents",
+          "mystery real incidents: ek story jisme hidden warning chhupi thi",
+          "story",
+          "mystery real incidents money lessons",
+          "dark realistic documentary mystery, 9:16 cinematic",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons",
+          "village",
+          "missing",
+          "crime",
+          "mystery",
+          "incident",
+          "greed",
+          "documents",
+          "timeline gap",
+          "ignored clue",
+          "evidence mismatch",
+          "hook",
+          "bold topic text, fast suspense opener",
+          "mystery real incidents me ek ignored risk signal sabse badi warning ban gaya...",
+          "context",
+          "context scene, slow push-in"
+        ],
+        "scene_count": 7,
+        "source_quality": {
+          "script_quality_score": 97,
+          "has_timeline_labels": false
+        }
+      },
+      "visual_quality": {
+        "score": 100,
+        "has_scene_narration_alignment": true,
+        "has_continuity_anchor": true,
+        "has_documentary_constraints": true,
+        "scene_count": 7
+      }
+    },
+    {
+      "version": "phase_27a_storyboard_intelligence",
+      "status": "storyboard_ready",
+      "script_id": "intelligence_script_003",
+      "topic": "mystery real incident",
+      "working_title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "script_source": "documentary_script_v3",
+      "documentary_mode": "risk breakdown",
+      "scenes": [
+        {
+          "scene": 1,
+          "beat": "hook",
+          "time": "0-3",
+          "start_second": 0,
+          "end_second": 3,
+          "duration_seconds": 3,
+          "narration": "mystery real incident me ek ignored risk signal sabse badi warning ban gaya...",
+          "visual_intent": "bold topic text, fast suspense opener",
+          "shot_type": "opening hook frame",
+          "composition": "tight cinematic opener with one clear subject",
+          "retention_role": "stop scroll",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "opening hook frame, mystery real incident, documents, bold topic text, fast suspense opener, narration cue: mystery real incident ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 2,
+          "beat": "context",
+          "time": "3-7",
+          "start_second": 3,
+          "end_second": 7,
+          "duration_seconds": 4,
+          "narration": "mystery real incident me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+          "visual_intent": "context scene, slow push-in",
+          "shot_type": "establishing context shot",
+          "composition": "wide-to-medium scene that sets place and stakes",
+          "retention_role": "orient viewer",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "establishing context shot, mystery real incident, documents, context scene, slow push-in, narration cue: mystery real incident shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 3,
+          "beat": "complication",
+          "time": "7-12",
+          "start_second": 7,
+          "end_second": 12,
+          "duration_seconds": 5,
+          "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+          "visual_intent": "warning sign, documents, uneasy transition",
+          "shot_type": "tension detail shot",
+          "composition": "medium close-up of the first visible problem",
+          "retention_role": "raise concern",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "tension detail shot, mystery real incident, documents, warning sign, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 4,
+          "beat": "evidence",
+          "time": "12-18",
+          "start_second": 12,
+          "end_second": 18,
+          "duration_seconds": 6,
+          "narration": "mystery real incident me primary timeline sabse important research angle hai.",
+          "visual_intent": "records, timeline, highlighted detail",
+          "shot_type": "evidence insert shot",
+          "composition": "close-up of records, objects, or visual proof without readable text",
+          "retention_role": "make claim concrete",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "evidence insert shot, mystery real incident, case file, records, timeline, highlighted detail, narration cue: mystery real incident primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 5,
+          "beat": "escalation",
+          "time": "18-23",
+          "start_second": 18,
+          "end_second": 23,
+          "duration_seconds": 5,
+          "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+          "visual_intent": "faster cuts, increasing pressure",
+          "shot_type": "pressure-building shot",
+          "composition": "dynamic documentary frame with increasing visual tension",
+          "retention_role": "increase pace",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "pressure-building shot, mystery real incident, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 6,
+          "beat": "reveal",
+          "time": "23-27",
+          "start_second": 23,
+          "end_second": 27,
+          "duration_seconds": 4,
+          "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+          "visual_intent": "dramatic reveal, contrast shift",
+          "shot_type": "reveal contrast shot",
+          "composition": "before-after style contrast without literal text overlays",
+          "retention_role": "deliver turn",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "reveal contrast shot, mystery real incident, documents, dramatic reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 7,
+          "beat": "lesson",
+          "time": "27-30",
+          "start_second": 27,
+          "end_second": 30,
+          "duration_seconds": 3,
+          "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+          "visual_intent": "clean lesson text, final pause",
+          "shot_type": "final takeaway shot",
+          "composition": "clean closing frame with subject and consequence visible",
+          "retention_role": "memory anchor",
+          "continuity_anchor": "mystery real incident",
+          "image_prompt": "final takeaway shot, mystery real incident, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        }
+      ],
+      "visual_context": {
+        "version": "phase_27a_visual_context",
+        "topic": "mystery real incident",
+        "working_title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+        "script_source": "documentary_script_v3",
+        "documentary_mode": "risk breakdown",
+        "channel": {
+          "channelId": "unraaz",
+          "contentMode": "story",
+          "niche": "mystery real incidents money lessons",
+          "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+          "targetAudience": "Hindi/Hinglish mystery and real story viewers",
+          "contentPillars": [
+            "unsolved stories",
+            "real incidents",
+            "crime twists",
+            "money greed lessons"
+          ],
+          "topicKeywords": [
+            "village",
+            "missing",
+            "crime",
+            "mystery",
+            "incident",
+            "greed",
+            "documents"
+          ],
+          "blockedKeywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ]
+        },
+        "visual_style": "dark realistic documentary mystery, 9:16 cinematic",
+        "target_audience": "Hindi/Hinglish mystery and real story viewers",
+        "aspect_ratio": "vertical 9:16",
+        "subject_anchor": "mystery real incident",
+        "continuity": {
+          "subject_lock": "mystery real incident",
+          "style_lock": "dark realistic documentary mystery, 9:16 cinematic",
+          "palette_lock": "dark cinematic documentary palette",
+          "recurring_visual_motifs": [
+            "documents",
+            "records",
+            "calculator",
+            "phone screen without readable text",
+            "mystery real incident",
+            "timeline gap"
+          ]
+        },
+        "evidence": {
+          "entities": [
+            "mystery real incident",
+            "timeline gap",
+            "ignored clue",
+            "evidence mismatch",
+            "mystery",
+            "incident"
+          ],
+          "facts": [
+            "mystery real incident me primary timeline sabse important research angle hai",
+            "mystery real incident se judi statements, evidence aur sequence verify karna zaroori hai",
+            "mystery real incident ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          ],
+          "evidence_objects": [
+            "case file",
+            "statement papers without readable text",
+            "evidence photo layout"
+          ]
+        },
+        "safety": {
+          "blocked_keywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ],
+          "negative_prompt_hints": [
+            "no readable text",
+            "no watermark",
+            "no gore",
+            "no distorted faces",
+            "no low resolution"
+          ],
+          "safe_documentary_framing": true
+        },
+        "visual_vocabulary": [
+          "mystery real incident",
+          "mystery real incident: ek story jisme hidden warning chhupi thi",
+          "story",
+          "mystery real incidents money lessons",
+          "dark realistic documentary mystery, 9:16 cinematic",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons",
+          "village",
+          "missing",
+          "crime",
+          "mystery",
+          "incident",
+          "greed",
+          "documents",
+          "timeline gap",
+          "ignored clue",
+          "evidence mismatch",
+          "hook",
+          "bold topic text, fast suspense opener",
+          "mystery real incident me ek ignored risk signal sabse badi warning ban gaya...",
+          "context",
+          "context scene, slow push-in"
+        ],
+        "scene_count": 7,
+        "source_quality": {
+          "script_quality_score": 97,
+          "has_timeline_labels": false
+        }
+      },
+      "visual_quality": {
+        "score": 100,
+        "has_scene_narration_alignment": true,
+        "has_continuity_anchor": true,
+        "has_documentary_constraints": true,
+        "scene_count": 7
+      }
+    },
+    {
+      "version": "phase_27a_storyboard_intelligence",
+      "status": "storyboard_ready",
+      "script_id": "intelligence_script_004",
+      "topic": "incident true crime",
+      "working_title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "script_source": "documentary_script_v3",
+      "documentary_mode": "risk breakdown",
+      "scenes": [
+        {
+          "scene": 1,
+          "beat": "hook",
+          "time": "0-3",
+          "start_second": 0,
+          "end_second": 3,
+          "duration_seconds": 3,
+          "narration": "incident true crime me ek ignored risk signal sabse badi warning ban gaya...",
+          "visual_intent": "bold topic text, fast suspense opener",
+          "shot_type": "opening hook frame",
+          "composition": "tight cinematic opener with one clear subject",
+          "retention_role": "stop scroll",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "opening hook frame, incident true crime, documents, bold topic text, fast suspense opener, narration cue: incident true crime ignored risk signal sabse badi warning ban, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 2,
+          "beat": "context",
+          "time": "3-7",
+          "start_second": 3,
+          "end_second": 7,
+          "duration_seconds": 4,
+          "narration": "incident true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+          "visual_intent": "context scene, slow push-in",
+          "shot_type": "establishing context shot",
+          "composition": "wide-to-medium scene that sets place and stakes",
+          "retention_role": "orient viewer",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "establishing context shot, incident true crime, documents, context scene, slow push-in, narration cue: incident true crime shuruaat normal financial decision hoti hai, jahan, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 3,
+          "beat": "complication",
+          "time": "7-12",
+          "start_second": 7,
+          "end_second": 12,
+          "duration_seconds": 5,
+          "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+          "visual_intent": "warning sign, documents, uneasy transition",
+          "shot_type": "tension detail shot",
+          "composition": "medium close-up of the first visible problem",
+          "retention_role": "raise concern",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "tension detail shot, incident true crime, documents, warning sign, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 4,
+          "beat": "evidence",
+          "time": "12-18",
+          "start_second": 12,
+          "end_second": 18,
+          "duration_seconds": 6,
+          "narration": "incident true crime me primary timeline sabse important research angle hai.",
+          "visual_intent": "records, timeline, highlighted detail",
+          "shot_type": "evidence insert shot",
+          "composition": "close-up of records, objects, or visual proof without readable text",
+          "retention_role": "make claim concrete",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "evidence insert shot, incident true crime, case file, records, timeline, highlighted detail, narration cue: incident true crime primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 5,
+          "beat": "escalation",
+          "time": "18-23",
+          "start_second": 18,
+          "end_second": 23,
+          "duration_seconds": 5,
+          "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+          "visual_intent": "faster cuts, increasing pressure",
+          "shot_type": "pressure-building shot",
+          "composition": "dynamic documentary frame with increasing visual tension",
+          "retention_role": "increase pace",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "pressure-building shot, incident true crime, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 6,
+          "beat": "reveal",
+          "time": "23-27",
+          "start_second": 23,
+          "end_second": 27,
+          "duration_seconds": 4,
+          "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+          "visual_intent": "dramatic reveal, contrast shift",
+          "shot_type": "reveal contrast shot",
+          "composition": "before-after style contrast without literal text overlays",
+          "retention_role": "deliver turn",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "reveal contrast shot, incident true crime, documents, dramatic reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 7,
+          "beat": "lesson",
+          "time": "27-30",
+          "start_second": 27,
+          "end_second": 30,
+          "duration_seconds": 3,
+          "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+          "visual_intent": "clean lesson text, final pause",
+          "shot_type": "final takeaway shot",
+          "composition": "clean closing frame with subject and consequence visible",
+          "retention_role": "memory anchor",
+          "continuity_anchor": "incident true crime",
+          "image_prompt": "final takeaway shot, incident true crime, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        }
+      ],
+      "visual_context": {
+        "version": "phase_27a_visual_context",
+        "topic": "incident true crime",
+        "working_title": "incident true crime: ek story jisme hidden warning chhupi thi",
+        "script_source": "documentary_script_v3",
+        "documentary_mode": "risk breakdown",
+        "channel": {
+          "channelId": "unraaz",
+          "contentMode": "story",
+          "niche": "mystery real incidents money lessons",
+          "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+          "targetAudience": "Hindi/Hinglish mystery and real story viewers",
+          "contentPillars": [
+            "unsolved stories",
+            "real incidents",
+            "crime twists",
+            "money greed lessons"
+          ],
+          "topicKeywords": [
+            "village",
+            "missing",
+            "crime",
+            "mystery",
+            "incident",
+            "greed",
+            "documents"
+          ],
+          "blockedKeywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ]
+        },
+        "visual_style": "dark realistic documentary mystery, 9:16 cinematic",
+        "target_audience": "Hindi/Hinglish mystery and real story viewers",
+        "aspect_ratio": "vertical 9:16",
+        "subject_anchor": "incident true crime",
+        "continuity": {
+          "subject_lock": "incident true crime",
+          "style_lock": "dark realistic documentary mystery, 9:16 cinematic",
+          "palette_lock": "dark cinematic documentary palette",
+          "recurring_visual_motifs": [
+            "documents",
+            "records",
+            "calculator",
+            "phone screen without readable text",
+            "incident true crime",
+            "timeline gap"
+          ]
+        },
+        "evidence": {
+          "entities": [
+            "incident true crime",
+            "timeline gap",
+            "ignored clue",
+            "evidence mismatch",
+            "crime",
+            "incident"
+          ],
+          "facts": [
+            "incident true crime me primary timeline sabse important research angle hai",
+            "incident true crime se judi statements, evidence aur sequence verify karna zaroori hai",
+            "incident true crime ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          ],
+          "evidence_objects": [
+            "case file",
+            "statement papers without readable text",
+            "evidence photo layout"
+          ]
+        },
+        "safety": {
+          "blocked_keywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ],
+          "negative_prompt_hints": [
+            "no readable text",
+            "no watermark",
+            "no gore",
+            "no distorted faces",
+            "no low resolution"
+          ],
+          "safe_documentary_framing": true
+        },
+        "visual_vocabulary": [
+          "incident true crime",
+          "incident true crime: ek story jisme hidden warning chhupi thi",
+          "story",
+          "mystery real incidents money lessons",
+          "dark realistic documentary mystery, 9:16 cinematic",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons",
+          "village",
+          "missing",
+          "crime",
+          "mystery",
+          "incident",
+          "greed",
+          "documents",
+          "timeline gap",
+          "ignored clue",
+          "evidence mismatch",
+          "hook",
+          "bold topic text, fast suspense opener",
+          "incident true crime me ek ignored risk signal sabse badi warning ban gaya...",
+          "context",
+          "context scene, slow push-in"
+        ],
+        "scene_count": 7,
+        "source_quality": {
+          "script_quality_score": 97,
+          "has_timeline_labels": false
+        }
+      },
+      "visual_quality": {
+        "score": 100,
+        "has_scene_narration_alignment": true,
+        "has_continuity_anchor": true,
+        "has_documentary_constraints": true,
+        "scene_count": 7
+      }
+    },
+    {
+      "version": "phase_27a_storyboard_intelligence",
+      "status": "storyboard_ready",
+      "script_id": "intelligence_script_005",
+      "topic": "crime mystery",
+      "working_title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "script_source": "documentary_script_v3",
+      "documentary_mode": "risk breakdown",
+      "scenes": [
+        {
+          "scene": 1,
+          "beat": "hook",
+          "time": "0-3",
+          "start_second": 0,
+          "end_second": 3,
+          "duration_seconds": 3,
+          "narration": "crime mystery me ek ignored risk signal sabse badi warning ban gaya...",
+          "visual_intent": "bold topic text, fast suspense opener",
+          "shot_type": "opening hook frame",
+          "composition": "tight cinematic opener with one clear subject",
+          "retention_role": "stop scroll",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "opening hook frame, crime mystery, documents, bold topic text, fast suspense opener, narration cue: crime mystery ignored risk signal sabse badi warning ban gaya, tight cinematic opener with one clear subject, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 2,
+          "beat": "context",
+          "time": "3-7",
+          "start_second": 3,
+          "end_second": 7,
+          "duration_seconds": 4,
+          "narration": "crime mystery me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha.",
+          "visual_intent": "context scene, slow push-in",
+          "shot_type": "establishing context shot",
+          "composition": "wide-to-medium scene that sets place and stakes",
+          "retention_role": "orient viewer",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "establishing context shot, crime mystery, documents, context scene, slow push-in, narration cue: crime mystery shuruaat normal financial decision hoti hai, jahan sab, wide-to-medium scene that sets place and stakes, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 3,
+          "beat": "complication",
+          "time": "7-12",
+          "start_second": 7,
+          "end_second": 12,
+          "duration_seconds": 5,
+          "narration": "Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua.",
+          "visual_intent": "warning sign, documents, uneasy transition",
+          "shot_type": "tension detail shot",
+          "composition": "medium close-up of the first visible problem",
+          "retention_role": "raise concern",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "tension detail shot, crime mystery, documents, warning sign, documents, uneasy transition, narration cue: Numbers pressure chhupa tha. Lekin problem yahan thi: early signal, medium close-up of the first visible problem, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 4,
+          "beat": "evidence",
+          "time": "12-18",
+          "start_second": 12,
+          "end_second": 18,
+          "duration_seconds": 6,
+          "narration": "crime mystery me primary timeline sabse important research angle hai.",
+          "visual_intent": "records, timeline, highlighted detail",
+          "shot_type": "evidence insert shot",
+          "composition": "close-up of records, objects, or visual proof without readable text",
+          "retention_role": "make claim concrete",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "evidence insert shot, crime mystery, case file, records, timeline, highlighted detail, narration cue: crime mystery primary timeline sabse important research angle hai, close-up of records, objects, or visual proof without readable text, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 5,
+          "beat": "escalation",
+          "time": "18-23",
+          "start_second": 18,
+          "end_second": 23,
+          "duration_seconds": 5,
+          "narration": "Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga.",
+          "visual_intent": "faster cuts, increasing pressure",
+          "shot_type": "pressure-building shot",
+          "composition": "dynamic documentary frame with increasing visual tension",
+          "retention_role": "increase pace",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "pressure-building shot, crime mystery, documents, faster cuts, increasing pressure, narration cue: Delay badhta gaya, aur wahi chhota pressure mehngi galti banne, dynamic documentary frame with increasing visual tension, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 6,
+          "beat": "reveal",
+          "time": "23-27",
+          "start_second": 23,
+          "end_second": 27,
+          "duration_seconds": 4,
+          "narration": "Yahin story palti. Real issue shuruaat me hi dikh raha tha.",
+          "visual_intent": "dramatic reveal, contrast shift",
+          "shot_type": "reveal contrast shot",
+          "composition": "before-after style contrast without literal text overlays",
+          "retention_role": "deliver turn",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "reveal contrast shot, crime mystery, documents, dramatic reveal, contrast shift, narration cue: Yahin story palti. Real issue shuruaat dikh raha tha, before-after style contrast without literal text overlays, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        },
+        {
+          "scene": 7,
+          "beat": "lesson",
+          "time": "27-30",
+          "start_second": 27,
+          "end_second": 30,
+          "duration_seconds": 3,
+          "narration": "Risk ignore karna mehngi galti ban sakta hai.",
+          "visual_intent": "clean lesson text, final pause",
+          "shot_type": "final takeaway shot",
+          "composition": "clean closing frame with subject and consequence visible",
+          "retention_role": "memory anchor",
+          "continuity_anchor": "crime mystery",
+          "image_prompt": "final takeaway shot, crime mystery, documents, clean lesson text, final pause, narration cue: Risk ignore karna mehngi galti ban sakta hai, clean closing frame with subject and consequence visible, dark realistic documentary mystery, 9:16 cinematic, vertical 9:16, photorealistic documentary frame, no readable text, no watermark, no gore, no distorted faces, no low resolution"
+        }
+      ],
+      "visual_context": {
+        "version": "phase_27a_visual_context",
+        "topic": "crime mystery",
+        "working_title": "crime mystery: ek story jisme hidden warning chhupi thi",
+        "script_source": "documentary_script_v3",
+        "documentary_mode": "risk breakdown",
+        "channel": {
+          "channelId": "unraaz",
+          "contentMode": "story",
+          "niche": "mystery real incidents money lessons",
+          "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+          "targetAudience": "Hindi/Hinglish mystery and real story viewers",
+          "contentPillars": [
+            "unsolved stories",
+            "real incidents",
+            "crime twists",
+            "money greed lessons"
+          ],
+          "topicKeywords": [
+            "village",
+            "missing",
+            "crime",
+            "mystery",
+            "incident",
+            "greed",
+            "documents"
+          ],
+          "blockedKeywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ]
+        },
+        "visual_style": "dark realistic documentary mystery, 9:16 cinematic",
+        "target_audience": "Hindi/Hinglish mystery and real story viewers",
+        "aspect_ratio": "vertical 9:16",
+        "subject_anchor": "crime mystery",
+        "continuity": {
+          "subject_lock": "crime mystery",
+          "style_lock": "dark realistic documentary mystery, 9:16 cinematic",
+          "palette_lock": "dark cinematic documentary palette",
+          "recurring_visual_motifs": [
+            "documents",
+            "records",
+            "calculator",
+            "phone screen without readable text",
+            "crime mystery",
+            "timeline gap"
+          ]
+        },
+        "evidence": {
+          "entities": [
+            "crime mystery",
+            "timeline gap",
+            "ignored clue",
+            "evidence mismatch",
+            "crime",
+            "mystery"
+          ],
+          "facts": [
+            "crime mystery me primary timeline sabse important research angle hai",
+            "crime mystery se judi statements, evidence aur sequence verify karna zaroori hai",
+            "crime mystery ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          ],
+          "evidence_objects": [
+            "case file",
+            "statement papers without readable text",
+            "evidence photo layout"
+          ]
+        },
+        "safety": {
+          "blocked_keywords": [
+            "home loan",
+            "cibil",
+            "msme",
+            "emi"
+          ],
+          "negative_prompt_hints": [
+            "no readable text",
+            "no watermark",
+            "no gore",
+            "no distorted faces",
+            "no low resolution"
+          ],
+          "safe_documentary_framing": true
+        },
+        "visual_vocabulary": [
+          "crime mystery",
+          "crime mystery: ek story jisme hidden warning chhupi thi",
+          "story",
+          "mystery real incidents money lessons",
+          "dark realistic documentary mystery, 9:16 cinematic",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons",
+          "village",
+          "missing",
+          "crime",
+          "mystery",
+          "incident",
+          "greed",
+          "documents",
+          "timeline gap",
+          "ignored clue",
+          "evidence mismatch",
+          "hook",
+          "bold topic text, fast suspense opener",
+          "crime mystery me ek ignored risk signal sabse badi warning ban gaya...",
+          "context",
+          "context scene, slow push-in"
+        ],
+        "scene_count": 7,
+        "source_quality": {
+          "script_quality_score": 97,
+          "has_timeline_labels": false
+        }
+      },
+      "visual_quality": {
+        "score": 100,
+        "has_scene_narration_alignment": true,
+        "has_continuity_anchor": true,
+        "has_documentary_constraints": true,
+        "scene_count": 7
+      }
+    }
+  ]
+}

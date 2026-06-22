@@ -1,0 +1,454 @@
+{
+  "generated_at": "2026-06-21T11:22:12.708Z",
+  "total_scripts": 5,
+  "summary": {
+    "optimized_scripts": 5,
+    "source_missing_scripts": 0,
+    "baseline_total_seconds": 150,
+    "optimized_total_seconds": 244,
+    "total_change_seconds": 94,
+    "status": "scene_timing_batch_optimized"
+  },
+  "optimizations": [
+    {
+      "script_id": "intelligence_script_001",
+      "baseline_total_seconds": 30,
+      "optimized_total_seconds": 49,
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "total_change_seconds": 19,
+      "status": "scene_timing_optimized",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 5,
+          "estimated_total_audio_seconds": 7.86,
+          "duration_diff_seconds": 4.86,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 11,
+          "change_seconds": 7,
+          "estimated_total_audio_seconds": 10.01,
+          "duration_diff_seconds": 6.01,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 3,
+          "estimated_total_audio_seconds": 7.43,
+          "duration_diff_seconds": 2.43,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "baseline_duration_seconds": 6,
+          "optimized_duration_seconds": 6,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": -0.19,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 5,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": 0.81,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 4,
+          "estimated_total_audio_seconds": 7.44,
+          "duration_diff_seconds": 3.44,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 3,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 4.02,
+          "duration_diff_seconds": 1.02,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "baseline_total_seconds": 30,
+      "optimized_total_seconds": 49,
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "total_change_seconds": 19,
+      "status": "scene_timing_optimized",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 5,
+          "estimated_total_audio_seconds": 7.86,
+          "duration_diff_seconds": 4.86,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 11,
+          "change_seconds": 7,
+          "estimated_total_audio_seconds": 10.01,
+          "duration_diff_seconds": 6.01,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 3,
+          "estimated_total_audio_seconds": 7.43,
+          "duration_diff_seconds": 2.43,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "baseline_duration_seconds": 6,
+          "optimized_duration_seconds": 6,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": -0.19,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 5,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": 0.81,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 4,
+          "estimated_total_audio_seconds": 7.44,
+          "duration_diff_seconds": 3.44,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 3,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 4.02,
+          "duration_diff_seconds": 1.02,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "baseline_total_seconds": 30,
+      "optimized_total_seconds": 49,
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "total_change_seconds": 19,
+      "status": "scene_timing_optimized",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 5,
+          "estimated_total_audio_seconds": 7.86,
+          "duration_diff_seconds": 4.86,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 11,
+          "change_seconds": 7,
+          "estimated_total_audio_seconds": 10.01,
+          "duration_diff_seconds": 6.01,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 3,
+          "estimated_total_audio_seconds": 7.43,
+          "duration_diff_seconds": 2.43,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "baseline_duration_seconds": 6,
+          "optimized_duration_seconds": 6,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": -0.19,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 5,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": 0.81,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 4,
+          "estimated_total_audio_seconds": 7.44,
+          "duration_diff_seconds": 3.44,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 3,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 4.02,
+          "duration_diff_seconds": 1.02,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "baseline_total_seconds": 30,
+      "optimized_total_seconds": 49,
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "total_change_seconds": 19,
+      "status": "scene_timing_optimized",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 5,
+          "estimated_total_audio_seconds": 7.86,
+          "duration_diff_seconds": 4.86,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 11,
+          "change_seconds": 7,
+          "estimated_total_audio_seconds": 10.01,
+          "duration_diff_seconds": 6.01,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 3,
+          "estimated_total_audio_seconds": 7.43,
+          "duration_diff_seconds": 2.43,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "baseline_duration_seconds": 6,
+          "optimized_duration_seconds": 6,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": -0.19,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 5,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": 0.81,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 4,
+          "estimated_total_audio_seconds": 7.44,
+          "duration_diff_seconds": 3.44,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 3,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 4.02,
+          "duration_diff_seconds": 1.02,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "baseline_total_seconds": 30,
+      "optimized_total_seconds": 48,
+      "recommended_total_video_seconds": 48,
+      "estimated_total_audio_seconds": 46.88,
+      "total_change_seconds": 18,
+      "status": "scene_timing_optimized",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 5,
+          "estimated_total_audio_seconds": 7.32,
+          "duration_diff_seconds": 4.32,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 10,
+          "change_seconds": 6,
+          "estimated_total_audio_seconds": 9.52,
+          "duration_diff_seconds": 5.52,
+          "duration_status": "duration_needs_major_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 3,
+          "estimated_total_audio_seconds": 7.43,
+          "duration_diff_seconds": 2.43,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "baseline_duration_seconds": 6,
+          "optimized_duration_seconds": 6,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.34,
+          "duration_diff_seconds": -0.66,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "baseline_duration_seconds": 5,
+          "optimized_duration_seconds": 5,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 5.81,
+          "duration_diff_seconds": 0.81,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "baseline_duration_seconds": 4,
+          "optimized_duration_seconds": 8,
+          "change_seconds": 4,
+          "estimated_total_audio_seconds": 7.44,
+          "duration_diff_seconds": 3.44,
+          "duration_status": "duration_needs_minor_adjustment",
+          "source": "audio_duration_match_report"
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "baseline_duration_seconds": 3,
+          "optimized_duration_seconds": 3,
+          "change_seconds": 0,
+          "estimated_total_audio_seconds": 4.02,
+          "duration_diff_seconds": 1.02,
+          "duration_status": "duration_matched",
+          "source": "audio_duration_match_report"
+        }
+      ]
+    }
+  ]
+}

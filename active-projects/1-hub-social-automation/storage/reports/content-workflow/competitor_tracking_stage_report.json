@@ -3,14 +3,28 @@
   "stage": "competitor_tracking",
   "channelId": "unraaz",
   "workflowId": "default_content_workflow",
-  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
-  "generatedAt": "2026-06-10T10:27:26.426Z",
+  "workflowRunId": "default_content_workflow_unraaz_1782040847283",
+  "generatedAt": "2026-06-21T11:20:47.688Z",
   "attempts": [
     {
       "ok": true,
       "file": "modules/intelligence/services/build_competitor_intelligence.js",
       "exitCode": 0,
       "stdout": "✅ Competitor intelligence report created:\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/competitor_intelligence_report.json\nTotal analyzed: 6263\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/build_pattern_intelligence.js",
+      "exitCode": 0,
+      "stdout": "✅ Pattern intelligence generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/pattern_intelligence_report.json\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/build_unraaz_recommendations.js",
+      "exitCode": 0,
+      "stdout": "✅ UNRAAZ recommendations generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/unraaz_recommendations.json\n",
       "stderr": ""
     }
   ],
@@ -20,6 +34,10 @@
   },
   "outputs": {
     "competitorIntelligenceReport": true,
-    "path": "modules/intelligence/output/competitor_intelligence_report.json"
+    "competitorIntelligencePath": "modules/intelligence/output/competitor_intelligence_report.json",
+    "patternIntelligenceReport": true,
+    "patternIntelligencePath": "modules/intelligence/output/pattern_intelligence_report.json",
+    "unraazRecommendations": true,
+    "unraazRecommendationsPath": "modules/intelligence/output/unraaz_recommendations.json"
   }
 }

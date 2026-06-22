@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T13:31:28.578Z",
+  "generated_at": "2026-06-22T07:31:52.450Z",
   "input_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/exports/normalized/relevant_competitor_videos.json",
   "total_videos_analyzed": 6263,
   "top_trending_videos": [
@@ -658,6 +658,53 @@
       ]
     }
   ],
+  "channel": "UNRAAZ",
+  "channelId": "unraaz",
+  "channel_strategy": {
+    "niche": "mystery_real_incidents_money_lessons",
+    "contentMode": "story",
+    "contentCategories": [
+      "mystery",
+      "true_crime",
+      "real_incident",
+      "money_lesson"
+    ],
+    "blockedCategories": [
+      "loan_lead_generation",
+      "generic_finance"
+    ],
+    "contentPillars": [
+      "unsolved stories",
+      "real incidents",
+      "crime twists",
+      "money greed lessons"
+    ],
+    "topicKeywords": [
+      "village",
+      "missing",
+      "crime",
+      "mystery",
+      "incident",
+      "greed",
+      "documents"
+    ],
+    "blockedKeywords": [
+      "home loan",
+      "cibil",
+      "msme",
+      "emi"
+    ],
+    "storyFormulas": [
+      "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    ],
+    "hookStyles": [
+      "curiosity",
+      "shock",
+      "unanswered_question"
+    ],
+    "visualStyle": "dark realistic documentary mystery, 9:16 cinematic",
+    "targetAudience": "Hindi/Hinglish mystery and real story viewers"
+  },
   "hook_summary": [
     {
       "hook": "number_hook",
@@ -686,82 +733,214 @@
   ],
   "content_gaps": [
     {
-      "topic": "loan fraud story",
-      "coverage": 0.67,
-      "opportunity_score": 0.33,
-      "matched_words": [
-        "fraud",
-        "story"
-      ]
-    },
-    {
-      "topic": "family betrayal story",
-      "coverage": 0.67,
-      "opportunity_score": 0.33,
-      "matched_words": [
-        "family",
-        "story"
-      ]
-    },
-    {
-      "topic": "indian village mystery",
+      "topic": "village mystery",
       "coverage": 1,
       "opportunity_score": 0,
       "matched_words": [
-        "indian",
         "village",
         "mystery"
-      ]
+      ],
+      "source": "channel_strategy"
     },
     {
-      "topic": "real money lesson",
-      "coverage": 1,
-      "opportunity_score": 0,
-      "matched_words": [
-        "real",
-        "money",
-        "lesson"
-      ]
-    },
-    {
-      "topic": "small town crime",
-      "coverage": 1,
-      "opportunity_score": 0,
-      "matched_words": [
-        "small",
-        "town",
-        "crime"
-      ]
-    },
-    {
-      "topic": "business scam story",
-      "coverage": 1,
-      "opportunity_score": 0,
-      "matched_words": [
-        "business",
-        "scam",
-        "story"
-      ]
-    },
-    {
-      "topic": "missing person case",
+      "topic": "missing mystery",
       "coverage": 1,
       "opportunity_score": 0,
       "matched_words": [
         "missing",
-        "person",
-        "case"
-      ]
+        "mystery"
+      ],
+      "source": "channel_strategy"
     },
     {
-      "topic": "historical mystery india",
+      "topic": "crime mystery",
       "coverage": 1,
       "opportunity_score": 0,
       "matched_words": [
-        "historical",
+        "crime",
+        "mystery"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "mystery",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "mystery"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "incident mystery",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "incident",
+        "mystery"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "greed mystery",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "greed",
+        "mystery"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "documents mystery",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "documents",
+        "mystery"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "village true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "village",
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "missing true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "missing",
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "crime true",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "crime",
+        "true"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "mystery true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
         "mystery",
-        "india"
-      ]
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "incident true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "incident",
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "greed true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "greed",
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "documents true crime",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "documents",
+        "true",
+        "crime"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "village real incident",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "village",
+        "real",
+        "incident"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "missing real incident",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "missing",
+        "real",
+        "incident"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "crime real incident",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "crime",
+        "real",
+        "incident"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "mystery real incident",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "mystery",
+        "real",
+        "incident"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "incident real",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "incident",
+        "real"
+      ],
+      "source": "channel_strategy"
+    },
+    {
+      "topic": "greed real incident",
+      "coverage": 1,
+      "opportunity_score": 0,
+      "matched_words": [
+        "greed",
+        "real",
+        "incident"
+      ],
+      "source": "channel_strategy"
     }
   ]
 }

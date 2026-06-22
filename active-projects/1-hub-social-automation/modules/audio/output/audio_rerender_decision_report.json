@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-06-21T11:22:12.660Z",
+  "total_scripts": 5,
+  "summary": {
+    "approved": 0,
+    "review_required": 5,
+    "rerender_required": 5,
+    "average_audio_readiness_score": 72,
+    "status": "audio_rerender_or_retime_required"
+  },
+  "decisions": [
+    {
+      "script_id": "intelligence_script_001",
+      "voice_profile": "mystery_storyteller",
+      "voice_score": 90,
+      "pacing_score": 85,
+      "emotion_score": 83,
+      "pause_score": 85,
+      "duration_score": 30,
+      "final_audio_readiness_score": 72,
+      "decision": "rerender_or_retime_required",
+      "rerender_required": true,
+      "review_required": true,
+      "reasons": [
+        "duration_mismatch"
+      ],
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "manifest_total_seconds": 30,
+      "status": "rerender_or_retime_required"
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "voice_profile": "mystery_storyteller",
+      "voice_score": 90,
+      "pacing_score": 85,
+      "emotion_score": 83,
+      "pause_score": 85,
+      "duration_score": 30,
+      "final_audio_readiness_score": 72,
+      "decision": "rerender_or_retime_required",
+      "rerender_required": true,
+      "review_required": true,
+      "reasons": [
+        "duration_mismatch"
+      ],
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "manifest_total_seconds": 30,
+      "status": "rerender_or_retime_required"
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "voice_profile": "mystery_storyteller",
+      "voice_score": 90,
+      "pacing_score": 85,
+      "emotion_score": 83,
+      "pause_score": 85,
+      "duration_score": 30,
+      "final_audio_readiness_score": 72,
+      "decision": "rerender_or_retime_required",
+      "rerender_required": true,
+      "review_required": true,
+      "reasons": [
+        "duration_mismatch"
+      ],
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "manifest_total_seconds": 30,
+      "status": "rerender_or_retime_required"
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "voice_profile": "mystery_storyteller",
+      "voice_score": 90,
+      "pacing_score": 85,
+      "emotion_score": 83,
+      "pause_score": 85,
+      "duration_score": 30,
+      "final_audio_readiness_score": 72,
+      "decision": "rerender_or_retime_required",
+      "rerender_required": true,
+      "review_required": true,
+      "reasons": [
+        "duration_mismatch"
+      ],
+      "recommended_total_video_seconds": 49,
+      "estimated_total_audio_seconds": 48.38,
+      "manifest_total_seconds": 30,
+      "status": "rerender_or_retime_required"
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "voice_profile": "mystery_storyteller",
+      "voice_score": 90,
+      "pacing_score": 85,
+      "emotion_score": 83,
+      "pause_score": 85,
+      "duration_score": 30,
+      "final_audio_readiness_score": 72,
+      "decision": "rerender_or_retime_required",
+      "rerender_required": true,
+      "review_required": true,
+      "reasons": [
+        "duration_mismatch"
+      ],
+      "recommended_total_video_seconds": 48,
+      "estimated_total_audio_seconds": 46.88,
+      "manifest_total_seconds": 30,
+      "status": "rerender_or_retime_required"
+    }
+  ]
+}

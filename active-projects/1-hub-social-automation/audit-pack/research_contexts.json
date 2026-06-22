@@ -1,0 +1,1221 @@
+{
+  "generated_at": "2026-06-21T11:20:47.882Z",
+  "channel": "UNRAAZ",
+  "channelId": "unraaz",
+  "source_file": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/unraaz_recommendations.json",
+  "total_contexts": 5,
+  "research_strategy": {
+    "mode": "offline_inferred_foundation",
+    "purpose": "Convert recommended topics into structured research context before script brief generation",
+    "safety": "Inferred research points must not be treated as verified facts until external/source verification is added"
+  },
+  "contexts": [
+    {
+      "rank": 1,
+      "topic": "mystery true crime",
+      "source_recommendation": {
+        "rank": 1,
+        "topic": "mystery true crime",
+        "reason": "Channel strategy: story. Matches patterns: real_story, true_crime, documentary",
+        "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+      },
+      "research_context": {
+        "topic": "mystery true crime",
+        "research_type": "case_investigation",
+        "summary": "mystery true crime ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye.",
+        "facts": [
+          {
+            "order": 1,
+            "fact": "mystery true crime me primary timeline sabse important research angle hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, mystery true crime me primary timeline sabse important research angle hai"
+          },
+          {
+            "order": 2,
+            "fact": "mystery true crime se judi statements, evidence aur sequence verify karna zaroori hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, mystery true crime se judi statements, evidence aur sequence verify karna zaroori hai"
+          },
+          {
+            "order": 3,
+            "fact": "mystery true crime ka strongest story point ignored clue ya timeline gap ho sakta hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, mystery true crime ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          }
+        ],
+        "timeline": [
+          {
+            "order": 1,
+            "label": "stage_1",
+            "event": "Initial incident or report",
+            "confidence": "inferred"
+          },
+          {
+            "order": 2,
+            "label": "stage_2",
+            "event": "Evidence or statement contradiction",
+            "confidence": "inferred"
+          },
+          {
+            "order": 3,
+            "label": "stage_3",
+            "event": "Ignored clue becomes important",
+            "confidence": "inferred"
+          },
+          {
+            "order": 4,
+            "label": "stage_4",
+            "event": "Final reveal or unresolved question",
+            "confidence": "inferred"
+          }
+        ],
+        "entities": [
+          {
+            "name": "mystery true crime",
+            "role": "primary_subject",
+            "confidence": "high",
+            "source": "topic",
+            "score": 230
+          },
+          {
+            "name": "timeline gap",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "ignored clue",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "evidence mismatch",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "crime",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "mystery",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "village",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "missing",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "incident",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "case file",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          }
+        ],
+        "locations": [],
+        "dates": [],
+        "keywords": [
+          "mystery",
+          "true",
+          "crime",
+          "village",
+          "missing",
+          "incident",
+          "greed",
+          "documents",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons"
+        ],
+        "research_questions": [
+          "Investigation me sabse ignored clue kya tha?",
+          "Statements aur evidence me kya mismatch tha?",
+          "mystery true crime me sabse reliable source kya hai?",
+          "mystery true crime ki actual timeline kya thi?",
+          "mystery true crime me kaunsi detail audience ke liye new ya surprising hogi?"
+        ],
+        "source_hints": [
+          "official records where available",
+          "credible news/report references",
+          "publicly verifiable timeline",
+          "cross-check controversial claims"
+        ],
+        "safety_notes": [
+          "Do not present inferred points as confirmed facts",
+          "Avoid naming real accused/persons unless source verified",
+          "Use cautious language for unresolved or disputed claims"
+        ],
+        "confidence": 0.58,
+        "generation_mode": "offline_recommendation_research_foundation",
+        "primary_subject": "mystery true crime",
+        "entity_quality": {
+          "primary_subject": "mystery true crime",
+          "generic_entities_demoted": 6,
+          "ranking_version": "25B.3"
+        },
+        "verification": {
+          "verification_status": "offline_inferred",
+          "source_status": "not_source_verified",
+          "verification_mode": "offline_guard",
+          "research_type": "case_investigation",
+          "confidence_score": 0.57,
+          "confidence_level": "low_medium",
+          "confidence_reasons": [
+            "multiple_fact_candidates",
+            "structured_timeline",
+            "entity_context_available",
+            "offline_inferred_not_source_verified",
+            "sensitive_research_type"
+          ],
+          "risk_level": "medium",
+          "risk_score": 66,
+          "risk_reasons": [
+            "crime_or_person_claim",
+            "unverified_or_disputed_claim",
+            "case_investigation_context"
+          ],
+          "safe_language_mode": true,
+          "allowed_claim_style": "contextual_cautious",
+          "required_disclaimers": [
+            "Do not present inferred points as verified facts",
+            "Avoid absolute certainty unless source verification exists",
+            "Use cautious framing for crime, fraud, financial and disputed claims"
+          ]
+        },
+        "verification_status": "offline_inferred",
+        "source_status": "not_source_verified",
+        "confidence_score": 0.57,
+        "confidence_level": "low_medium",
+        "risk_level": "medium",
+        "safe_language_mode": true,
+        "safe_summary": "Investigation-style analysis me, mystery true crime ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye."
+      }
+    },
+    {
+      "rank": 2,
+      "topic": "mystery real incidents",
+      "source_recommendation": {
+        "rank": 2,
+        "topic": "mystery real incidents",
+        "reason": "Channel strategy: story. Matches patterns: real_story, true_crime, documentary",
+        "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+      },
+      "research_context": {
+        "topic": "mystery real incidents",
+        "research_type": "case_investigation",
+        "summary": "mystery real incidents ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye.",
+        "facts": [
+          {
+            "order": 1,
+            "fact": "mystery real incidents me primary timeline sabse important research angle hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incidents me primary timeline sabse important research angle hai"
+          },
+          {
+            "order": 2,
+            "fact": "mystery real incidents se judi statements, evidence aur sequence verify karna zaroori hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incidents se judi statements, evidence aur sequence verify karna zaroori hai"
+          },
+          {
+            "order": 3,
+            "fact": "mystery real incidents ka strongest story point ignored clue ya timeline gap ho sakta hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incidents ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          }
+        ],
+        "timeline": [
+          {
+            "order": 1,
+            "label": "stage_1",
+            "event": "Initial incident or report",
+            "confidence": "inferred"
+          },
+          {
+            "order": 2,
+            "label": "stage_2",
+            "event": "Evidence or statement contradiction",
+            "confidence": "inferred"
+          },
+          {
+            "order": 3,
+            "label": "stage_3",
+            "event": "Ignored clue becomes important",
+            "confidence": "inferred"
+          },
+          {
+            "order": 4,
+            "label": "stage_4",
+            "event": "Final reveal or unresolved question",
+            "confidence": "inferred"
+          }
+        ],
+        "entities": [
+          {
+            "name": "mystery real incidents",
+            "role": "primary_subject",
+            "confidence": "high",
+            "source": "topic",
+            "score": 230
+          },
+          {
+            "name": "timeline gap",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "ignored clue",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "evidence mismatch",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "mystery",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "incident",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "crime",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "village",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "missing",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "case file",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          }
+        ],
+        "locations": [],
+        "dates": [],
+        "keywords": [
+          "mystery",
+          "real",
+          "incidents",
+          "village",
+          "missing",
+          "crime",
+          "incident",
+          "greed",
+          "documents",
+          "unsolved stories",
+          "real incidents",
+          "crime twists"
+        ],
+        "research_questions": [
+          "Investigation me sabse ignored clue kya tha?",
+          "Statements aur evidence me kya mismatch tha?",
+          "mystery real incidents me sabse reliable source kya hai?",
+          "mystery real incidents ki actual timeline kya thi?",
+          "mystery real incidents me kaunsi detail audience ke liye new ya surprising hogi?"
+        ],
+        "source_hints": [
+          "official records where available",
+          "credible news/report references",
+          "publicly verifiable timeline",
+          "cross-check controversial claims"
+        ],
+        "safety_notes": [
+          "Do not present inferred points as confirmed facts",
+          "Avoid naming real accused/persons unless source verified",
+          "Use cautious language for unresolved or disputed claims"
+        ],
+        "confidence": 0.58,
+        "generation_mode": "offline_recommendation_research_foundation",
+        "primary_subject": "mystery real incidents",
+        "entity_quality": {
+          "primary_subject": "mystery real incidents",
+          "generic_entities_demoted": 6,
+          "ranking_version": "25B.3"
+        },
+        "verification": {
+          "verification_status": "offline_inferred",
+          "source_status": "not_source_verified",
+          "verification_mode": "offline_guard",
+          "research_type": "case_investigation",
+          "confidence_score": 0.57,
+          "confidence_level": "low_medium",
+          "confidence_reasons": [
+            "multiple_fact_candidates",
+            "structured_timeline",
+            "entity_context_available",
+            "offline_inferred_not_source_verified",
+            "sensitive_research_type"
+          ],
+          "risk_level": "low",
+          "risk_score": 36,
+          "risk_reasons": [
+            "unverified_or_disputed_claim",
+            "case_investigation_context"
+          ],
+          "safe_language_mode": true,
+          "allowed_claim_style": "normal_with_no_certainty",
+          "required_disclaimers": [
+            "Do not present inferred points as verified facts",
+            "Avoid absolute certainty unless source verification exists",
+            "Use cautious framing for crime, fraud, financial and disputed claims"
+          ]
+        },
+        "verification_status": "offline_inferred",
+        "source_status": "not_source_verified",
+        "confidence_score": 0.57,
+        "confidence_level": "low_medium",
+        "risk_level": "low",
+        "safe_language_mode": true,
+        "safe_summary": "Context ke hisab se, mystery real incidents ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye."
+      }
+    },
+    {
+      "rank": 3,
+      "topic": "mystery real incident",
+      "source_recommendation": {
+        "rank": 3,
+        "topic": "mystery real incident",
+        "reason": "Channel strategy: story. Matches patterns: real_story, true_crime, documentary",
+        "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+      },
+      "research_context": {
+        "topic": "mystery real incident",
+        "research_type": "case_investigation",
+        "summary": "mystery real incident ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye.",
+        "facts": [
+          {
+            "order": 1,
+            "fact": "mystery real incident me primary timeline sabse important research angle hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incident me primary timeline sabse important research angle hai"
+          },
+          {
+            "order": 2,
+            "fact": "mystery real incident se judi statements, evidence aur sequence verify karna zaroori hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incident se judi statements, evidence aur sequence verify karna zaroori hai"
+          },
+          {
+            "order": 3,
+            "fact": "mystery real incident ka strongest story point ignored clue ya timeline gap ho sakta hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "low_risk_context_claim",
+            "risk_level": "low",
+            "risk_score": 36,
+            "risk_reasons": [
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Context ke hisab se, mystery real incident ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          }
+        ],
+        "timeline": [
+          {
+            "order": 1,
+            "label": "stage_1",
+            "event": "Initial incident or report",
+            "confidence": "inferred"
+          },
+          {
+            "order": 2,
+            "label": "stage_2",
+            "event": "Evidence or statement contradiction",
+            "confidence": "inferred"
+          },
+          {
+            "order": 3,
+            "label": "stage_3",
+            "event": "Ignored clue becomes important",
+            "confidence": "inferred"
+          },
+          {
+            "order": 4,
+            "label": "stage_4",
+            "event": "Final reveal or unresolved question",
+            "confidence": "inferred"
+          }
+        ],
+        "entities": [
+          {
+            "name": "mystery real incident",
+            "role": "primary_subject",
+            "confidence": "high",
+            "source": "topic",
+            "score": 230
+          },
+          {
+            "name": "timeline gap",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "ignored clue",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "evidence mismatch",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "mystery",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "incident",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "crime",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "village",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "missing",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "case file",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          }
+        ],
+        "locations": [],
+        "dates": [],
+        "keywords": [
+          "mystery",
+          "real",
+          "incident",
+          "village",
+          "missing",
+          "crime",
+          "greed",
+          "documents",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons"
+        ],
+        "research_questions": [
+          "Investigation me sabse ignored clue kya tha?",
+          "Statements aur evidence me kya mismatch tha?",
+          "mystery real incident me sabse reliable source kya hai?",
+          "mystery real incident ki actual timeline kya thi?",
+          "mystery real incident me kaunsi detail audience ke liye new ya surprising hogi?"
+        ],
+        "source_hints": [
+          "official records where available",
+          "credible news/report references",
+          "publicly verifiable timeline",
+          "cross-check controversial claims"
+        ],
+        "safety_notes": [
+          "Do not present inferred points as confirmed facts",
+          "Avoid naming real accused/persons unless source verified",
+          "Use cautious language for unresolved or disputed claims"
+        ],
+        "confidence": 0.58,
+        "generation_mode": "offline_recommendation_research_foundation",
+        "primary_subject": "mystery real incident",
+        "entity_quality": {
+          "primary_subject": "mystery real incident",
+          "generic_entities_demoted": 6,
+          "ranking_version": "25B.3"
+        },
+        "verification": {
+          "verification_status": "offline_inferred",
+          "source_status": "not_source_verified",
+          "verification_mode": "offline_guard",
+          "research_type": "case_investigation",
+          "confidence_score": 0.57,
+          "confidence_level": "low_medium",
+          "confidence_reasons": [
+            "multiple_fact_candidates",
+            "structured_timeline",
+            "entity_context_available",
+            "offline_inferred_not_source_verified",
+            "sensitive_research_type"
+          ],
+          "risk_level": "low",
+          "risk_score": 36,
+          "risk_reasons": [
+            "unverified_or_disputed_claim",
+            "case_investigation_context"
+          ],
+          "safe_language_mode": true,
+          "allowed_claim_style": "normal_with_no_certainty",
+          "required_disclaimers": [
+            "Do not present inferred points as verified facts",
+            "Avoid absolute certainty unless source verification exists",
+            "Use cautious framing for crime, fraud, financial and disputed claims"
+          ]
+        },
+        "verification_status": "offline_inferred",
+        "source_status": "not_source_verified",
+        "confidence_score": 0.57,
+        "confidence_level": "low_medium",
+        "risk_level": "low",
+        "safe_language_mode": true,
+        "safe_summary": "Context ke hisab se, mystery real incident ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye."
+      }
+    },
+    {
+      "rank": 4,
+      "topic": "incident true crime",
+      "source_recommendation": {
+        "rank": 4,
+        "topic": "incident true crime",
+        "reason": "Channel strategy: story. Matches patterns: real_story, true_crime, documentary",
+        "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+      },
+      "research_context": {
+        "topic": "incident true crime",
+        "research_type": "case_investigation",
+        "summary": "incident true crime ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye.",
+        "facts": [
+          {
+            "order": 1,
+            "fact": "incident true crime me primary timeline sabse important research angle hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 48,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, incident true crime me primary timeline sabse important research angle hai"
+          },
+          {
+            "order": 2,
+            "fact": "incident true crime se judi statements, evidence aur sequence verify karna zaroori hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 48,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, incident true crime se judi statements, evidence aur sequence verify karna zaroori hai"
+          },
+          {
+            "order": 3,
+            "fact": "incident true crime ka strongest story point ignored clue ya timeline gap ho sakta hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 48,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, incident true crime ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          }
+        ],
+        "timeline": [
+          {
+            "order": 1,
+            "label": "stage_1",
+            "event": "Initial incident or report",
+            "confidence": "inferred"
+          },
+          {
+            "order": 2,
+            "label": "stage_2",
+            "event": "Evidence or statement contradiction",
+            "confidence": "inferred"
+          },
+          {
+            "order": 3,
+            "label": "stage_3",
+            "event": "Ignored clue becomes important",
+            "confidence": "inferred"
+          },
+          {
+            "order": 4,
+            "label": "stage_4",
+            "event": "Final reveal or unresolved question",
+            "confidence": "inferred"
+          }
+        ],
+        "entities": [
+          {
+            "name": "incident true crime",
+            "role": "primary_subject",
+            "confidence": "high",
+            "source": "topic",
+            "score": 230
+          },
+          {
+            "name": "timeline gap",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "ignored clue",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "evidence mismatch",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "crime",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "incident",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "village",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "missing",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "mystery",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "case file",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          }
+        ],
+        "locations": [],
+        "dates": [],
+        "keywords": [
+          "incident",
+          "true",
+          "crime",
+          "village",
+          "missing",
+          "mystery",
+          "greed",
+          "documents",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons"
+        ],
+        "research_questions": [
+          "Investigation me sabse ignored clue kya tha?",
+          "Statements aur evidence me kya mismatch tha?",
+          "incident true crime me sabse reliable source kya hai?",
+          "incident true crime ki actual timeline kya thi?",
+          "incident true crime me kaunsi detail audience ke liye new ya surprising hogi?"
+        ],
+        "source_hints": [
+          "official records where available",
+          "credible news/report references",
+          "publicly verifiable timeline",
+          "cross-check controversial claims"
+        ],
+        "safety_notes": [
+          "Do not present inferred points as confirmed facts",
+          "Avoid naming real accused/persons unless source verified",
+          "Use cautious language for unresolved or disputed claims"
+        ],
+        "confidence": 0.58,
+        "generation_mode": "offline_recommendation_research_foundation",
+        "primary_subject": "incident true crime",
+        "entity_quality": {
+          "primary_subject": "incident true crime",
+          "generic_entities_demoted": 6,
+          "ranking_version": "25B.3"
+        },
+        "verification": {
+          "verification_status": "offline_inferred",
+          "source_status": "not_source_verified",
+          "verification_mode": "offline_guard",
+          "research_type": "case_investigation",
+          "confidence_score": 0.57,
+          "confidence_level": "low_medium",
+          "confidence_reasons": [
+            "multiple_fact_candidates",
+            "structured_timeline",
+            "entity_context_available",
+            "offline_inferred_not_source_verified",
+            "sensitive_research_type"
+          ],
+          "risk_level": "medium",
+          "risk_score": 48,
+          "risk_reasons": [
+            "crime_or_person_claim",
+            "case_investigation_context"
+          ],
+          "safe_language_mode": true,
+          "allowed_claim_style": "contextual_cautious",
+          "required_disclaimers": [
+            "Do not present inferred points as verified facts",
+            "Avoid absolute certainty unless source verification exists",
+            "Use cautious framing for crime, fraud, financial and disputed claims"
+          ]
+        },
+        "verification_status": "offline_inferred",
+        "source_status": "not_source_verified",
+        "confidence_score": 0.57,
+        "confidence_level": "low_medium",
+        "risk_level": "medium",
+        "safe_language_mode": true,
+        "safe_summary": "Investigation-style analysis me, incident true crime ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye."
+      }
+    },
+    {
+      "rank": 5,
+      "topic": "crime mystery",
+      "source_recommendation": {
+        "rank": 5,
+        "topic": "crime mystery",
+        "reason": "Channel strategy: story. Matches patterns: real_story, true_crime, documentary",
+        "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+      },
+      "research_context": {
+        "topic": "crime mystery",
+        "research_type": "case_investigation",
+        "summary": "crime mystery ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye.",
+        "facts": [
+          {
+            "order": 1,
+            "fact": "crime mystery me primary timeline sabse important research angle hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, crime mystery me primary timeline sabse important research angle hai"
+          },
+          {
+            "order": 2,
+            "fact": "crime mystery se judi statements, evidence aur sequence verify karna zaroori hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, crime mystery se judi statements, evidence aur sequence verify karna zaroori hai"
+          },
+          {
+            "order": 3,
+            "fact": "crime mystery ka strongest story point ignored clue ya timeline gap ho sakta hai",
+            "confidence": "inferred",
+            "source_type": "topic_and_channel_context",
+            "verification_status": "offline_inferred",
+            "source_status": "not_source_verified",
+            "claim_type": "inferred_context_claim",
+            "risk_level": "medium",
+            "risk_score": 66,
+            "risk_reasons": [
+              "crime_or_person_claim",
+              "unverified_or_disputed_claim",
+              "case_investigation_context"
+            ],
+            "safe_fact": "Investigation-style analysis me, crime mystery ka strongest story point ignored clue ya timeline gap ho sakta hai"
+          }
+        ],
+        "timeline": [
+          {
+            "order": 1,
+            "label": "stage_1",
+            "event": "Initial incident or report",
+            "confidence": "inferred"
+          },
+          {
+            "order": 2,
+            "label": "stage_2",
+            "event": "Evidence or statement contradiction",
+            "confidence": "inferred"
+          },
+          {
+            "order": 3,
+            "label": "stage_3",
+            "event": "Ignored clue becomes important",
+            "confidence": "inferred"
+          },
+          {
+            "order": 4,
+            "label": "stage_4",
+            "event": "Final reveal or unresolved question",
+            "confidence": "inferred"
+          }
+        ],
+        "entities": [
+          {
+            "name": "crime mystery",
+            "role": "primary_subject",
+            "confidence": "high",
+            "source": "topic",
+            "score": 230
+          },
+          {
+            "name": "timeline gap",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "ignored clue",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "evidence mismatch",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "inferred",
+            "score": 20
+          },
+          {
+            "name": "crime",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "mystery",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -10
+          },
+          {
+            "name": "village",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "missing",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "incident",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          },
+          {
+            "name": "case file",
+            "role": "supporting_context",
+            "confidence": "inferred",
+            "source": "role",
+            "score": -35
+          }
+        ],
+        "locations": [],
+        "dates": [],
+        "keywords": [
+          "crime",
+          "mystery",
+          "village",
+          "missing",
+          "incident",
+          "greed",
+          "documents",
+          "unsolved stories",
+          "real incidents",
+          "crime twists",
+          "money greed lessons"
+        ],
+        "research_questions": [
+          "Investigation me sabse ignored clue kya tha?",
+          "Statements aur evidence me kya mismatch tha?",
+          "crime mystery me sabse reliable source kya hai?",
+          "crime mystery ki actual timeline kya thi?",
+          "crime mystery me kaunsi detail audience ke liye new ya surprising hogi?"
+        ],
+        "source_hints": [
+          "official records where available",
+          "credible news/report references",
+          "publicly verifiable timeline",
+          "cross-check controversial claims"
+        ],
+        "safety_notes": [
+          "Do not present inferred points as confirmed facts",
+          "Avoid naming real accused/persons unless source verified",
+          "Use cautious language for unresolved or disputed claims"
+        ],
+        "confidence": 0.58,
+        "generation_mode": "offline_recommendation_research_foundation",
+        "primary_subject": "crime mystery",
+        "entity_quality": {
+          "primary_subject": "crime mystery",
+          "generic_entities_demoted": 6,
+          "ranking_version": "25B.3"
+        },
+        "verification": {
+          "verification_status": "offline_inferred",
+          "source_status": "not_source_verified",
+          "verification_mode": "offline_guard",
+          "research_type": "case_investigation",
+          "confidence_score": 0.57,
+          "confidence_level": "low_medium",
+          "confidence_reasons": [
+            "multiple_fact_candidates",
+            "structured_timeline",
+            "entity_context_available",
+            "offline_inferred_not_source_verified",
+            "sensitive_research_type"
+          ],
+          "risk_level": "medium",
+          "risk_score": 66,
+          "risk_reasons": [
+            "crime_or_person_claim",
+            "unverified_or_disputed_claim",
+            "case_investigation_context"
+          ],
+          "safe_language_mode": true,
+          "allowed_claim_style": "contextual_cautious",
+          "required_disclaimers": [
+            "Do not present inferred points as verified facts",
+            "Avoid absolute certainty unless source verification exists",
+            "Use cautious framing for crime, fraud, financial and disputed claims"
+          ]
+        },
+        "verification_status": "offline_inferred",
+        "source_status": "not_source_verified",
+        "confidence_score": 0.57,
+        "confidence_level": "low_medium",
+        "risk_level": "medium",
+        "safe_language_mode": true,
+        "safe_summary": "Investigation-style analysis me, crime mystery ke liye research focus timeline, evidence gap, statements aur ignored clue par rehna chahiye."
+      }
+    }
+  ]
+}

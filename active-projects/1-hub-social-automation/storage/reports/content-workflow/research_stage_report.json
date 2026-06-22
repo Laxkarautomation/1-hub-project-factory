@@ -3,8 +3,8 @@
   "stage": "research",
   "channelId": "unraaz",
   "workflowId": "default_content_workflow",
-  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
-  "generatedAt": "2026-06-10T10:27:26.617Z",
+  "workflowRunId": "default_content_workflow_unraaz_1782040847283",
+  "generatedAt": "2026-06-21T11:20:47.920Z",
   "attempts": [
     {
       "ok": true,
@@ -17,7 +17,7 @@
       "ok": true,
       "file": "modules/intelligence/services/build_script_briefs.js",
       "exitCode": 0,
-      "stdout": "✅ Script briefs generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json\n",
+      "stdout": "ℹ️ Research contexts missing. Generating first...\n✅ Research contexts generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/research_contexts.json\nTotal contexts: 5\n✅ Script briefs generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/script_briefs.json\n",
       "stderr": ""
     }
   ],

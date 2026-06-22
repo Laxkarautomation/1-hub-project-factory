@@ -1,0 +1,816 @@
+{
+  "generated_at": "2026-06-21T11:22:12.956Z",
+  "manifest_source": "modules/video/output/optimized_video_manifest.json",
+  "total_scripts": 5,
+  "summary": {
+    "average_readability_score": 95,
+    "total_highlight_keywords": 62,
+    "subtitle_density": 1.75,
+    "status": "subtitle_overlay_plan_batch_ready"
+  },
+  "plans": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "average_readability_score": 94,
+      "detected_issues": [
+        {
+          "issue_type": "text_overload",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "scene subtitles contain too many words for a short-form readable overlay"
+        }
+      ],
+      "status": "subtitle_overlay_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "subtitle_style": "bold_hook_caption",
+          "subtitle_position": "upper_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "ignored",
+            "warning"
+          ],
+          "highlight_keywords": [
+            "mystery"
+          ],
+          "overlay_type": "hook_keyword_pop",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 87,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "mid_lower_safe",
+          "emphasis_words": [
+            "mystery",
+            "shuruaat",
+            "financial"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "shuruaat",
+            "financial",
+            "decision"
+          ],
+          "overlay_type": "pattern_break_caption",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 3600,
+          "readability_score": 71,
+          "word_count": 19,
+          "emotion_intensity": 82,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure",
+            "numbers",
+            "problem"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "timeline",
+            "important"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "timeline",
+            "important",
+            "research"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 96,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "subtitle_style": "impact_reveal_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "shuruaat"
+          ],
+          "overlay_type": "reveal_emphasis",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 92,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "subtitle_style": "clean_cta_caption",
+          "subtitle_position": "lower_safe_center",
+          "emphasis_words": [],
+          "highlight_keywords": [],
+          "overlay_type": "cta_prompt",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2250,
+          "readability_score": 94,
+          "word_count": 8,
+          "emotion_intensity": 72,
+          "retention_attention_flag": false
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "average_readability_score": 94,
+      "detected_issues": [
+        {
+          "issue_type": "text_overload",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "scene subtitles contain too many words for a short-form readable overlay"
+        }
+      ],
+      "status": "subtitle_overlay_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "subtitle_style": "bold_hook_caption",
+          "subtitle_position": "upper_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "incidents",
+            "ignored"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incidents"
+          ],
+          "overlay_type": "hook_keyword_pop",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 87,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "mid_lower_safe",
+          "emphasis_words": [
+            "mystery",
+            "incidents",
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incidents",
+            "shuruaat",
+            "financial"
+          ],
+          "overlay_type": "pattern_break_caption",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 3600,
+          "readability_score": 71,
+          "word_count": 19,
+          "emotion_intensity": 82,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure",
+            "numbers",
+            "problem"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "incidents",
+            "timeline"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incidents",
+            "timeline",
+            "important"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 96,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "subtitle_style": "impact_reveal_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "shuruaat"
+          ],
+          "overlay_type": "reveal_emphasis",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 92,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "subtitle_style": "clean_cta_caption",
+          "subtitle_position": "lower_safe_center",
+          "emphasis_words": [],
+          "highlight_keywords": [],
+          "overlay_type": "cta_prompt",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2250,
+          "readability_score": 94,
+          "word_count": 8,
+          "emotion_intensity": 72,
+          "retention_attention_flag": false
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "average_readability_score": 94,
+      "detected_issues": [
+        {
+          "issue_type": "text_overload",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "scene subtitles contain too many words for a short-form readable overlay"
+        }
+      ],
+      "status": "subtitle_overlay_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "subtitle_style": "bold_hook_caption",
+          "subtitle_position": "upper_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "incident",
+            "ignored"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incident"
+          ],
+          "overlay_type": "hook_keyword_pop",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 87,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "mid_lower_safe",
+          "emphasis_words": [
+            "mystery",
+            "incident",
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incident",
+            "shuruaat",
+            "financial"
+          ],
+          "overlay_type": "pattern_break_caption",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 3600,
+          "readability_score": 71,
+          "word_count": 19,
+          "emotion_intensity": 82,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure",
+            "numbers",
+            "problem"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "incident",
+            "timeline"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "incident",
+            "timeline",
+            "important"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 96,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "subtitle_style": "impact_reveal_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "shuruaat"
+          ],
+          "overlay_type": "reveal_emphasis",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 92,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "subtitle_style": "clean_cta_caption",
+          "subtitle_position": "lower_safe_center",
+          "emphasis_words": [],
+          "highlight_keywords": [],
+          "overlay_type": "cta_prompt",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2250,
+          "readability_score": 94,
+          "word_count": 8,
+          "emotion_intensity": 72,
+          "retention_attention_flag": false
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "average_readability_score": 94,
+      "detected_issues": [
+        {
+          "issue_type": "text_overload",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "scene subtitles contain too many words for a short-form readable overlay"
+        }
+      ],
+      "status": "subtitle_overlay_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "subtitle_style": "bold_hook_caption",
+          "subtitle_position": "upper_safe_center",
+          "emphasis_words": [
+            "incident",
+            "ignored",
+            "warning"
+          ],
+          "highlight_keywords": [
+            "incident"
+          ],
+          "overlay_type": "hook_keyword_pop",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 87,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "mid_lower_safe",
+          "emphasis_words": [
+            "incident",
+            "shuruaat",
+            "financial"
+          ],
+          "highlight_keywords": [
+            "incident",
+            "shuruaat",
+            "financial",
+            "decision"
+          ],
+          "overlay_type": "pattern_break_caption",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 3600,
+          "readability_score": 71,
+          "word_count": 19,
+          "emotion_intensity": 82,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure",
+            "numbers",
+            "problem"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "incident",
+            "timeline",
+            "important"
+          ],
+          "highlight_keywords": [
+            "incident",
+            "timeline",
+            "important",
+            "research"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 96,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "subtitle_style": "impact_reveal_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "shuruaat"
+          ],
+          "overlay_type": "reveal_emphasis",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 92,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "subtitle_style": "clean_cta_caption",
+          "subtitle_position": "lower_safe_center",
+          "emphasis_words": [],
+          "highlight_keywords": [],
+          "overlay_type": "cta_prompt",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2250,
+          "readability_score": 94,
+          "word_count": 8,
+          "emotion_intensity": 72,
+          "retention_attention_flag": false
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "average_readability_score": 95,
+      "detected_issues": [],
+      "status": "subtitle_overlay_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "subtitle_style": "bold_hook_caption",
+          "subtitle_position": "upper_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "ignored",
+            "warning"
+          ],
+          "highlight_keywords": [
+            "mystery"
+          ],
+          "overlay_type": "hook_keyword_pop",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 12,
+          "emotion_intensity": 87,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "shuruaat",
+            "financial"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "shuruaat",
+            "financial",
+            "decision"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 76,
+          "word_count": 18,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure",
+            "numbers",
+            "problem"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 13,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "mystery",
+            "timeline",
+            "important"
+          ],
+          "highlight_keywords": [
+            "mystery",
+            "timeline",
+            "important",
+            "research"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 96,
+          "word_count": 10,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "subtitle_style": "high_emotion_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "pressure"
+          ],
+          "highlight_keywords": [
+            "pressure"
+          ],
+          "overlay_type": "emotion_keyword_pop",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 82,
+          "retention_attention_flag": false
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "subtitle_style": "impact_reveal_caption",
+          "subtitle_position": "bottom_safe_center",
+          "emphasis_words": [
+            "shuruaat"
+          ],
+          "highlight_keywords": [
+            "shuruaat"
+          ],
+          "overlay_type": "reveal_emphasis",
+          "overlay_timing_ms": 250,
+          "overlay_duration_ms": 2800,
+          "readability_score": 100,
+          "word_count": 11,
+          "emotion_intensity": 92,
+          "retention_attention_flag": true
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "subtitle_style": "clean_cta_caption",
+          "subtitle_position": "lower_safe_center",
+          "emphasis_words": [],
+          "highlight_keywords": [],
+          "overlay_type": "cta_prompt",
+          "overlay_timing_ms": 400,
+          "overlay_duration_ms": 2250,
+          "readability_score": 94,
+          "word_count": 8,
+          "emotion_intensity": 72,
+          "retention_attention_flag": false
+        }
+      ]
+    }
+  ]
+}

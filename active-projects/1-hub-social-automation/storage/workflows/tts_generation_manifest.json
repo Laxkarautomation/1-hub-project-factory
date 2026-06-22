@@ -4,40 +4,71 @@
   "providerAware": true,
   "adminConfigDriven": true,
   "freeFirst": true,
-  "status": "manifest_created",
-  "note": "TTS content-stage manifest created. Actual audio generation will use admin-selected audio provider when keys/free provider are available.",
+  "status": "audio_ready",
+  "failureReason": null,
   "totalScripts": 5,
+  "readyAudio": 5,
+  "missingAudio": 0,
   "items": [
     {
-      "id": "script_001",
-      "status": "pending_audio_provider",
-      "textSource": "script_generation",
-      "outputAudio": null
+      "id": "intelligence_script_001",
+      "script_id": "intelligence_script_001",
+      "status": "audio_ready",
+      "textSource": "video_manifest",
+      "text": "mystery true crime me ek ignored risk signal sabse badi warning ban gaya... mystery true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha. Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua. mystery true crime me primary timeline sabse important research angle hai. Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga. Yahin story palti. Real issue shuruaat me hi dikh raha tha. Risk ignore karna mehngi galti ban sakta hai.",
+      "outputAudio": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_001.mp3",
+      "exists": true,
+      "sizeBytes": 232848
     },
     {
-      "id": "script_002",
-      "status": "pending_audio_provider",
-      "textSource": "script_generation",
-      "outputAudio": null
+      "id": "intelligence_script_002",
+      "script_id": "intelligence_script_002",
+      "status": "audio_ready",
+      "textSource": "video_manifest",
+      "text": "mystery real incidents me ek ignored risk signal sabse badi warning ban gaya... mystery real incidents me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha. Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua. mystery real incidents me primary timeline sabse important research angle hai. Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga. Yahin story palti. Real issue shuruaat me hi dikh raha tha. Risk ignore karna mehngi galti ban sakta hai.",
+      "outputAudio": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_002.mp3",
+      "exists": true,
+      "sizeBytes": 213696
     },
     {
-      "id": "script_003",
-      "status": "pending_audio_provider",
-      "textSource": "script_generation",
-      "outputAudio": null
+      "id": "intelligence_script_003",
+      "script_id": "intelligence_script_003",
+      "status": "audio_ready",
+      "textSource": "video_manifest",
+      "text": "mystery real incident me ek ignored risk signal sabse badi warning ban gaya... mystery real incident me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha. Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua. mystery real incident me primary timeline sabse important research angle hai. Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga. Yahin story palti. Real issue shuruaat me hi dikh raha tha. Risk ignore karna mehngi galti ban sakta hai.",
+      "outputAudio": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_003.mp3",
+      "exists": true,
+      "sizeBytes": 212688
     },
     {
-      "id": "script_004",
-      "status": "pending_audio_provider",
-      "textSource": "script_generation",
-      "outputAudio": null
+      "id": "intelligence_script_004",
+      "script_id": "intelligence_script_004",
+      "status": "audio_ready",
+      "textSource": "video_manifest",
+      "text": "incident true crime me ek ignored risk signal sabse badi warning ban gaya... incident true crime me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha. Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua. incident true crime me primary timeline sabse important research angle hai. Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga. Yahin story palti. Real issue shuruaat me hi dikh raha tha. Risk ignore karna mehngi galti ban sakta hai.",
+      "outputAudio": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_004.mp3",
+      "exists": true,
+      "sizeBytes": 234576
     },
     {
-      "id": "script_005",
-      "status": "pending_audio_provider",
-      "textSource": "script_generation",
-      "outputAudio": null
+      "id": "intelligence_script_005",
+      "script_id": "intelligence_script_005",
+      "status": "audio_ready",
+      "textSource": "video_manifest",
+      "text": "crime mystery me ek ignored risk signal sabse badi warning ban gaya... crime mystery me shuruaat ek normal financial decision se hoti hai, jahan sab kuch safe lag raha tha. Numbers me pressure chhupa tha. Lekin problem yahan thi: early signal ignore hua. crime mystery me primary timeline sabse important research angle hai. Delay badhta gaya, aur wahi chhota pressure mehngi galti banne laga. Yahin story palti. Real issue shuruaat me hi dikh raha tha. Risk ignore karna mehngi galti ban sakta hai.",
+      "outputAudio": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_005.mp3",
+      "exists": true,
+      "sizeBytes": 231840
     }
   ],
-  "generatedAt": "2026-06-10T10:29:57.915Z"
+  "generatedAt": "2026-06-21T11:21:51.102Z",
+  "attempts": [
+    {
+      "ok": true,
+      "file": "providers/edge-tts/services/generate_voice.js",
+      "exitCode": 0,
+      "stdout": "Generating voice: intelligence_script_001\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_001.mp3\nGenerating voice: intelligence_script_002\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_002.mp3\nGenerating voice: intelligence_script_003\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_003.mp3\nGenerating voice: intelligence_script_004\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_004.mp3\nGenerating voice: intelligence_script_005\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_005.mp3\n✅ Voice generation complete\n",
+      "stderr": ""
+    }
+  ]
 }

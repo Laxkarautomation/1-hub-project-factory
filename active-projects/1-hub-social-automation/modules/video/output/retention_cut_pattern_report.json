@@ -1,0 +1,434 @@
+{
+  "generated_at": "2026-06-21T11:22:12.904Z",
+  "manifest_source": "modules/video/output/optimized_video_manifest.json",
+  "total_scripts": 5,
+  "summary": {
+    "total_scenes": 35,
+    "average_retention_score": 51,
+    "high_drop_risk_scripts": 5,
+    "medium_drop_risk_scripts": 0,
+    "low_drop_risk_scripts": 0,
+    "total_recommendations": 19,
+    "status": "retention_cut_pattern_batch_ready"
+  },
+  "reports": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "retention_score": 50,
+      "viewer_drop_risk": "high",
+      "cut_density": 3.7,
+      "pattern_variation_score": 47,
+      "suspense_curve_score": 76,
+      "pacing_consistency_score": 71,
+      "detected_issues": [
+        {
+          "issue_type": "repetitive_motion_patterns",
+          "severity": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats",
+          "recommendation_type": "speed_up_motion"
+        },
+        {
+          "issue_type": "repetitive_transitions",
+          "severity": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break",
+          "recommendation_type": "stronger_transition"
+        },
+        {
+          "issue_type": "weak_reveal_timing",
+          "severity": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve",
+          "recommendation_type": "insert_pattern_break"
+        },
+        {
+          "issue_type": "dead_zone",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change",
+          "recommendation_type": "add_cut"
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation_type": "speed_up_motion",
+          "priority": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats"
+        },
+        {
+          "recommendation_type": "stronger_transition",
+          "priority": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break"
+        },
+        {
+          "recommendation_type": "insert_pattern_break",
+          "priority": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve"
+        },
+        {
+          "recommendation_type": "add_cut",
+          "priority": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change"
+        }
+      ],
+      "status": "retention_cut_pattern_ready"
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "retention_score": 50,
+      "viewer_drop_risk": "high",
+      "cut_density": 3.7,
+      "pattern_variation_score": 47,
+      "suspense_curve_score": 76,
+      "pacing_consistency_score": 71,
+      "detected_issues": [
+        {
+          "issue_type": "repetitive_motion_patterns",
+          "severity": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats",
+          "recommendation_type": "speed_up_motion"
+        },
+        {
+          "issue_type": "repetitive_transitions",
+          "severity": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break",
+          "recommendation_type": "stronger_transition"
+        },
+        {
+          "issue_type": "weak_reveal_timing",
+          "severity": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve",
+          "recommendation_type": "insert_pattern_break"
+        },
+        {
+          "issue_type": "dead_zone",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change",
+          "recommendation_type": "add_cut"
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation_type": "speed_up_motion",
+          "priority": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats"
+        },
+        {
+          "recommendation_type": "stronger_transition",
+          "priority": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break"
+        },
+        {
+          "recommendation_type": "insert_pattern_break",
+          "priority": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve"
+        },
+        {
+          "recommendation_type": "add_cut",
+          "priority": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change"
+        }
+      ],
+      "status": "retention_cut_pattern_ready"
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "retention_score": 50,
+      "viewer_drop_risk": "high",
+      "cut_density": 3.7,
+      "pattern_variation_score": 47,
+      "suspense_curve_score": 76,
+      "pacing_consistency_score": 71,
+      "detected_issues": [
+        {
+          "issue_type": "repetitive_motion_patterns",
+          "severity": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats",
+          "recommendation_type": "speed_up_motion"
+        },
+        {
+          "issue_type": "repetitive_transitions",
+          "severity": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break",
+          "recommendation_type": "stronger_transition"
+        },
+        {
+          "issue_type": "weak_reveal_timing",
+          "severity": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve",
+          "recommendation_type": "insert_pattern_break"
+        },
+        {
+          "issue_type": "dead_zone",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change",
+          "recommendation_type": "add_cut"
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation_type": "speed_up_motion",
+          "priority": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats"
+        },
+        {
+          "recommendation_type": "stronger_transition",
+          "priority": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break"
+        },
+        {
+          "recommendation_type": "insert_pattern_break",
+          "priority": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve"
+        },
+        {
+          "recommendation_type": "add_cut",
+          "priority": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change"
+        }
+      ],
+      "status": "retention_cut_pattern_ready"
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "retention_score": 50,
+      "viewer_drop_risk": "high",
+      "cut_density": 3.7,
+      "pattern_variation_score": 47,
+      "suspense_curve_score": 76,
+      "pacing_consistency_score": 71,
+      "detected_issues": [
+        {
+          "issue_type": "repetitive_motion_patterns",
+          "severity": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats",
+          "recommendation_type": "speed_up_motion"
+        },
+        {
+          "issue_type": "repetitive_transitions",
+          "severity": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break",
+          "recommendation_type": "stronger_transition"
+        },
+        {
+          "issue_type": "weak_reveal_timing",
+          "severity": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve",
+          "recommendation_type": "insert_pattern_break"
+        },
+        {
+          "issue_type": "dead_zone",
+          "severity": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change",
+          "recommendation_type": "add_cut"
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation_type": "speed_up_motion",
+          "priority": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats"
+        },
+        {
+          "recommendation_type": "stronger_transition",
+          "priority": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break"
+        },
+        {
+          "recommendation_type": "insert_pattern_break",
+          "priority": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve"
+        },
+        {
+          "recommendation_type": "add_cut",
+          "priority": "medium",
+          "scenes": [
+            2
+          ],
+          "reason": "long slow-moving sections risk losing attention before the next meaningful pattern change"
+        }
+      ],
+      "status": "retention_cut_pattern_ready"
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 48,
+      "retention_score": 53,
+      "viewer_drop_risk": "high",
+      "cut_density": 3.8,
+      "pattern_variation_score": 45,
+      "suspense_curve_score": 76,
+      "pacing_consistency_score": 73,
+      "detected_issues": [
+        {
+          "issue_type": "repetitive_motion_patterns",
+          "severity": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats",
+          "recommendation_type": "speed_up_motion"
+        },
+        {
+          "issue_type": "repetitive_transitions",
+          "severity": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break",
+          "recommendation_type": "stronger_transition"
+        },
+        {
+          "issue_type": "weak_reveal_timing",
+          "severity": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve",
+          "recommendation_type": "insert_pattern_break"
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation_type": "speed_up_motion",
+          "priority": "high",
+          "scenes": [
+            4,
+            5
+          ],
+          "reason": "camera movement repeats too often across adjacent beats"
+        },
+        {
+          "recommendation_type": "stronger_transition",
+          "priority": "medium",
+          "scenes": [
+            4
+          ],
+          "reason": "transition language repeats before the viewer gets a pattern break"
+        },
+        {
+          "recommendation_type": "insert_pattern_break",
+          "priority": "high",
+          "scenes": [
+            6
+          ],
+          "reason": "the reveal is not punctuated strongly enough for the current pacing curve"
+        }
+      ],
+      "status": "retention_cut_pattern_ready"
+    }
+  ]
+}

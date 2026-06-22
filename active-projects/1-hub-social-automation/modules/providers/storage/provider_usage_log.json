@@ -1,1 +1,542 @@
-[]
+[
+  {
+    "id": "usage_1782040850423_2qyinh",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1434,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:50.428Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040851843_dg7dj7",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1410,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:51.843Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040853277_abvvll",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1432,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:53.277Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040854473_t565z1",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1195,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:54.473Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040855680_fknw4b",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1205,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:55.680Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040856866_m881k4",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1185,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:56.866Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040858079_wzzcq6",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1212,
+    "error": null,
+    "createdAt": "2026-06-21T11:20:58.079Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040860232_pp7khj",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1552,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:00.232Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040861568_obdh2r",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1334,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:01.568Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040862849_ahi0gs",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1280,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:02.849Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040864532_c0gja0",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1682,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:04.532Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040865867_p2hyxz",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1333,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:05.867Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040867323_159haw",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1455,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:07.323Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040868662_qp4tbl",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1338,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:08.662Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040872137_k8um7j",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2884,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:12.137Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040873423_jlhac1",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1281,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:13.423Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040874789_rnmpw4",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1364,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:14.789Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040876172_zsny0m",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1382,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:16.172Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040877460_74mf4a",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1287,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:17.460Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040878850_mjsd3j",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1389,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:18.850Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040880107_geoizu",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1255,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:20.107Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040883053_o6ugqp",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2503,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:23.053Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040886014_de52xr",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2959,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:26.014Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040888583_c5p4q3",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2568,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:28.583Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040890227_atp6hm",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1643,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:30.227Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040892459_nxusxq",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2230,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:32.459Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040893759_yofuhr",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1299,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:33.759Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040895054_ob141m",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1293,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:35.054Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040897703_dr412m",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2214,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:37.703Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040899381_c1de7l",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1675,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:39.381Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040902129_s9pstm",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2748,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:42.129Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040903806_kvbr8q",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1676,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:43.806Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040905965_1bql8v",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 2158,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:45.965Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040907324_qdzinh",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1358,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:47.324Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040908614_22qvt1",
+    "provider": "cloudflare",
+    "type": "image",
+    "status": "api_error",
+    "success": false,
+    "keyId": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "durationMs": 1288,
+    "error": "AiError: AiError: Input prompt contains NSFW content. (f3bfaec4-3a76-4706-bdb9-a78dc42ba2d3)",
+    "createdAt": "2026-06-21T11:21:48.614Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  },
+  {
+    "id": "usage_1782040910768_81tzyt",
+    "provider": "pollinations",
+    "type": "image",
+    "status": "generated",
+    "success": true,
+    "keyId": null,
+    "model": "flux",
+    "durationMs": 2154,
+    "error": null,
+    "createdAt": "2026-06-21T11:21:50.768Z",
+    "metadata": {
+      "fallbackEngine": true
+    }
+  }
+]

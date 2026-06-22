@@ -3,62 +3,561 @@
   "stage": "image_generation",
   "channelId": "unraaz",
   "workflowId": "default_content_workflow",
-  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
-  "generatedAt": "2026-06-10T10:29:57.861Z",
-  "totalScripts": 10,
-  "completed": 0,
-  "skippedExisting": 10,
+  "workflowRunId": "default_content_workflow_unraaz_1782040847283",
+  "generatedAt": "2026-06-21T11:21:51.057Z",
+  "status": "completed",
+  "totalScripts": 5,
+  "expectedImages": 35,
+  "generatedImages": 35,
+  "failedImages": 0,
+  "skippedImages": 0,
+  "failedScenes": [],
+  "completedScriptIds": [
+    "intelligence_script_001",
+    "intelligence_script_002",
+    "intelligence_script_003",
+    "intelligence_script_004",
+    "intelligence_script_005"
+  ],
+  "incompleteScriptIds": [],
+  "completed": 5,
+  "skippedExisting": 0,
   "failed": 0,
+  "setupAttempts": [
+    {
+      "ok": true,
+      "file": "modules/intelligence/services/build_visual_storyboards.js",
+      "exitCode": 0,
+      "stdout": "Visual storyboards generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/intelligence/output/visual_storyboards.json\nTotal storyboards: 5\nSkipped briefs: 0\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/images/services/generate_scene_varied_prompts.js",
+      "exitCode": 0,
+      "stdout": "Varied image prompts generated\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/images/output/unraaz_varied_image_prompts.json\nSource: phase_27_visual_storyboards\nTotal packs: 5\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/publishing/services/export_content_pack.js",
+      "exitCode": 0,
+      "stdout": "Content pack exported\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/publishing/unraaz/content_pack.json\nSource: phase_27_visual_storyboards\nTotal packs: 5\n",
+      "stderr": ""
+    },
+    {
+      "ok": true,
+      "file": "modules/video/services/build_video_manifest.js",
+      "exitCode": 0,
+      "stdout": "Video manifest created\n/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video/output/video_manifest.json\nTotal videos: 5\n",
+      "stderr": ""
+    }
+  ],
   "results": [
     {
-      "scriptId": "research_script_001",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_001_image_status.json"
+      "scriptId": "intelligence_script_001",
+      "status": "completed",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "expectedImages": 7,
+      "stdout": "Image factory started: intelligence_script_001\nProvider stack: cloudflare → pollinations → google → fal\nGenerating missing image: scene_1.jpg\nGenerating missing image: scene_2.jpg\nGenerating missing image: scene_3.jpg\nGenerating missing image: scene_4.jpg\nGenerating missing image: scene_5.jpg\nGenerating missing image: scene_6.jpg\nGenerating missing image: scene_7.jpg\nImage factory report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_factory_report.json\n{\n  \"scriptId\": \"intelligence_script_001\",\n  \"status\": \"completed\",\n  \"expectedImages\": 7,\n  \"generatedImages\": 7,\n  \"failedImages\": 0,\n  \"skippedImages\": 0,\n  \"failedScenes\": [],\n  \"updatedAt\": \"2026-06-21T11:20:58.080Z\"\n}\nImage factory completed.\n",
+      "stderr": "",
+      "error": null,
+      "outputStatus": "modules/image-factory/output/intelligence_script_001_image_status.json",
+      "outputReport": "modules/image-factory/output/intelligence_script_001_image_factory_report.json",
+      "generatedImages": 7,
+      "failedImages": 0,
+      "failedScenes": [],
+      "workflowStatus": "completed",
+      "preflightStatus": "completed",
+      "preflightResults": [
+        {
+          "key": "image_strategy",
+          "file": "modules/image-factory/run_image_strategy_resolver.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image generation strategy report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_strategy_report.json\n┌─────────┬───────┬───────────────────────────────────────────────────┬──────────┬───────────────────────────────────┐\n│ (index) │ scene │ intents                                           │ primary  │ fallback                          │\n├─────────┼───────┼───────────────────────────────────────────────────┼──────────┼───────────────────────────────────┤\n│ 0       │ 1     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 1       │ 2     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 2       │ 3     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 3       │ 4     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 4       │ 5     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 5       │ 6     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 6       │ 7     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n└─────────┴───────┴───────────────────────────────────────────────────┴──────────┴───────────────────────────────────┘\nSummary: {\n  total_scenes: 7,\n  dominant_provider: 'google',\n  primary_provider_counts: { google: 7 },\n  status: 'image_generation_strategy_resolved'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "provider_fallback",
+          "file": "modules/image-factory/run_provider_fallback_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Provider fallback report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_provider_fallback_report.json\n┌─────────┬───────┬──────────┬───────────────────────────┬─────────────────────────────────┬──────────────┬───────────┐\n│ (index) │ scene │ failed   │ type                      │ action                          │ next         │ exhausted │\n├─────────┼───────┼──────────┼───────────────────────────┼─────────────────────────────────┼──────────────┼───────────┤\n│ 0       │ 1     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 1       │ 2     │ 'google' │ 'timeout_or_network'      │ 'retry_once_then_fallback'      │ 'cloudflare' │ false     │\n│ 2       │ 3     │ 'google' │ 'safety_block'            │ 'sanitize_prompt_then_fallback' │ 'cloudflare' │ false     │\n│ 3       │ 4     │ 'google' │ 'auth_or_key_error'       │ 'skip_provider_until_key_fixed' │ 'cloudflare' │ false     │\n│ 4       │ 5     │ 'google' │ 'empty_or_invalid_output' │ 'retry_or_fallback'             │ 'cloudflare' │ false     │\n│ 5       │ 6     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 6       │ 7     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n└─────────┴───────┴──────────┴───────────────────────────┴─────────────────────────────────┴──────────────┴───────────┘\nSummary: {\n  total_scenes: 7,\n  fallback_ready: 7,\n  exhausted: 0,\n  retryable_failures: 3,\n  status: 'provider_fallback_ready'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ],
+      "imageFactoryStatus": "completed",
+      "qaStatus": "completed",
+      "qaResults": [
+        {
+          "key": "image_audit",
+          "file": "modules/image-factory/run_image_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image audit saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_status.json\nImage output audit report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_output_audit_report.json\n┌─────────┬───────┬─────────┬────────┬────────┬─────────┬─────────────┬──────────┐\n│ (index) │ scene │ status  │ exists │ size   │ quality │ band        │ approved │\n├─────────┼───────┼─────────┼────────┼────────┼─────────┼─────────────┼──────────┤\n│ 0       │ 1     │ 'ready' │ true   │ 467607 │ 86      │ 'excellent' │ true     │\n│ 1       │ 2     │ 'ready' │ true   │ 237796 │ 86      │ 'excellent' │ true     │\n│ 2       │ 3     │ 'ready' │ true   │ 254698 │ 86      │ 'excellent' │ true     │\n│ 3       │ 4     │ 'ready' │ true   │ 345371 │ 86      │ 'excellent' │ true     │\n│ 4       │ 5     │ 'ready' │ true   │ 344071 │ 86      │ 'excellent' │ true     │\n│ 5       │ 6     │ 'ready' │ true   │ 357365 │ 86      │ 'excellent' │ true     │\n│ 6       │ 7     │ 'ready' │ true   │ 214282 │ 86      │ 'excellent' │ true     │\n└─────────┴───────┴─────────┴────────┴────────┴─────────┴─────────────┴──────────┘\nSummary: {\n  total_images: 7,\n  approved: 7,\n  rejected: 0,\n  missing: 0,\n  average_quality: 86,\n  status: 'image_quality_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_narration_match",
+          "file": "modules/image-factory/run_image_narration_match.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image narration match report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_narration_match_report.json\n┌─────────┬───────┬───────────┬───────────┬─────────────┬───────┬────────────────┐\n│ (index) │ scene │ keyword   │ mood      │ specificity │ match │ status         │\n├─────────┼───────┼───────────┼───────────┼─────────────┼───────┼────────────────┤\n│ 0       │ 1     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 1       │ 2     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 2       │ 3     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 3       │ 4     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 4       │ 5     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 5       │ 6     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 6       │ 7     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n└─────────┴───────┴───────────┴───────────┴─────────────┴───────┴────────────────┘\nSummary: {\n  average_match_score: 86,\n  approved_scenes: 7,\n  rejected_scenes: 0,\n  status: 'image_narration_match_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_continuity_check",
+          "file": "modules/image-factory/run_image_continuity_check.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image continuity report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_continuity_report.json\n┌─────────┬────────┬─────┬──────┬─────────┬─────────────┬───────┬───────────────────────────┐\n│ (index) │ pair   │ env │ mood │ subject │ progression │ score │ status                    │\n├─────────┼────────┼─────┼──────┼─────────┼─────────────┼───────┼───────────────────────────┤\n│ 0       │ '1->2' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 1       │ '2->3' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 2       │ '3->4' │ 100 │ 67   │ 50      │ 100         │ 80    │ 'continuity_passed'       │\n│ 3       │ '4->5' │ 50  │ 67   │ 50      │ 100         │ 63    │ 'continuity_needs_review' │\n│ 4       │ '5->6' │ 50  │ 100  │ 50      │ 100         │ 73    │ 'continuity_passed'       │\n│ 5       │ '6->7' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n└─────────┴────────┴─────┴──────┴─────────┴─────────────┴───────┴───────────────────────────┘\nSummary: {\n  pair_average_score: 86,\n  story_progression_score: 85,\n  continuity_score: 86,\n  status: 'image_continuity_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_regeneration_decision",
+          "file": "modules/image-factory/run_image_regeneration_decision.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image regeneration decision report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_image_regeneration_decision_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────────┬───────────┬─────────┐\n│ (index) │ scene │ quality │ match │ continuity │ readiness │ decision  │ reasons │\n├─────────┼───────┼─────────┼───────┼────────────┼───────────┼───────────┼─────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85        │ 'approve' │ '-'     │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86        │ 'approve' │ '-'     │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79        │ 'approve' │ '-'     │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84        │ 'approve' │ '-'     │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87        │ 'approve' │ '-'     │\n└─────────┴───────┴─────────┴───────┴────────────┴───────────┴───────────┴─────────┘\nSummary: {\n  total_scenes: 7,\n  approved: 7,\n  regenerate_required: 0,\n  review_or_regenerate: 0,\n  average_readiness_score: 87,\n  status: 'image_regeneration_not_required'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "final_image_selection",
+          "file": "modules/image-factory/run_final_image_selection.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Final image selection report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_001_final_image_selection_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────┬──────────┬──────────────────────┐\n│ (index) │ scene │ quality │ match │ continuity │ final │ selected │ status               │\n├─────────┼───────┼─────────┼───────┼────────────┼───────┼──────────┼──────────────────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85    │ true     │ 'selected_for_video' │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86    │ true     │ 'selected_for_video' │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79    │ true     │ 'selected_for_video' │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84    │ true     │ 'selected_for_video' │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87    │ true     │ 'selected_for_video' │\n└─────────┴───────┴─────────┴───────┴────────────┴───────┴──────────┴──────────────────────┘\nSummary: {\n  total_scenes: 7,\n  approved_for_video: 7,\n  blocked_from_video: 0,\n  average_final_image_score: 87,\n  status: 'final_images_selected'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ]
     },
     {
-      "scriptId": "research_script_002",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_002_image_status.json"
+      "scriptId": "intelligence_script_002",
+      "status": "completed",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "expectedImages": 7,
+      "stdout": "Image factory started: intelligence_script_002\nProvider stack: cloudflare → pollinations → google → fal\nGenerating missing image: scene_1.jpg\nGenerating missing image: scene_2.jpg\nGenerating missing image: scene_3.jpg\nGenerating missing image: scene_4.jpg\nGenerating missing image: scene_5.jpg\nGenerating missing image: scene_6.jpg\nGenerating missing image: scene_7.jpg\nImage factory report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_factory_report.json\n{\n  \"scriptId\": \"intelligence_script_002\",\n  \"status\": \"completed\",\n  \"expectedImages\": 7,\n  \"generatedImages\": 7,\n  \"failedImages\": 0,\n  \"skippedImages\": 0,\n  \"failedScenes\": [],\n  \"updatedAt\": \"2026-06-21T11:21:08.663Z\"\n}\nImage factory completed.\n",
+      "stderr": "",
+      "error": null,
+      "outputStatus": "modules/image-factory/output/intelligence_script_002_image_status.json",
+      "outputReport": "modules/image-factory/output/intelligence_script_002_image_factory_report.json",
+      "generatedImages": 7,
+      "failedImages": 0,
+      "failedScenes": [],
+      "workflowStatus": "completed",
+      "preflightStatus": "completed",
+      "preflightResults": [
+        {
+          "key": "image_strategy",
+          "file": "modules/image-factory/run_image_strategy_resolver.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image generation strategy report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_strategy_report.json\n┌─────────┬───────┬───────────────────────────────────────────────────┬──────────┬───────────────────────────────────┐\n│ (index) │ scene │ intents                                           │ primary  │ fallback                          │\n├─────────┼───────┼───────────────────────────────────────────────────┼──────────┼───────────────────────────────────┤\n│ 0       │ 1     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 1       │ 2     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 2       │ 3     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 3       │ 4     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 4       │ 5     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 5       │ 6     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 6       │ 7     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n└─────────┴───────┴───────────────────────────────────────────────────┴──────────┴───────────────────────────────────┘\nSummary: {\n  total_scenes: 7,\n  dominant_provider: 'google',\n  primary_provider_counts: { google: 7 },\n  status: 'image_generation_strategy_resolved'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "provider_fallback",
+          "file": "modules/image-factory/run_provider_fallback_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Provider fallback report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_provider_fallback_report.json\n┌─────────┬───────┬──────────┬───────────────────────────┬─────────────────────────────────┬──────────────┬───────────┐\n│ (index) │ scene │ failed   │ type                      │ action                          │ next         │ exhausted │\n├─────────┼───────┼──────────┼───────────────────────────┼─────────────────────────────────┼──────────────┼───────────┤\n│ 0       │ 1     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 1       │ 2     │ 'google' │ 'timeout_or_network'      │ 'retry_once_then_fallback'      │ 'cloudflare' │ false     │\n│ 2       │ 3     │ 'google' │ 'safety_block'            │ 'sanitize_prompt_then_fallback' │ 'cloudflare' │ false     │\n│ 3       │ 4     │ 'google' │ 'auth_or_key_error'       │ 'skip_provider_until_key_fixed' │ 'cloudflare' │ false     │\n│ 4       │ 5     │ 'google' │ 'empty_or_invalid_output' │ 'retry_or_fallback'             │ 'cloudflare' │ false     │\n│ 5       │ 6     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 6       │ 7     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n└─────────┴───────┴──────────┴───────────────────────────┴─────────────────────────────────┴──────────────┴───────────┘\nSummary: {\n  total_scenes: 7,\n  fallback_ready: 7,\n  exhausted: 0,\n  retryable_failures: 3,\n  status: 'provider_fallback_ready'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ],
+      "imageFactoryStatus": "completed",
+      "qaStatus": "completed",
+      "qaResults": [
+        {
+          "key": "image_audit",
+          "file": "modules/image-factory/run_image_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image audit saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_status.json\nImage output audit report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_output_audit_report.json\n┌─────────┬───────┬─────────┬────────┬────────┬─────────┬─────────────┬──────────┐\n│ (index) │ scene │ status  │ exists │ size   │ quality │ band        │ approved │\n├─────────┼───────┼─────────┼────────┼────────┼─────────┼─────────────┼──────────┤\n│ 0       │ 1     │ 'ready' │ true   │ 349669 │ 86      │ 'excellent' │ true     │\n│ 1       │ 2     │ 'ready' │ true   │ 263011 │ 86      │ 'excellent' │ true     │\n│ 2       │ 3     │ 'ready' │ true   │ 279305 │ 86      │ 'excellent' │ true     │\n│ 3       │ 4     │ 'ready' │ true   │ 414818 │ 86      │ 'excellent' │ true     │\n│ 4       │ 5     │ 'ready' │ true   │ 284510 │ 86      │ 'excellent' │ true     │\n│ 5       │ 6     │ 'ready' │ true   │ 368459 │ 86      │ 'excellent' │ true     │\n│ 6       │ 7     │ 'ready' │ true   │ 380503 │ 86      │ 'excellent' │ true     │\n└─────────┴───────┴─────────┴────────┴────────┴─────────┴─────────────┴──────────┘\nSummary: {\n  total_images: 7,\n  approved: 7,\n  rejected: 0,\n  missing: 0,\n  average_quality: 86,\n  status: 'image_quality_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_narration_match",
+          "file": "modules/image-factory/run_image_narration_match.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image narration match report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_narration_match_report.json\n┌─────────┬───────┬───────────┬───────────┬─────────────┬───────┬────────────────┐\n│ (index) │ scene │ keyword   │ mood      │ specificity │ match │ status         │\n├─────────┼───────┼───────────┼───────────┼─────────────┼───────┼────────────────┤\n│ 0       │ 1     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 1       │ 2     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 2       │ 3     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 3       │ 4     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 4       │ 5     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 5       │ 6     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 6       │ 7     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n└─────────┴───────┴───────────┴───────────┴─────────────┴───────┴────────────────┘\nSummary: {\n  average_match_score: 86,\n  approved_scenes: 7,\n  rejected_scenes: 0,\n  status: 'image_narration_match_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_continuity_check",
+          "file": "modules/image-factory/run_image_continuity_check.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image continuity report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_continuity_report.json\n┌─────────┬────────┬─────┬──────┬─────────┬─────────────┬───────┬───────────────────────────┐\n│ (index) │ pair   │ env │ mood │ subject │ progression │ score │ status                    │\n├─────────┼────────┼─────┼──────┼─────────┼─────────────┼───────┼───────────────────────────┤\n│ 0       │ '1->2' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 1       │ '2->3' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 2       │ '3->4' │ 100 │ 67   │ 50      │ 100         │ 80    │ 'continuity_passed'       │\n│ 3       │ '4->5' │ 50  │ 67   │ 50      │ 100         │ 63    │ 'continuity_needs_review' │\n│ 4       │ '5->6' │ 50  │ 100  │ 50      │ 100         │ 73    │ 'continuity_passed'       │\n│ 5       │ '6->7' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n└─────────┴────────┴─────┴──────┴─────────┴─────────────┴───────┴───────────────────────────┘\nSummary: {\n  pair_average_score: 86,\n  story_progression_score: 85,\n  continuity_score: 86,\n  status: 'image_continuity_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_regeneration_decision",
+          "file": "modules/image-factory/run_image_regeneration_decision.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image regeneration decision report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_image_regeneration_decision_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────────┬───────────┬─────────┐\n│ (index) │ scene │ quality │ match │ continuity │ readiness │ decision  │ reasons │\n├─────────┼───────┼─────────┼───────┼────────────┼───────────┼───────────┼─────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85        │ 'approve' │ '-'     │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86        │ 'approve' │ '-'     │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79        │ 'approve' │ '-'     │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84        │ 'approve' │ '-'     │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87        │ 'approve' │ '-'     │\n└─────────┴───────┴─────────┴───────┴────────────┴───────────┴───────────┴─────────┘\nSummary: {\n  total_scenes: 7,\n  approved: 7,\n  regenerate_required: 0,\n  review_or_regenerate: 0,\n  average_readiness_score: 87,\n  status: 'image_regeneration_not_required'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "final_image_selection",
+          "file": "modules/image-factory/run_final_image_selection.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Final image selection report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_002_final_image_selection_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────┬──────────┬──────────────────────┐\n│ (index) │ scene │ quality │ match │ continuity │ final │ selected │ status               │\n├─────────┼───────┼─────────┼───────┼────────────┼───────┼──────────┼──────────────────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85    │ true     │ 'selected_for_video' │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86    │ true     │ 'selected_for_video' │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79    │ true     │ 'selected_for_video' │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84    │ true     │ 'selected_for_video' │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87    │ true     │ 'selected_for_video' │\n└─────────┴───────┴─────────┴───────┴────────────┴───────┴──────────┴──────────────────────┘\nSummary: {\n  total_scenes: 7,\n  approved_for_video: 7,\n  blocked_from_video: 0,\n  average_final_image_score: 87,\n  status: 'final_images_selected'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ]
     },
     {
-      "scriptId": "research_script_003",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_003_image_status.json"
+      "scriptId": "intelligence_script_003",
+      "status": "completed",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "expectedImages": 7,
+      "stdout": "Image factory started: intelligence_script_003\nProvider stack: cloudflare → pollinations → google → fal\nGenerating missing image: scene_1.jpg\nGenerating missing image: scene_2.jpg\nGenerating missing image: scene_3.jpg\nGenerating missing image: scene_4.jpg\nGenerating missing image: scene_5.jpg\nGenerating missing image: scene_6.jpg\nGenerating missing image: scene_7.jpg\nImage factory report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_factory_report.json\n{\n  \"scriptId\": \"intelligence_script_003\",\n  \"status\": \"completed\",\n  \"expectedImages\": 7,\n  \"generatedImages\": 7,\n  \"failedImages\": 0,\n  \"skippedImages\": 0,\n  \"failedScenes\": [],\n  \"updatedAt\": \"2026-06-21T11:21:20.108Z\"\n}\nImage factory completed.\n",
+      "stderr": "",
+      "error": null,
+      "outputStatus": "modules/image-factory/output/intelligence_script_003_image_status.json",
+      "outputReport": "modules/image-factory/output/intelligence_script_003_image_factory_report.json",
+      "generatedImages": 7,
+      "failedImages": 0,
+      "failedScenes": [],
+      "workflowStatus": "completed",
+      "preflightStatus": "completed",
+      "preflightResults": [
+        {
+          "key": "image_strategy",
+          "file": "modules/image-factory/run_image_strategy_resolver.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image generation strategy report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_strategy_report.json\n┌─────────┬───────┬───────────────────────────────────────────────────┬──────────┬───────────────────────────────────┐\n│ (index) │ scene │ intents                                           │ primary  │ fallback                          │\n├─────────┼───────┼───────────────────────────────────────────────────┼──────────┼───────────────────────────────────┤\n│ 0       │ 1     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 1       │ 2     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 2       │ 3     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 3       │ 4     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 4       │ 5     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 5       │ 6     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 6       │ 7     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n└─────────┴───────┴───────────────────────────────────────────────────┴──────────┴───────────────────────────────────┘\nSummary: {\n  total_scenes: 7,\n  dominant_provider: 'google',\n  primary_provider_counts: { google: 7 },\n  status: 'image_generation_strategy_resolved'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "provider_fallback",
+          "file": "modules/image-factory/run_provider_fallback_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Provider fallback report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_provider_fallback_report.json\n┌─────────┬───────┬──────────┬───────────────────────────┬─────────────────────────────────┬──────────────┬───────────┐\n│ (index) │ scene │ failed   │ type                      │ action                          │ next         │ exhausted │\n├─────────┼───────┼──────────┼───────────────────────────┼─────────────────────────────────┼──────────────┼───────────┤\n│ 0       │ 1     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 1       │ 2     │ 'google' │ 'timeout_or_network'      │ 'retry_once_then_fallback'      │ 'cloudflare' │ false     │\n│ 2       │ 3     │ 'google' │ 'safety_block'            │ 'sanitize_prompt_then_fallback' │ 'cloudflare' │ false     │\n│ 3       │ 4     │ 'google' │ 'auth_or_key_error'       │ 'skip_provider_until_key_fixed' │ 'cloudflare' │ false     │\n│ 4       │ 5     │ 'google' │ 'empty_or_invalid_output' │ 'retry_or_fallback'             │ 'cloudflare' │ false     │\n│ 5       │ 6     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 6       │ 7     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n└─────────┴───────┴──────────┴───────────────────────────┴─────────────────────────────────┴──────────────┴───────────┘\nSummary: {\n  total_scenes: 7,\n  fallback_ready: 7,\n  exhausted: 0,\n  retryable_failures: 3,\n  status: 'provider_fallback_ready'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ],
+      "imageFactoryStatus": "completed",
+      "qaStatus": "completed",
+      "qaResults": [
+        {
+          "key": "image_audit",
+          "file": "modules/image-factory/run_image_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image audit saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_status.json\nImage output audit report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_output_audit_report.json\n┌─────────┬───────┬─────────┬────────┬────────┬─────────┬─────────────┬──────────┐\n│ (index) │ scene │ status  │ exists │ size   │ quality │ band        │ approved │\n├─────────┼───────┼─────────┼────────┼────────┼─────────┼─────────────┼──────────┤\n│ 0       │ 1     │ 'ready' │ true   │ 489622 │ 86      │ 'excellent' │ true     │\n│ 1       │ 2     │ 'ready' │ true   │ 370238 │ 86      │ 'excellent' │ true     │\n│ 2       │ 3     │ 'ready' │ true   │ 200225 │ 86      │ 'excellent' │ true     │\n│ 3       │ 4     │ 'ready' │ true   │ 454016 │ 86      │ 'excellent' │ true     │\n│ 4       │ 5     │ 'ready' │ true   │ 299379 │ 86      │ 'excellent' │ true     │\n│ 5       │ 6     │ 'ready' │ true   │ 205857 │ 86      │ 'excellent' │ true     │\n│ 6       │ 7     │ 'ready' │ true   │ 175581 │ 76      │ 'good'      │ true     │\n└─────────┴───────┴─────────┴────────┴────────┴─────────┴─────────────┴──────────┘\nSummary: {\n  total_images: 7,\n  approved: 7,\n  rejected: 0,\n  missing: 0,\n  average_quality: 85,\n  status: 'image_quality_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_narration_match",
+          "file": "modules/image-factory/run_image_narration_match.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image narration match report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_narration_match_report.json\n┌─────────┬───────┬───────────┬───────────┬─────────────┬───────┬────────────────┐\n│ (index) │ scene │ keyword   │ mood      │ specificity │ match │ status         │\n├─────────┼───────┼───────────┼───────────┼─────────────┼───────┼────────────────┤\n│ 0       │ 1     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 1       │ 2     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 2       │ 3     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 3       │ 4     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 4       │ 5     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 5       │ 6     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 6       │ 7     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n└─────────┴───────┴───────────┴───────────┴─────────────┴───────┴────────────────┘\nSummary: {\n  average_match_score: 86,\n  approved_scenes: 7,\n  rejected_scenes: 0,\n  status: 'image_narration_match_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_continuity_check",
+          "file": "modules/image-factory/run_image_continuity_check.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image continuity report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_continuity_report.json\n┌─────────┬────────┬─────┬──────┬─────────┬─────────────┬───────┬───────────────────────────┐\n│ (index) │ pair   │ env │ mood │ subject │ progression │ score │ status                    │\n├─────────┼────────┼─────┼──────┼─────────┼─────────────┼───────┼───────────────────────────┤\n│ 0       │ '1->2' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 1       │ '2->3' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 2       │ '3->4' │ 100 │ 67   │ 50      │ 100         │ 80    │ 'continuity_passed'       │\n│ 3       │ '4->5' │ 50  │ 67   │ 50      │ 100         │ 63    │ 'continuity_needs_review' │\n│ 4       │ '5->6' │ 50  │ 100  │ 50      │ 100         │ 73    │ 'continuity_passed'       │\n│ 5       │ '6->7' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n└─────────┴────────┴─────┴──────┴─────────┴─────────────┴───────┴───────────────────────────┘\nSummary: {\n  pair_average_score: 86,\n  story_progression_score: 85,\n  continuity_score: 86,\n  status: 'image_continuity_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_regeneration_decision",
+          "file": "modules/image-factory/run_image_regeneration_decision.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image regeneration decision report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_image_regeneration_decision_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────────┬───────────┬─────────┐\n│ (index) │ scene │ quality │ match │ continuity │ readiness │ decision  │ reasons │\n├─────────┼───────┼─────────┼───────┼────────────┼───────────┼───────────┼─────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85        │ 'approve' │ '-'     │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86        │ 'approve' │ '-'     │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79        │ 'approve' │ '-'     │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84        │ 'approve' │ '-'     │\n│ 6       │ 7     │ 76      │ 80    │ 100        │ 84        │ 'approve' │ '-'     │\n└─────────┴───────┴─────────┴───────┴────────────┴───────────┴───────────┴─────────┘\nSummary: {\n  total_scenes: 7,\n  approved: 7,\n  regenerate_required: 0,\n  review_or_regenerate: 0,\n  average_readiness_score: 86,\n  status: 'image_regeneration_not_required'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "final_image_selection",
+          "file": "modules/image-factory/run_final_image_selection.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Final image selection report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_003_final_image_selection_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────┬──────────┬──────────────────────┐\n│ (index) │ scene │ quality │ match │ continuity │ final │ selected │ status               │\n├─────────┼───────┼─────────┼───────┼────────────┼───────┼──────────┼──────────────────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85    │ true     │ 'selected_for_video' │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86    │ true     │ 'selected_for_video' │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79    │ true     │ 'selected_for_video' │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84    │ true     │ 'selected_for_video' │\n│ 6       │ 7     │ 76      │ 80    │ 100        │ 84    │ true     │ 'selected_for_video' │\n└─────────┴───────┴─────────┴───────┴────────────┴───────┴──────────┴──────────────────────┘\nSummary: {\n  total_scenes: 7,\n  approved_for_video: 7,\n  blocked_from_video: 0,\n  average_final_image_score: 86,\n  status: 'final_images_selected'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ]
     },
     {
-      "scriptId": "research_script_004",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_004_image_status.json"
+      "scriptId": "intelligence_script_004",
+      "status": "completed",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "expectedImages": 7,
+      "stdout": "Image factory started: intelligence_script_004\nProvider stack: cloudflare → pollinations → google → fal\nGenerating missing image: scene_1.jpg\nGenerating missing image: scene_2.jpg\nGenerating missing image: scene_3.jpg\nGenerating missing image: scene_4.jpg\nGenerating missing image: scene_5.jpg\nGenerating missing image: scene_6.jpg\nGenerating missing image: scene_7.jpg\nImage factory report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_factory_report.json\n{\n  \"scriptId\": \"intelligence_script_004\",\n  \"status\": \"completed\",\n  \"expectedImages\": 7,\n  \"generatedImages\": 7,\n  \"failedImages\": 0,\n  \"skippedImages\": 0,\n  \"failedScenes\": [],\n  \"updatedAt\": \"2026-06-21T11:21:35.054Z\"\n}\nImage factory completed.\n",
+      "stderr": "",
+      "error": null,
+      "outputStatus": "modules/image-factory/output/intelligence_script_004_image_status.json",
+      "outputReport": "modules/image-factory/output/intelligence_script_004_image_factory_report.json",
+      "generatedImages": 7,
+      "failedImages": 0,
+      "failedScenes": [],
+      "workflowStatus": "completed",
+      "preflightStatus": "completed",
+      "preflightResults": [
+        {
+          "key": "image_strategy",
+          "file": "modules/image-factory/run_image_strategy_resolver.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image generation strategy report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_strategy_report.json\n┌─────────┬───────┬───────────────────────────────────────────────────┬──────────┬───────────────────────────────────┐\n│ (index) │ scene │ intents                                           │ primary  │ fallback                          │\n├─────────┼───────┼───────────────────────────────────────────────────┼──────────┼───────────────────────────────────┤\n│ 0       │ 1     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 1       │ 2     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 2       │ 3     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 3       │ 4     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 4       │ 5     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 5       │ 6     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 6       │ 7     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n└─────────┴───────┴───────────────────────────────────────────────────┴──────────┴───────────────────────────────────┘\nSummary: {\n  total_scenes: 7,\n  dominant_provider: 'google',\n  primary_provider_counts: { google: 7 },\n  status: 'image_generation_strategy_resolved'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "provider_fallback",
+          "file": "modules/image-factory/run_provider_fallback_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Provider fallback report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_provider_fallback_report.json\n┌─────────┬───────┬──────────┬───────────────────────────┬─────────────────────────────────┬──────────────┬───────────┐\n│ (index) │ scene │ failed   │ type                      │ action                          │ next         │ exhausted │\n├─────────┼───────┼──────────┼───────────────────────────┼─────────────────────────────────┼──────────────┼───────────┤\n│ 0       │ 1     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 1       │ 2     │ 'google' │ 'timeout_or_network'      │ 'retry_once_then_fallback'      │ 'cloudflare' │ false     │\n│ 2       │ 3     │ 'google' │ 'safety_block'            │ 'sanitize_prompt_then_fallback' │ 'cloudflare' │ false     │\n│ 3       │ 4     │ 'google' │ 'auth_or_key_error'       │ 'skip_provider_until_key_fixed' │ 'cloudflare' │ false     │\n│ 4       │ 5     │ 'google' │ 'empty_or_invalid_output' │ 'retry_or_fallback'             │ 'cloudflare' │ false     │\n│ 5       │ 6     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 6       │ 7     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n└─────────┴───────┴──────────┴───────────────────────────┴─────────────────────────────────┴──────────────┴───────────┘\nSummary: {\n  total_scenes: 7,\n  fallback_ready: 7,\n  exhausted: 0,\n  retryable_failures: 3,\n  status: 'provider_fallback_ready'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ],
+      "imageFactoryStatus": "completed",
+      "qaStatus": "completed",
+      "qaResults": [
+        {
+          "key": "image_audit",
+          "file": "modules/image-factory/run_image_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image audit saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_status.json\nImage output audit report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_output_audit_report.json\n┌─────────┬───────┬─────────┬────────┬────────┬─────────┬─────────────┬──────────┐\n│ (index) │ scene │ status  │ exists │ size   │ quality │ band        │ approved │\n├─────────┼───────┼─────────┼────────┼────────┼─────────┼─────────────┼──────────┤\n│ 0       │ 1     │ 'ready' │ true   │ 520562 │ 93      │ 'excellent' │ true     │\n│ 1       │ 2     │ 'ready' │ true   │ 381633 │ 86      │ 'excellent' │ true     │\n│ 2       │ 3     │ 'ready' │ true   │ 407429 │ 86      │ 'excellent' │ true     │\n│ 3       │ 4     │ 'ready' │ true   │ 392045 │ 86      │ 'excellent' │ true     │\n│ 4       │ 5     │ 'ready' │ true   │ 440751 │ 86      │ 'excellent' │ true     │\n│ 5       │ 6     │ 'ready' │ true   │ 198624 │ 76      │ 'good'      │ true     │\n│ 6       │ 7     │ 'ready' │ true   │ 290984 │ 86      │ 'excellent' │ true     │\n└─────────┴───────┴─────────┴────────┴────────┴─────────┴─────────────┴──────────┘\nSummary: {\n  total_images: 7,\n  approved: 7,\n  rejected: 0,\n  missing: 0,\n  average_quality: 86,\n  status: 'image_quality_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_narration_match",
+          "file": "modules/image-factory/run_image_narration_match.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image narration match report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_narration_match_report.json\n┌─────────┬───────┬───────────┬───────────┬─────────────┬───────┬────────────────┐\n│ (index) │ scene │ keyword   │ mood      │ specificity │ match │ status         │\n├─────────┼───────┼───────────┼───────────┼─────────────┼───────┼────────────────┤\n│ 0       │ 1     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 1       │ 2     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 2       │ 3     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 3       │ 4     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 4       │ 5     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 5       │ 6     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 6       │ 7     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n└─────────┴───────┴───────────┴───────────┴─────────────┴───────┴────────────────┘\nSummary: {\n  average_match_score: 80,\n  approved_scenes: 7,\n  rejected_scenes: 0,\n  status: 'image_narration_match_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_continuity_check",
+          "file": "modules/image-factory/run_image_continuity_check.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image continuity report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_continuity_report.json\n┌─────────┬────────┬─────┬──────┬─────────┬─────────────┬───────┬───────────────────────────┐\n│ (index) │ pair   │ env │ mood │ subject │ progression │ score │ status                    │\n├─────────┼────────┼─────┼──────┼─────────┼─────────────┼───────┼───────────────────────────┤\n│ 0       │ '1->2' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 1       │ '2->3' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 2       │ '3->4' │ 100 │ 67   │ 50      │ 100         │ 80    │ 'continuity_passed'       │\n│ 3       │ '4->5' │ 50  │ 67   │ 50      │ 100         │ 63    │ 'continuity_needs_review' │\n│ 4       │ '5->6' │ 50  │ 100  │ 50      │ 100         │ 73    │ 'continuity_passed'       │\n│ 5       │ '6->7' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n└─────────┴────────┴─────┴──────┴─────────┴─────────────┴───────┴───────────────────────────┘\nSummary: {\n  pair_average_score: 86,\n  story_progression_score: 85,\n  continuity_score: 86,\n  status: 'image_continuity_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_regeneration_decision",
+          "file": "modules/image-factory/run_image_regeneration_decision.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image regeneration decision report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_image_regeneration_decision_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────────┬───────────┬─────────┐\n│ (index) │ scene │ quality │ match │ continuity │ readiness │ decision  │ reasons │\n├─────────┼───────┼─────────┼───────┼────────────┼───────────┼───────────┼─────────┤\n│ 0       │ 1     │ 93      │ 80    │ 100        │ 90        │ 'approve' │ '-'     │\n│ 1       │ 2     │ 86      │ 80    │ 100        │ 87        │ 'approve' │ '-'     │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85        │ 'approve' │ '-'     │\n│ 3       │ 4     │ 86      │ 80    │ 72         │ 80        │ 'approve' │ '-'     │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79        │ 'approve' │ '-'     │\n│ 5       │ 6     │ 76      │ 80    │ 87         │ 80        │ 'approve' │ '-'     │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87        │ 'approve' │ '-'     │\n└─────────┴───────┴─────────┴───────┴────────────┴───────────┴───────────┴─────────┘\nSummary: {\n  total_scenes: 7,\n  approved: 7,\n  regenerate_required: 0,\n  review_or_regenerate: 0,\n  average_readiness_score: 84,\n  status: 'image_regeneration_not_required'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "final_image_selection",
+          "file": "modules/image-factory/run_final_image_selection.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Final image selection report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_004_final_image_selection_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────┬──────────┬──────────────────────┐\n│ (index) │ scene │ quality │ match │ continuity │ final │ selected │ status               │\n├─────────┼───────┼─────────┼───────┼────────────┼───────┼──────────┼──────────────────────┤\n│ 0       │ 1     │ 93      │ 80    │ 100        │ 90    │ true     │ 'selected_for_video' │\n│ 1       │ 2     │ 86      │ 80    │ 100        │ 87    │ true     │ 'selected_for_video' │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85    │ true     │ 'selected_for_video' │\n│ 3       │ 4     │ 86      │ 80    │ 72         │ 80    │ true     │ 'selected_for_video' │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79    │ true     │ 'selected_for_video' │\n│ 5       │ 6     │ 76      │ 80    │ 87         │ 80    │ true     │ 'selected_for_video' │\n│ 6       │ 7     │ 86      │ 80    │ 100        │ 87    │ true     │ 'selected_for_video' │\n└─────────┴───────┴─────────┴───────┴────────────┴───────┴──────────┴──────────────────────┘\nSummary: {\n  total_scenes: 7,\n  approved_for_video: 7,\n  blocked_from_video: 0,\n  average_final_image_score: 84,\n  status: 'final_images_selected'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ]
     },
     {
-      "scriptId": "research_script_005",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_005_image_status.json"
-    },
-    {
-      "scriptId": "research_script_006",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_006_image_status.json"
-    },
-    {
-      "scriptId": "research_script_007",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_007_image_status.json"
-    },
-    {
-      "scriptId": "research_script_008",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_008_image_status.json"
-    },
-    {
-      "scriptId": "research_script_009",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_009_image_status.json"
-    },
-    {
-      "scriptId": "research_script_010",
-      "status": "skipped_existing",
-      "outputStatus": "modules/image-factory/output/research_script_010_image_status.json"
+      "scriptId": "intelligence_script_005",
+      "status": "completed",
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "expectedImages": 7,
+      "stdout": "Image factory started: intelligence_script_005\nProvider stack: cloudflare → pollinations → google → fal\nGenerating missing image: scene_1.jpg\nGenerating missing image: scene_2.jpg\nGenerating missing image: scene_3.jpg\nGenerating missing image: scene_4.jpg\nGenerating missing image: scene_5.jpg\nGenerating missing image: scene_6.jpg\nGenerating missing image: scene_7.jpg\nImage factory report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_factory_report.json\n{\n  \"scriptId\": \"intelligence_script_005\",\n  \"status\": \"completed\",\n  \"expectedImages\": 7,\n  \"generatedImages\": 7,\n  \"failedImages\": 0,\n  \"skippedImages\": 0,\n  \"failedScenes\": [],\n  \"updatedAt\": \"2026-06-21T11:21:50.769Z\"\n}\nImage factory completed.\n",
+      "stderr": "",
+      "error": null,
+      "outputStatus": "modules/image-factory/output/intelligence_script_005_image_status.json",
+      "outputReport": "modules/image-factory/output/intelligence_script_005_image_factory_report.json",
+      "generatedImages": 7,
+      "failedImages": 0,
+      "failedScenes": [],
+      "workflowStatus": "completed",
+      "preflightStatus": "completed",
+      "preflightResults": [
+        {
+          "key": "image_strategy",
+          "file": "modules/image-factory/run_image_strategy_resolver.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image generation strategy report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_strategy_report.json\n┌─────────┬───────┬───────────────────────────────────────────────────┬──────────┬───────────────────────────────────┐\n│ (index) │ scene │ intents                                           │ primary  │ fallback                          │\n├─────────┼───────┼───────────────────────────────────────────────────┼──────────┼───────────────────────────────────┤\n│ 0       │ 1     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 1       │ 2     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 2       │ 3     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 3       │ 4     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 4       │ 5     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 5       │ 6     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n│ 6       │ 7     │ 'documentary_realism,dark_mystery,human_subjects' │ 'google' │ 'cloudflare > fal > pollinations' │\n└─────────┴───────┴───────────────────────────────────────────────────┴──────────┴───────────────────────────────────┘\nSummary: {\n  total_scenes: 7,\n  dominant_provider: 'google',\n  primary_provider_counts: { google: 7 },\n  status: 'image_generation_strategy_resolved'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "provider_fallback",
+          "file": "modules/image-factory/run_provider_fallback_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Provider fallback report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_provider_fallback_report.json\n┌─────────┬───────┬──────────┬───────────────────────────┬─────────────────────────────────┬──────────────┬───────────┐\n│ (index) │ scene │ failed   │ type                      │ action                          │ next         │ exhausted │\n├─────────┼───────┼──────────┼───────────────────────────┼─────────────────────────────────┼──────────────┼───────────┤\n│ 0       │ 1     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 1       │ 2     │ 'google' │ 'timeout_or_network'      │ 'retry_once_then_fallback'      │ 'cloudflare' │ false     │\n│ 2       │ 3     │ 'google' │ 'safety_block'            │ 'sanitize_prompt_then_fallback' │ 'cloudflare' │ false     │\n│ 3       │ 4     │ 'google' │ 'auth_or_key_error'       │ 'skip_provider_until_key_fixed' │ 'cloudflare' │ false     │\n│ 4       │ 5     │ 'google' │ 'empty_or_invalid_output' │ 'retry_or_fallback'             │ 'cloudflare' │ false     │\n│ 5       │ 6     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n│ 6       │ 7     │ 'google' │ 'quota_exceeded'          │ 'skip_provider_use_fallback'    │ 'cloudflare' │ false     │\n└─────────┴───────┴──────────┴───────────────────────────┴─────────────────────────────────┴──────────────┴───────────┘\nSummary: {\n  total_scenes: 7,\n  fallback_ready: 7,\n  exhausted: 0,\n  retryable_failures: 3,\n  status: 'provider_fallback_ready'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ],
+      "imageFactoryStatus": "completed",
+      "qaStatus": "completed",
+      "qaResults": [
+        {
+          "key": "image_audit",
+          "file": "modules/image-factory/run_image_audit.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image audit saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_status.json\nImage output audit report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_output_audit_report.json\n┌─────────┬───────┬─────────┬────────┬────────┬─────────┬─────────────┬──────────┐\n│ (index) │ scene │ status  │ exists │ size   │ quality │ band        │ approved │\n├─────────┼───────┼─────────┼────────┼────────┼─────────┼─────────────┼──────────┤\n│ 0       │ 1     │ 'ready' │ true   │ 326433 │ 86      │ 'excellent' │ true     │\n│ 1       │ 2     │ 'ready' │ true   │ 364563 │ 86      │ 'excellent' │ true     │\n│ 2       │ 3     │ 'ready' │ true   │ 280224 │ 86      │ 'excellent' │ true     │\n│ 3       │ 4     │ 'ready' │ true   │ 429412 │ 86      │ 'excellent' │ true     │\n│ 4       │ 5     │ 'ready' │ true   │ 397609 │ 86      │ 'excellent' │ true     │\n│ 5       │ 6     │ 'ready' │ true   │ 304564 │ 86      │ 'excellent' │ true     │\n│ 6       │ 7     │ 'ready' │ true   │ 60414  │ 76      │ 'good'      │ true     │\n└─────────┴───────┴─────────┴────────┴────────┴─────────┴─────────────┴──────────┘\nSummary: {\n  total_images: 7,\n  approved: 7,\n  rejected: 0,\n  missing: 0,\n  average_quality: 85,\n  status: 'image_quality_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_narration_match",
+          "file": "modules/image-factory/run_image_narration_match.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image narration match report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_narration_match_report.json\n┌─────────┬───────┬───────────┬───────────┬─────────────┬───────┬────────────────┐\n│ (index) │ scene │ keyword   │ mood      │ specificity │ match │ status         │\n├─────────┼───────┼───────────┼───────────┼─────────────┼───────┼────────────────┤\n│ 0       │ 1     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 1       │ 2     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 2       │ 3     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 3       │ 4     │ undefined │ undefined │ 100         │ 94    │ 'match_passed' │\n│ 4       │ 5     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 5       │ 6     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n│ 6       │ 7     │ undefined │ undefined │ 100         │ 80    │ 'match_passed' │\n└─────────┴───────┴───────────┴───────────┴─────────────┴───────┴────────────────┘\nSummary: {\n  average_match_score: 86,\n  approved_scenes: 7,\n  rejected_scenes: 0,\n  status: 'image_narration_match_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_continuity_check",
+          "file": "modules/image-factory/run_image_continuity_check.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image continuity report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_continuity_report.json\n┌─────────┬────────┬─────┬──────┬─────────┬─────────────┬───────┬───────────────────────────┐\n│ (index) │ pair   │ env │ mood │ subject │ progression │ score │ status                    │\n├─────────┼────────┼─────┼──────┼─────────┼─────────────┼───────┼───────────────────────────┤\n│ 0       │ '1->2' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 1       │ '2->3' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n│ 2       │ '3->4' │ 100 │ 67   │ 50      │ 100         │ 80    │ 'continuity_passed'       │\n│ 3       │ '4->5' │ 50  │ 67   │ 50      │ 100         │ 63    │ 'continuity_needs_review' │\n│ 4       │ '5->6' │ 50  │ 100  │ 50      │ 100         │ 73    │ 'continuity_passed'       │\n│ 5       │ '6->7' │ 100 │ 100  │ 100     │ 100         │ 100   │ 'continuity_passed'       │\n└─────────┴────────┴─────┴──────┴─────────┴─────────────┴───────┴───────────────────────────┘\nSummary: {\n  pair_average_score: 86,\n  story_progression_score: 85,\n  continuity_score: 86,\n  status: 'image_continuity_passed'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "image_regeneration_decision",
+          "file": "modules/image-factory/run_image_regeneration_decision.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Image regeneration decision report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_image_regeneration_decision_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────────┬───────────┬─────────┐\n│ (index) │ scene │ quality │ match │ continuity │ readiness │ decision  │ reasons │\n├─────────┼───────┼─────────┼───────┼────────────┼───────────┼───────────┼─────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93        │ 'approve' │ '-'     │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85        │ 'approve' │ '-'     │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86        │ 'approve' │ '-'     │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79        │ 'approve' │ '-'     │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84        │ 'approve' │ '-'     │\n│ 6       │ 7     │ 76      │ 80    │ 100        │ 84        │ 'approve' │ '-'     │\n└─────────┴───────┴─────────┴───────┴────────────┴───────────┴───────────┴─────────┘\nSummary: {\n  total_scenes: 7,\n  approved: 7,\n  regenerate_required: 0,\n  review_or_regenerate: 0,\n  average_readiness_score: 86,\n  status: 'image_regeneration_not_required'\n}\n",
+          "stderr": "",
+          "error": null
+        },
+        {
+          "key": "final_image_selection",
+          "file": "modules/image-factory/run_final_image_selection.js",
+          "status": "completed",
+          "exitCode": 0,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "Final image selection report saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/image-factory/output/intelligence_script_005_final_image_selection_report.json\n┌─────────┬───────┬─────────┬───────┬────────────┬───────┬──────────┬──────────────────────┐\n│ (index) │ scene │ quality │ match │ continuity │ final │ selected │ status               │\n├─────────┼───────┼─────────┼───────┼────────────┼───────┼──────────┼──────────────────────┤\n│ 0       │ 1     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 1       │ 2     │ 86      │ 94    │ 100        │ 93    │ true     │ 'selected_for_video' │\n│ 2       │ 3     │ 86      │ 80    │ 90         │ 85    │ true     │ 'selected_for_video' │\n│ 3       │ 4     │ 86      │ 94    │ 72         │ 86    │ true     │ 'selected_for_video' │\n│ 4       │ 5     │ 86      │ 80    │ 68         │ 79    │ true     │ 'selected_for_video' │\n│ 5       │ 6     │ 86      │ 80    │ 87         │ 84    │ true     │ 'selected_for_video' │\n│ 6       │ 7     │ 76      │ 80    │ 100        │ 84    │ true     │ 'selected_for_video' │\n└─────────┴───────┴─────────┴───────┴────────────┴───────┴──────────┴──────────────────────┘\nSummary: {\n  total_scenes: 7,\n  approved_for_video: 7,\n  blocked_from_video: 0,\n  average_final_image_score: 86,\n  status: 'final_images_selected'\n}\n",
+          "stderr": "",
+          "error": null
+        }
+      ]
     }
   ]
 }

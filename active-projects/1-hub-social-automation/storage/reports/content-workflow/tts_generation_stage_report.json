@@ -3,8 +3,22 @@
   "stage": "tts_generation",
   "channelId": "unraaz",
   "workflowId": "default_content_workflow",
-  "workflowRunId": "default_content_workflow_unraaz_1781087163443",
-  "generatedAt": "2026-06-10T10:29:57.916Z",
+  "workflowRunId": "default_content_workflow_unraaz_1782040847283",
+  "generatedAt": "2026-06-21T11:22:12.358Z",
+  "status": "audio_ready",
+  "failureReason": null,
+  "attempts": [
+    {
+      "ok": true,
+      "file": "providers/edge-tts/services/generate_voice.js",
+      "exitCode": 0,
+      "stdout": "Generating voice: intelligence_script_001\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_001.mp3\nGenerating voice: intelligence_script_002\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_002.mp3\nGenerating voice: intelligence_script_003\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_003.mp3\nGenerating voice: intelligence_script_004\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_004.mp3\nGenerating voice: intelligence_script_005\n✅ Saved: /workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/audio/unraaz/intelligence_script_005.mp3\n✅ Voice generation complete\n",
+      "stderr": ""
+    }
+  ],
   "output": "storage/workflows/tts_generation_manifest.json",
-  "totalItems": 5
+  "totalItems": 5,
+  "readyAudio": 5,
+  "missingAudio": 0,
+  "missingAudioItems": []
 }

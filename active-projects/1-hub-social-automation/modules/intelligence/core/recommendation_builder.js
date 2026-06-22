@@ -21,6 +21,29 @@ function unique(items = []) {
   return Array.from(new Set(items.map((item) => String(item || "").trim()).filter(Boolean)));
 }
 
+function normalizeText(value = "") {
+  return cleanText(value)
+    .replace(/[_/]+/g, " ")
+    .replace(/[^a-z0-9\s'’-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function titleCase(value = "") {
+  return normalizeText(value)
+    .split(/\s+/)
+    .map((word) => word ? word.charAt(0).toUpperCase() + word.slice(1) : "")
+    .join(" ")
+    .trim();
+}
+
+function safeTopicSeed(value = "") {
+  return normalizeText(value)
+    .replace(/\b(real|true|story|stories|crime|mystery|horror|incident|incidents|documentary)\b/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function wordsOf(value = "") {
   return cleanText(value).replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
 }
@@ -33,6 +56,133 @@ function buildPhrase(parts = []) {
     }
   }
   return words.join(" ");
+}
+
+function hasGenericOnlyTopic(topic = "") {
+  const text = cleanText(topic);
+  if (!text) return true;
+
+  return [
+    /^mystery true crime$/,
+    /^crime mystery$/,
+    /^real incident$/,
+    /^incident true crime$/,
+    /^mystery real incident(s)?$/,
+    /^mystery real incidents$/
+  ].some(pattern => pattern.test(text));
+}
+
+function isBlockedRecommendationTopic(topic = "", profile = {}) {
+  const text = cleanText(topic);
+  if (!text) return true;
+
+  if (hasGenericOnlyTopic(text)) return true;
+
+  return [...profile.blockedCategories, ...profile.blockedKeywords].some((blocked) => {
+    const blockedText = cleanText(blocked);
+    return blockedText && text.includes(blockedText);
+  });
+}
+
+function splitTitleSegments(title = "") {
+  return normalizeText(title)
+    .split(/[:|–—\-]+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function stripTitleNoise(title = "") {
+  return normalizeText(title)
+    .replace(/[🔥🔥🔥]+/g, " ")
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\b(real stories?|true crime|real|true|horror|crime|story|stories|documentary|hindi|kahani|kahaniyan|sachchi|sachi|in hindi|in hinglish|khooni monday|episode|ep|e\s*\d+|km\s*e\d+)\b/gi, " ")
+    .replace(/\b(who|what|when|where|why|how|was|is|are|did|does|do|the|a|an|and|of|to|in|for|with|on|from|by|vs|vs\.|story|storys|stories)\b/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractTitleNouns(title = "") {
+  return stripTitleNoise(title)
+    .replace(/[^a-z0-9\s'’-]/gi, " ")
+    .split(/\s+/)
+    .map((word) => word.trim())
+    .filter((word) => word.length > 2);
+}
+
+function buildStorySeedFromTitle(title = "", gapTopic = "", patternName = "") {
+  const rawTitle = normalizeText(title);
+  const segments = splitTitleSegments(title)
+    .map((segment) => stripTitleNoise(segment))
+    .filter(Boolean);
+
+  const titleNoNoise = stripTitleNoise(rawTitle);
+  const nouns = extractTitleNouns(titleNoNoise);
+
+  const subjectFromSegment = segments.find((segment) => {
+    const wordCount = segment.split(/\s+/).filter(Boolean).length;
+    return wordCount >= 2 && !hasGenericOnlyTopic(segment);
+  }) || segments[0] || "";
+
+  const subject =
+    safeTopicSeed(subjectFromSegment)
+    || safeTopicSeed(nouns.slice(0, 4).join(" "))
+    || safeTopicSeed(gapTopic)
+    || safeTopicSeed(title);
+
+  if (!subject) return "";
+
+  const hasHaunted = /\bhaunted|ghost|paranormal|dybbuk|doll|castle|hotel|room\b/i.test(rawTitle);
+  const hasCrime = /\bcrime|murder|killer|death|dead|missing|stalker|unabomber|prison\b/i.test(rawTitle);
+  const hasDisaster = /\bcrash|accident|survivor|plane|ship|disaster|chernobyl\b/i.test(rawTitle);
+  const hasSecret = /\bsecret|hidden|buried|classified|cover[- ]?up|truth\b/i.test(rawTitle);
+  const hasIndia = /\bindia|indian|kashmir|village\b/i.test(rawTitle);
+
+  let angle = "";
+  if (hasCrime) angle = "case ke overlooked clue par";
+  else if (hasDisaster) angle = "survival aur ek ignored detail par";
+  else if (hasHaunted) angle = "local legend aur fear psychology par";
+  else if (hasSecret) angle = "hidden detail aur public curiosity par";
+  else if (hasIndia) angle = "local mystery aur real context par";
+  else if (patternName) angle = `${String(patternName).replace(/_/g, " ")} pattern ke fresh angle par`;
+  else angle = "ek fresh story angle par";
+
+  return cleanText(`${titleCase(subject)}: ${angle}`);
+}
+
+function buildSourceHint(title = "", sourceName = "") {
+  const segments = splitTitleSegments(title);
+  const source = cleanText(sourceName);
+  const titleHint = stripTitleNoise(segments[0] || title) || stripTitleNoise(title) || title;
+
+  return [
+    source ? `competitor:${source}` : "",
+    titleHint ? `title:${titleHint}` : ""
+  ].filter(Boolean).join(" | ");
+}
+
+function buildCompetitorTopicCandidates(videos = [], profile = {}, gaps = [], patterns = []) {
+  const topGapTopics = pickTop(gaps, 8).map(item => cleanText(item.topic));
+  const topPatternName = cleanText(pickTop(patterns, 1)[0]?.pattern || "");
+  const candidates = [];
+
+  for (const video of videos) {
+    const title = cleanText(video?.title || video?.source_title || video?.name || video);
+    if (!title) continue;
+
+    const sourceName = cleanText(video?.source_name || video?.source || "");
+    const gapTopic = topGapTopics.find(Boolean) || profile.topicPool[0] || "";
+    const seed = buildStorySeedFromTitle(title, gapTopic, topPatternName);
+    candidates.push({
+      topic: seed,
+      story_seed: seed,
+      source_hint: buildSourceHint(title, sourceName),
+      source_title: title,
+      source_name: sourceName,
+      reason: `Competitor title seed from ${sourceName || "competitor"}`
+    });
+  }
+
+  return candidates;
 }
 
 function getChannelProfile(channel = {}) {
@@ -145,14 +295,6 @@ function buildHookBase({ hookStyles = [], categories = [], pillars = [], keyword
   return unique(hooks).slice(0, 6);
 }
 
-function isBlockedTopic(topic, profile) {
-  const text = cleanText(topic);
-  return [...profile.blockedCategories, ...profile.blockedKeywords].some((blocked) => {
-    const blockedText = cleanText(blocked);
-    return blockedText && text.includes(blockedText);
-  });
-}
-
 function scoreTopic(topic, patterns = [], gaps = [], profile = {}) {
   const text = cleanText(topic);
   const patternNames = patterns.map(item => cleanText(item.pattern));
@@ -191,12 +333,19 @@ function scoreTopic(topic, patterns = [], gaps = [], profile = {}) {
     }
   }
 
-  if (isBlockedTopic(topic, profile)) score -= 100;
+  if (isBlockedRecommendationTopic(topic, profile)) score -= 100;
 
   return score;
 }
 
-function buildRecommendedTopics({ patterns = [], gaps = [], formulas = [], channel = {} }) {
+function buildRecommendedTopics({
+  patterns = [],
+  gaps = [],
+  formulas = [],
+  channel = {},
+  competitorVideos = [],
+  sourceTitles = []
+}) {
   const profile = getChannelProfile(channel);
   const topPatterns = pickTop(patterns, 3).map(item => item.pattern);
 
@@ -204,22 +353,65 @@ function buildRecommendedTopics({ patterns = [], gaps = [], formulas = [], chann
   const topFormula = strategyFormula || formulas[0]?.formula || "STORY → BUILDUP → TWIST → LESSON";
 
   const gapTopics = pickTop(gaps, 10).map(item => item.topic);
-  const candidateTopics = unique([
+  const competitorTitlePool = unique([
+    ...toList(sourceTitles),
+    ...competitorVideos.map(item => item.title || item.source_title || item.name || "")
+  ]).filter(Boolean);
+
+  const competitorDerived = competitorTitlePool.length
+    ? buildCompetitorTopicCandidates(
+      competitorVideos.length ? competitorVideos : competitorTitlePool.map(title => ({ title })),
+      profile,
+      gaps,
+      patterns
+    )
+    : [];
+
+  const fallbackTopics = unique([
     ...gapTopics,
     ...profile.topicPool
-  ]).filter(topic => !isBlockedTopic(topic, profile));
+  ]).filter(topic => !isBlockedRecommendationTopic(topic, profile));
 
-  return candidateTopics
-    .map(topic => ({
+  const candidateRows = [];
+  const seenTopics = new Set();
+
+  for (const item of competitorDerived) {
+    if (!item?.topic || isBlockedRecommendationTopic(item.topic, profile) || seenTopics.has(item.topic)) continue;
+    seenTopics.add(item.topic);
+    candidateRows.push({
+      ...item,
+      score: scoreTopic(item.topic, patterns, gaps, profile) + 250,
+      is_competitor_seed: true
+    });
+  }
+
+  for (const topic of fallbackTopics) {
+    if (!topic || seenTopics.has(topic)) continue;
+    seenTopics.add(topic);
+    candidateRows.push({
       topic,
-      score: scoreTopic(topic, patterns, gaps, profile)
-    }))
-    .sort((a, b) => b.score - a.score)
+      story_seed: topic,
+      source_hint: null,
+      source_title: null,
+      score: scoreTopic(topic, patterns, gaps, profile),
+      reason: `Channel strategy fallback: ${profile.contentMode}`,
+      is_competitor_seed: false
+    });
+  }
+
+  return candidateRows
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (a.is_competitor_seed !== b.is_competitor_seed) return a.is_competitor_seed ? -1 : 1;
+      return a.topic.localeCompare(b.topic);
+    })
     .slice(0, 5)
     .map((item, index) => ({
       rank: index + 1,
       topic: item.topic,
-      reason: `Channel strategy: ${profile.contentMode}. Matches patterns: ${topPatterns.join(", ")}`,
+      story_seed: item.story_seed,
+      source_hint: item.source_hint || undefined,
+      reason: item.reason + (topPatterns.length ? ` | Patterns: ${topPatterns.join(", ")}` : ""),
       suggested_formula: topFormula
     }));
 }

@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-06-21T12:21:46.222Z",
+  "channel": "UNRAAZ",
+  "channelId": "unraaz",
+  "channel_profile": {
+    "niche": "mystery_real_incidents_money_lessons",
+    "language": "hinglish",
+    "contentStyle": {}
+  },
+  "strategy_summary": {
+    "strongest_patterns": [
+      {
+        "pattern": "real_story",
+        "count": 25
+      },
+      {
+        "pattern": "true_crime",
+        "count": 18
+      },
+      {
+        "pattern": "documentary",
+        "count": 16
+      },
+      {
+        "pattern": "horror",
+        "count": 9
+      },
+      {
+        "pattern": "india",
+        "count": 8
+      },
+      {
+        "pattern": "mystery",
+        "count": 1
+      }
+    ],
+    "strongest_competitors": [
+      {
+        "source_name": "Khooni Monday",
+        "total_videos": 8,
+        "total_score": 182,
+        "average_score": 22.75
+      },
+      {
+        "source_name": "Real Stories",
+        "total_videos": 17,
+        "total_score": 376,
+        "average_score": 22.11764705882353
+      }
+    ],
+    "best_story_formulas": [
+      {
+        "formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON",
+        "count": 23
+      },
+      {
+        "formula": "CRIME → INVESTIGATION → REVEAL",
+        "count": 17
+      },
+      {
+        "formula": "NORMAL EVENT → FEAR → PARANORMAL TWIST",
+        "count": 8
+      },
+      {
+        "formula": "QUESTION → CLUES → UNKNOWN ENDING",
+        "count": 1
+      }
+    ]
+  },
+  "recommended_topics": [
+    {
+      "rank": 1,
+      "topic": "scary scarecrow ka unsolved twist",
+      "story_seed": "scary scarecrow ka unsolved twist",
+      "source_hint": "competitor:khooni monday | title:scary scarecrow",
+      "reason": "Competitor title seed from khooni monday | Patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 2,
+      "topic": "unabomber ted kazinsky ka unsolved twist",
+      "story_seed": "unabomber ted kazinsky ka unsolved twist",
+      "source_hint": "competitor:real stories | title:unabomber ted kazinsky",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 3,
+      "topic": "1920 haunted castle ka haunted twist",
+      "story_seed": "1920 haunted castle ka haunted twist",
+      "source_hint": "competitor:khooni monday | title:1920 haunted castle",
+      "reason": "Competitor title seed from khooni monday | Patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 4,
+      "topic": "30 saal purane murder case ka late reveal",
+      "story_seed": "30 saal purane murder case ka late reveal",
+      "source_hint": "competitor:real stories | title:30 year",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    },
+    {
+      "rank": 5,
+      "topic": "80 saal purane murder case ka late reveal",
+      "story_seed": "80 saal purane murder case ka late reveal",
+      "source_hint": "competitor:real stories | title:unsolved murder newly married 80 year",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
+      "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
+    }
+  ],
+  "hook_suggestions": [
+    "village se judi ek baat hai jise log aksar ignore kar dete hain...",
+    "mystery me ek aisa twist aaya jiske baad poori kahani badal gayi...",
+    "Sawal simple tha, lekin village ka jawab aaj tak clear nahi hua...",
+    "village ki ye kahani real lagti hai kyunki isme warning chhupi hai...",
+    "village me jo hua, uska jawab seedha nahi tha...",
+    "village se judi ek chhoti detail ne poora case badal diya..."
+  ],
+  "title_suggestions": [
+    {
+      "topic": "scary scarecrow ka unsolved twist",
+      "titles": [
+        "scary scarecrow ka unsolved twist: ek story jisme hidden warning chhupi thi",
+        "scary scarecrow ka unsolved twist ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "scary scarecrow ka unsolved twist: real story, shocking twist"
+      ]
+    },
+    {
+      "topic": "unabomber ted kazinsky ka unsolved twist",
+      "titles": [
+        "unabomber ted kazinsky ka unsolved twist: ek story jisme hidden warning chhupi thi",
+        "unabomber ted kazinsky ka unsolved twist ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "unabomber ted kazinsky ka unsolved twist: real story, shocking twist"
+      ]
+    },
+    {
+      "topic": "1920 haunted castle ka haunted twist",
+      "titles": [
+        "1920 haunted castle ka haunted twist: ek story jisme hidden warning chhupi thi",
+        "1920 haunted castle ka haunted twist ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "1920 haunted castle ka haunted twist: real story, shocking twist"
+      ]
+    },
+    {
+      "topic": "30 saal purane murder case ka late reveal",
+      "titles": [
+        "30 saal purane murder case ka late reveal: ek story jisme hidden warning chhupi thi",
+        "30 saal purane murder case ka late reveal ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "30 saal purane murder case ka late reveal: real story, shocking twist"
+      ]
+    },
+    {
+      "topic": "80 saal purane murder case ka late reveal",
+      "titles": [
+        "80 saal purane murder case ka late reveal: ek story jisme hidden warning chhupi thi",
+        "80 saal purane murder case ka late reveal ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "80 saal purane murder case ka late reveal: real story, shocking twist"
+      ]
+    }
+  ],
+  "next_action": "Use top recommended topic to generate script brief."
+}

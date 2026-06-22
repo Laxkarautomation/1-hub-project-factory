@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-06-09T13:31:28.673Z",
+  "generated_at": "2026-06-22T07:37:39.029Z",
   "channel": "UNRAAZ",
+  "channelId": "unraaz",
+  "channel_profile": {
+    "niche": "mystery_real_incidents_money_lessons",
+    "language": "hinglish",
+    "contentStyle": {}
+  },
   "strategy_summary": {
     "strongest_patterns": [
       {
@@ -64,80 +70,92 @@
   "recommended_topics": [
     {
       "rank": 1,
-      "topic": "loan fraud story",
-      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "topic": "scary scarecrow: real story pattern ke fresh angle par",
+      "story_seed": "scary scarecrow: real story pattern ke fresh angle par",
+      "source_hint": "competitor:khooni monday | title:scary scarecrow",
+      "reason": "Competitor title seed from khooni monday | Patterns: real_story, true_crime, documentary",
       "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
     },
     {
       "rank": 2,
-      "topic": "family betrayal story",
-      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "topic": "unsolved murder newly married 80 year: case ke overlooked clue par",
+      "story_seed": "unsolved murder newly married 80 year: case ke overlooked clue par",
+      "source_hint": "competitor:real stories | title:unsolved murder newly married 80 year",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
       "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
     },
     {
       "rank": 3,
-      "topic": "indian village mystery",
-      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "topic": "1920 haunted castle: local legend aur fear psychology par",
+      "story_seed": "1920 haunted castle: local legend aur fear psychology par",
+      "source_hint": "competitor:khooni monday | title:1920 haunted castle",
+      "reason": "Competitor title seed from khooni monday | Patterns: real_story, true_crime, documentary",
       "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
     },
     {
       "rank": 4,
-      "topic": "real money lesson",
-      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "topic": "30 year: case ke overlooked clue par",
+      "story_seed": "30 year: case ke overlooked clue par",
+      "source_hint": "competitor:real stories | title:30 year",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
       "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
     },
     {
       "rank": 5,
-      "topic": "small town crime",
-      "reason": "Matches patterns: real_story, true_crime, documentary",
+      "topic": "america's most dangerous gang bosses: case ke overlooked clue par",
+      "story_seed": "america's most dangerous gang bosses: case ke overlooked clue par",
+      "source_hint": "competitor:real stories | title:america's most dangerous gang bosses",
+      "reason": "Competitor title seed from real stories | Patterns: real_story, true_crime, documentary",
       "suggested_formula": "REAL INCIDENT → BUILDUP → TWIST → LESSON"
     }
   ],
   "hook_suggestions": [
-    "Ye kahani sach hai, lekin iska twist kisi film se kam nahi...",
-    "Raat ke andhere me jo hua, uska jawab aaj tak nahi mila...",
-    "Ek normal din, ek galat decision, aur phir sab kuch badal gaya...",
-    "Saboot mile, gawah mile, lekin sach aaj bhi adhoora hai..."
+    "village se judi ek baat hai jise log aksar ignore kar dete hain...",
+    "mystery me ek aisa twist aaya jiske baad poori kahani badal gayi...",
+    "Sawal simple tha, lekin village ka jawab aaj tak clear nahi hua...",
+    "village ki ye kahani real lagti hai kyunki isme warning chhupi hai...",
+    "village me jo hua, uska jawab seedha nahi tha...",
+    "village se judi ek chhoti detail ne poora case badal diya..."
   ],
   "title_suggestions": [
     {
-      "topic": "loan fraud story",
+      "topic": "scary scarecrow: real story pattern ke fresh angle par",
       "titles": [
-        "loan fraud story: ek sachchi kahani jise log bhool gaye",
-        "loan fraud story ka woh raaz jo aaj bhi clear nahi hua",
-        "loan fraud story: real incident, shocking twist"
+        "scary scarecrow: real story pattern ke fresh angle par: ek story jisme hidden warning chhupi thi",
+        "scary scarecrow: real story pattern ke fresh angle par ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "scary scarecrow: real story pattern ke fresh angle par: real story, shocking twist"
       ]
     },
     {
-      "topic": "family betrayal story",
+      "topic": "unsolved murder newly married 80 year: case ke overlooked clue par",
       "titles": [
-        "family betrayal story: ek sachchi kahani jise log bhool gaye",
-        "family betrayal story ka woh raaz jo aaj bhi clear nahi hua",
-        "family betrayal story: real incident, shocking twist"
+        "unsolved murder newly married 80 year: case ke overlooked clue par: ek story jisme hidden warning chhupi thi",
+        "unsolved murder newly married 80 year: case ke overlooked clue par ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "unsolved murder newly married 80 year: case ke overlooked clue par: real story, shocking twist"
       ]
     },
     {
-      "topic": "indian village mystery",
+      "topic": "1920 haunted castle: local legend aur fear psychology par",
       "titles": [
-        "indian village mystery: ek sachchi kahani jise log bhool gaye",
-        "indian village mystery ka woh raaz jo aaj bhi clear nahi hua",
-        "indian village mystery: real incident, shocking twist"
+        "1920 haunted castle: local legend aur fear psychology par: ek story jisme hidden warning chhupi thi",
+        "1920 haunted castle: local legend aur fear psychology par ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "1920 haunted castle: local legend aur fear psychology par: real story, shocking twist"
       ]
     },
     {
-      "topic": "real money lesson",
+      "topic": "30 year: case ke overlooked clue par",
       "titles": [
-        "real money lesson: ek sachchi kahani jise log bhool gaye",
-        "real money lesson ka woh raaz jo aaj bhi clear nahi hua",
-        "real money lesson: real incident, shocking twist"
+        "30 year: case ke overlooked clue par: ek story jisme hidden warning chhupi thi",
+        "30 year: case ke overlooked clue par ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "30 year: case ke overlooked clue par: real story, shocking twist"
       ]
     },
     {
-      "topic": "small town crime",
+      "topic": "america's most dangerous gang bosses: case ke overlooked clue par",
       "titles": [
-        "small town crime: ek sachchi kahani jise log bhool gaye",
-        "small town crime ka woh raaz jo aaj bhi clear nahi hua",
-        "small town crime: real incident, shocking twist"
+        "america's most dangerous gang bosses: case ke overlooked clue par: ek story jisme hidden warning chhupi thi",
+        "america's most dangerous gang bosses: case ke overlooked clue par ka woh sach jo pehle kisi ko samajh nahi aaya",
+        "america's most dangerous gang bosses: case ke overlooked clue par: real story, shocking twist"
       ]
     }
   ],

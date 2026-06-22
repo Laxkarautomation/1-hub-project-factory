@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-06-21T11:22:12.406Z",
+  "total_scripts": 5,
+  "profile_counts": {
+    "mystery_storyteller": 5
+  },
+  "status": "voice_profiles_resolved",
+  "profiles": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "detected_intents": [
+        "mystery",
+        "scam_money"
+      ],
+      "selected_profile": "mystery_storyteller",
+      "profile": {
+        "id": "mystery_storyteller",
+        "providerPreference": [
+          "edge_tts",
+          "cloudflare_tts"
+        ],
+        "voiceGender": "male",
+        "language": "hi-IN",
+        "pace": "slow_medium",
+        "speedMultiplier": 0.94,
+        "pitchShift": -2,
+        "energy": "medium_low",
+        "emotionBase": "suspense",
+        "useCase": "dark mystery, haunted, suspense storytelling"
+      },
+      "status": "voice_profile_resolved"
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "detected_intents": [
+        "mystery",
+        "documentary",
+        "scam_money"
+      ],
+      "selected_profile": "mystery_storyteller",
+      "profile": {
+        "id": "mystery_storyteller",
+        "providerPreference": [
+          "edge_tts",
+          "cloudflare_tts"
+        ],
+        "voiceGender": "male",
+        "language": "hi-IN",
+        "pace": "slow_medium",
+        "speedMultiplier": 0.94,
+        "pitchShift": -2,
+        "energy": "medium_low",
+        "emotionBase": "suspense",
+        "useCase": "dark mystery, haunted, suspense storytelling"
+      },
+      "status": "voice_profile_resolved"
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "detected_intents": [
+        "mystery",
+        "documentary",
+        "scam_money"
+      ],
+      "selected_profile": "mystery_storyteller",
+      "profile": {
+        "id": "mystery_storyteller",
+        "providerPreference": [
+          "edge_tts",
+          "cloudflare_tts"
+        ],
+        "voiceGender": "male",
+        "language": "hi-IN",
+        "pace": "slow_medium",
+        "speedMultiplier": 0.94,
+        "pitchShift": -2,
+        "energy": "medium_low",
+        "emotionBase": "suspense",
+        "useCase": "dark mystery, haunted, suspense storytelling"
+      },
+      "status": "voice_profile_resolved"
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "detected_intents": [
+        "mystery",
+        "documentary",
+        "scam_money"
+      ],
+      "selected_profile": "mystery_storyteller",
+      "profile": {
+        "id": "mystery_storyteller",
+        "providerPreference": [
+          "edge_tts",
+          "cloudflare_tts"
+        ],
+        "voiceGender": "male",
+        "language": "hi-IN",
+        "pace": "slow_medium",
+        "speedMultiplier": 0.94,
+        "pitchShift": -2,
+        "energy": "medium_low",
+        "emotionBase": "suspense",
+        "useCase": "dark mystery, haunted, suspense storytelling"
+      },
+      "status": "voice_profile_resolved"
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "detected_intents": [
+        "mystery",
+        "scam_money"
+      ],
+      "selected_profile": "mystery_storyteller",
+      "profile": {
+        "id": "mystery_storyteller",
+        "providerPreference": [
+          "edge_tts",
+          "cloudflare_tts"
+        ],
+        "voiceGender": "male",
+        "language": "hi-IN",
+        "pace": "slow_medium",
+        "speedMultiplier": 0.94,
+        "pitchShift": -2,
+        "energy": "medium_low",
+        "emotionBase": "suspense",
+        "useCase": "dark mystery, haunted, suspense storytelling"
+      },
+      "status": "voice_profile_resolved"
+    }
+  ]
+}

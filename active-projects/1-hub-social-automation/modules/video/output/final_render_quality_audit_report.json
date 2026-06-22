@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-06-21T11:23:21.547Z",
+  "manifest_source": "modules/video/output/optimized_video_manifest.json",
+  "total_scripts": 5,
+  "summary": {
+    "average_overall_render_quality_score": 85,
+    "excellent_scripts": 0,
+    "good_scripts": 5,
+    "needs_attention_scripts": 0,
+    "poor_scripts": 0,
+    "total_issues": 5,
+    "status": "final_render_quality_audit_batch_ready"
+  },
+  "audits": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "timing_score": 100,
+      "motion_score": 98,
+      "transition_score": 100,
+      "hook_score": 97,
+      "retention_score": 38,
+      "subtitle_score": 90,
+      "viewer_drop_risk": "high",
+      "overall_render_quality_score": 85,
+      "quality_band": "good",
+      "detected_issues": [
+        {
+          "issue_type": "retention_risk",
+          "severity": "high",
+          "reason": "retention planning indicates viewer drop risk"
+        }
+      ],
+      "status": "final_render_quality_needs_attention"
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "timing_score": 100,
+      "motion_score": 98,
+      "transition_score": 100,
+      "hook_score": 97,
+      "retention_score": 38,
+      "subtitle_score": 90,
+      "viewer_drop_risk": "high",
+      "overall_render_quality_score": 85,
+      "quality_band": "good",
+      "detected_issues": [
+        {
+          "issue_type": "retention_risk",
+          "severity": "high",
+          "reason": "retention planning indicates viewer drop risk"
+        }
+      ],
+      "status": "final_render_quality_needs_attention"
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "timing_score": 100,
+      "motion_score": 98,
+      "transition_score": 100,
+      "hook_score": 97,
+      "retention_score": 38,
+      "subtitle_score": 90,
+      "viewer_drop_risk": "high",
+      "overall_render_quality_score": 85,
+      "quality_band": "good",
+      "detected_issues": [
+        {
+          "issue_type": "retention_risk",
+          "severity": "high",
+          "reason": "retention planning indicates viewer drop risk"
+        }
+      ],
+      "status": "final_render_quality_needs_attention"
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "timing_score": 100,
+      "motion_score": 98,
+      "transition_score": 100,
+      "hook_score": 97,
+      "retention_score": 38,
+      "subtitle_score": 90,
+      "viewer_drop_risk": "high",
+      "overall_render_quality_score": 85,
+      "quality_band": "good",
+      "detected_issues": [
+        {
+          "issue_type": "retention_risk",
+          "severity": "high",
+          "reason": "retention planning indicates viewer drop risk"
+        }
+      ],
+      "status": "final_render_quality_needs_attention"
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "timing_score": 100,
+      "motion_score": 98,
+      "transition_score": 100,
+      "hook_score": 95,
+      "retention_score": 41,
+      "subtitle_score": 95,
+      "viewer_drop_risk": "high",
+      "overall_render_quality_score": 86,
+      "quality_band": "good",
+      "detected_issues": [
+        {
+          "issue_type": "retention_risk",
+          "severity": "high",
+          "reason": "retention planning indicates viewer drop risk"
+        }
+      ],
+      "status": "final_render_quality_needs_attention"
+    }
+  ]
+}

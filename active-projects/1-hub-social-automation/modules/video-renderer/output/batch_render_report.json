@@ -1,65 +1,36 @@
 {
-  "generated_at": "2026-06-13T13:29:12.791Z",
+  "generated_at": "2026-06-21T11:23:21.494Z",
+  "manifestPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video/output/optimized_video_manifest.json",
   "results": [
     {
-      "script_id": "research_script_001",
+      "script_id": "intelligence_script_001",
       "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_001.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_001_preflight_report.json"
+      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/intelligence_script_001.mp4",
+      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/intelligence_script_001_preflight_report.json"
     },
     {
-      "script_id": "research_script_002",
+      "script_id": "intelligence_script_002",
       "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_002.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_002_preflight_report.json"
+      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/intelligence_script_002.mp4",
+      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/intelligence_script_002_preflight_report.json"
     },
     {
-      "script_id": "research_script_003",
+      "script_id": "intelligence_script_003",
       "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_003.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_003_preflight_report.json"
+      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/intelligence_script_003.mp4",
+      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/intelligence_script_003_preflight_report.json"
     },
     {
-      "script_id": "research_script_004",
+      "script_id": "intelligence_script_004",
       "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_004.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_004_preflight_report.json"
+      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/intelligence_script_004.mp4",
+      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/intelligence_script_004_preflight_report.json"
     },
     {
-      "script_id": "research_script_005",
+      "script_id": "intelligence_script_005",
       "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_005.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_005_preflight_report.json"
-    },
-    {
-      "script_id": "research_script_006",
-      "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_006.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_006_preflight_report.json"
-    },
-    {
-      "script_id": "research_script_007",
-      "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_007.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_007_preflight_report.json"
-    },
-    {
-      "script_id": "research_script_008",
-      "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_008.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_008_preflight_report.json"
-    },
-    {
-      "script_id": "research_script_009",
-      "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_009.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_009_preflight_report.json"
-    },
-    {
-      "script_id": "research_script_010",
-      "status": "rendered",
-      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/research_script_010.mp4",
-      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/research_script_010_preflight_report.json"
+      "outputFile": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/storage/videos/unraaz/intelligence_script_005.mp4",
+      "reportPath": "/workspaces/1-hub-project-factory/active-projects/1-hub-social-automation/modules/video-renderer/output/intelligence_script_005_preflight_report.json"
     }
   ]
 }

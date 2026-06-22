@@ -1,0 +1,1142 @@
+{
+  "generated_at": "2026-06-21T11:22:12.753Z",
+  "manifest_source": "modules/video/output/optimized_video_manifest.json",
+  "total_scripts": 5,
+  "summary": {
+    "total_scenes": 35,
+    "total_duration_seconds": 244,
+    "status": "motion_plan_batch_ready"
+  },
+  "plans": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "status": "motion_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "duration_seconds": 8,
+          "motion_type": "slow_zoom_in_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.02,
+            "end_scale": 1.12
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in_out",
+          "intensity": "slow",
+          "purpose": "create immediate depth without distracting from the hook",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.02+(1.12-1.02)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "duration_seconds": 11,
+          "motion_type": "slow_pan",
+          "camera_move": "pan",
+          "zoom": {
+            "start_scale": 1.06,
+            "end_scale": 1.06
+          },
+          "pan": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "distance_percent": 8
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "linear",
+          "intensity": "slow",
+          "purpose": "add gentle movement while orienting the viewer",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 330,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.06+(1.06-1.06)*on/330",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "duration_seconds": 8,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "duration_seconds": 6,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 180,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/180",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "duration_seconds": 5,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 150,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/150",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "duration_seconds": 8,
+          "motion_type": "dramatic_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.03,
+            "end_scale": 1.18
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in",
+          "intensity": "dramatic",
+          "purpose": "increase tension at the reveal beat",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.03+(1.18-1.03)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "duration_seconds": 3,
+          "motion_type": "slow_zoom_out_or_hold",
+          "camera_move": "zoom_out_or_hold",
+          "zoom": {
+            "start_scale": 1.08,
+            "end_scale": 1.02
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 80,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "slow",
+          "purpose": "settle the final frame so the call to action is readable",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 90,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.08+(1.02-1.08)*on/90",
+            "output_size": "720x1280"
+          }
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "status": "motion_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "duration_seconds": 8,
+          "motion_type": "slow_zoom_in_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.02,
+            "end_scale": 1.12
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in_out",
+          "intensity": "slow",
+          "purpose": "create immediate depth without distracting from the hook",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.02+(1.12-1.02)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "duration_seconds": 11,
+          "motion_type": "slow_pan",
+          "camera_move": "pan",
+          "zoom": {
+            "start_scale": 1.06,
+            "end_scale": 1.06
+          },
+          "pan": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "distance_percent": 8
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "linear",
+          "intensity": "slow",
+          "purpose": "add gentle movement while orienting the viewer",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 330,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.06+(1.06-1.06)*on/330",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "duration_seconds": 8,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "duration_seconds": 6,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 180,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/180",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "duration_seconds": 5,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 150,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/150",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "duration_seconds": 8,
+          "motion_type": "dramatic_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.03,
+            "end_scale": 1.18
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in",
+          "intensity": "dramatic",
+          "purpose": "increase tension at the reveal beat",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.03+(1.18-1.03)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "duration_seconds": 3,
+          "motion_type": "slow_zoom_out_or_hold",
+          "camera_move": "zoom_out_or_hold",
+          "zoom": {
+            "start_scale": 1.08,
+            "end_scale": 1.02
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 80,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "slow",
+          "purpose": "settle the final frame so the call to action is readable",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 90,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.08+(1.02-1.08)*on/90",
+            "output_size": "720x1280"
+          }
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "status": "motion_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "duration_seconds": 8,
+          "motion_type": "slow_zoom_in_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.02,
+            "end_scale": 1.12
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in_out",
+          "intensity": "slow",
+          "purpose": "create immediate depth without distracting from the hook",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.02+(1.12-1.02)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "duration_seconds": 11,
+          "motion_type": "slow_pan",
+          "camera_move": "pan",
+          "zoom": {
+            "start_scale": 1.06,
+            "end_scale": 1.06
+          },
+          "pan": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "distance_percent": 8
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "linear",
+          "intensity": "slow",
+          "purpose": "add gentle movement while orienting the viewer",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 330,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.06+(1.06-1.06)*on/330",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "duration_seconds": 8,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "duration_seconds": 6,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 180,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/180",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "duration_seconds": 5,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 150,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/150",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "duration_seconds": 8,
+          "motion_type": "dramatic_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.03,
+            "end_scale": 1.18
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in",
+          "intensity": "dramatic",
+          "purpose": "increase tension at the reveal beat",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.03+(1.18-1.03)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "duration_seconds": 3,
+          "motion_type": "slow_zoom_out_or_hold",
+          "camera_move": "zoom_out_or_hold",
+          "zoom": {
+            "start_scale": 1.08,
+            "end_scale": 1.02
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 80,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "slow",
+          "purpose": "settle the final frame so the call to action is readable",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 90,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.08+(1.02-1.08)*on/90",
+            "output_size": "720x1280"
+          }
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 49,
+      "status": "motion_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "duration_seconds": 8,
+          "motion_type": "slow_zoom_in_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.02,
+            "end_scale": 1.12
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in_out",
+          "intensity": "slow",
+          "purpose": "create immediate depth without distracting from the hook",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.02+(1.12-1.02)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "duration_seconds": 11,
+          "motion_type": "slow_pan",
+          "camera_move": "pan",
+          "zoom": {
+            "start_scale": 1.06,
+            "end_scale": 1.06
+          },
+          "pan": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "distance_percent": 8
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "linear",
+          "intensity": "slow",
+          "purpose": "add gentle movement while orienting the viewer",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 330,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.06+(1.06-1.06)*on/330",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "duration_seconds": 8,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "duration_seconds": 6,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 180,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/180",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "duration_seconds": 5,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 150,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/150",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "duration_seconds": 8,
+          "motion_type": "dramatic_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.03,
+            "end_scale": 1.18
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in",
+          "intensity": "dramatic",
+          "purpose": "increase tension at the reveal beat",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.03+(1.18-1.03)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "duration_seconds": 3,
+          "motion_type": "slow_zoom_out_or_hold",
+          "camera_move": "zoom_out_or_hold",
+          "zoom": {
+            "start_scale": 1.08,
+            "end_scale": 1.02
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 80,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "slow",
+          "purpose": "settle the final frame so the call to action is readable",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 90,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.08+(1.02-1.08)*on/90",
+            "output_size": "720x1280"
+          }
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_duration_seconds": 48,
+      "status": "motion_plan_ready",
+      "scenes": [
+        {
+          "scene": 1,
+          "segment": "hook",
+          "duration_seconds": 8,
+          "motion_type": "slow_zoom_in_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.02,
+            "end_scale": 1.12
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in_out",
+          "intensity": "slow",
+          "purpose": "create immediate depth without distracting from the hook",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.02+(1.12-1.02)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 2,
+          "segment": "context",
+          "duration_seconds": 10,
+          "motion_type": "slow_pan",
+          "camera_move": "pan",
+          "zoom": {
+            "start_scale": 1.06,
+            "end_scale": 1.06
+          },
+          "pan": {
+            "enabled": true,
+            "direction": "left_to_right",
+            "distance_percent": 8
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "linear",
+          "intensity": "slow",
+          "purpose": "add gentle movement while orienting the viewer",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 300,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.06+(1.06-1.06)*on/300",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 3,
+          "segment": "evidence",
+          "duration_seconds": 8,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 4,
+          "segment": "evidence",
+          "duration_seconds": 6,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 180,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/180",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 5,
+          "segment": "evidence",
+          "duration_seconds": 5,
+          "motion_type": "subtle_zoom_hold",
+          "camera_move": "zoom_and_hold",
+          "zoom": {
+            "start_scale": 1.04,
+            "end_scale": 1.08
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 70,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "subtle",
+          "purpose": "make evidence feel inspected rather than static",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 150,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.04+(1.08-1.04)*on/150",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 6,
+          "segment": "reveal",
+          "duration_seconds": 8,
+          "motion_type": "dramatic_push_in",
+          "camera_move": "push_in",
+          "zoom": {
+            "start_scale": 1.03,
+            "end_scale": 1.18
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": false,
+            "start_percent": 0,
+            "end_percent": 0
+          },
+          "easing": "ease_in",
+          "intensity": "dramatic",
+          "purpose": "increase tension at the reveal beat",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 240,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.03+(1.18-1.03)*on/240",
+            "output_size": "720x1280"
+          }
+        },
+        {
+          "scene": 7,
+          "segment": "cta",
+          "duration_seconds": 3,
+          "motion_type": "slow_zoom_out_or_hold",
+          "camera_move": "zoom_out_or_hold",
+          "zoom": {
+            "start_scale": 1.08,
+            "end_scale": 1.02
+          },
+          "pan": {
+            "enabled": false,
+            "direction": "center",
+            "distance_percent": 0
+          },
+          "hold": {
+            "enabled": true,
+            "start_percent": 80,
+            "end_percent": 100
+          },
+          "easing": "ease_out",
+          "intensity": "slow",
+          "purpose": "settle the final frame so the call to action is readable",
+          "ffmpeg_hint": {
+            "fps": 30,
+            "frames": 90,
+            "filter_family": "zoompan",
+            "zoom_expression": "1.08+(1.02-1.08)*on/90",
+            "output_size": "720x1280"
+          }
+        }
+      ]
+    }
+  ]
+}

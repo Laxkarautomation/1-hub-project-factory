@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-06-21T11:22:12.804Z",
+  "manifest_source": "modules/video/output/optimized_video_manifest.json",
+  "total_scripts": 5,
+  "summary": {
+    "total_transitions": 30,
+    "status": "transition_intelligence_batch_ready"
+  },
+  "plans": [
+    {
+      "script_id": "intelligence_script_001",
+      "title": "mystery true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_transitions": 6,
+      "status": "transition_intelligence_ready",
+      "transitions": [
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "from_segment": "hook",
+          "to_segment": "context",
+          "transition_type": "hard_cut",
+          "duration_ms": 120,
+          "intensity": "sharp",
+          "reason": "move quickly from the hook into context without losing attention"
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "from_segment": "context",
+          "to_segment": "evidence",
+          "transition_type": "soft_dissolve",
+          "duration_ms": 450,
+          "intensity": "gentle",
+          "reason": "soften the shift from setup into supporting detail"
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "from_segment": "evidence",
+          "to_segment": "reveal",
+          "transition_type": "impact_flash",
+          "duration_ms": 180,
+          "intensity": "high",
+          "reason": "punctuate the turn from evidence into the reveal"
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "from_segment": "reveal",
+          "to_segment": "cta",
+          "transition_type": "smooth_fade",
+          "duration_ms": 650,
+          "intensity": "calm",
+          "reason": "settle the reveal before the call to action"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_002",
+      "title": "mystery real incidents: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_transitions": 6,
+      "status": "transition_intelligence_ready",
+      "transitions": [
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "from_segment": "hook",
+          "to_segment": "context",
+          "transition_type": "hard_cut",
+          "duration_ms": 120,
+          "intensity": "sharp",
+          "reason": "move quickly from the hook into context without losing attention"
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "from_segment": "context",
+          "to_segment": "evidence",
+          "transition_type": "soft_dissolve",
+          "duration_ms": 450,
+          "intensity": "gentle",
+          "reason": "soften the shift from setup into supporting detail"
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "from_segment": "evidence",
+          "to_segment": "reveal",
+          "transition_type": "impact_flash",
+          "duration_ms": 180,
+          "intensity": "high",
+          "reason": "punctuate the turn from evidence into the reveal"
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "from_segment": "reveal",
+          "to_segment": "cta",
+          "transition_type": "smooth_fade",
+          "duration_ms": 650,
+          "intensity": "calm",
+          "reason": "settle the reveal before the call to action"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_003",
+      "title": "mystery real incident: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_transitions": 6,
+      "status": "transition_intelligence_ready",
+      "transitions": [
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "from_segment": "hook",
+          "to_segment": "context",
+          "transition_type": "hard_cut",
+          "duration_ms": 120,
+          "intensity": "sharp",
+          "reason": "move quickly from the hook into context without losing attention"
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "from_segment": "context",
+          "to_segment": "evidence",
+          "transition_type": "soft_dissolve",
+          "duration_ms": 450,
+          "intensity": "gentle",
+          "reason": "soften the shift from setup into supporting detail"
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "from_segment": "evidence",
+          "to_segment": "reveal",
+          "transition_type": "impact_flash",
+          "duration_ms": 180,
+          "intensity": "high",
+          "reason": "punctuate the turn from evidence into the reveal"
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "from_segment": "reveal",
+          "to_segment": "cta",
+          "transition_type": "smooth_fade",
+          "duration_ms": 650,
+          "intensity": "calm",
+          "reason": "settle the reveal before the call to action"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_004",
+      "title": "incident true crime: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_transitions": 6,
+      "status": "transition_intelligence_ready",
+      "transitions": [
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "from_segment": "hook",
+          "to_segment": "context",
+          "transition_type": "hard_cut",
+          "duration_ms": 120,
+          "intensity": "sharp",
+          "reason": "move quickly from the hook into context without losing attention"
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "from_segment": "context",
+          "to_segment": "evidence",
+          "transition_type": "soft_dissolve",
+          "duration_ms": 450,
+          "intensity": "gentle",
+          "reason": "soften the shift from setup into supporting detail"
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "from_segment": "evidence",
+          "to_segment": "reveal",
+          "transition_type": "impact_flash",
+          "duration_ms": 180,
+          "intensity": "high",
+          "reason": "punctuate the turn from evidence into the reveal"
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "from_segment": "reveal",
+          "to_segment": "cta",
+          "transition_type": "smooth_fade",
+          "duration_ms": 650,
+          "intensity": "calm",
+          "reason": "settle the reveal before the call to action"
+        }
+      ]
+    },
+    {
+      "script_id": "intelligence_script_005",
+      "title": "crime mystery: ek story jisme hidden warning chhupi thi",
+      "total_scenes": 7,
+      "total_transitions": 6,
+      "status": "transition_intelligence_ready",
+      "transitions": [
+        {
+          "from_scene": 1,
+          "to_scene": 2,
+          "from_segment": "hook",
+          "to_segment": "context",
+          "transition_type": "hard_cut",
+          "duration_ms": 120,
+          "intensity": "sharp",
+          "reason": "move quickly from the hook into context without losing attention"
+        },
+        {
+          "from_scene": 2,
+          "to_scene": 3,
+          "from_segment": "context",
+          "to_segment": "evidence",
+          "transition_type": "soft_dissolve",
+          "duration_ms": 450,
+          "intensity": "gentle",
+          "reason": "soften the shift from setup into supporting detail"
+        },
+        {
+          "from_scene": 3,
+          "to_scene": 4,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 4,
+          "to_scene": 5,
+          "from_segment": "evidence",
+          "to_segment": "evidence",
+          "transition_type": "zoom_blend",
+          "duration_ms": 520,
+          "intensity": "medium",
+          "reason": "connect related evidence beats while preserving momentum"
+        },
+        {
+          "from_scene": 5,
+          "to_scene": 6,
+          "from_segment": "evidence",
+          "to_segment": "reveal",
+          "transition_type": "impact_flash",
+          "duration_ms": 180,
+          "intensity": "high",
+          "reason": "punctuate the turn from evidence into the reveal"
+        },
+        {
+          "from_scene": 6,
+          "to_scene": 7,
+          "from_segment": "reveal",
+          "to_segment": "cta",
+          "transition_type": "smooth_fade",
+          "duration_ms": 650,
+          "intensity": "calm",
+          "reason": "settle the reveal before the call to action"
+        }
+      ]
+    }
+  ]
+}
